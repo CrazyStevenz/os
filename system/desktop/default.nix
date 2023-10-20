@@ -6,9 +6,7 @@ let
   else
     config.system.user.work.username;
 
-  monitorConfigPath = "/home/${selectedUser}/.config/monitors.xml";
-  monitorsXmlContent = builtins.readFile monitorConfigPath;
-  monitorsConfig = pkgs.writeText "gdm_monitors.xml" monitorsXmlContent;
+  monitorConfig = "/home/${selectedUser}/.config/monitors.xml";
 in {
   imports = [ ./home/main.nix ./home/work.nix ]; # Setup home manager
 
@@ -56,9 +54,12 @@ in {
   };
 
   # Set GDM monitors config, matching the user's config
-  systemd.tmpfiles.rules =
-    lib.mkIf (config.system.user.main.enable || config.system.user.work.enable)
-    [ "L+ /run/gdm/.config/monitors.xml - - - - ${monitorsConfig}" ];
+  systemd.tmpfiles.rules = lib.mkIf (lib.pathExists monitorConfig
+    && (config.system.user.main.enable || config.system.user.work.enable)) [
+      "L+ /run/gdm/.config/monitors.xml - - - - ${
+        pkgs.writeText "monitors.xml" (builtins.readFile monitorConfig)
+      }"
+    ];
 
   # Workaround for GDM autologin
   systemd.services = {
