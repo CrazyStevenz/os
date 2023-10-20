@@ -6,8 +6,9 @@
 # Install
 
 ```bash
-git clone https://github.com/IceDBorn/IceDOS
-cd IceDOS
+git clone https://github.com/CrazyStevenz/os
+cd os
+git checkout os
 bash install.sh
 ```
 

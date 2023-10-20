@@ -67,7 +67,7 @@ lib.mkIf config.system.user.work.enable {
       ".config/VSCodium/User/settings.json".source = ../configs/vscodium.json;
 
       # Set firefox to privacy profile
-      ".mozilla/firefox/profiles.ini".source = ../configs/firefox/profiles.ini;
+      # ".mozilla/firefox/profiles.ini".source = ../configs/firefox/profiles.ini;
 
       # Add user.js
       ".mozilla/firefox/privacy/user.js".source =
@@ -91,8 +91,8 @@ lib.mkIf config.system.user.work.enable {
           "#webrtcIndicator { display: none }";
 
       # Import firefox gnome theme userContent.css
-      ".mozilla/firefox/privacy/chrome/userContent.css".text =
-        ''@import "firefox-gnome-theme/userContent.css"'';
+      # ".mozilla/firefox/privacy/chrome/userContent.css".text =
+      #   ''@import "firefox-gnome-theme/userContent.css"'';
 
       # Create second firefox profile for pwas
       ".mozilla/firefox/pwas/user.js".source =
@@ -111,16 +111,16 @@ lib.mkIf config.system.user.work.enable {
       ".config/btop/btop.conf".source = ../configs/btop.conf;
 
       # Add nvchad
-      ".config/nvim" = {
-        source = "${(pkgs.callPackage ../self-built/nvchad.nix { })}";
-        recursive = true;
-      };
+      # ".config/nvim" = {
+      #   source = "${(pkgs.callPackage ../self-built/nvchad.nix { })}";
+      #   recursive = true;
+      # };
 
-      ".config/nvim/lua/custom" = {
-        source = ../configs/nvchad;
-        recursive = true;
-        force = true;
-      };
+      # ".config/nvim/lua/custom" = {
+      #   source = ../configs/nvchad;
+      #   recursive = true;
+      #   force = true;
+      # };
 
       # Add tmux
       ".config/tmux/tmux.conf".source = ../configs/tmux.conf;

@@ -6,19 +6,19 @@
       firefox = {
         gnome-theme.enable = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         privacy.enable = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         # Sites to launch on Firefox PWAs
         pwas.sites = mkOption {
           type = types.str;
           default =
-            "https://mail.tutanota.com https://icedborn.github.io/icedchat https://discord.com/app https://dtekteam.slack.com/";
+            "https://mail.tutanota.com https://icedborn.github.io/icedchat";
         };
       };
 
@@ -32,8 +32,7 @@
         # Extras to use for adwaita for steam theme
         adwaita-for-steam.extras = mkOption {
           type = types.str;
-          default =
-            "-e library/hide_whats_new -e login/hover_qr -e windowcontrols/hide-close";
+          default = "-e library/hide_whats_new -e login/hover_qr";
         };
 
         beta.enable = mkOption {
@@ -81,7 +80,7 @@
 
         efi-mount-path = mkOption {
           type = types.str;
-          default = "/boot";
+          default = "/boot/efi";
         };
       };
 
@@ -96,7 +95,7 @@
       autologin = {
         enable = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         # If false, defaults to work user
@@ -114,32 +113,32 @@
       gnome = {
         enable = mkOption {
           type = types.bool;
-          default = false;
+          default = true;
         };
 
         arcmenu.enable = mkOption {
           type = types.bool;
-          default = false;
+          default = true;
         };
 
         caffeine.enable = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         clock-date.enable = mkOption {
           type = types.bool;
-          default = false;
+          default = true;
         };
 
         dash-to-panel.enable = mkOption {
           type = types.bool;
-          default = false;
+          default = true;
         };
 
         gsconnect.enable = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         hot-corners.enable = mkOption {
@@ -150,18 +149,18 @@
         # Whether to set (or unset) gnome's and arcmenu's pinned apps
         pinned-apps.enable = mkOption {
           type = types.bool;
-          default = false;
+          default = true;
         };
 
         startup-items.enable = mkOption {
           type = types.bool;
-          default = false;
+          default = true;
         };
 
         workspaces = {
           dynamic-workspaces.enable = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # Determines the maximum number of workspaces when dynamic workspaces are disabled
@@ -174,12 +173,12 @@
 
       hypr.enable = mkOption {
         type = types.bool;
-        default = true;
+        default = false;
       };
 
       hyprland.enable = mkOption {
         type = types.bool;
-        default = true;
+        default = false;
       };
     };
 
@@ -218,8 +217,8 @@
 
             value = mkOption {
               type = types.str;
-              # Pstate 0, 1.25 voltage, 4200 clock speed
-              default = "-p 0 -v 30 -f A8";
+              # Pstate 0, 1.25 voltage, 4400 clock speed
+              default = "-p 0 -v 30 -f B0";
             };
           };
         };
@@ -283,7 +282,7 @@
 
           resolution = mkOption {
             type = types.str;
-            default = "1920x1080";
+            default = "3440x1440";
           };
 
           refresh-rate = mkOption {
@@ -315,17 +314,17 @@
 
           resolution = mkOption {
             type = types.str;
-            default = "1280x1024";
+            default = "1920x1080";
           };
 
           refresh-rate = mkOption {
             type = types.str;
-            default = "75";
+            default = "60";
           };
 
           position = mkOption {
             type = types.str;
-            default = "1920x0";
+            default = "3440x0";
           };
 
           scaling = mkOption {
@@ -374,7 +373,7 @@
         # Android container
         waydroid.enable = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
       };
 
@@ -396,13 +395,13 @@
         # Number of days before a generation can be deleted
         days = mkOption {
           type = types.str;
-          default = "0";
+          default = "7";
         };
 
         # Number of generations that will always be kept
         generations = mkOption {
           type = types.str;
-          default = "10";
+          default = "5";
         };
       };
 
@@ -420,23 +419,23 @@
 
           username = mkOption {
             type = types.str;
-            default = "icedborn";
+            default = "stef";
           };
 
           description = mkOption {
             type = types.str;
-            default = "IceDBorn";
+            default = "Stefanos";
           };
 
           git = {
             username = mkOption {
               type = types.str;
-              default = "IceDBorn";
+              default = "CrazyStevenz";
             };
 
             email = mkOption {
               type = types.str;
-              default = "github.envenomed@dralias.com";
+              default = "github.ekta@aleeas.com";
             };
           };
         };
@@ -460,12 +459,12 @@
           git = {
             username = mkOption {
               type = types.str;
-              default = "IceDBorn";
+              default = "CrazyStevenz";
             };
 
             email = mkOption {
               type = types.str;
-              default = "github.envenomed@dralias.com";
+              default = "github.ekta@aleeas.com";
             };
           };
         };
@@ -474,7 +473,7 @@
       # Do not change without checking the docs (config.system.stateVersion)
       state-version = mkOption {
         type = types.str;
-        default = "23.05";
+        default = "22.05";
       };
     };
   };

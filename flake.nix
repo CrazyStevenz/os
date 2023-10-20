@@ -11,11 +11,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    phps.url = "github:fossar/nix-phps";
+    # phps.url = "github:fossar/nix-phps";
   };
 
   outputs = { self, nixpkgs, hyprland, home-manager, nur, pipewire-screenaudio
-    , steam-session, phps }@inputs: {
+    , steam-session
+    # , phps
+    }@inputs: {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };

@@ -4,7 +4,7 @@ lib.mkIf config.system.user.main.enable {
   home-manager.users.${config.system.user.main.username} = {
     gtk = {
       enable = true;
-      theme.name = "Adwaita-dark";
+      theme.name = "adw-gtk3-dark";
       cursorTheme.name = "Bibata-Modern-Classic";
       iconTheme.name = "Tela-black-dark";
     }; # Change GTK themes
@@ -24,26 +24,26 @@ lib.mkIf config.system.user.main.enable {
     };
 
     xdg = {
-      desktopEntries = {
-        # Firefox PWA
-        pwas = {
-          exec =
-            "firefox --no-remote -P PWAs --name pwas ${config.applications.firefox.pwas.sites}";
-          icon = "firefox-nightly";
-          name = "Firefox PWAs";
-          terminal = false;
-          type = "Application";
-        };
+      # desktopEntries = {
+      #   # Firefox PWA
+      #   pwas = {
+      #     exec =
+      #       "firefox --no-remote -P PWAs --name pwas ${config.applications.firefox.pwas.sites}";
+      #     icon = "firefox-nightly";
+      #     name = "Firefox PWAs";
+      #     terminal = false;
+      #     type = "Application";
+      #   };
 
-        # Run signal without a tray icon
-        signal = {
-          exec = "signal-desktop --hide-tray-icon";
-          icon = "signal-desktop";
-          name = "Signal - No tray";
-          terminal = false;
-          type = "Application";
-        };
-      };
+      #   # Run signal without a tray icon
+      #   signal = {
+      #     exec = "signal-desktop --hide-tray-icon";
+      #     icon = "signal-desktop";
+      #     name = "Signal - No tray";
+      #     terminal = false;
+      #     type = "Application";
+      #   };
+      # };
 
       mimeApps = {
         enable = true;
@@ -52,16 +52,22 @@ lib.mkIf config.system.user.main.enable {
           "application/pdf" = "firefox.desktop";
           "application/x-bittorrent" = "de.haeckerfelix.Fragments.desktop";
           "application/x-ms-dos-executable" = "wine.desktop";
-          "application/x-shellscript" = "codium.desktop";
-          "application/x-wine-extension-ini" = "codium.desktop";
+          "application/x-shellscript" = "sublime_text.desktop";
+          "application/x-wine-extension-ini" = "sublime_text.desktop";
           "application/zip" = "org.gnome.FileRoller.desktop";
+          "audio/aac" = "io.bassi.Amberol.desktop";
+          "audio/flac" = "io.bassi.Amberol.desktop";
+          "audio/mp3" = "io.bassi.Amberol.desktop";
+          "audio/wav" = "io.bassi.Amberol.desktop";
           "image/avif" = "org.gnome.gThumb.desktop";
           "image/jpeg" = "org.gnome.gThumb.desktop";
           "image/png" = "org.gnome.gThumb.desktop";
           "image/svg+xml" = "org.gnome.gThumb.desktop";
           "text/html" = "firefox.desktop";
-          "text/plain" = "codium.desktop";
+          "text/plain" = "sublime_text.desktop";
           "video/mp4" = "mpv.desktop";
+          "video/quicktime" = "mpv.desktop";
+          "video/x-ms-wmv" = "mpv.desktop";
           "x-scheme-handler/http" = "firefox.desktop";
           "x-scheme-handler/https" = "firefox.desktop";
           "x-scheme-handler/about" = "firefox.desktop";

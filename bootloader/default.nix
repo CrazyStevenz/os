@@ -18,7 +18,7 @@
 
       systemd-boot = lib.mkIf config.boot.systemd-boot.enable {
         enable = true;
-        configurationLimit = 10;
+        configurationLimit = 20;
         # Select the highest resolution for the bootloader
         consoleMode = "max";
       };

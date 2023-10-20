@@ -5,7 +5,7 @@ let
   stashLock = if (config.system.update.stash-flake-lock) then "1" else "0";
 
   # Rebuild the system configuration
-  update = pkgs.writeShellScriptBin "update" "rebuild 1 ${stashLock} 0 0";
+  update = pkgs.writeShellScriptBin "update" "rebuild 1 ${stashLock} 0 1";
   shellScripts = [ update ];
 
   gitLocation = "/home/${config.system.user.work.username}/git/";
@@ -13,40 +13,44 @@ let
 in lib.mkIf config.system.user.work.enable {
   users.users.${config.system.user.work.username}.packages = with pkgs;
     [
-      apacheHttpd # HTTP Server
-      beekeeper-studio # Database manager
-      google-chrome-dev # Dev browser
-      php # Programming language for websites
-      phpPackages.composer # Package manager for PHP
+      docker-compose
+      nodePackages.firebase-tools
+      slack
+      watchman
+      # apacheHttpd # HTTP Server
+      # beekeeper-studio # Database manager
+      # google-chrome-dev # Dev browser
+      # php # Programming language for websites
+      # phpPackages.composer # Package manager for PHP
     ] ++ shellScripts;
 
-  services = {
-    httpd = {
-      enable = true;
-      user = config.system.user.work.username;
-      phpPackage = inputs.phps.packages.x86_64-linux.php74;
-      enablePHP = true;
-      extraConfig = ''
-        <VirtualHost *:80>
-          ServerName ${config.system.user.work.username}.localhost
-          ServerAdmin ${config.system.user.work.username}@localhost
-          DocumentRoot ${gitLocation}
-          Alias /burkani ${gitLocation}${multiStoreProject}
-          <Directory ${gitLocation}>
-            AllowOverride all
-            Options Indexes FollowSymLinks MultiViews
-            Order Deny,Allow
-            Allow from all
-            Require all granted
-          </Directory>
-        </VirtualHost>
-      '';
-    };
+  # services = {
+  #   httpd = {
+  #     enable = true;
+  #     user = config.system.user.work.username;
+  #     phpPackage = inputs.phps.packages.x86_64-linux.php74;
+  #     enablePHP = true;
+  #     extraConfig = ''
+  #       <VirtualHost *:80>
+  #         ServerName ${config.system.user.work.username}.localhost
+  #         ServerAdmin ${config.system.user.work.username}@localhost
+  #         DocumentRoot ${gitLocation}
+  #         Alias /burkani ${gitLocation}${multiStoreProject}
+  #         <Directory ${gitLocation}>
+  #           AllowOverride all
+  #           Options Indexes FollowSymLinks MultiViews
+  #           Order Deny,Allow
+  #           Allow from all
+  #           Require all granted
+  #         </Directory>
+  #       </VirtualHost>
+  #     '';
+  #   };
 
-    mysql = {
-      enable = true;
-      package = pkgs.mysql;
-    };
-  };
+  #   mysql = {
+  #     enable = true;
+  #     package = pkgs.mysql;
+  #   };
+  # };
 
 }

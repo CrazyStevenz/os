@@ -77,38 +77,52 @@ let
 
   codingDeps = with pkgs; [
     cargo # Rust package manager
-    dotnet-sdk_7 # SDK for .net
-    gcc # C++ compiler
-    gdtoolkit # Tools for gdscript
+    # dotnet-sdk_7 # SDK for .net
+    # gcc # C++ compiler
+    # gdtoolkit # Tools for gdscript
     nixfmt # A nix formatter
-    nodejs # Node package manager
+    nodejs-16_x # Node package manager
     python3 # Python
     vscodium # All purpose IDE
   ];
 
   # Packages to add for a fork of the config
-  myPackages = with pkgs; [ ];
-
-  nvchadDeps = with pkgs; [
-    beautysh # Bash formatter
-    black # Python formatter
-    lazygit # Git CLI UI
-    libclang # C language server and formatter
-    lua-language-server # Lua language server
-    marksman # Markdown language server
-    neovim # Terminal text editor
-    nil # Nix language server
-    nodePackages.bash-language-server # Bash Language server
-    nodePackages.dockerfile-language-server-nodejs # Dockerfiles language server
-    nodePackages.prettier # Javascript/Typescript formatter
-    nodePackages.typescript-language-server # Typescript language server
-    nodePackages.vscode-langservers-extracted # HTML, CSS, Eslint, Json language servers
-    python3Packages.jedi-language-server # Python language server
-    ripgrep # Silver searcher grep
-    rust-analyzer # Rust language server
-    rustfmt # Rust formatter
-    stylua # Lua formatter
+  myPackages = with pkgs; [
+    adw-gtk3
+    amberol
+    audacity
+    gradience
+    gsound
+    mullvad-vpn
+    nextcloud-client
+    spotify
+    stremio
+    sublime4
+    ungoogled-chromium
+    jetbrains.webstorm
   ];
+
+  nvchadDeps = with pkgs;
+    [
+      # beautysh # Bash formatter
+      # black # Python formatter
+      # lazygit # Git CLI UI
+      # libclang # C language server and formatter
+      # lua-language-server # Lua language server
+      # marksman # Markdown language server
+      # neovim # Terminal text editor
+      # nil # Nix language server
+      # nodePackages.bash-language-server # Bash Language server
+      # nodePackages.dockerfile-language-server-nodejs # Dockerfiles language server
+      # nodePackages.prettier # Javascript/Typescript formatter
+      # nodePackages.typescript-language-server # Typescript language server
+      # nodePackages.vscode-langservers-extracted # HTML, CSS, Eslint, Json language servers
+      # python3Packages.jedi-language-server # Python language server
+      # ripgrep # Silver searcher grep
+      # rust-analyzer # Rust language server
+      # rustfmt # Rust formatter
+      # stylua # Lua formatter
+    ];
 
   packageOverrides = with pkgs;
     [
@@ -129,7 +143,9 @@ let
 
   selfBuilt = with pkgs; [
     (callPackage ./self-built/apx.nix { }) # Package manager using distrobox
-    (callPackage ./self-built/webcord { }) # An open source discord client
+    (callPackage ./self-built/webcord {
+      electron = electron_24;
+    }) # An open source discord client
   ];
 
   shellScripts = [ lout nix-gc rebuild trim-generations vpn-exclude ];
@@ -148,7 +164,7 @@ in {
       curtail # Image compressor
       easyeffects # Pipewire effects manager
       efibootmgr # Edit EFI entries
-      endeavour # Tasks
+      # endeavour # Tasks
       fd # Find alternative
       fragments # Bittorrent client following Gnome UI standards
       gimp # Image editor
@@ -157,8 +173,8 @@ in {
       gping # ping with a graph
       gthumb # Image viewer
       helvum # Pipewire patchbay
-      iotas # Notes
-      jc # JSON parser
+      # iotas # Notes
+      # jc # JSON parser
       jq # JSON parser
       killall # Tool to kill all programs matching process name
       kitty # Terminal
@@ -168,20 +184,20 @@ in {
       mousai # Song recognizer
       mpv # Video player
       ncdu # Terminal disk analyzer
-      newsflash # RSS reader
+      # newsflash # RSS reader
       ntfs3g # Support NTFS drives
       obs-studio # Recording/Livestream
       onlyoffice-bin # Microsoft Office alternative for Linux
       p7zip # 7zip
       pitivi # Video editor
-      ranger # Terminal file manager
+      # ranger # Terminal file manager
       rnnoise-plugin # A real-time noise suppression plugin
       scrcpy # Remotely use android
       signal-desktop # Encrypted messaging platform
-      sunshine # Remote desktop
-      tailscale # VPN with P2P support
+      # sunshine # Remote desktop
+      # tailscale # VPN with P2P support
       tmux # Terminal multiplexer
-      trayscale # Tailscale GUI
+      # trayscale # Tailscale GUI
       tree # Display folder content at a tree format
       unrar # Support opening rar files
       unzip # An extraction utility
@@ -189,7 +205,7 @@ in {
       wget # Terminal downloader
       wine # Compatibility layer capable of running Windows applications
       winetricks # Wine prefix settings manager
-      woeusb # Windows ISO Burner
+      # woeusb # Windows ISO Burner
       xorg.xhost # Use x.org server with distrobox
       youtube-dl # Video downloader
       zenstates # Ryzen CPU controller
@@ -276,8 +292,9 @@ in {
 
   services = {
     clamav.updater.enable = true;
+    mullvad-vpn.enable = true;
     openssh.enable = true;
-    tailscale.enable = true;
+    # tailscale.enable = true;
     udev.packages = [
       (pkgs.writeTextFile {
         name = "sunshine_udev";

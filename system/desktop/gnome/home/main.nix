@@ -66,6 +66,7 @@ lib.mkIf config.system.user.main.enable {
             "appindicatorsupport@rgcjonas.gmail.com"
             "pano@elhan.io"
             "quick-settings-tweaks@qwreey"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
           ] ++ lib.optional config.desktop.gnome.arcmenu.enable
             "arcmenu@arcmenu.com"
             ++ lib.optional config.desktop.gnome.caffeine.enable
