@@ -80,7 +80,7 @@
 
         efi-mount-path = mkOption {
           type = types.str;
-          default = "/boot/efi";
+          default = "/boot";
         };
       };
 
