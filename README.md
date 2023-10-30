@@ -6,6 +6,9 @@
 # Install
 
 ```bash
+mkdir code
+cd code
+nix-shell -p git
 git clone https://github.com/CrazyStevenz/os
 cd os
 git checkout os
