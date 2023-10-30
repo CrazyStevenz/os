@@ -473,7 +473,7 @@
       # Do not change without checking the docs (config.system.stateVersion)
       state-version = mkOption {
         type = types.str;
-        default = "22.05";
+        default = "23.05";
       };
     };
   };
