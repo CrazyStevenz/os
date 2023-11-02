@@ -4,7 +4,7 @@
   imports = [
     ./home/main.nix
     ./home/work.nix
-    ../../applications/configs/swaync/config.nix
+    ./configs/swaync/config.nix
   ]; # Setup home manager for hypr and hyprland
 
   programs =
@@ -22,6 +22,7 @@
         gnome-online-accounts # Nextcloud integration
         gnome.file-roller # Archive file manager
         gnome.gnome-calculator # Calculator
+        gnome.gnome-clocks # Clock
         gnome.gnome-control-center # Gnome settings
         gnome.gnome-disk-utility # Disks manager
         gnome.gnome-keyring # Keyring daemon
@@ -52,9 +53,12 @@
       gnome.gnome-keyring.enable = true;
     };
 
-  security.polkit.enable =
-    lib.mkIf (config.desktop.hyprland.enable || config.desktop.hypr.enable)
-    true;
+  security = {
+    polkit.enable =
+      lib.mkIf (config.desktop.hyprland.enable || config.desktop.hypr.enable)
+      true;
+    pam.services.login.enableGnomeKeyring = true;
+  };
 
   xdg.portal.extraPortals = lib.mkIf (!config.desktop.gnome.enable)
     [ pkgs.xdg-desktop-portal-gtk ]; # Needed for steam file picker

@@ -119,7 +119,8 @@ in {
         bind = $mainMod SHIFT, Print, exec, grimblast --freeze edit area
         bind = ALT, Print, exec, grimblast copy
         bind = $mainMod ALT, Print, exec, grimblast edit
-        bind = $mainMod, L, exec, wlogout
+        bind = $mainMod, L, exec, swaylockconf
+        bind = $mainMod SHIFT, L, exec, wlogout
         bind = $mainMod, N, exec, swaync-client -t -sw
         bind = $mainMod SHIFT, N, exec, swaync-client -d -sw
 
@@ -200,10 +201,12 @@ in {
         # Move apps to workspaces
         ${workspaceRules}
 
-        # Maximize apps
-        windowrulev2 = maximize, class:^(firefox|startup-nvchad|Steam|startup-kitty|io.missioncenter.MissionCenter|pwas)$, floating:0
-        windowrulev2 = maximize, title:^(Steam)$
-        windowrulev2 = noborder, fullscreen:1 # Hide maximized window borders
+        # Hide maximized window borders
+        windowrulev2 = noborder, fullscreen:1
+
+        # Inhibit idle for apps
+        windowrulev2 = idleinhibit focus, class:^(steam_app_.*|org.gnome.clocks)$
+        windowrulev2 = idleinhibit fullscreen, class:^(.*)$
 
         # Tile apps
         windowrulev2 = tile, class:^(Godot.*|Steam|steam_app_.*|photoshop\.exe)$
