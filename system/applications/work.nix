@@ -23,7 +23,7 @@ in lib.mkIf config.system.user.work.enable {
       watchman
       # apacheHttpd # HTTP Server
       # dbeaver # Database manager
-      # google-chrome-dev # Dev browser
+      # google-chrome # Dev browser
       # php # Programming language for websites
       # phpPackages.composer # Package manager for PHP
     ] ++ shellScripts;

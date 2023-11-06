@@ -129,7 +129,7 @@ let
     [
       # Browser with pipewire-screenaudio connector json
       (firefox.override {
-        extraNativeMessagingHosts =
+        nativeMessagingHosts =
           [ inputs.pipewire-screenaudio.packages.${pkgs.system}.default ];
       })
     ];
@@ -142,12 +142,10 @@ let
       })
     ];
 
-  selfBuilt = with pkgs; [
-    (callPackage ./self-built/apx.nix { }) # Package manager using distrobox
-    (callPackage ./self-built/webcord {
-      electron = electron_24;
-    }) # An open source discord client
-  ];
+  selfBuilt = with pkgs;
+    [
+      (callPackage ./self-built/apx.nix { }) # Package manager using distrobox
+    ];
 
   shellScripts = [ lout nix-gc rebuild trim-generations vpn-exclude ];
 in {
