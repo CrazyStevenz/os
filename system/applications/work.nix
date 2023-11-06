@@ -6,6 +6,15 @@ let
 
   # Rebuild the system configuration
   update = pkgs.writeShellScriptBin "update" "rebuild 1 ${stashLock} 0 1";
+
+  # Packages to add for a fork of the config
+  myPackages = with pkgs; [
+    docker-compose
+    nodePackages.firebase-tools
+    slack
+    watchman
+  ];
+
   shellScripts = [ update ];
 
   gitLocation = "/home/${config.system.user.work.username}/git/";
@@ -17,16 +26,12 @@ let
 in lib.mkIf config.system.user.work.enable {
   users.users.${config.system.user.work.username}.packages = with pkgs;
     [
-      docker-compose
-      nodePackages.firebase-tools
-      slack
-      watchman
       # apacheHttpd # HTTP Server
       # dbeaver # Database manager
       # google-chrome # Dev browser
       # php # Programming language for websites
       # phpPackages.composer # Package manager for PHP
-    ] ++ shellScripts;
+    ] ++ myPackages ++ shellScripts;
 
   # services = {
   #   httpd = {
@@ -56,5 +61,4 @@ in lib.mkIf config.system.user.work.enable {
   #     package = pkgs.mysql;
   #   };
   # };
-
 }

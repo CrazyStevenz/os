@@ -129,7 +129,12 @@
         clock-date.enable = mkOption {
           type = types.bool;
           default = true;
-        };
+        }; # Show the month and day of the month on the clock
+
+        clock-weekday.enable = mkOption {
+          type = types.bool;
+          default = true;
+        }; # Show the day of the week on the clock
 
         dash-to-panel.enable = mkOption {
           type = types.bool;

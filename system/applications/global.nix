@@ -167,7 +167,6 @@ in {
       fd # Find alternative
       fragments # Bittorrent client following Gnome UI standards
       gimp # Image editor
-      git # Distributed version control system
       gnome.gnome-boxes # VM manager
       gping # ping with a graph
       gthumb # Image viewer
@@ -184,6 +183,7 @@ in {
       mpv # Video player
       ncdu # Terminal disk analyzer
       # newsflash # RSS reader
+      nix-health # Check system health
       ntfs3g # Support NTFS drives
       obs-studio # Recording/Livestream
       onlyoffice-bin # Microsoft Office alternative for Linux
@@ -214,6 +214,8 @@ in {
   users.defaultUserShell = pkgs.zsh; # Use ZSH shell for all users
 
   programs = {
+    direnv.enable = true;
+
     zsh = {
       enable = true;
       # Enable oh my zsh and it's plugins
