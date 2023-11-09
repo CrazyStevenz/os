@@ -17,9 +17,13 @@
         # Sites to launch on Firefox PWAs
         pwas.sites = mkOption {
           type = types.str;
-          default =
-            "https://mail.tutanota.com https://icedborn.github.io/icedchat";
+          default = "https://app.tuta.com https://icedborn.github.io/icedchat";
         };
+      };
+
+      nvchad.formatOnSave = mkOption {
+        type = types.bool;
+        default = true;
       };
 
       # Hide kitty top bar
@@ -160,6 +164,12 @@
         startup-items.enable = mkOption {
           type = types.bool;
           default = true;
+        };
+
+        # Options: 'minimize', 'maximize', 'close', 'spacer'(adds space between buttons), ':'(left-center-right separator)
+        titlebar-layout = mkOption {
+          type = types.str;
+          default = "appmenu:minimize,maximize,close";
         };
 
         workspaces = {
