@@ -194,6 +194,7 @@ in {
       rnnoise-plugin # A real-time noise suppression plugin
       scrcpy # Remotely use android
       signal-desktop # Encrypted messaging platform
+      solaar # Logitech devices manager
       # sunshine # Remote desktop
       # tailscale # VPN with P2P support
       tmux # Terminal multiplexer
@@ -264,9 +265,11 @@ in {
           "ssh -f server@192.168.1.2 'mullvad connect && sleep 1 && mullvad status'"; # Connect to VPN
       };
 
+      # Commands to run on zsh shell initialization
       interactiveShellInit = ''
         source ~/.config/zsh/zsh-theme.zsh
-        unsetopt PROMPT_SP''; # Commands to run on zsh shell initialization
+        export EDITOR=nvim
+        unsetopt PROMPT_SP'';
     };
 
     # Enable gamemode and set custom settings
@@ -297,14 +300,15 @@ in {
     mullvad-vpn.enable = true;
     openssh.enable = true;
     # tailscale.enable = true;
-    udev.packages = [
-      (pkgs.writeTextFile {
+    udev.packages = with pkgs; [
+      (writeTextFile {
         name = "sunshine_udev";
         text = ''
           KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"
         '';
         destination = "/etc/udev/rules.d/85-sunshine.rules";
       }) # Needed for sunshine input to work
+      logitech-udev-rules # Needed for solaar to work
     ];
   };
 
