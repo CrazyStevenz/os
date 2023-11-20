@@ -64,8 +64,8 @@ lib.mkIf config.system.user.work.enable {
       # Add vscodium config
       ".config/VSCodium/User/settings.json".source = ../configs/vscodium.json;
 
-      # Set firefox to privacy profile
-      ".mozilla/firefox/profiles.ini".source = ../configs/firefox/profiles.ini;
+      # # Set firefox to privacy profile
+      # ".mozilla/firefox/profiles.ini".source = ../configs/firefox/profiles.ini;
 
       # Add user.js
       ".mozilla/firefox/privacy/user.js".source =
