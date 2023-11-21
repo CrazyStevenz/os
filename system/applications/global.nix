@@ -83,7 +83,7 @@ let
     # gdtoolkit # Tools for gdscript
     # gnumake # A tool to control the generation of non-source files from sources
     nixfmt # A nix formatter
-    nodejs-16_x # Node package manager
+    nodejs_18 # Node package manager
     python3 # Python
     vscodium # All purpose IDE
   ];
