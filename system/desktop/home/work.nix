@@ -69,8 +69,8 @@ lib.mkIf config.system.user.work.enable {
           "application/pdf" = "firefox.desktop";
           "application/x-bittorrent" = "de.haeckerfelix.Fragments.desktop";
           "application/x-ms-dos-executable" = "wine.desktop";
-          "application/x-shellscript" = "sublime_text.desktop";
-          "application/x-wine-extension-ini" = "sublime_text.desktop";
+          "application/x-shellscript" = "codium.desktop";
+          "application/x-wine-extension-ini" = "codium.desktop";
           "application/zip" = "org.gnome.FileRoller.desktop";
           "audio/aac" = "io.bassi.Amberol.desktop";
           "audio/flac" = "io.bassi.Amberol.desktop";
@@ -81,7 +81,7 @@ lib.mkIf config.system.user.work.enable {
           "image/png" = "org.gnome.gThumb.desktop";
           "image/svg+xml" = "org.gnome.gThumb.desktop";
           "text/html" = "firefox.desktop";
-          "text/plain" = "sublime_text.desktop";
+          "text/plain" = "codium.desktop";
           "video/mp4" = "mpv.desktop";
           "video/quicktime" = "mpv.desktop";
           "video/x-ms-wmv" = "mpv.desktop";

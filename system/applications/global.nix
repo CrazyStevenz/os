@@ -99,7 +99,6 @@ let
     nextcloud-client
     spotify
     stremio
-    sublime4
     ungoogled-chromium
     jetbrains.webstorm
   ];
