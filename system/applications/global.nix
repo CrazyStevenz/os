@@ -97,6 +97,7 @@ let
     gsound
     mullvad-vpn
     nextcloud-client
+    pavucontrol # Sound manager
     spotify
     stremio
     ungoogled-chromium
