@@ -90,18 +90,18 @@ let
 
   # Packages to add for a fork of the config
   myPackages = with pkgs; [
-    adw-gtk3
-    amberol
-    audacity
-    gradience
-    gsound
-    mullvad-vpn
-    nextcloud-client
+    adw-gtk3 # Adds libadwaita support to GTK-3
+    amberol # A small and simple sound and music player
+    audacity # Sound editor with graphical UI
+    gradience # Customize libadwaita and GTK3 apps (with adw-gtk3)
+    gsound # Small library for playing system sounds (required to show file properties in Nautilus)
+    mullvad-vpn # The GUI client for mullvad
+    nextcloud-client # Nextcloud themed desktop client
     pavucontrol # Sound manager
-    spotify
-    stremio
-    ungoogled-chromium
-    jetbrains.webstorm
+    spotify # Music streaming service
+    stremio # Movie/Series/Anime streaming service
+    ungoogled-chromium # Chromium with dependencies on Google web services removed
+    jetbrains.webstorm # Professional IDE for Web and JavaScript development
   ];
 
   nvchadDeps = with pkgs;
