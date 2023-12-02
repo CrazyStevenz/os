@@ -161,7 +161,7 @@ in {
       btop # System monitor
       clamav # Antivirus
       curtail # Image compressor
-      easyeffects # Pipewire effects manager
+      # easyeffects # Pipewire effects manager
       efibootmgr # Edit EFI entries
       # endeavour # Tasks
       fd # Find alternative
