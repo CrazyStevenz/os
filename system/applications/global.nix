@@ -93,6 +93,7 @@ let
     adw-gtk3 # Adds libadwaita support to GTK-3
     amberol # A small and simple sound and music player
     audacity # Sound editor with graphical UI
+    bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager 
     gradience # Customize libadwaita and GTK3 apps (with adw-gtk3)
     gsound # Small library for playing system sounds (required to show file properties in Nautilus)
     mullvad-vpn # The GUI client for mullvad
