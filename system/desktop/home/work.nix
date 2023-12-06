@@ -24,7 +24,20 @@ lib.mkIf config.system.user.work.enable {
     };
 
     xdg = {
+      # Force creation of mimeapps
+      configFile."mimeapps.list".force = true;
+
       desktopEntries = {
+        # Codium profile used a an IDE
+        codiumIDE = {
+          exec =
+            "codium --user-data-dir /home/${config.system.user.work.username}/.config/VSCodiumIDE";
+          icon = "codium";
+          name = "Codium IDE";
+          terminal = false;
+          type = "Application";
+        };
+
         # dbeaver on Xwayland (fix scaling issues)
         # dbeaver = {
         #   exec = "env GDK_BACKEND=x11 dbeaver";
@@ -65,6 +78,7 @@ lib.mkIf config.system.user.work.enable {
       mimeApps = {
         enable = true;
 
+        # Default apps
         defaultApplications = {
           "application/pdf" = "firefox.desktop";
           "application/x-bittorrent" = "de.haeckerfelix.Fragments.desktop";
@@ -90,7 +104,7 @@ lib.mkIf config.system.user.work.enable {
           "x-scheme-handler/about" = "firefox.desktop";
           "x-scheme-handler/unknown" = "firefox.desktop";
         };
-      }; # Default apps
+      };
     };
 
     home.file = {

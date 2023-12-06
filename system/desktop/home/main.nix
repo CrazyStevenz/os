@@ -24,27 +24,41 @@ lib.mkIf config.system.user.main.enable {
     };
 
     xdg = {
-      # desktopEntries = {
-      #   # Firefox PWA
-      #   pwas = {
-      #     exec =
-      #       "firefox --no-remote -P PWAs --name pwas ${config.applications.firefox.pwas.sites}";
-      #     icon = "firefox-nightly";
-      #     name = "Firefox PWAs";
-      #     terminal = false;
-      #     type = "Application";
-      #   };
+      # Force creation of mimeapps
+      configFile."mimeapps.list".force = true;
 
-      #   # Run signal without a tray icon
-      #   signal = {
-      #     exec = "signal-desktop --hide-tray-icon";
-      #     icon = "signal-desktop";
-      #     name = "Signal - No tray";
-      #     terminal = false;
-      #     type = "Application";
-      #   };
-      # };
+      desktopEntries = {
+        # Codium profile used a an IDE
+        codiumIDE = {
+          exec =
+            "codium --user-data-dir /home/${config.system.user.main.username}/.config/VSCodiumIDE";
+          icon = "codium";
+          name = "Codium IDE";
+          terminal = false;
+          type = "Application";
+        };
 
+        # Firefox PWA
+        # pwas = {
+        #   exec =
+        #     "firefox --no-remote -P PWAs --name pwas ${config.applications.firefox.pwas.sites}";
+        #   icon = "firefox-nightly";
+        #   name = "Firefox PWAs";
+        #   terminal = false;
+        #   type = "Application";
+        # };
+
+        # # Run signal without a tray icon
+        # signal = {
+        #   exec = "signal-desktop --hide-tray-icon";
+        #   icon = "signal-desktop";
+        #   name = "Signal - No tray";
+        #   terminal = false;
+        #   type = "Application";
+        # };
+      };
+
+      # Default apps
       mimeApps = {
         enable = true;
 
@@ -73,7 +87,7 @@ lib.mkIf config.system.user.main.enable {
           "x-scheme-handler/about" = "firefox.desktop";
           "x-scheme-handler/unknown" = "firefox.desktop";
         };
-      }; # Default apps
+      };
     };
 
     home.file = {
