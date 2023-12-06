@@ -20,6 +20,7 @@ EXTENSIONS=(
     "paragdiwan.gitpatch"
     "pkief.material-icon-theme"
     "rust-lang.rust-analyzer"
+    "svelte.svelte-vscode"
     "timonwong.shellcheck"
     "zhuangtongfa.material-theme"
     "ziyasal.vscode-open-in-github"
