@@ -66,7 +66,7 @@ lib.mkIf config.system.user.work.enable {
           # Disable auto suspend
           sleep-inactive-ac-type = "nothing";
           # Power button shutdown
-          power-button-action = "interactive";
+          power-button-action = config.desktop.gnome.powerButtonAction;
         };
 
         "org/gnome/shell" = {
@@ -78,8 +78,7 @@ lib.mkIf config.system.user.work.enable {
             "pano@elhan.io"
             "quick-settings-tweaks@qwreey"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
-          ] ++ lib.optional config.desktop.gnome.arcmenu
-            "arcmenu@arcmenu.com"
+          ] ++ lib.optional config.desktop.gnome.arcmenu "arcmenu@arcmenu.com"
             ++ lib.optional config.desktop.gnome.caffeine
             "caffeine@patapon.info"
             ++ lib.optional config.desktop.gnome.dashToPanel
@@ -188,8 +187,7 @@ lib.mkIf config.system.user.work.enable {
             multi-monitor = true;
             menu-layout = "Windows";
             windows-disable-frequent-apps = true;
-            windows-disable-pinned-apps =
-              !config.desktop.gnome.pinnedApps;
+            windows-disable-pinned-apps = !config.desktop.gnome.pinnedApps;
             pinned-app-list = lib.mkIf config.desktop.gnome.pinnedApps [
               "VSCodium"
               ""

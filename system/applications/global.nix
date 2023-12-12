@@ -93,7 +93,7 @@ let
     adw-gtk3 # Adds libadwaita support to GTK-3
     amberol # A small and simple sound and music player
     audacity # Sound editor with graphical UI
-    bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager 
+    bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
     gradience # Customize libadwaita and GTK3 apps (with adw-gtk3)
     gsound # Small library for playing system sounds (required to show file properties in Nautilus)
     mullvad-vpn # The GUI client for mullvad
@@ -151,7 +151,8 @@ let
 
   shellScripts = [ lout nix-gc rebuild trim-generations vpn-exclude ];
 in {
-  boot.kernelPackages = pkgs.linuxPackages_zen; # Use ZEN linux kernel
+  boot.kernelPackages = lib.mkIf (!config.applications.steam.session.steamdeck)
+    pkgs.linuxPackages_zen; # Use ZEN linux kernel
 
   environment.systemPackages = with pkgs;
     [
@@ -181,6 +182,7 @@ in {
       libnotify # Send desktop notifications
       lsd # Better ls command
       mission-center # Task manager
+      # moonlight-qt # Remote streaming
       mousai # Song recognizer
       mpv # Video player
       ncdu # Terminal disk analyzer

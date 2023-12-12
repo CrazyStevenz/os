@@ -44,9 +44,9 @@
       # Fixes certain wine games crash on launch
       "clearcpuid=514"
     ] ++ lib.optional config.hardware.monitors.main.enable
-      "video=${config.hardware.monitors.main.name}:${config.hardware.monitors.main.resolution}@${config.hardware.monitors.main.refreshRate}"
+      "video=${config.hardware.monitors.main.name}:${config.hardware.monitors.main.resolution}@${config.hardware.monitors.main.refreshRate},rotate=${config.hardware.monitors.main.rotation}"
       ++ lib.optional config.hardware.monitors.secondary.enable
-      "video=${config.hardware.monitors.secondary.name}:${config.hardware.monitors.secondary.resolution}@${config.hardware.monitors.secondary.refreshRate}";
+      "video=${config.hardware.monitors.secondary.name}:${config.hardware.monitors.secondary.resolution}@${config.hardware.monitors.secondary.refreshRate},rotate=${config.hardware.monitors.secondary.rotation}";
 
     extraModulePackages = with config.boot.kernelPackages;
       [ v4l2loopback ] ++ lib.optional config.hardware.xpadneoUnstable
@@ -57,6 +57,8 @@
       "vm.max_map_count" = 262144;
       # Disable ipv6 for all interfaces
       "net.ipv6.conf.all.disable_ipv6" = !config.hardware.networking.ipv6;
+      # Set agressiveness of swap usage
+      "vm.swappiness" = config.system.swappiness;
     };
   };
 

@@ -50,9 +50,28 @@
           default = true;
         };
 
-        session = mkOption {
-          type = types.bool;
-          default = true;
+        session = {
+          enable = mkOption {
+            type = types.bool;
+            default = true;
+          };
+
+          autoStart = {
+            enable = mkOption {
+              type = types.bool;
+              default = false;
+            };
+
+            desktopSession = mkOption {
+              type = types.str;
+              default = "hyprland";
+            };
+          };
+
+          steamdeck = mkOption {
+            type = types.bool;
+            default = false;
+          };
         };
       };
     };
@@ -109,9 +128,16 @@
         };
       };
 
-      gdm.autoSuspend = mkOption {
-        type = types.bool;
-        default = true;
+      gdm = {
+        enable = mkOption {
+          type = types.bool;
+          default = true;
+        };
+
+        autoSuspend = mkOption {
+          type = types.bool;
+          default = true;
+        };
       };
 
       gnome = {
@@ -159,6 +185,11 @@
         pinnedApps = mkOption {
           type = types.bool;
           default = true;
+        };
+
+        powerButtonAction = mkOption {
+          type = types.str;
+          default = "interactive";
         };
 
         startupItems = mkOption {
@@ -314,6 +345,11 @@
             type = types.str;
             default = "1";
           };
+
+          rotation = mkOption {
+            type = types.str;
+            default = "0";
+          };
         };
 
         secondary = {
@@ -345,6 +381,11 @@
           scaling = mkOption {
             type = types.str;
             default = "1";
+          };
+
+          rotation = mkOption {
+            type = types.str;
+            default = "0";
           };
         };
       };
@@ -425,6 +466,16 @@
           type = types.str;
           default = "5";
         };
+      };
+
+      home = mkOption {
+        type = types.str;
+        default = "/home";
+      };
+
+      swappiness = mkOption {
+        type = types.str;
+        default = "60";
       };
 
       update.stashFlakeLock = mkOption {
