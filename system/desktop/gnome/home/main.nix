@@ -30,8 +30,6 @@ lib.mkIf config.system.user.main.enable {
         "org/gnome/desktop/wm/preferences" = {
           # Buttons to show in titlebars
           button-layout = config.desktop.gnome.titlebarLayout;
-          # Disable application is ready notification
-          focus-new-windows = "strict";
           num-workspaces = config.desktop.gnome.workspaces.maxWorkspaces;
         };
 
