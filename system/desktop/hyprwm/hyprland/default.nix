@@ -92,6 +92,7 @@ in {
       grimblast # Screenshot tool
       hyprland-per-window-layout # Per window layout
       hyprpaper # Wallpaper daemon
+      hyprpicker # Color picker
       inhibit-lock # Script to check if pipewire has active links
       rofi-wayland # App launcher
       slurp # Monitor selector
@@ -99,6 +100,7 @@ in {
       swayidleconf # Configure swayidle
       swaylock-effects # Lock
       swaylockconf # Configure swaylock
+      swayosd # Notifications for volume, caps lock etc.
       waybar # Status bar
       wdisplays # Displays manager
       wl-clipboard # Clipboard daemon
@@ -110,8 +112,27 @@ in {
     };
   };
 
-  # Needed for hyprland flake
-  disabledModules = [ "programs/hyprland.nix" ];
+  systemd.services.swayosd-input = {
+    enable = true;
+    description =
+      "SwayOSD LibInput backend for listening to certain keys like CapsLock, ScrollLock, VolumeUp, etc...";
+    after = [ "graphical.target" ];
+
+    unitConfig = {
+      ConditionPathExists = "${pkgs.swayosd}/bin/swayosd-libinput-backend";
+      PartOf = [ "graphical.target" ];
+    };
+
+    serviceConfig = {
+      User = "root";
+      Type = "dbus";
+      BusName = "org.erikreider.swayosd";
+      ExecStart = "${pkgs.swayosd}/bin/swayosd-libinput-backend";
+      Restart = "on-failure";
+    };
+
+    wantedBy = [ "graphical.target" ];
+  };
 
   # Needed for unlocking to work
   security.pam.services.swaylock.text = ''
