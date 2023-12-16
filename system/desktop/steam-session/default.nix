@@ -2,7 +2,7 @@
 
 lib.mkIf config.applications.steam.session.enable {
   jovian = {
-    decky-loader.enable = true;
+    decky-loader.enable = false;
 
     devices.steamdeck = lib.mkIf config.applications.steam.session.steamdeck {
       enable = true;
