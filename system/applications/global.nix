@@ -102,7 +102,6 @@ let
     spotify # Music streaming service
     stremio # Movie/Series/Anime streaming service
     ungoogled-chromium # Chromium with dependencies on Google web services removed
-    jetbrains.webstorm # Professional IDE for Web and JavaScript development
   ];
 
   nvchadDeps = with pkgs;

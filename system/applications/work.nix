@@ -9,10 +9,11 @@ let
 
   # Packages to add for a fork of the config
   myPackages = with pkgs; [
-    docker-compose
-    nodePackages.firebase-tools
-    slack
-    watchman
+    docker-compose # Docker CLI plugin to define and run multi-container applications with Docker
+    jetbrains.webstorm # Professional IDE for Web and JavaScript development
+    nodePackages.firebase-tools # Manage, and deploy your Firebase project from the command line
+    slack # Desktop client for Slack
+    watchman # Watches files and takes action when they change
   ];
 
   shellScripts = [ update ];
