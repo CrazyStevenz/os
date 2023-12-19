@@ -391,6 +391,11 @@
       };
 
       networking = {
+        hostname = mkOption {
+          type = types.str;
+          default = "desktop";
+        };
+
         hosts.enable = mkOption {
           type = types.bool;
           default = false;
@@ -448,12 +453,6 @@
     };
 
     system = {
-      # Location of the config
-      configurationLocation = mkOption {
-        type = types.str;
-        default = builtins.readFile ./.configuration-location;
-      };
-
       gc = {
         # Number of days before a generation can be deleted
         days = mkOption {

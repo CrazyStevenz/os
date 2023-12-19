@@ -33,8 +33,8 @@ let
     }
 
     # Navigate to configuration directory
-    cd ${config.system.configurationLocation} 2> /dev/null ||
-    (echo 'Configuration path is invalid. Run build.sh manually to update the path!' && false) &&
+    cd ${config.configurationLocation} 2> /dev/null ||
+    (echo 'Configuration path is invalid. Manually run build.sh inside the configuration directory to update the path!' && false) &&
 
     # Update specific commands
     if [ $ARG1 -eq 1 ]; then

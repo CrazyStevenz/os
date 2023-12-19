@@ -15,16 +15,6 @@ git checkout os
 bash install.sh
 ```
 
-# Known Issues
-
-### error: Entry '.configuration-location' not uptodate. Cannot merge.
-
-Solution:
-
-```
-git rm --cached --sparse .configuration-location
-```
-
 # Preview
 
 ![image](https://github.com/IceDBorn/IceDOS/assets/51162078/80e89e81-9a2a-4ca6-807c-91d925204a8a)
