@@ -104,27 +104,31 @@ let
     ungoogled-chromium # Chromium with dependencies on Google web services removed
   ];
 
-  nvchadDeps = with pkgs;
-    [
-      # beautysh # Bash formatter
-      # black # Python formatter
-      # lazygit # Git CLI UI
-      # libclang # C language server and formatter
-      # lua-language-server # Lua language server
-      # marksman # Markdown language server
-      # neovim # Terminal text editor
-      # nil # Nix language server
-      # nodePackages.bash-language-server # Bash Language server
-      # nodePackages.dockerfile-language-server-nodejs # Dockerfiles language server
-      # nodePackages.prettier # Javascript/Typescript formatter
-      # nodePackages.typescript-language-server # Typescript language server
-      # nodePackages.vscode-langservers-extracted # HTML, CSS, Eslint, Json language servers
-      # python3Packages.jedi-language-server # Python language server
-      # ripgrep # Silver searcher grep
-      # rust-analyzer # Rust language server
-      # rustfmt # Rust formatter
-      # stylua # Lua formatter
-    ];
+  nvchadDeps = with pkgs; [
+    # beautysh # Bash formatter
+    # black # Python formatter
+    # lazygit # Git CLI UI
+    # libclang # C language server and formatter
+    # lua-language-server # Lua language server
+    # marksman # Markdown language server
+    # neovim # Terminal text editor
+    # nil # Nix language server
+    # nodePackages.bash-language-server # Bash Language server
+    # nodePackages.dockerfile-language-server-nodejs # Dockerfiles language server
+    # nodePackages.intelephense # PHP language server
+    # nodePackages.prettier # Javascript/Typescript formatter
+    # nodePackages.typescript-language-server # Typescript language server
+    # nodePackages.vscode-langservers-extracted # HTML, CSS, Eslint, Json language servers
+    # phpPackages.phpstan # PHP Static Analysis Tool
+    # python3Packages.jedi-language-server # Python language server
+    # ripgrep # Silver searcher grep
+    # rust-analyzer # Rust language server
+    # rustfmt # Rust formatter
+    # shellcheck # Shell script analysis tool
+    # stylua # Lua formatter
+    # tailwindcss-language-server # Tailwind language server
+    # tree-sitter # Parser generator tool and an incremental parsing library
+  ];
 
   packageOverrides = with pkgs;
     [
