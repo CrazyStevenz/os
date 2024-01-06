@@ -23,7 +23,7 @@ let
 
   multiStoreProject = {
     vaza = {
-      folder = "smart-trade";
+      folder = "vaza";
 
       aliases = {
         one = "burkani";
@@ -35,12 +35,18 @@ let
       folder = "tosupermou";
       alias = "tosupermoureal";
     };
+
+    papiros = {
+      folder = "papiros";
+      alias = "bookmarkt";
+    };
   };
 
   httpdAliases = ''
     Alias /${multiStoreProject.vaza.aliases.one} ${gitLocation}${multiStoreProject.vaza.folder}
     Alias /${multiStoreProject.vaza.aliases.two} ${gitLocation}${multiStoreProject.vaza.folder}
     Alias /${multiStoreProject.tosupermou.alias} ${gitLocation}${multiStoreProject.tosupermou.folder}
+    Alias /${multiStoreProject.papiros.alias} ${gitLocation}${multiStoreProject.papiros.folder}
   '';
 in lib.mkIf config.system.user.work.enable {
   users.users.${config.system.user.work.username}.packages = with pkgs;

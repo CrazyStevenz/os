@@ -45,6 +45,7 @@
     ] ++ lib.optional config.hardware.xpadneoUnstable "hid_xpadneo";
 
     kernelParams = [
+      "transparent_hugepage=always"
       # Fixes certain wine games crash on launch
       "clearcpuid=514"
     ] ++ lib.optional config.hardware.monitors.main.enable
@@ -63,6 +64,8 @@
       "net.ipv6.conf.all.disable_ipv6" = !config.hardware.networking.ipv6;
       # Set agressiveness of swap usage
       "vm.swappiness" = config.system.swappiness;
+      "vm.compaction_proactiveness" = 0;
+      "vm.page_lock_unfairness" = 1;
     };
   };
 
@@ -72,4 +75,10 @@
     };
 
   services.fstrim.enable = true; # Enable SSD TRIM
+
+  # More sysctl params to set
+  system.activationScripts.sysfs.text = ''
+    echo advise > /sys/kernel/mm/transparent_hugepage/shmem_enabled
+    echo 0 > /sys/kernel/mm/transparent_hugepage/khugepaged/defrag
+  '';
 }

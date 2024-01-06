@@ -222,9 +222,46 @@
         default = false;
       };
 
-      hyprland.enable = mkOption {
-        type = types.bool;
-        default = false;
+      hyprland = {
+        enable = mkOption {
+          type = types.bool;
+          default = false;
+        };
+
+        lock = {
+          secondsToLock = mkOption {
+            type = types.str;
+            default = "180";
+          };
+
+          secondsToDisableMonitor = mkOption {
+            type = types.str;
+            default = "300";
+          };
+
+          secondsToSuspend = mkOption {
+            type = types.str;
+            default = "900";
+          };
+
+          # CPU usage to inhibit lock in percentage
+          cpuUsageThreshold = mkOption {
+            type = types.str;
+            default = "60";
+          };
+
+          # Disk usage to inhibit lock in MB/s
+          diskUsageThreshold = mkOption {
+            type = types.str;
+            default = "10";
+          };
+
+          # Network usage to inhibit lock in bytes/s
+          networkUsageThreshold = mkOption {
+            type = types.str;
+            default = "1000000";
+          };
+        };
       };
     };
 
@@ -474,7 +511,7 @@
 
       swappiness = mkOption {
         type = types.str;
-        default = "60";
+        default = "1";
       };
 
       update.stashFlakeLock = mkOption {
