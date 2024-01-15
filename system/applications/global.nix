@@ -189,7 +189,7 @@ in {
       mousai # Song recognizer
       mpv # Video player
       ncdu # Terminal disk analyzer
-      # newsflash # RSS reader
+      newsflash # RSS reader
       nix-health # Check system health
       ntfs3g # Support NTFS drives
       obs-studio # Recording/Livestream
