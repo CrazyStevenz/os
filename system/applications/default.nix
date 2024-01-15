@@ -1,4 +1,4 @@
-{ ... }:
+{ config, inputs, ... }:
 
 {
   imports = [
@@ -27,6 +27,13 @@
   };
 
   nixpkgs.config = {
-    allowUnfree = true; # Allow proprietary packages
+    # Allow proprietary packages
+    allowUnfree = true;
+
+    # Add extra channels (Ex. pkgs.master.firefox)
+    packageOverrides = pkgs: {
+      master = import inputs.master { config = config.nixpkgs.config; };
+      small = import inputs.small { config = config.nixpkgs.config; };
+    };
   };
 }
