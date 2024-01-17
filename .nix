@@ -478,7 +478,7 @@
         # Android container
         waydroid = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
       };
 
