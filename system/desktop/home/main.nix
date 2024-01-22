@@ -81,10 +81,11 @@ lib.mkIf config.system.user.main.enable {
           "text/plain" = "codium.desktop";
           "video/mp4" = "mpv.desktop";
           "video/quicktime" = "mpv.desktop";
+          "video/x-matroska" = "mpv.desktop";
           "video/x-ms-wmv" = "mpv.desktop";
+          "x-scheme-handler/about" = "firefox.desktop";
           "x-scheme-handler/http" = "firefox.desktop";
           "x-scheme-handler/https" = "firefox.desktop";
-          "x-scheme-handler/about" = "firefox.desktop";
           "x-scheme-handler/unknown" = "firefox.desktop";
         };
       };
