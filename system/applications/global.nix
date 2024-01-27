@@ -196,7 +196,7 @@ in {
       onlyoffice-bin # Microsoft Office alternative for Linux
       pavucontrol # Sound manager
       p7zip # 7zip
-      pitivi # Video editor
+      # pitivi # Video editor
       # ranger # Terminal file manager
       rnnoise-plugin # A real-time noise suppression plugin
       scrcpy # Remotely use android
