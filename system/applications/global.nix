@@ -155,7 +155,7 @@ let
   shellScripts = [ lout nix-gc rebuild trim-generations vpn-exclude ];
 in {
   boot.kernelPackages = lib.mkIf (!config.applications.steam.session.steamdeck)
-    pkgs.linuxPackages_zen; # Use ZEN linux kernel
+    pkgs.linuxPackages_cachyos; # Use CachyOS optimized linux kernel
 
   environment.systemPackages = with pkgs;
     [
