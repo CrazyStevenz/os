@@ -73,6 +73,7 @@ in {
           ],
 
           "bluetooth": {
+            "format": "<span foreground='red'>󰂲</span>",
             "format-on": "󰂯",
             "format-off": "<span foreground='red'>󰂲</span>",
             "format-disabled": "󰂲",
@@ -96,7 +97,8 @@ in {
             "format": "{:%H:%M:%S}",
             "tooltip-format": "{:%A, %B %d, %Y}",
             "max-length": 25,
-            "on-click": "gnome-clocks"
+            "on-click": "gnome-clocks",
+            "on-click-right": "gnome-calendar"
           },
 
           "pulseaudio": {
