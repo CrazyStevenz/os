@@ -33,10 +33,18 @@
       };
 
       steam = {
-        # Extras to use for adwaita for steam theme
-        adwaitaForSteam.extras = mkOption {
-          type = types.str;
-          default = "-e library/hide_whats_new -e login/hover_qr";
+        adwaitaForSteam = {
+          enable = mkOption {
+            type = types.bool;
+            default = false;
+          };
+
+          # Extra options to use for the Adwaita for Steam theme
+          # https://github.com/tkashkin/Adwaita-for-Steam/tree/master/adwaita/extras
+          extras = mkOption {
+            type = types.str;
+            default = "-e library/hide_whats_new -e login/hover_qr";
+          };
         };
 
         beta = mkOption {
