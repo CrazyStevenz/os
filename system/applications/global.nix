@@ -55,11 +55,6 @@ let
         bash ~/.config/zsh/steam-library-patcher.sh
       fi
 
-      # Update apx packages
-      if [ $ARG4 -eq 1 ]; then
-        # apx --aur upgrade
-      fi
-
       # Update commands for all users
       bash ~/.config/zsh/update-codium-extensions.sh
     else
