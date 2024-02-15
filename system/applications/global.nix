@@ -57,7 +57,7 @@ let
 
       # Update apx packages
       if [ $ARG4 -eq 1 ]; then
-        apx --aur upgrade
+        # apx --aur upgrade
       fi
 
       # Update commands for all users
@@ -104,31 +104,32 @@ let
     ungoogled-chromium # Chromium with dependencies on Google web services removed
   ];
 
-  nvchadDeps = with pkgs; [
-    # beautysh # Bash formatter
-    # black # Python formatter
-    # lazygit # Git CLI UI
-    # libclang # C language server and formatter
-    # lua-language-server # Lua language server
-    # marksman # Markdown language server
-    # neovim # Terminal text editor
-    # nil # Nix language server
-    # nodePackages.bash-language-server # Bash Language server
-    # nodePackages.dockerfile-language-server-nodejs # Dockerfiles language server
-    # nodePackages.intelephense # PHP language server
-    # nodePackages.prettier # Javascript/Typescript formatter
-    # nodePackages.typescript-language-server # Typescript language server
-    # nodePackages.vscode-langservers-extracted # HTML, CSS, Eslint, Json language servers
-    # phpPackages.phpstan # PHP Static Analysis Tool
-    # python3Packages.jedi-language-server # Python language server
-    # ripgrep # Silver searcher grep
-    # rust-analyzer # Rust language server
-    # rustfmt # Rust formatter
-    # shellcheck # Shell script analysis tool
-    # stylua # Lua formatter
-    # tailwindcss-language-server # Tailwind language server
-    # tree-sitter # Parser generator tool and an incremental parsing library
-  ];
+  nvchadDeps = with pkgs;
+    [
+      # beautysh # Bash formatter
+      # black # Python formatter
+      # lazygit # Git CLI UI
+      # libclang # C language server and formatter
+      # lua-language-server # Lua language server
+      # marksman # Markdown language server
+      # neovim # Terminal text editor
+      # nil # Nix language server
+      # nodePackages.bash-language-server # Bash Language server
+      # nodePackages.dockerfile-language-server-nodejs # Dockerfiles language server
+      # nodePackages.intelephense # PHP language server
+      # nodePackages.prettier # Javascript/Typescript formatter
+      # nodePackages.typescript-language-server # Typescript language server
+      # nodePackages.vscode-langservers-extracted # HTML, CSS, Eslint, Json language servers
+      # phpPackages.phpstan # PHP Static Analysis Tool
+      # python3Packages.jedi-language-server # Python language server
+      # ripgrep # Silver searcher grep
+      # rust-analyzer # Rust language server
+      # rustfmt # Rust formatter
+      # shellcheck # Shell script analysis tool
+      # stylua # Lua formatter
+      # tailwindcss-language-server # Tailwind language server
+      # tree-sitter # Parser generator tool and an incremental parsing library
+    ];
 
   packageOverrides = with pkgs;
     [
@@ -147,10 +148,10 @@ let
       })
     ];
 
-  selfBuilt = with pkgs; [
-    (callPackage ./self-built/apx.nix { }) # Package manager using distrobox
-    (callPackage ./self-built/webcord { }) # An open source discord client
-  ];
+  selfBuilt = with pkgs;
+    [
+      (callPackage ./self-built/webcord { }) # An open source discord client
+    ];
 
   shellScripts = [ lout nix-gc rebuild trim-generations vpn-exclude ];
 in {
@@ -162,6 +163,7 @@ in {
     [
       android-tools # Tools for debugging android devices
       appimage-run # Appimage runner
+      apx # Distro containers
       aria # Terminal downloader with multiple connections support
       bat # Better cat command
       bless # HEX Editor
@@ -219,7 +221,7 @@ in {
       youtube-dl # Video downloader
       zenstates # Ryzen CPU controller
     ] ++ codingDeps ++ nvchadDeps ++ myPackages ++ packageOverrides
-    ++ packageWraps ++ shellScripts ++ selfBuilt;
+    ++ packageWraps ++ shellScripts;
 
   environment.variables = {
     PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}";
@@ -243,7 +245,7 @@ in {
 
       # Aliases
       shellAliases = {
-        apx = "apx --aur"; # Use arch as the base apx container
+        # apx = "apx --aur"; # Use arch as the base apx container
         aria2c = "aria2c -j 16 -s 16"; # Download with aria using best settings
         btrfs-compress =
           "sudo btrfs filesystem defrag -czstd -r -v"; # Compress given path with zstd
@@ -344,8 +346,5 @@ in {
   # Symlink files and folders to /etc
   environment.etc."rnnoise-plugin/librnnoise_ladspa.so".source =
     "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
-  environment.etc."proton-ge-nix".source =
-    "${(pkgs.callPackage self-built/proton-ge.nix { })}/";
-  environment.etc."apx/config.json".source =
-    "${(pkgs.callPackage self-built/apx.nix { })}/etc/apx/config.json";
+  environment.etc."proton-ge-nix".source = pkgs.proton-ge;
 }
