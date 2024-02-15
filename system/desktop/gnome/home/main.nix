@@ -79,8 +79,9 @@ lib.mkIf config.system.user.main.enable {
             "gsconnect@andyholmes.github.io";
 
           favorite-apps = lib.mkIf config.desktop.gnome.pinnedApps [
-            "webstorm.desktop"
+            "steam.desktop"
             "webcord.desktop"
+            "signal-desktop.desktop"
             "firefox.desktop"
           ]; # Set dash to panel pinned apps
         };
@@ -180,15 +181,15 @@ lib.mkIf config.system.user.main.enable {
             windows-disable-frequent-apps = true;
             windows-disable-pinned-apps = !config.desktop.gnome.pinnedApps;
             pinned-app-list = lib.mkIf config.desktop.gnome.pinnedApps [
+              "Codium IDE"
+              ""
+              "codiumIDE.desktop"
               "VSCodium"
               ""
               "codium.desktop"
               "Spotify"
               ""
               "spotify.desktop"
-              "Signal"
-              ""
-              "signal-desktop.desktop"
               "OBS Studio"
               ""
               "com.obsproject.Studio.desktop"
