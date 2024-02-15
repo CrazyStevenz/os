@@ -5,7 +5,7 @@ let
   stashLock = if (config.system.update.stashFlakeLock) then "1" else "0";
 
   # Rebuild the system configuration
-  update = pkgs.writeShellScriptBin "update" "rebuild 1 ${stashLock} 1 0";
+  update = pkgs.writeShellScriptBin "update" "rebuild 1 ${stashLock} 1";
 
   emulators = with pkgs;
     [
