@@ -221,6 +221,10 @@ in {
     ] ++ codingDeps ++ nvchadDeps ++ myPackages ++ packageOverrides
     ++ packageWraps ++ shellScripts ++ selfBuilt;
 
+  environment.variables = {
+    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}";
+  };
+
   users.defaultUserShell = pkgs.zsh; # Use ZSH shell for all users
 
   programs = {
