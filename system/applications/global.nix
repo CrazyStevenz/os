@@ -92,6 +92,7 @@ let
     spotify # Music streaming service
     stremio # Movie/Series/Anime streaming service
     ungoogled-chromium # Chromium with dependencies on Google web services removed
+    webcord # An open source discord client
   ];
 
   nvchadDeps = with pkgs;
@@ -139,7 +140,7 @@ let
     ];
 
   shellScripts = [
-    (pkgs.callPackage ./self-built/webcord { }) # An open source discord client
+    # (pkgs.callPackage ./self-built/webcord { }) # An open source discord client
     lout
     nix-gc
     rebuild
