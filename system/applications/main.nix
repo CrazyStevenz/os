@@ -2,10 +2,39 @@
 { config, pkgs, lib, ... }:
 
 let
-  stashLock = if (config.system.update.stashFlakeLock) then "1" else "0";
+  install-proton-ge = import modules/wine-build-installer.nix {
+    inherit pkgs;
+    name = "proton-ge";
+    buildPath = "${pkgs.proton-ge-custom}/bin";
+    installPath =
+      "/home/${config.system.user.main.username}/.local/share/Steam/compatibilitytools.d";
+    message = "proton ge";
+    type = "Proton";
+  };
 
-  # Rebuild the system configuration
-  update = pkgs.writeShellScriptBin "update" "rebuild 1 ${stashLock} 1";
+  install-wine-ge = import modules/wine-build-installer.nix {
+    inherit pkgs;
+    name = "wine-ge";
+    buildPath = "${pkgs.wine-ge}/bin";
+    installPath =
+      "/home/${config.system.user.main.username}/.local/share/bottles/runners";
+    message = "wine ge";
+    type = "Wine";
+  };
+
+  steam-library-patcher = import modules/steam-library-patcher.nix {
+    inherit pkgs;
+    steamPath =
+      "/home/${config.system.user.main.username}/.local/share/Steam/steamui/css/";
+  };
+
+  # Update the system configuration
+  update = import modules/rebuild.nix {
+    inherit pkgs config;
+    command = "update";
+    update = "true";
+    stash = config.system.update.stash;
+  };
 
   emulators = with pkgs;
     [
@@ -29,7 +58,7 @@ let
   # Packages to add for a fork of the config
   myPackages = with pkgs; [ ];
 
-  shellScripts = [ update ];
+  shellScripts = [ update install-wine-ge install-proton-ge ];
 in lib.mkIf config.system.user.main.enable {
   users.users.${config.system.user.main.username}.packages = with pkgs;
     [

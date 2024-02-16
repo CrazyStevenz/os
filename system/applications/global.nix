@@ -19,47 +19,15 @@ let
     nix-store --gc
   '';
 
-  # Rebuild the system configuration
-  rebuild = pkgs.writeShellScriptBin "rebuild" ''
-    # Arguments for update and main user specific commands
-    ARG1=''${1:-0} # Update
-    ARG2=''${2:-0} # Stash
-    ARG3=''${3:-0} # Main user
+  rebuild = import modules/rebuild.nix {
+    inherit pkgs config;
+    command = "rebuild";
+    update = "false";
+    stash = "false";
+  };
 
-    # Stash flake.lock
-    function stashLock() {
-      git stash store $(git stash create) -m "flake.lock@$(date +%A-%d-%B-%T)"
-    }
-
-    # Navigate to configuration directory
-    cd ${config.configurationLocation} 2> /dev/null ||
-    (echo 'Configuration path is invalid. Manually run build.sh inside the configuration directory to update the path!' && false) &&
-
-    # Update specific commands
-    if [ $ARG1 -eq 1 ]; then
-      # Stash the flake lock file
-      if [ $ARG2 -eq 1 ]; then
-        if [ $(git stash list | wc -l) -eq 0 ]; then
-          stashLock
-        else
-          [ -n "$(git diff stash flake.lock)" ] && stashLock
-        fi
-      fi
-
-      nix flake update && bash build.sh
-
-      # Main user specific update commands
-      if [ $ARG3 -eq 1 ]; then
-        bash ~/.config/zsh/proton-ge-updater.sh
-        bash ~/.config/zsh/steam-library-patcher.sh
-      fi
-
-      # Update commands for all users
-      bash ~/.config/zsh/update-codium-extensions.sh
-    else
-      bash build.sh
-    fi
-  '';
+  update-codium-extensions =
+    import modules/codium-extension-updater.nix { inherit pkgs; };
 
   # Trim NixOS generations
   trim-generations = pkgs.writeShellScriptBin "trim-generations"
@@ -141,11 +109,12 @@ let
 
   shellScripts = [
     # (pkgs.callPackage ./self-built/webcord { }) # An open source discord client
+    inputs.shell-in-netns.packages.${pkgs.system}.default
     lout
     nix-gc
     rebuild
     trim-generations
-    inputs.shell-in-netns.packages.${pkgs.system}.default
+    update-codium-extensions
   ];
 in {
   boot.kernelPackages = lib.mkIf (!config.applications.steam.session.steamdeck
@@ -242,12 +211,7 @@ in {
         btrfs-compress =
           "sudo btrfs filesystem defrag -czstd -r -v"; # Compress given path with zstd
         cat = "bat"; # Better cat command
-        chmod = "sudo chmod"; # It's a command that I always execute with sudo
-        clear-keys =
-          "sudo rm -rf ~/ local/share/keyrings/* ~/ local/share/kwalletd/*"; # Clear system keys
         cp = "rsync -rP"; # Copy command with details
-        desktop-files-list =
-          "ls -l /run/current-system/sw/share/applications"; # Show desktop files location
         list-packages =
           "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq"; # List installed nix packages
         ls = "lsd"; # Better ls command
@@ -260,17 +224,8 @@ in {
           "nix-store --verify --check-contents --repair"; # Verifies integrity and repairs inconsistencies between Nix database and store
         restart-pipewire =
           "systemctl --user restart pipewire"; # Restart pipewire
-        server = "ssh server@192.168.1.2"; # Connect to local server
         ssh = "TERM=xterm-256color ssh"; # SSH with colors
-        steam-link =
-          "killall steam 2> /dev/null ; while ps axg | grep -vw grep | grep -w steam > /dev/null; do sleep 1; done && (nohup steam -pipewire > /dev/null &) 2> /dev/null"; # Kill existing steam process and relaunch steam with the pipewire flag
         v = "nvim"; # Neovim
-        vpn = "ssh -f server@192.168.1.2 'mullvad status'"; # Show VPN status
-        vpn-btop = "ssh -t server@192.168.1.2 'bpytop'"; # Show VPN bpytop
-        vpn-off =
-          "ssh -f server@192.168.1.2 'mullvad disconnect && sleep 1 && mullvad status'"; # Disconnect from VPN
-        vpn-on =
-          "ssh -f server@192.168.1.2 'mullvad connect && sleep 1 && mullvad status'"; # Connect to VPN
       };
 
       # Commands to run on zsh shell initialization
@@ -338,5 +293,4 @@ in {
   # Symlink files and folders to /etc
   environment.etc."rnnoise-plugin/librnnoise_ladspa.so".source =
     "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
-  environment.etc."proton-ge-nix".source = pkgs.proton-ge;
 }
