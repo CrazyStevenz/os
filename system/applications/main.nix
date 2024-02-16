@@ -2,7 +2,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  install-proton-ge = import modules/wine-build-installer.nix {
+  install-proton-ge = import modules/wine-build-updater.nix {
     inherit pkgs;
     name = "proton-ge";
     buildPath = "${pkgs.proton-ge-custom}/bin";
@@ -12,7 +12,7 @@ let
     type = "Proton";
   };
 
-  install-wine-ge = import modules/wine-build-installer.nix {
+  install-wine-ge = import modules/wine-build-updater.nix {
     inherit pkgs;
     name = "wine-ge";
     buildPath = "${pkgs.wine-ge}/bin";
@@ -58,7 +58,9 @@ let
   # Packages to add for a fork of the config
   myPackages = with pkgs; [ ];
 
-  shellScripts = [ update install-wine-ge install-proton-ge ];
+  shellScripts = [ update install-wine-ge install-proton-ge ]
+    ++ lib.optional config.applications.steam.adwaitaForSteam.enable
+    steam-library-patcher;
 in lib.mkIf config.system.user.main.enable {
   users.users.${config.system.user.main.username}.packages = with pkgs;
     [

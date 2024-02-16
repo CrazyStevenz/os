@@ -39,11 +39,10 @@
             default = false;
           };
 
-          # Extra options to use for the Adwaita for Steam theme
           # https://github.com/tkashkin/Adwaita-for-Steam/tree/master/adwaita/extras
           extras = mkOption {
             type = types.str;
-            default = "-e library/hide_whats_new -e login/hover_qr";
+            default = "-e library/hide_whats_new";
           };
         };
 
@@ -74,6 +73,11 @@
               type = types.str;
               default = "hyprland";
             };
+          };
+
+          decky = mkOption {
+            type = types.bool;
+            default = false;
           };
 
           steamdeck = mkOption {

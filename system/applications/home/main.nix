@@ -149,7 +149,7 @@ lib.mkIf config.system.user.main.enable {
 
       # Add adwaita steam skin
       ".local/share/Steam/steamui" =
-        lib.mkIf (config.applications.steam.adwaitaForSteam.enable) {
+        lib.mkIf config.applications.steam.adwaitaForSteam.enable {
           source = "${
               (pkgs.callPackage ../self-built/adwaita-for-steam {
                 config = config;
