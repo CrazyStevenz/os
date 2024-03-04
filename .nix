@@ -60,7 +60,7 @@
         session = {
           enable = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           autoStart = {
@@ -592,6 +592,11 @@
               type = types.str;
               default = "github.ekta@aleeas.com";
             };
+          };
+
+          httpd = mkOption {
+            type = types.bool;
+            default = false;
           };
         };
       };

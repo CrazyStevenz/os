@@ -2,7 +2,14 @@
 { config, pkgs, lib, inputs, ... }:
 
 let
+  cfg = config.system.user.work;
   stashLock = if (config.system.update.stashFlakeLock) then "1" else "0";
+
+  sail = import modules/run-command.nix {
+    inherit pkgs;
+    name = "sail";
+    command = "vendor/bin/sail";
+  };
 
   # Update the system configuration
   update = import modules/rebuild.nix {
@@ -21,10 +28,9 @@ let
     watchman # Watches files and takes action when they change
   ];
 
-  shellScripts = [ update ];
+  shellScripts = [ sail update ];
 
-  gitLocation =
-    "${config.system.home}/${config.system.user.work.username}/git/";
+  gitLocation = "${config.system.home}/${cfg.username}/git/";
 
   multiStoreProjects = {
     vaza = {
@@ -53,42 +59,41 @@ let
     Alias /${multiStoreProjects.tosupermou.alias} ${gitLocation}${multiStoreProjects.tosupermou.folder}
     Alias /${multiStoreProjects.papiros.alias} ${gitLocation}${multiStoreProjects.papiros.folder}
   '';
-in lib.mkIf config.system.user.work.enable {
-  users.users.${config.system.user.work.username}.packages = with pkgs;
+in lib.mkIf cfg.enable {
+  users.users.${cfg.username}.packages = with pkgs;
     [
-      # apacheHttpd # HTTP Server
       # dbeaver # Database manager
       # google-chrome # Dev browser
       # php # Programming language for websites
       # phpPackages.composer # Package manager for PHP
-    ] ++ myPackages ++ shellScripts;
+    ] ++ myPackages ++ shellScripts ++ lib.optional cfg.httpd apacheHttpd;
 
-  # services = {
-  #   httpd = {
-  #     enable = true;
-  #     user = config.system.user.work.username;
-  #     phpPackage = inputs.phps.packages.x86_64-linux.php73;
-  #     enablePHP = true;
-  #     extraConfig = ''
-  #       <VirtualHost *:80>
-  #         ServerName ${config.system.user.work.username}.localhost
-  #         ServerAdmin ${config.system.user.work.username}@localhost
-  #         DocumentRoot ${gitLocation}
-  #         ${httpdAliases}
-  #         <Directory ${gitLocation}>
-  #           AllowOverride all
-  #           Options Indexes FollowSymLinks MultiViews
-  #           Order Deny,Allow
-  #           Allow from all
-  #           Require all granted
-  #         </Directory>
-  #       </VirtualHost>
-  #     '';
-  #   };
+  services = lib.mkIf cfg.httpd {
+    httpd = {
+      enable = true;
+      user = config.system.user.work.username;
+      phpPackage = inputs.phps.packages.x86_64-linux.php73;
+      enablePHP = true;
+      extraConfig = ''
+        <VirtualHost *:80>
+          ServerName ${config.system.user.work.username}.localhost
+          ServerAdmin ${config.system.user.work.username}@localhost
+          DocumentRoot ${gitLocation}
+          ${httpdAliases}
+          <Directory ${gitLocation}>
+            AllowOverride all
+            Options Indexes FollowSymLinks MultiViews
+            Order Deny,Allow
+            Allow from all
+            Require all granted
+          </Directory>
+        </VirtualHost>
+      '';
+    };
 
-  #   mysql = {
-  #     enable = true;
-  #     package = pkgs.mysql;
-  #   };
-  # };
+    mysql = {
+      enable = true;
+      package = pkgs.mysql;
+    };
+  };
 }
