@@ -36,15 +36,13 @@ let
     stash = config.system.update.stash;
   };
 
-  emulators = with pkgs;
-    [
-      # cemu # Wii U Emulator
-      # duckstation # PS1 Emulator
-      # pcsx2 # PS2 Emulator
-      # ppsspp # PSP Emulator
-      # rpcs3 # PS3 Emulator
-      # yuzu-early-access # Nintendo Switch emulator
-    ];
+  emulators = with pkgs; [
+    # cemu # Wii U Emulator
+    # duckstation # PS1 Emulator
+    # pcsx2 # PS2 Emulator
+    # ppsspp # PSP Emulator
+    # rpcs3 # PS3 Emulator
+  ];
 
   gaming = with pkgs; [
     # heroic # Epic Games Launcher for Linux

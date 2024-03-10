@@ -279,15 +279,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1709043503,
-        "narHash": "sha256-GHrgunfo+UARnf3OgNhdXoNFALRAmQEGhlZ8x5TBvkQ=",
-        "owner": "DreamMaoMao",
+        "lastModified": 1709626409,
+        "narHash": "sha256-fSujEAViKqQusHyYe7Qg8QnLlyUNOf0/Jk1P70BmiyE=",
+        "owner": "IceDBorn",
         "repo": "hycov",
-        "rev": "7d48cff8364a7b6ae52a3472ad1dfe01b9f728ae",
+        "rev": "25a4fc8fb2d32c2ca214c06a083b4f8ffd1cb341",
         "type": "github"
       },
       "original": {
-        "owner": "DreamMaoMao",
+        "owner": "IceDBorn",
         "repo": "hycov",
         "type": "github"
       }
