@@ -28,7 +28,7 @@ let
 
   # Trim NixOS generations
   trim-generations = pkgs.writeShellScriptBin "trim-generations"
-    (builtins.readFile ../scripts/trim-generations.sh);
+    (builtins.readFile ../../scripts/trim-generations.sh);
 
   update-codium-extensions =
     import modules/codium-extension-updater.nix { inherit pkgs; };
@@ -139,7 +139,6 @@ in {
       # flowblade # Video editor
       fragments # Bittorrent client following Gnome UI standards
       gimp # Image editor
-      gnome.gnome-boxes # VM manager
       gping # ping with a graph
       gthumb # Image viewer
       helvum # Pipewire patchbay
