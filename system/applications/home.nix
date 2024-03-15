@@ -152,10 +152,6 @@ in {
             recursive = true;
           };
 
-          # Add noise suppression microphone
-          ".config/pipewire/pipewire.conf.d/99-input-denoising.conf".source =
-            configs/pipewire.conf;
-
           # Add btop config
           ".config/btop/btop.conf".source = configs/btop.conf;
 
@@ -212,14 +208,30 @@ in {
             recursive = true;
           };
 
-          # Add mpv
-          ".config/mpv" = {
-            source = configs/mpv;
+          # Add celluloid config file
+          ".config/celluloid" = {
+            source = configs/celluloid;
             recursive = true;
           };
 
           # Avoid file not found errors for bash
           ".bashrc".text = "export EDITOR=codium";
+        };
+
+        # Set celluloid config file path
+        dconf.settings = {
+          "io/github/celluloid-player/celluloid" = {
+            mpv-config-file =
+              "file:///home/${username}/.config/celluloid/celluloid.conf";
+          };
+
+          "io/github/celluloid-player/celluloid" = {
+            mpv-config-enable = true;
+          };
+
+          "io/github/celluloid-player/celluloid" = {
+            always-append-to-playlist = true;
+          };
         };
       };
     }) users;

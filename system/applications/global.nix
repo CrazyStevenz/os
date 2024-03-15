@@ -118,6 +118,8 @@ let
     update-codium-extensions
   ];
 in {
+  imports = [ configs/pipewire.nix ];
+
   boot.kernelPackages = lib.mkIf (!config.applications.steam.session.steamdeck
     && builtins.pathExists /etc/icedos-version)
     pkgs.linuxPackages_cachyos; # Use CachyOS optimized linux kernel
@@ -130,6 +132,7 @@ in {
       bat # Better cat command
       bless # HEX Editor
       btop # System monitor
+      celluloid # Video player
       clamav # Antivirus
       curtail # Image compressor
       # easyeffects # Pipewire effects manager
@@ -153,7 +156,6 @@ in {
       mission-center # Task manager
       # moonlight-qt # Remote streaming
       mousai # Song recognizer
-      mpv # Video player
       ncdu # Terminal disk analyzer
       newsflash # RSS reader
       nix-health # Check system health
@@ -275,24 +277,6 @@ in {
     ];
   };
 
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv.override {
-        # https://github.com/NixOS/nixpkgs/tree/nixos-unstable/pkgs/applications/video/mpv/scripts
-        scripts = [
-          pkgs.mpvScripts.mpris # Allow control with standard media keys
-          pkgs.mpvScripts.thumbfast # Thumbnailer
-          pkgs.mpvScripts.uosc # Feature-rich minimalist proximity-based UI
-        ] ++ lib.optional config.desktop.gnome.enable
-          pkgs.mpvScripts.inhibit-gnome; # Prevent gnome screen blanking while playing media
-      };
-    })
-  ];
-
   nerivations.arkenfox-userjs.userjs =
     builtins.readFile ./configs/firefox/user-overrides.js;
-
-  # Symlink files and folders to /etc
-  environment.etc."rnnoise-plugin/librnnoise_ladspa.so".source =
-    "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
 }

@@ -18,21 +18,16 @@ let
 
   pipewire-watcher = import modules/pipewire-watcher.nix { pkgs = pkgs; };
 
-  swayidle-wrapper = import modules/swayidle-wrapper.nix {
-    pkgs = pkgs;
-    config = config;
-  };
-
   swaylock-wrapper = import modules/swaylock-wrapper.nix { pkgs = pkgs; };
 
   cfg = config.desktop.hyprland;
 in {
   imports = [
-    # Setup home manager for hypr and hyprland
-    ./home.nix
-    ./configs/swaync/config.nix
     ./configs/config.nix
+    ./configs/hypridle.nix
+    ./configs/swaync/config.nix
     ./configs/waybar/config.nix
+    ./home.nix
   ];
 
   programs = lib.mkIf (cfg.enable) {
@@ -44,7 +39,9 @@ in {
   environment = lib.mkIf (cfg.enable) {
     systemPackages = with pkgs; [
       baobab # Disk usage analyser
-      clipman # Clipboard manager for wayland
+      brightnessctl # Brightness control
+      cliphist # Clipboard manager for wayland
+      cliphist-rofi-img # Image support for cliphist
       cpu-watcher # Script to check if cpu has a usage above given number
       disk-watcher # Script to check if any disk has a read/write usage above given numbers
       feh # Minimal image viewer
@@ -61,6 +58,7 @@ in {
       grim # Screenshot tool
       grimblast # Screenshot tool
       hyprfreeze # Script to freeze active hyprland window
+      hypridle # Idle inhibitor
       hyprland-per-window-layout # Per window layout
       hyprpaper # Wallpaper daemon
       hyprpicker # Color picker
@@ -74,8 +72,6 @@ in {
       rofi-wayland # App launcher
       slurp # Monitor selector
       swappy # Edit screenshots
-      swayidle # Idle inhibitor
-      swayidle-wrapper # Wrap swayidle
       swaylock-effects # Lock
       swaylock-wrapper # Wrap swaylock
       swaynotificationcenter # Notification daemon

@@ -152,40 +152,52 @@
         };
       };
 
+      secondsToLock = mkOption {
+        type = types.str;
+        default = "300";
+      };
+
+      secondsToDisableMonitors = mkOption {
+        type = types.str;
+        default = "360";
+      };
+
       gnome = {
         enable = mkOption {
           type = types.bool;
           default = true;
         };
 
-        arcmenu = mkOption {
-          type = types.bool;
-          default = true;
+        extensions = {
+          arcmenu = mkOption {
+            type = types.bool;
+            default = true;
+          };
+
+          dashToPanel = mkOption {
+            type = types.bool;
+            default = true;
+          };
+
+          gsconnect = mkOption {
+            type = types.bool;
+            default = false;
+          };
+
         };
 
-        caffeine = mkOption {
-          type = types.bool;
-          default = false;
-        };
+        # Show the month and day of the month on the clock
+        clock = {
+          date = mkOption {
+            type = types.bool;
+            default = true;
+          };
 
-        clockDate = mkOption {
-          type = types.bool;
-          default = true;
-        }; # Show the month and day of the month on the clock
-
-        clockWeekday = mkOption {
-          type = types.bool;
-          default = true;
-        }; # Show the day of the week on the clock
-
-        dashToPanel = mkOption {
-          type = types.bool;
-          default = true;
-        };
-
-        gsconnect = mkOption {
-          type = types.bool;
-          default = false;
+          # Show the day of the week on the clock
+          weekday = mkOption {
+            type = types.bool;
+            default = true;
+          };
         };
 
         hotCorners = mkOption {
@@ -236,14 +248,9 @@
         };
 
         lock = {
-          secondsToLock = mkOption {
+          secondsToLowerBrightness = mkOption {
             type = types.str;
-            default = "180";
-          };
-
-          secondsToDisableMonitor = mkOption {
-            type = types.str;
-            default = "300";
+            default = "60";
           };
 
           secondsToSuspend = mkOption {
