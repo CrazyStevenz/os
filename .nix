@@ -621,11 +621,6 @@
             };
           };
 
-          httpd = mkOption {
-            type = types.bool;
-            default = false;
-          };
-
           desktop = {
             idle = {
               lock = {

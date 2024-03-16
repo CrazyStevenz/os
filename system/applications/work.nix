@@ -68,32 +68,32 @@ in lib.mkIf cfg.enable {
       # phpPackages.composer # Package manager for PHP
     ] ++ myPackages ++ shellScripts ++ lib.optional cfg.httpd apacheHttpd;
 
-  services = lib.mkIf cfg.httpd {
-    httpd = {
-      enable = true;
-      user = config.system.user.work.username;
-      phpPackage = inputs.phps.packages.x86_64-linux.php73;
-      enablePHP = true;
-      extraConfig = ''
-        <VirtualHost *:80>
-          ServerName ${config.system.user.work.username}.localhost
-          ServerAdmin ${config.system.user.work.username}@localhost
-          DocumentRoot ${gitLocation}
-          ${httpdAliases}
-          <Directory ${gitLocation}>
-            AllowOverride all
-            Options Indexes FollowSymLinks MultiViews
-            Order Deny,Allow
-            Allow from all
-            Require all granted
-          </Directory>
-        </VirtualHost>
-      '';
-    };
+  # services = {
+  #   httpd = {
+  #     enable = true;
+  #     user = config.system.user.work.username;
+  #     phpPackage = inputs.phps.packages.x86_64-linux.php73;
+  #     enablePHP = true;
+  #     extraConfig = ''
+  #       <VirtualHost *:80>
+  #         ServerName ${config.system.user.work.username}.localhost
+  #         ServerAdmin ${config.system.user.work.username}@localhost
+  #         DocumentRoot ${gitLocation}
+  #         ${httpdAliases}
+  #         <Directory ${gitLocation}>
+  #           AllowOverride all
+  #           Options Indexes FollowSymLinks MultiViews
+  #           Order Deny,Allow
+  #           Allow from all
+  #           Require all granted
+  #         </Directory>
+  #       </VirtualHost>
+  #     '';
+  #   };
 
-    mysql = {
-      enable = true;
-      package = pkgs.mysql;
-    };
-  };
+  #   mysql = {
+  #     enable = true;
+  #     package = pkgs.mysql;
+  #   };
+  # };
 }
