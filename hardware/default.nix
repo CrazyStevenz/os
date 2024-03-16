@@ -55,7 +55,7 @@
       "video=${config.hardware.monitors.secondary.name}:${config.hardware.monitors.secondary.resolution}@${config.hardware.monitors.secondary.refreshRate},rotate=${config.hardware.monitors.secondary.rotation}";
 
     extraModulePackages = with config.boot.kernelPackages;
-      [ v4l2loopback ]
+      [ pkgs.v4l2loopback-git ]
       ++ lib.optional config.hardware.xpadneoUnstable pkgs.xpadneo-git;
 
     kernel.sysctl = {
