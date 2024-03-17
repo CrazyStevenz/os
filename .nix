@@ -16,7 +16,7 @@
           };
 
           # Sites to launch on Firefox PWAs
-          pwas.sites = mkOption {
+          pwas = mkOption {
             type = types.str;
             default =
               "https://app.tuta.com https://icedborn.github.io/icedchat";
