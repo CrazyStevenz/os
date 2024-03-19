@@ -22,7 +22,7 @@ in {
 
       systemd-boot = mkIf (cfg.systemd-boot.enable) {
         enable = true;
-        configurationLimit = 20;
+        configurationLimit = 30;
         # Select the highest resolution for the bootloader
         consoleMode = "max";
       };
