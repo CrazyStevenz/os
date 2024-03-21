@@ -45,7 +45,7 @@ in {
 
   boot = {
     kernelModules = [
-      "v4l2loopback" # Virtual camera
+      # "v4l2loopback" # Virtual camera
       "uinput"
     ] ++ optional (cfg.hardware.xpadneoUnstable) "hid_xpadneo";
 
@@ -60,8 +60,9 @@ in {
       "video=${monitors.secondary.name}:${monitors.secondary.resolution}@${monitors.secondary.refreshRate},rotate=${monitors.secondary.rotation}";
 
     extraModulePackages = with config.boot.kernelPackages;
-      [ pkgs.v4l2loopback-git ]
-      ++ optional (cfg.hardware.xpadneoUnstable) pkgs.xpadneo-git;
+      [
+        # pkgs.v4l2loopback-git
+      ] ++ optional (cfg.hardware.xpadneoUnstable) pkgs.xpadneo-git;
 
     kernel.sysctl = {
       # Fixes crash when loading maps in CS2
