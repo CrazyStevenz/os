@@ -50,7 +50,7 @@
 
           beta = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # Workaround for slow steam downloads
@@ -117,7 +117,7 @@
 
           mountPoint = mkOption {
             type = types.str;
-            default = "/boot";
+            default = "/boot/efi";
           };
         };
 
@@ -132,13 +132,13 @@
         autologin = {
           enable = mkOption {
             type = types.bool;
-            default = false;
+            default = true;
           };
 
           # If false, defaults to work user
           main.user.enable = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
         };
 
@@ -276,7 +276,7 @@
           # Use btrfs compression for mounted drives
           mounts = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # Use btrfs compression for root
@@ -296,7 +296,7 @@
             undervolt = {
               enable = mkOption {
                 type = types.bool;
-                default = true;
+                default = false;
               };
 
               value = mkOption {
@@ -343,7 +343,7 @@
         laptop = {
           enable = mkOption {
             type = types.bool;
-            default = false;
+            default = true;
           };
 
           autoCpuFreq = mkOption {
@@ -361,17 +361,17 @@
 
             name = mkOption {
               type = types.str;
-              default = "DP-1";
+              default = "eDP-1";
             };
 
             resolution = mkOption {
               type = types.str;
-              default = "3440x1440";
+              default = "1920x1080";
             };
 
             refreshRate = mkOption {
               type = types.str;
-              default = "144";
+              default = "60";
             };
 
             position = mkOption {
@@ -393,7 +393,7 @@
           secondary = {
             enable = mkOption {
               type = types.bool;
-              default = true;
+              default = false;
             };
 
             name = mkOption {
@@ -431,7 +431,7 @@
         networking = {
           hostname = mkOption {
             type = types.str;
-            default = "desktop";
+            default = "laptop";
           };
 
           hosts.enable = mkOption {
@@ -448,7 +448,7 @@
         # Set to false if hardware/mounts.nix is not correctly configured
         mounts = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         virtualisation = {
@@ -668,7 +668,7 @@
         # Do not change without checking the docs (config.system.stateVersion)
         version = mkOption {
           type = types.str;
-          default = "23.05";
+          default = "22.05";
         };
       };
     };
