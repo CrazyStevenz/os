@@ -75,13 +75,13 @@
       },
       "systemd-boot": {
         "enable": true,
-        "mountPoint": "/boot"
+        "mountPoint": "/boot/efi"
       }
     },
     "desktop": {
       "autologin": {
-        "enable": false,
-        "user": "stef"
+        "enable": true,
+        "user": "work"
       },
       "gdm": {
         "enable": true,
@@ -122,7 +122,7 @@
       "btrfs": {
         "compression": {
           "enable": true,
-          "mounts": true,
+          "mounts": false,
           "root": true
         }
       },
@@ -130,14 +130,14 @@
         "amd": {
           "enable": true,
           "undervolt": {
-            "enable": true,
+            "enable": false,
             "value": "-p 0 -v 40 -f B0"
           }
         },
         "intel": false
       },
       "devices": {
-        "laptop": false,
+        "laptop": true,
         "steamdeck": false
       },
       "gpus": {
@@ -155,15 +155,15 @@
         "main": {
           "enable": true,
           "deck": false,
-          "name": "DP-1",
-          "resolution": "3440x1440",
-          "refreshRate": 120,
+          "name": "eDP-1",
+          "resolution": "1920x1080",
+          "refreshRate": 60,
           "position": "0x0",
           "scaling": 1,
           "rotation": 0
         },
         "second": {
-          "enable": true,
+          "enable": false,
           "deck": false,
           "name": "DP-2",
           "resolution": "1920x1080",
@@ -184,11 +184,11 @@
         }
       },
       "networking": {
-        "hostname": "desktop",
+        "hostname": "laptop",
         "hosts": false,
         "ipv6": false
       },
-      "mounts": true,
+      "mounts": false,
       "virtualisation": {
         "docker": true,
         "libvirtd": true,
@@ -337,7 +337,7 @@
           }
         }
       },
-      "version": "23.05"
+      "version": "22.05"
     }
   }
 }

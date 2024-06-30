@@ -70,7 +70,7 @@ mkIf (cfg.system.users.main.enable) {
   users.users.${username}.packages =
     with pkgs;
     [
-      bottles # Wine manager
+      # bottles # Wine manager
       # godot_4 # Game engine
       input-remapper # Remap input device controls
       # ludusavi # Cloud backup with Nextcloud
@@ -99,7 +99,7 @@ mkIf (cfg.system.users.main.enable) {
   };
 
   services = {
-    teamviewer.enable = true;
+    # teamviewer.enable = true;
     input-remapper = {
       enable = true;
       enableUdevRules = true;
