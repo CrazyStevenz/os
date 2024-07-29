@@ -34,7 +34,7 @@ let
 
   codingDeps = with pkgs; [
     # bruno # API explorer
-    cargo # Rust package manager
+    # cargo # Rust package manager
     # dotnet-sdk_7 # SDK for .net
     # gcc # C++ compiler
     # gdtoolkit # Tools for gdscript
@@ -47,22 +47,16 @@ let
   # Packages to add for a fork of the config
   myPackages = with pkgs; [
     amberol # A small and simple sound and music player
-    audacity # Sound editor with graphical UI
-    bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-    gradience # Customize libadwaita and GTK3 apps (with adw-gtk3)
+    # audacity # Sound editor with graphical UI
+    # bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
+    # gradience # Customize libadwaita and GTK3 apps (with adw-gtk3)
     gsound # Small library for playing system sounds (required to show file properties in Nautilus)
-    mullvad-vpn # The GUI client for mullvad
-    nextcloud-client # Nextcloud themed desktop client
-    pavucontrol # Sound manager
-    spotify # Music streaming service
+    # mullvad-vpn # The GUI client for mullvad
+    # nextcloud-client # Nextcloud themed desktop client
+    # spotify # Music streaming service
     stremio # Movie/Series/Anime streaming service
     ungoogled-chromium # Chromium with dependencies on Google web services removed
-    webcord # An open source discord client
-  ];
-
-  packageWraps = with pkgs; [
-    # Pipewire audio plugin for OBS Studio
-    (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; })
+    # webcord # An open source discord client
   ];
 
   shellScripts = [
@@ -90,8 +84,8 @@ in
       # bless # HEX Editor
       btop # System monitor
       celluloid # Video player
-      clamav # Antivirus
-      curtail # Image compressor
+      # clamav # Antivirus
+      # curtail # Image compressor
       # easyeffects # Pipewire effects manager
       efibootmgr # Edit EFI entries
       # endeavour # Tasks
@@ -112,22 +106,22 @@ in
       mission-center # Task manager
       # moonlight-qt # Remote streaming
       mousai # Song recognizer
-      ncdu # Terminal disk analyzer
-      newsflash # RSS reader
+      # ncdu # Terminal disk analyzer
+      # newsflash # RSS reader
       nix-health # Check system health
       ntfs3g # Support NTFS drives
-      obs-studio # Recording/Livestream
+      # obs-studio # Recording/Livestream
       onlyoffice-bin # Microsoft Office alternative for Linux
       p7zip # 7zip
       pavucontrol # Sound manager
       rnnoise-plugin # A real-time noise suppression plugin
       scrcpy # Remotely use android
-      signal-desktop # Encrypted messaging platform
+      # signal-desktop # Encrypted messaging platform
       # solaar # Logitech devices manager
       # sunshine # Remote desktop
-      tailscale # VPN with P2P support
+      # tailscale # VPN with P2P support
       tmux # Terminal multiplexer
-      trayscale # Tailscale GUI
+      # trayscale # Tailscale GUI
       tree # Display folder content at a tree format
       unrar # Support opening rar files
       unzip # An extraction utility
@@ -219,10 +213,9 @@ in
   };
 
   services = {
-    clamav.updater.enable = true;
-    mullvad-vpn.enable = true;
+    # clamav.updater.enable = true;
     openssh.enable = true;
-    tailscale.enable = true;
+    # tailscale.enable = true;
     fwupd.enable = true;
     udev.packages = with pkgs; [
       (writeTextFile {

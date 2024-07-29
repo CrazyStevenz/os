@@ -329,13 +329,13 @@ in
             undervolt = {
               enable = mkOption {
                 type = types.bool;
-                default = true;
+                default = false;
               };
 
               value = mkOption {
                 type = types.str;
-                # Pstate 0, 1.15 voltage, 4400 clock speed
-                default = "-p 0 -v 40 -f B0";
+                # Pstate 0, 1.175 voltage, 4000 clock speed
+                default = "-p 0 -v 3C -f A0";
               };
             };
           };
@@ -424,7 +424,7 @@ in
           second = {
             enable = mkOption {
               type = types.bool;
-              default = true;
+              default = false;
             };
 
             deck = mkOption {
@@ -526,7 +526,7 @@ in
         # Set to false if hardware/mounts.nix is not correctly configured
         mounts = mkOption {
           type = types.bool;
-          default = true;
+          default = false;
         };
 
         steamdeck = mkOption {
@@ -538,25 +538,25 @@ in
           # Container manager
           docker = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # A daemon that manages virtual machines
           libvirtd = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # Container daemon
           lxd = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # Passthrough USB devices to vms
           spiceUSBRedirection = mkOption {
             type = types.bool;
-            default = true;
+            default = false;
           };
 
           # Android container
@@ -750,7 +750,7 @@ in
           work = {
             enable = mkOption {
               type = types.bool;
-              default = true;
+              default = false;
             };
 
             username = mkOption {
@@ -894,7 +894,7 @@ in
         # Do not change without checking the docs (config.system.stateVersion)
         version = mkOption {
           type = types.str;
-          default = "23.05";
+          default = "23.11";
         };
       };
     };
