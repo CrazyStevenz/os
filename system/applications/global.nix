@@ -46,7 +46,7 @@ let
 
   packageWraps = with pkgs; [
     # Pipewire audio plugin for OBS Studio
-    (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; })
+    # (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; })
   ];
 
   shellScripts = [
@@ -58,10 +58,10 @@ let
     trim-generations
   ];
 
-  aagl-gtk-on-nix = import (
-    builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz"
-  );
 in
+# aagl-gtk-on-nix = import (
+#   builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz"
+# );
 {
   imports = [
     ./modules/android-tools.nix
@@ -75,14 +75,14 @@ in
     ./modules/sunshine.nix
 
     # Enable Genshin Impact launcher
-    aagl-gtk-on-nix.module
+    # aagl-gtk-on-nix.module
   ];
 
-  programs.anime-game-launcher.enable = true;
-  nix.settings = {
-    substituters = [ "https://ezkea.cachix.org" ];
-    trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
-  };
+  # programs.anime-game-launcher.enable = true;
+  # nix.settings = {
+  #   substituters = [ "https://ezkea.cachix.org" ];
+  #   trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
+  # };
 
   boot.kernelPackages = mkIf (
     !cfg.hardware.devices.steamdeck && builtins.pathExists /etc/icedos-version
@@ -91,9 +91,9 @@ in
   environment.systemPackages =
     (pkgMapper pkgFile.packages) ++ codingDeps ++ packageWraps ++ shellScripts;
 
-  environment.variables = {
-    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
-  };
+  # environment.variables = {
+  #   PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+  # };
 
   users.defaultUserShell = pkgs.zsh; # Use ZSH shell for all users
 
@@ -140,12 +140,12 @@ in
   };
 
   services = {
-    mullvad-vpn.enable = true;
+    # mullvad-vpn.enable = true;
     openssh.enable = true;
-    tailscale.enable = true;
+    # tailscale.enable = true;
     fwupd.enable = true;
-    udev.packages = with pkgs; [
-      logitech-udev-rules # Needed for solaar to work
-    ];
+    # udev.packages = with pkgs; [
+    #   logitech-udev-rules # Needed for solaar to work
+    # ];
   };
 }

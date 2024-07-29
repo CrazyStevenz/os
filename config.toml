@@ -116,7 +116,7 @@ diskUsageThreshold = 10 # Disk usage to inhibit lock in MB/s
 networkUsageThreshold = 1_000_000 # Network usage to inhibit lock in bytes/s
 
 [icedos.hardware]
-mounts = true # Set to false if hardware/mounts.nix is not correctly configured
+mounts = false # Set to false if hardware/mounts.nix is not correctly configured
 
 [icedos.hardware.btrfs.compression]
 enable = true
@@ -130,7 +130,7 @@ intel = false
 enable = true
 
 [icedos.hardware.cpus.amd.undervolt]
-enable = true
+enable = false
 value = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.hardware.devices]
@@ -151,15 +151,15 @@ value = 242
 [icedos.hardware.monitors.main]
 enable = true
 deck = false
-name = "DP-1"
-resolution = "3440x1440"
-refreshRate = 120
+name = "HDMI-1"
+resolution = "1920x1080"
+refreshRate = 74.91
 position = "0x0"
 scaling = 1
 rotation = 0
 
 [icedos.hardware.monitors.second]
-enable = true
+enable = false
 deck = false
 name = "DP-2"
 resolution = "1920x1080"
@@ -184,16 +184,16 @@ hosts = false
 ipv6 = false
 
 [icedos.hardware.virtualisation]
-docker = true # Container manager
-libvirtd = true # A daemon that manages virtual machines
-lxd = true # Container daemon
-spiceUSBRedirection = true # Passthrough USB devices to vms
-waydroid = true # Android container
+docker = false # Container manager
+libvirtd = false # A daemon that manages virtual machines
+lxd = false # Container daemon
+spiceUSBRedirection = false # Passthrough USB devices to vms
+waydroid = false # Android container
 
 [icedos.system]
 home = "/home"
 swappiness = 1
-version = "23.05" # Do not change without checking the docs (config.system.stateVersion)
+version = "23.11" # Do not change without checking the docs (config.system.stateVersion)
 
 [icedos.system.config]
 version = "1.0.0"
@@ -256,7 +256,7 @@ enable = false
 seconds = 900
 
 [icedos.system.users.work]
-enable = true
+enable = false
 username = "work"
 description = "Work"
 

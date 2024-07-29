@@ -7,18 +7,18 @@ emulators = [
 
 gaming = [
   # "heroic", # Cross-platform Epic Games Launcher
-  "ludusavi", # Game saves cloud backup with Nextcloud
+  # "ludusavi", # Game saves cloud backup with Nextcloud
   # "papermc", # Performance optimized minecraft server
-  "prismlauncher", # Minecraft launcher
+  # "prismlauncher", # Minecraft launcher
   "protontricks", # Winetricks for proton prefixes
-  "rclone", # Sync to and from nextcloud
+  # "rclone", # Sync to and from nextcloud
   "steamtinkerlaunch", # General tweaks for games
 ]
 
 packages = [
-  "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
-  "nicotine-plus", # p2p music sharing platform
-  "spek", # Audio file spectrogram analysis
+  # "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
+  # "nicotine-plus", # p2p music sharing platform
+  # "spek", # Audio file spectrogram analysis
 
   "bottles", # Wine manager
   # "godot_4", # Game engine

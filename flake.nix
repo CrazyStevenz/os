@@ -82,7 +82,6 @@
           nerivations.nixosModules.default
 
           ./system/applications/users/main
-          ./system/applications/users/work
 
         ];
       };
