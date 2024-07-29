@@ -137,7 +137,6 @@ in
     ]
     ++ codingDeps
     ++ myPackages
-    ++ packageWraps
     ++ shellScripts;
 
   environment.variables = {
