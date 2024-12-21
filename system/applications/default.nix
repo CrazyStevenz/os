@@ -84,9 +84,9 @@ in
   environment.systemPackages =
     (pkgMapper pkgFile.packages) ++ myPackages ++ codingDeps ++ shellScripts;
 
-  environment.variables = {
-    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
-  };
+  # environment.variables = {
+  #   PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+  # };
 
   # Allow proprietary packages
   nixpkgs.config.allowUnfree = true;

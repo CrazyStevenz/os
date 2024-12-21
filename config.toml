@@ -1,8 +1,8 @@
 [icedos.applications]
-aagl = true
+aagl = false
 android-tools = true
 brave = false
-celluloid = true
+celluloid = false
 clamav = false
 defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
@@ -11,11 +11,11 @@ fwupd = true
 php = false
 pitivi = false
 rust = false
-solaar = true
+solaar = false
 ssh = true
 sunshine = false
 suyu = false
-walker = true
+walker = false
 yazi = false
 
 [icedos.applications.codium]
@@ -45,7 +45,7 @@ extensions = [
 zoomLevel = 1
 
 [icedos.applications.mangohud]
-enable = true
+enable = false
 maxFpsLimit = 120 # Use 0 for unlimited
 
 [icedos.applications.kitty]
@@ -68,8 +68,8 @@ sites = [
 ]
 
 [icedos.applications.mullvad]
-enable = true
-gui = true
+enable = false
+gui = false
 
 [icedos.applications.steam]
 enable = true
@@ -85,11 +85,11 @@ enable = false
 desktopSession = "hyprland"
 
 [icedos.applications.tailscale]
-enable = true
+enable = false
 enableTrayscale = false
 
 [icedos.applications.valent]
-enable = true
+enable = false
 deviceId = "901524a4_c7c0_407e_9903_431abce54131"
 
 [icedos.applications.zed]
@@ -144,7 +144,7 @@ enable = true
 accentColor = "purple" # Options: 'blue', 'teal', 'green', 'yellow', 'orange', 'red', 'pink', 'purple', 'slate'
 hotCorners = false
 powerButtonAction = "interactive"
-startupItems = true
+startupItems = false
 
 # Options: 'minimize', 'maximize', 'close', 'spacer'(adds space between buttons), ':'(left-center-right separator)
 titlebarLayout = "appmenu:minimize,maximize,close"
@@ -181,7 +181,7 @@ networkUsageThreshold = 1_000_000 # Network usage to inhibit lock in bytes/s
 
 [icedos.hardware]
 bluetooth = true
-mounts = true # Set to false if hardware/mounts.nix is not correctly configured
+mounts = false # Set to false if hardware/mounts.nix is not correctly configured
 
 [icedos.hardware.btrfs.compression]
 enable = true
@@ -195,7 +195,7 @@ intel = false
 enable = true
 
 [icedos.hardware.cpus.amd.undervolt]
-enable = true
+enable = false
 value = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.hardware.devices]
@@ -204,7 +204,7 @@ steamdeck = false
 
 [icedos.hardware.drivers]
 rtl8821ce = false # Use the unofficial RTL8821CE driver
-xpadneo = true # Xbox gamepad bluetooth driver (supports various xinput controllers)
+xpadneo = false # Xbox gamepad bluetooth driver (supports various xinput controllers)
 
 [icedos.hardware.devices.server]
 enable = false
@@ -228,18 +228,10 @@ enable = true
 value = 242
 
 [[icedos.hardware.monitors]]
-name = "DP-1"
-resolution = "3440x1440"
-refreshRate = 164.87
-position = "0x0"
-scaling = 1
-rotation = 0
-
-[[icedos.hardware.monitors]]
-name = "DP-2"
+name = "HDMI-1"
 resolution = "1920x1080"
-refreshRate = 59.96
-position = "3440x360"
+refreshRate = 74.91
+position = "0x0"
 scaling = 1
 rotation = 0
 
@@ -252,7 +244,7 @@ ipv6 = false
 home = "/home"
 kernel = "zen" # Options: 'cachyos', 'cachyos-server', 'latest', 'lts', 'valve', 'zen'
 swappiness = 1
-version = "23.05" # Do not change without checking the docs (config.system.stateVersion)
+version = "23.11" # Do not change without checking the docs (config.system.stateVersion)
 
 [icedos.system.channels]
 master = false
@@ -318,51 +310,11 @@ seconds = 300
 enable = false
 seconds = 900
 
-[icedos.system.users.work]
-description = "Work"
-type = "work" # Options: 'main', 'work', 'server'
-
-[icedos.system.users.work.applications.codium]
-autoSave = "onFocusChange" # Options: 'off', 'afterDelay', 'onFocusChange', 'onWindowChange'
-formatOnSave = true
-formatOnPaste = false
-
-[icedos.system.users.work.applications.git]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
-
-[icedos.system.users.work.desktop.gnome.pinnedApps.arcmenu]
-enable = true
-list = ["codiumIDE.desktop", "codium.desktop", "mullvad-vpn.desktop"]
-
-# Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
-[icedos.system.users.work.desktop.gnome.pinnedApps.shell]
-enable = true
-list = [
-  "slack.desktop",
-  "vesktop.desktop",
-  "signal-desktop.desktop",
-  "librewolf.desktop",
-  "webstorm.desktop",
-]
-
-[icedos.system.users.work.desktop.idle.lock]
-enable = true
-seconds = 270
-
-[icedos.system.users.work.desktop.idle.disableMonitors]
-enable = true
-seconds = 300
-
-[icedos.system.users.work.desktop.idle.suspend]
-enable = false
-seconds = 900
-
 [icedos.system.virtualisation]
-libvirtd = true # A daemon that manages virtual machines
+libvirtd = false # A daemon that manages virtual machines
 waydroid = false # Android container
 
 [icedos.system.virtualisation.containerManager]
-enable = true
+enable = false
 usePodman = true
 requireSudoForDocker = true # CAUTION: Disabling this gives every user root priviledges!

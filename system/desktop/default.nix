@@ -10,8 +10,9 @@ let
   cfg = config.icedos;
 
   # Use monitor configuration for GDM (desktop monitor primary). See https://discourse.nixos.org/t/gdm-monitor-configuration/6356/4
-  monitorsXmlContent = builtins.readFile /home/stef/.config/monitors.xml;
-  monitorsConfig = pkgs.writeText "gdm_monitors.xml" monitorsXmlContent;
+  # monitorsXmlContent = builtins.readFile /home/stef/.config/monitors.xml;
+  # monitorsConfig = pkgs.writeText "gdm_monitors.xml" monitorsXmlContent;
+
 in
 {
   imports = [
@@ -21,9 +22,9 @@ in
     ./home.nix
   ];
 
-  systemd.tmpfiles.rules = [
-    "L+ /run/gdm/.config/monitors.xml - - - - ${monitorsConfig}"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "L+ /run/gdm/.config/monitors.xml - - - - ${monitorsConfig}"
+  # ];
 
   time.timeZone = "Europe/Bucharest";
 

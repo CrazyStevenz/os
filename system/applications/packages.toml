@@ -1,18 +1,18 @@
 myPackages = [
-  "amberol", # A small and simple sound and music player
+  # "amberol", # A small and simple sound and music player
   # "audacity", # Sound editor with graphical UI
   # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-  "eartag", # Simple music tag editor
+  # "eartag", # Simple music tag editor
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
-  "handbrake", # Tool for converting video files and ripping DVDs
-  "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
+  # "handbrake", # Tool for converting video files and ripping DVDs
+  # "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
   # "nextcloud-client", # Nextcloud themed desktop client
-  "parabolic", # Download web video and audio
-  "pnpm", # Fast, disk space efficient package manager for JavaScript
-  "spotify", # Music streaming service
-  "sticky-notes", # Simple sticky notes app
+  # "parabolic", # Download web video and audio
+  # "pnpm", # Fast, disk space efficient package manager for JavaScript
+  # "spotify", # Music streaming service
+  # "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
-  "vesktop", # An open source discord client
+  # "vesktop", # An open source discord client
 ]
 
 codingDeps = [
@@ -45,9 +45,9 @@ packages = [
   "killall", # Tool to kill all programs matching process name
   "lsd", # Better ls command
   # "moonlight-qt", # Remote streaming client
-  "mousai", # Song recognizer
+  # "mousai", # Song recognizer
   "ncdu", # Terminal disk analyzer
-  "newsflash", # RSS reader
+  # "newsflash", # RSS reader
   "nix-health", # Check system health
   "ntfs3g", # Support NTFS drives
   # "obs-studio", # Recording/Livestream
@@ -55,7 +55,7 @@ packages = [
   "p7zip", # 7zip
   "pavucontrol", # Sound manager
   "scrcpy", # Remotely use android
-  "signal-desktop", # Encrypted messaging platform
+  # "signal-desktop", # Encrypted messaging platform
   # "tree", # Display folder content at a tree format
   "unrar", # Support opening rar files
   "unzip", # An extraction utility

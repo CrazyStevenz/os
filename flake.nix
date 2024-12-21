@@ -21,10 +21,6 @@
     };
 
     # Apps
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     pipewire-screenaudio = {
       url = "github:IceDBorn/pipewire-screenaudio";
@@ -46,8 +42,6 @@
       pipewire-screenaudio,
       self,
       shell-in-netns,
-
-      aagl,
 
     }@inputs:
     {
@@ -89,16 +83,9 @@
 
           ./system/desktop
 
-          aagl.nixosModules.default
-          {
-            nix.settings = aagl.nixConfig; # Set up Cachix
-            programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
-          }
-
           ./system/desktop/gnome
 
           ./system/users/stef.nix
-          ./system/users/work.nix
 
         ];
       };
