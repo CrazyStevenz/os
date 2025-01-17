@@ -28,6 +28,11 @@
       follows = "chaotic/jovian";
     };
 
+    windsurf = {
+      url = "github:KenMacD/etc-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Apps
 
     hyprlux = {
@@ -56,6 +61,7 @@
     {
       home-manager,
       nerivations,
+      windsurf,
       nixpkgs,
       pipewire-screenaudio,
       self,
@@ -133,6 +139,10 @@
 
           home-manager.nixosModules.home-manager
           nerivations.nixosModules.default
+
+          ({
+            environment.systemPackages = [ windsurf.packages.${system}.windsurf ];
+          })
 
           ./system/desktop
 

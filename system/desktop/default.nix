@@ -14,8 +14,17 @@ let
     builtins.map (dir: ./. + ("/modules/" + dir)) (
       builtins.attrNames (filterAttrs (_: v: v == "directory") (builtins.readDir path))
     );
+
+  # Use monitor configuration for GDM (desktop monitor primary). See https://discourse.nixos.org/t/gdm-monitor-configuration/6356/4
+  monitorsConfig =
+    pkgs.runCommand "gdm_monitors.xml" { }
+      "ln -s /home/stef/.config/monitors.xml $out";
 in
 {
+  systemd.tmpfiles.rules = [
+    "L+ /run/gdm/.config/monitors.xml - - - - ${monitorsConfig}"
+  ];
+
   imports = getModules (./modules);
   time.timeZone = "Europe/Bucharest";
 

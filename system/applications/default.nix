@@ -33,4 +33,8 @@ in
   imports = getModules (./modules);
   environment.systemPackages =
     (pkgMapper pkgFile.packages) ++ (pkgMapper cfg.applications.extraPackages);
+
+  environment.variables = {
+    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+  };
 }

@@ -94,6 +94,8 @@ in
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
           "quick-settings-tweaks@qwreey"
+          "quicksettings-audio-devices-hider@marcinjahn.com"
+          "quicksettings-audio-devices-renamer@marcinjahn.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
         ];
 

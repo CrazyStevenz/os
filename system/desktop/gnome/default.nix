@@ -24,9 +24,11 @@ in
   environment.systemPackages =
     with pkgs;
     mkIf (cfg.enable) [
-      gnome-extension-manager # Gnome extensions manager and downloader
+      # gnome-extension-manager # Gnome extensions manager and downloader
       gnome-tweaks # Tweaks missing from pure gnome
       gnomeExtensions.appindicator # Tray icons for gnome
+      gnomeExtensions.quick-settings-audio-devices-hider
+      gnomeExtensions.quick-settings-audio-devices-renamer
       gnomeExtensions.quick-settings-tweaker
     ];
 
