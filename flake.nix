@@ -20,20 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    steam-session = {
-      url = "github:Jovian-Experiments/Jovian-NixOS";
-      follows = "chaotic/jovian";
-    };
-
     windsurf = {
       url = "github:KenMacD/etc-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Apps
-
-    hyprlux = {
-      url = "github:amadejkastelic/Hyprlux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
