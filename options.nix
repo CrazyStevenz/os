@@ -170,7 +170,6 @@
 
         hyprland = {
           enable = mkOption { type = types.bool; };
-          backlight = mkOption { type = types.str; };
 
           cs2fix = {
             enable = mkOption { type = types.bool; };
@@ -178,7 +177,6 @@
             height = mkOption { type = types.number; };
           };
 
-          gatewayVpn = mkOption { type = types.bool; };
           hyprspace = mkOption { type = types.bool; };
 
           lock = {
@@ -187,8 +185,6 @@
             diskUsageThreshold = mkOption { type = types.number; };
             networkUsageThreshold = mkOption { type = types.number; };
           };
-
-          mainMonitor = mkOption { type = types.str; };
         };
       };
 
