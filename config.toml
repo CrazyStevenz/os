@@ -40,10 +40,6 @@ yazi = false
 enable = true
 zoomLevel = 1
 
-[icedos.applications.mangohud]
-enable = true
-maxFpsLimit = 165 # Use 0 for unlimited
-
 [icedos.applications.kitty]
 enable = true
 hideDecorations = true # Hide top bar
@@ -63,9 +59,17 @@ sites = [
   "https://web.skype.com/",
 ]
 
+[icedos.applications.mangohud]
+enable = true
+maxFpsLimit = 165 # Use 0 for unlimited
+
 [icedos.applications.mullvad]
 enable = true
 gui = true
+
+[icedos.applications.obs-studio]
+enable = false
+virtualCamera = false
 
 [icedos.applications.signal]
 enable = true
@@ -163,7 +167,18 @@ maxWorkspaces = 1 # Determines the maximum number of workspaces when dynamic wor
 
 [icedos.desktop.hyprland]
 enable = false
-hyprspace = true # Activity viewer
+hyprspace = true
+windowRules = [
+  "workspace 1 silent, class:^(zen)$",
+  "workspace 2 silent, class:^(dev.zed.Zed)$",
+  "workspace 3 silent, class:^(steam_app_.*)$, title:^((?!notificationtoasts.*).)*$",
+  "workspace 11 silent, class:^(de.schmidhuberj.Flare|pwas)$",
+  "workspace 12 silent, class:^(Steam|steam)$, title:^((?!notificationtoasts.*).)*$",
+  "workspace 12 silent, title:^(.*Steam[A-Za-z0-9\\s]*)$",
+  "workspace 13 silent, class:^(org\\.gnome\\.Nautilus)$",
+  "workspace 14 silent, class:^(task-managers)$",
+  "workspace 15 silent, class:^(terminals)$",
+]
 
 [icedos.desktop.hyprland.cs2fix]
 enable = false

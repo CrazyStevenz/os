@@ -16,6 +16,13 @@ in
   services.power-profiles-daemon.enable = true;
 
   home-manager.users = mapAttrs (user: _: {
+    wayland.windowManager.hyprland.settings = {
+      bindel = [
+        ", XF86AudioLowerVolume, exec, hyprpanel vol -5"
+        ", XF86AudioRaiseVolume, exec, hyprpanel vol +5"
+      ];
+    };
+
     home.file = {
       ".config/hyprpanel/config.json".text = ''
         {
@@ -403,7 +410,8 @@ in
           "bar.customModules.kbLayout.labelType": "code",
           "bar.customModules.kbLayout.icon": "",
           "theme.bar.buttons.modules.kbLayout.spacing": "0em",
-          "bar.launcher.icon": ""
+          "bar.launcher.icon": "",
+          "hyprpanel.restartCommand": "systemctel restart --user hyprpanel"
         }
       '';
 
