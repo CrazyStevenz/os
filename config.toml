@@ -107,7 +107,7 @@ light = "One Light"
 mode = "system" # Options: 'system', 'dark', 'light'
 
 [icedos.applications.zen-browser]
-enable = false
+enable = true
 overrides = false
 privacy = false
 
@@ -166,7 +166,7 @@ dynamicWorkspaces = true
 maxWorkspaces = 1 # Determines the maximum number of workspaces when dynamic workspaces are disabled
 
 [icedos.desktop.hyprland]
-enable = false
+enable = true
 hyprspace = true
 windowRules = [
   "workspace 1 silent, class:^(zen)$",

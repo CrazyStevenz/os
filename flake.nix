@@ -31,8 +31,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprlux = {
+      url = "github:amadejkastelic/Hyprlux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pipewire-screenaudio = {
       url = "github:IceDBorn/pipewire-screenaudio";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -48,6 +63,10 @@
       self,
       aagl,
 
+      hyprlux,
+      hyprpanel,
+
+      zen-browser,
       ...
     }@inputs:
     {
@@ -129,7 +148,13 @@
             programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
           }
 
+          ./system/desktop/hyprland
+          hyprlux.nixosModules.default
+          { nixpkgs.overlays = [ hyprpanel.overlay ]; }
+
           ./system/desktop/gnome
+
+          ./system/applications/modules/zen-browser
 
           ./system/users/stef
           ./system/users/work
