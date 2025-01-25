@@ -46,7 +46,6 @@ hideDecorations = true # Hide top bar
 
 [icedos.applications.librewolf]
 enable = true
-overrides = false
 privacy = false
 
 [icedos.applications.librewolf.pwas]
@@ -108,7 +107,6 @@ mode = "system" # Options: 'system', 'dark', 'light'
 
 [icedos.applications.zen-browser]
 enable = true
-overrides = false
 privacy = false
 
 [icedos.applications.zen-browser.pwas]
@@ -197,6 +195,13 @@ windowRules = [
 enable = false
 width = 1440
 height = 1080
+
+[icedos.desktop.hyprland.hyproled]
+enable = true
+startWidth = 0
+startHeight = 0
+endWidth = 3440
+endHeight = 1440
 
 [icedos.desktop.hyprland.lock]
 secondsToLowerBrightness = 60

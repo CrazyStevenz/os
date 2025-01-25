@@ -31,11 +31,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlux = {
-      url = "github:amadejkastelic/Hyprlux";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,7 +58,6 @@
       self,
       aagl,
 
-      hyprlux,
       hyprpanel,
 
       zen-browser,
@@ -149,7 +143,6 @@
           }
 
           ./system/desktop/hyprland
-          hyprlux.nixosModules.default
           { nixpkgs.overlays = [ hyprpanel.overlay ]; }
 
           ./system/desktop/gnome

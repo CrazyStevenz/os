@@ -33,7 +33,6 @@
 
         librewolf = {
           enable = mkOption { type = types.bool; };
-          overrides = mkOption { type = types.bool; };
           privacy = mkOption { type = types.bool; };
 
           pwas = {
@@ -111,7 +110,6 @@
 
         zen-browser = {
           enable = mkOption { type = types.bool; };
-          overrides = mkOption { type = types.bool; };
           privacy = mkOption { type = types.bool; };
 
           pwas = {
@@ -183,6 +181,14 @@
           };
 
           hyprspace = mkOption { type = types.bool; };
+
+          hyproled = {
+            enable = mkOption { type = types.bool; };
+            startWidth = mkOption { type = types.number; };
+            startHeight = mkOption { type = types.number; };
+            endWidth = mkOption { type = types.number; };
+            endHeight = mkOption { type = types.number; };
+          };
 
           lock = {
             secondsToLowerBrightness = mkOption { type = types.number; };

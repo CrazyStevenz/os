@@ -49,30 +49,27 @@ in
       settings = {
         "$mainMod" = "SUPER";
 
-        bind =
-          [
-            "$mainMod, Q, killactive"
-            "$mainMod, T, togglefloating"
-            "$mainMod, S, togglesplit"
-            "$mainMod, F, fullscreen, 0"
-            "$mainMod, M, fullscreen, 1"
-            "$mainMod, left, movefocus, l"
-            "$mainMod, right, movefocus, r"
-            "$mainMod, up, movefocus, u"
-            "$mainMod, down, movefocus, d"
-            "$mainMod SHIFT, left, movewindow, l"
-            "$mainMod SHIFT, right, movewindow, r"
-            "$mainMod SHIFT, up, movewindow, u"
-            "$mainMod SHIFT, down, movewindow, d"
-            "$mainMod ALT, left, workspace, e-1"
-            "$mainMod ALT, right, workspace, e+1"
-            "$mainMod SHIFT ALT, left, movetoworkspace, e-1"
-            "$mainMod SHIFT ALT, right, movetoworkspace, e+1"
-            "$mainMod, mouse_down, workspace, e-1"
-            "$mainMod, mouse_up, workspace, e+1"
-          ]
-          ++ workspaceBinds "" "workspace"
-          ++ workspaceBinds "SHIFT" "movetoworkspace";
+        bind = [
+          "$mainMod, Q, killactive"
+          "$mainMod, T, togglefloating"
+          "$mainMod, S, togglesplit"
+          "$mainMod, F, fullscreen, 0"
+          "$mainMod, M, fullscreen, 1"
+          "$mainMod, left, movefocus, l"
+          "$mainMod, right, movefocus, r"
+          "$mainMod, up, movefocus, u"
+          "$mainMod, down, movefocus, d"
+          "$mainMod SHIFT, left, movewindow, l"
+          "$mainMod SHIFT, right, movewindow, r"
+          "$mainMod SHIFT, up, movewindow, u"
+          "$mainMod SHIFT, down, movewindow, d"
+          "$mainMod ALT, left, workspace, e-1"
+          "$mainMod ALT, right, workspace, e+1"
+          "$mainMod SHIFT ALT, left, movetoworkspace, e-1"
+          "$mainMod SHIFT ALT, right, movetoworkspace, e+1"
+          "$mainMod, mouse_down, workspace, e-1"
+          "$mainMod, mouse_up, workspace, e+1"
+        ];
 
         bindm = [
           "$mainMod, mouse:272, movewindow"
