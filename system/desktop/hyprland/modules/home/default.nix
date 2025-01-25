@@ -49,27 +49,37 @@ in
       settings = {
         "$mainMod" = "SUPER";
 
-        bind = [
-          "$mainMod, Q, killactive"
-          "$mainMod, T, togglefloating"
-          "$mainMod, S, togglesplit"
-          "$mainMod, F, fullscreen, 0"
-          "$mainMod, M, fullscreen, 1"
-          "$mainMod, left, movefocus, l"
-          "$mainMod, right, movefocus, r"
-          "$mainMod, up, movefocus, u"
-          "$mainMod, down, movefocus, d"
-          "$mainMod SHIFT, left, movewindow, l"
-          "$mainMod SHIFT, right, movewindow, r"
-          "$mainMod SHIFT, up, movewindow, u"
-          "$mainMod SHIFT, down, movewindow, d"
-          "$mainMod ALT, left, workspace, e-1"
-          "$mainMod ALT, right, workspace, e+1"
-          "$mainMod SHIFT ALT, left, movetoworkspace, e-1"
-          "$mainMod SHIFT ALT, right, movetoworkspace, e+1"
-          "$mainMod, mouse_down, workspace, e-1"
-          "$mainMod, mouse_up, workspace, e+1"
+        bind =
+          [
+            "$mainMod, Q, killactive"
+            "$mainMod, T, togglefloating"
+            "$mainMod, S, togglesplit"
+            "$mainMod, F, fullscreen, 0"
+            "$mainMod, M, fullscreen, 1"
+            "$mainMod, left, movefocus, l"
+            "$mainMod, right, movefocus, r"
+            "$mainMod, up, movefocus, u"
+            "$mainMod, down, movefocus, d"
+            "$mainMod SHIFT, left, movewindow, l"
+            "$mainMod SHIFT, right, movewindow, r"
+            "$mainMod SHIFT, up, movewindow, u"
+            "$mainMod SHIFT, down, movewindow, d"
+            "$mainMod ALT, left, workspace, e-1"
+            "$mainMod ALT, right, workspace, e+1"
+            "$mainMod SHIFT ALT, left, movetoworkspace, e-1"
+            "$mainMod SHIFT ALT, right, movetoworkspace, e+1"
+            "$mainMod, mouse_down, workspace, e-1"
+            "$mainMod, mouse_up, workspace, e+1"
+          ]
+          ++ workspaceBinds "" "workspace"
+          ++ workspaceBinds "SHIFT" "movetoworkspace";
+
+        bindel = [
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
         ];
+
+        bindl = [ ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" ];
 
         bindm = [
           "$mainMod, mouse:272, movewindow"
