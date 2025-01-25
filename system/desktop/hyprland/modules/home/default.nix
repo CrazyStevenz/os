@@ -125,7 +125,7 @@ in
 
         input = {
           accel_profile = "flat";
-          follow_mouse = 1;
+          follow_mouse = cfg.desktop.hyprland.followMouse;
           kb_layout = "us,gr";
           kb_options = "grp:win_space_toggle";
         };
@@ -137,7 +137,6 @@ in
           key_press_enables_dpms = true;
           mouse_move_enables_dpms = true;
           new_window_takes_over_fullscreen = 1;
-          vrr = 2;
         };
 
         monitor = (
