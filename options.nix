@@ -21,14 +21,15 @@
         falkor = mkOption { type = types.bool; };
         fwupd = mkOption { type = types.bool; };
 
+        httpd = {
+          enable = mkOption { type = types.bool; };
+          php = mkOption { type = types.bool; };
+          user = mkOption { type = types.str; };
+        };
+
         kitty = {
           enable = mkOption { type = types.bool; };
           hideDecorations = mkOption { type = types.bool; };
-        };
-
-        mangohud = {
-          enable = mkOption { type = types.bool; };
-          maxFpsLimit = mkOption { type = types.number; };
         };
 
         librewolf = {
@@ -41,10 +42,17 @@
           };
         };
 
+        mangohud = {
+          enable = mkOption { type = types.bool; };
+          maxFpsLimit = mkOption { type = types.number; };
+        };
+
         mullvad = {
           enable = mkOption { type = types.bool; };
           gui = mkOption { type = types.bool; };
         };
+
+        mysql = mkOption { type = types.bool; };
 
         obs-studio = {
           enable = mkOption { type = types.bool; };
@@ -53,6 +61,7 @@
 
         php = mkOption { type = types.bool; };
         pitivi = mkOption { type = types.bool; };
+        protonvpn = mkOption { type = types.bool; };
         rust = mkOption { type = types.bool; };
 
         signal = {

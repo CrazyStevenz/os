@@ -26,8 +26,10 @@ defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
 falkor = false
 fwupd = true
+mysql = false
 php = false
 pitivi = false
+protonvpn = true
 rust = false
 solaar = true
 ssh = true
@@ -39,6 +41,11 @@ yazi = false
 [icedos.applications.codium]
 enable = true
 zoomLevel = 1
+
+[icedos.applications.httpd]
+enable = false
+php = true
+user = "icedborn"
 
 [icedos.applications.kitty]
 enable = true
@@ -112,11 +119,11 @@ privacy = false
 [icedos.applications.zen-browser.pwas]
 enable = false
 sites = [
-  "https://app.tuta.com",
+  "https://mail.proton.me",
   "https://develop.element.io",
   "https://discord.com/app",
-  "https://dtekteam.slack.com/",
-  "https://web.skype.com/",
+  "https://dtekteam.slack.com",
+  "https://web.skype.com",
 ]
 
 [icedos.bootloader]
@@ -166,9 +173,10 @@ maxWorkspaces = 1 # Determines the maximum number of workspaces when dynamic wor
 [icedos.desktop.hyprland]
 enable = true
 followMouse = 2 # Options: https://wiki.hyprland.org/Configuring/Variables/#follow-mouse-cursor
-hyprspace = true
+hyprspace = false
 
 startupScript = """
+run protonvpn-app
 run zen
 run zen-pwas
 nautilus -w &
@@ -235,7 +243,7 @@ steamdeck = false
 
 [icedos.hardware.drivers]
 rtl8821ce = false # Use the unofficial RTL8821CE driver
-xpadneo = true # Xbox gamepad bluetooth driver (supports various xinput controllers)
+xpadneo = false # Xbox gamepad bluetooth driver (supports various xinput controllers)
 
 [icedos.hardware.devices.server]
 enable = false
@@ -265,7 +273,7 @@ refreshRate = 164.90
 position = "0x0"
 scaling = 1
 rotation = 0
-tenBit = true
+tenBit = false
 
 [[icedos.hardware.monitors]]
 name = "DP-2"
@@ -274,7 +282,7 @@ refreshRate = 60
 position = "3440x360"
 scaling = 1
 rotation = 0
-tenBit = true
+tenBit = false
 
 [icedos.hardware.networking]
 hostname = "desktop"

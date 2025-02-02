@@ -35,7 +35,7 @@ in
       nicotine-plus # p2p music sharing platform
       # obs-studio, # Recording/Livestream
       # prismlauncher # Minecraft launcher
-      protontricks # Winetricks for proton prefixes
+      # protontricks # Winetricks for proton prefixes
       # protonup-qt
       spek # Audio file spectrogram analysis
       stremio # Media streaming platform
