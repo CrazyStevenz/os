@@ -49,6 +49,8 @@ in
   services = {
     fstrim.enable = true; # Enable SSD TRIM
     upower.enable = true; # Enable power management
+
+    hardware.openrgb.enable = true;
   };
 
   zramSwap = {

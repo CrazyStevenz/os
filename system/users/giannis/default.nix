@@ -21,16 +21,11 @@ let
   ];
 in
 {
-  users.users.icedborn.packages =
+  users.users.giannis.packages =
     with pkgs;
     [
       appimage-run
-      blanket
       bottles
-      fragments
-      gimp
-      harmony-music
-      newsflash
       warp
     ]
     ++ emulators
