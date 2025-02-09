@@ -85,11 +85,14 @@
                 );
             in
             {
-              imports = [
-                ./hardware
-                ./internals.nix
-                ./options.nix
-              ] ++ getModules (./system) ++ getModules (./hardware);
+              imports =
+                [
+                  ./hardware
+                  ./internals.nix
+                  ./options.nix
+                ]
+                ++ getModules (./system)
+                ++ getModules (./hardware);
 
               config.system.stateVersion = "24.05";
             }
@@ -103,7 +106,7 @@
           ./system/desktop
 
           # Is First Build
-          { icedos.internals.isFirstBuild = true; }
+          { icedos.internals.isFirstBuild = false; }
 
           ./system/desktop/gnome
 
@@ -144,7 +147,8 @@
                 options = [ "subvol=@" ];
               };
 
-              boot.initrd.luks.devices."luks-fb7a7159-bb31-4bfc-9147-e20b16ec99f9".device = "/dev/disk/by-uuid/fb7a7159-bb31-4bfc-9147-e20b16ec99f9";
+              boot.initrd.luks.devices."luks-fb7a7159-bb31-4bfc-9147-e20b16ec99f9".device =
+                "/dev/disk/by-uuid/fb7a7159-bb31-4bfc-9147-e20b16ec99f9";
 
               fileSystems."/boot" = {
                 device = "/dev/disk/by-uuid/4914-28AB";
