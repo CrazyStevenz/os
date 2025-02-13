@@ -3,6 +3,7 @@ extraPackages = [
   # "audacity", # Sound editor with graphical UI
   # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
   "curtail", # Image compressor
+  "discord-canary", # Bleeding edge version of Discord
   "eartag", # Simple music tag editor
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   "handbrake", # Tool for converting video files and ripping DVDs
@@ -15,7 +16,6 @@ extraPackages = [
   "spotify", # Music streaming service
   "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
-  "vesktop", # An open source discord client
 ]
 aagl = true
 android-tools = true
@@ -334,7 +334,7 @@ list = [
 enable = true
 list = [
   "steam.desktop",
-  "vesktop.desktop",
+  "discord-canary.desktop",
   "signal-desktop.desktop",
   "librewolf.desktop",
 ]
@@ -373,7 +373,7 @@ list = ["codiumIDE.desktop", "codium.desktop", "mullvad-vpn.desktop"]
 enable = true
 list = [
   "slack.desktop",
-  "vesktop.desktop",
+  "discord-canary.desktop",
   "signal-desktop.desktop",
   "librewolf.desktop",
   "webstorm.desktop",
