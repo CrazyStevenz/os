@@ -31,11 +31,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pipewire-screenaudio = {
       url = "github:IceDBorn/pipewire-screenaudio";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,8 +52,6 @@
       pipewire-screenaudio,
       self,
       aagl,
-
-      hyprpanel,
 
       zen-browser,
       ...
@@ -141,9 +134,6 @@
             nix.settings = aagl.nixConfig; # Set up Cachix
             programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
           }
-
-          ./system/desktop/hyprland
-          { nixpkgs.overlays = [ hyprpanel.overlay ]; }
 
           ./system/desktop/gnome
 
