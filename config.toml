@@ -35,7 +35,6 @@ solaar = true
 ssh = true
 sunshine = false
 suyu = false
-walker = true
 yazi = false
 
 [icedos.applications.codium]

@@ -102,7 +102,6 @@
           deviceId = mkOption { type = types.str; };
         };
 
-        walker = mkOption { type = types.bool; };
         yazi = mkOption { type = types.bool; };
 
         zed = {
@@ -280,8 +279,6 @@
             types.submodule {
               options = {
                 name = mkOption { type = types.str; };
-                deck = mkOption { type = types.bool; };
-                gaming = mkOption { type = types.bool; };
                 resolution = mkOption { type = types.str; };
                 refreshRate = mkOption { type = types.number; };
                 position = mkOption { type = types.str; };
