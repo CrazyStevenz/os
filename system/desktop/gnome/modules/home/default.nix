@@ -88,12 +88,9 @@ in
       };
 
       "org/gnome/shell" = {
-        # Enable gnome extensions
         disable-user-extensions = false;
         # Set enabled gnome extensions
         enabled-extensions = [
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "quick-settings-tweaks@qwreey"
           "quicksettings-audio-devices-hider@marcinjahn.com"
           "quicksettings-audio-devices-renamer@marcinjahn.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
@@ -130,13 +127,6 @@ in
       # Limit app switcher to current workspace
       "org/gnome/shell/app-switcher" = {
         current-workspace-only = true;
-      };
-
-      "org/gnome/shell/extensions/clipboard-indicator" = {
-        # Remove whitespace before and after the text
-        strip-text = true;
-        # Open the extension with Super + V
-        toggle-menu = [ "<Super>v" ];
       };
     };
   }) cfg.system.users;
