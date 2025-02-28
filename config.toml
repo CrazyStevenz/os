@@ -321,7 +321,6 @@ email = "github.ekta@aleeas.com"
 [icedos.system.users.stef.desktop.gnome.pinnedApps.arcmenu]
 enable = true
 list = [
-  "codiumIDE.desktop",
   "codium.desktop",
   "mullvad-vpn.desktop",
   "org.nicotine_plus.Nicotine.desktop",
@@ -365,7 +364,7 @@ email = "github.ekta@aleeas.com"
 
 [icedos.system.users.work.desktop.gnome.pinnedApps.arcmenu]
 enable = true
-list = ["codiumIDE.desktop", "codium.desktop", "mullvad-vpn.desktop"]
+list = ["codium.desktop", "mullvad-vpn.desktop"]
 
 # Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
 [icedos.system.users.work.desktop.gnome.pinnedApps.shell]
