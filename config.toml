@@ -26,7 +26,7 @@ defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
 falkor = false
 fwupd = true
-input-remapper = true
+input-remapper = false
 mysql = false
 php = false
 pitivi = false
@@ -74,7 +74,7 @@ enable = true
 gui = true
 
 [icedos.applications.network-manager]
-enable = true
+enable = false
 applet = true
 
 [icedos.applications.obs-studio]
