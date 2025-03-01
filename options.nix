@@ -27,6 +27,8 @@
           user = mkOption { type = types.str; };
         };
 
+        input-remapper = mkOption { type = types.bool; };
+
         kitty = {
           enable = mkOption { type = types.bool; };
           hideDecorations = mkOption { type = types.bool; };
@@ -53,6 +55,11 @@
         };
 
         mysql = mkOption { type = types.bool; };
+
+        network-manager = {
+          enable = mkOption { type = types.bool; };
+          applet = mkOption { type = types.bool; };
+        };
 
         obs-studio = {
           enable = mkOption { type = types.bool; };

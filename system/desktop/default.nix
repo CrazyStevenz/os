@@ -42,11 +42,6 @@ in
         };
   };
 
-  networking = {
-    networkmanager.enable = !cfg.hardware.devices.server.enable;
-    firewall.enable = false;
-  };
-
   environment = {
     # Packages to install for all window manager/desktop environments
     systemPackages = with pkgs; [

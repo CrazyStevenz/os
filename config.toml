@@ -26,6 +26,7 @@ defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
 falkor = false
 fwupd = true
+input-remapper = true
 mysql = false
 php = false
 pitivi = false
@@ -71,6 +72,10 @@ maxFpsLimit = 165 # Use 0 for unlimited
 [icedos.applications.mullvad]
 enable = true
 gui = true
+
+[icedos.applications.network-manager]
+enable = true
+applet = true
 
 [icedos.applications.obs-studio]
 enable = false
