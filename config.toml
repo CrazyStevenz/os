@@ -1,18 +1,19 @@
 [icedos.applications]
 extraPackages = [
+  "appimage-run", # Appimage runner
   # "audacity", # Sound editor with graphical UI
   # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-  "curtail", # Image compressor
-  "eartag", # Simple music tag editor
+  # "curtail", # Image compressor
+  # "eartag", # Simple music tag editor
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
-  "handbrake", # Tool for converting video files and ripping DVDs
+  # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
-  "mousai", # Song recognizer
+  # "mousai", # Song recognizer
   # "nextcloud-client", # Nextcloud themed desktop client
   "nodejs_20", # Node package manager
-  "parabolic", # Download web video and audio
-  "pnpm", # Fast, disk space efficient package manager for JavaScript
-  "spotify", # Music streaming service
+  # "parabolic", # Download web video and audio
+  # "pnpm", # Fast, disk space efficient package manager for JavaScript
+  # "spotify", # Music streaming service
   "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "vesktop", # An open source discord client
@@ -35,7 +36,7 @@ solaar = true
 ssh = true
 sunshine = false
 suyu = false
-walker = true
+walker = false
 yazi = false
 
 [icedos.applications.codium]
@@ -66,11 +67,11 @@ sites = [
 ]
 
 [icedos.applications.mangohud]
-enable = true
-maxFpsLimit = 165 # Use 0 for unlimited
+enable = false
+maxFpsLimit = 60 # Use 0 for unlimited
 
 [icedos.applications.mullvad]
-enable = true
+enable = false
 gui = true
 
 [icedos.applications.obs-studio]
@@ -82,7 +83,7 @@ enable = true
 package = "signal" # Options: 'flare', 'signal'
 
 [icedos.applications.steam]
-enable = true
+enable = false
 beta = true
 downloadsWorkaround = true
 
@@ -113,7 +114,7 @@ light = "One Light"
 mode = "system" # Options: 'system', 'dark', 'light'
 
 [icedos.applications.zen-browser]
-enable = true
+enable = false
 privacy = false
 
 [icedos.applications.zen-browser.pwas]
@@ -135,14 +136,14 @@ device = "/dev/sda"
 
 [icedos.bootloader.systemd-boot]
 enable = true
-mountPoint = "/boot"
+mountPoint = "/boot/efi"
 
 [icedos.desktop]
 accentColor = "#913A8B" # With gnome enabled this is getting overriden by gnome's selected accent color hex code
 
 [icedos.desktop.autologin]
 enable = true
-user = "icedborn"
+user = "work"
 
 [icedos.desktop.gdm]
 enable = true
@@ -171,7 +172,7 @@ dynamicWorkspaces = true
 maxWorkspaces = 1 # Determines the maximum number of workspaces when dynamic workspaces are disabled
 
 [icedos.desktop.hyprland]
-enable = true
+enable = false
 followMouse = 2 # Options: https://wiki.hyprland.org/Configuring/Variables/#follow-mouse-cursor
 hyprspace = false
 
@@ -220,11 +221,11 @@ networkUsageThreshold = 1_000_000 # Network usage to inhibit lock in bytes/s
 
 [icedos.hardware]
 bluetooth = true
-mounts = true # Set to false if hardware/mounts.nix is not correctly configured
+mounts = false # Set to false if hardware/mounts.nix is not correctly configured
 
 [icedos.hardware.btrfs.compression]
 enable = true
-mounts = true # Use btrfs compression for mounted drives
+mounts = false # Use btrfs compression for mounted drives
 root = true # Use btrfs compression for / (root)
 
 [icedos.hardware.cpus]
@@ -234,11 +235,11 @@ intel = false
 enable = true
 
 [icedos.hardware.cpus.amd.undervolt]
-enable = true
+enable = false
 value = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.hardware.devices]
-laptop = false
+laptop = true
 steamdeck = false
 
 [icedos.hardware.drivers]
@@ -267,25 +268,16 @@ enable = true
 value = 242
 
 [[icedos.hardware.monitors]]
-name = "DP-1"
-resolution = "3440x1440"
-refreshRate = 164.90
+name = "eDP-1"
+resolution = "1920x1080"
+refreshRate = 59.98
 position = "0x0"
 scaling = 1
 rotation = 0
 tenBit = false
 
-[[icedos.hardware.monitors]]
-name = "DP-2"
-resolution = "1920x1080"
-refreshRate = 60
-position = "3440x360"
-scaling = 1
-rotation = 0
-tenBit = false
-
 [icedos.hardware.networking]
-hostname = "desktop"
+hostname = "laptop"
 hosts = false
 ipv6 = false
 
@@ -295,7 +287,7 @@ forceFirstBuild = false
 home = "/home"
 kernel = "zen" # Options: 'cachyos', 'cachyos-server', 'latest', 'lts', 'valve', 'zen'
 swappiness = 1
-version = "23.05" # Do not change without checking the docs (config.system.stateVersion)
+version = "22.05" # Do not change without checking the docs (config.system.stateVersion)
 
 [icedos.system.generations]
 bootEntries = 30
@@ -305,51 +297,6 @@ automatic = false
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
 interval = "Mon *-*-* 00:00:00" # Format(https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html)
-
-[icedos.system.users.stef]
-description = "Stefanos"
-type = "main" # Options: 'main', 'work', 'server'
-
-[icedos.system.users.stef.applications.codium]
-autoSave = "onFocusChange" # Options: 'off', 'afterDelay', 'onFocusChange', 'onWindowChange'
-formatOnSave = true
-formatOnPaste = false
-
-[icedos.system.users.stef.applications.git]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
-
-[icedos.system.users.stef.desktop.gnome.pinnedApps.arcmenu]
-enable = true
-list = [
-  "codiumIDE.desktop",
-  "codium.desktop",
-  "mullvad-vpn.desktop",
-  "org.nicotine_plus.Nicotine.desktop",
-  "spek.desktop",
-]
-
-# Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
-[icedos.system.users.stef.desktop.gnome.pinnedApps.shell]
-enable = true
-list = [
-  "steam.desktop",
-  "vesktop.desktop",
-  "signal-desktop.desktop",
-  "librewolf.desktop",
-]
-
-[icedos.system.users.stef.desktop.idle.lock]
-enable = false
-seconds = 180
-
-[icedos.system.users.stef.desktop.idle.disableMonitors]
-enable = true
-seconds = 300
-
-[icedos.system.users.stef.desktop.idle.suspend]
-enable = false
-seconds = 900
 
 [icedos.system.users.work]
 description = "Work"
@@ -366,7 +313,7 @@ email = "github.ekta@aleeas.com"
 
 [icedos.system.users.work.desktop.gnome.pinnedApps.arcmenu]
 enable = true
-list = ["codiumIDE.desktop", "codium.desktop", "mullvad-vpn.desktop"]
+list = ["codium.desktop", "mullvad-vpn.desktop"]
 
 # Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
 [icedos.system.users.work.desktop.gnome.pinnedApps.shell]

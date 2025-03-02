@@ -31,18 +31,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     pipewire-screenaudio = {
       url = "github:IceDBorn/pipewire-screenaudio";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -58,13 +48,10 @@
       self,
       aagl,
 
-      hyprpanel,
-
-      zen-browser,
       ...
     }@inputs:
     {
-      nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem rec {
+      nixosConfigurations."laptop" = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
 
         specialArgs = {
@@ -81,7 +68,7 @@
             {
               options.icedos.configurationLocation = mkOption {
                 type = types.str;
-                default = "/home/stef/code/os";
+                default = "/home/work/code/IceDOS";
               };
             }
           )
@@ -118,7 +105,7 @@
                 ++ getModules (./system)
                 ++ getModules (./hardware);
 
-              config.system.stateVersion = "23.05";
+              config.system.stateVersion = "22.05";
             }
           )
 
@@ -142,14 +129,8 @@
             programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
           }
 
-          ./system/desktop/hyprland
-          { nixpkgs.overlays = [ hyprpanel.overlay ]; }
-
           ./system/desktop/gnome
 
-          ./system/applications/modules/zen-browser
-
-          ./system/users/stef
           ./system/users/work
 
           (
@@ -173,7 +154,6 @@
                 "nvme"
                 "xhci_pci"
                 "ahci"
-                "usbhid"
                 "usb_storage"
                 "sd_mod"
               ];
@@ -182,32 +162,39 @@
               boot.extraModulePackages = [ ];
 
               fileSystems."/" = {
-                device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834";
+                device = "/dev/disk/by-uuid/a96c8707-e60d-4a63-84e4-a09775df2bec";
                 fsType = "btrfs";
                 options = [ "subvol=@" ];
               };
 
-              boot.initrd.luks.devices."luks-a42d4af1-e764-4d91-acb2-ac735d979a64".device =
-                "/dev/disk/by-uuid/a42d4af1-e764-4d91-acb2-ac735d979a64";
+              boot.initrd.luks.devices."luks-1a3c2842-eb46-4f8f-9960-716acabc4b31".device =
+                "/dev/disk/by-uuid/1a3c2842-eb46-4f8f-9960-716acabc4b31";
+              boot.initrd.luks.devices."luks-a8cffca7-e268-4cb1-a7b8-2e14a3b56208".device =
+                "/dev/disk/by-uuid/a8cffca7-e268-4cb1-a7b8-2e14a3b56208";
 
-              fileSystems."/boot" = {
-                device = "/dev/disk/by-uuid/080E-B189";
+              fileSystems."/boot/efi" = {
+                device = "/dev/disk/by-uuid/7330-238A";
                 fsType = "vfat";
               };
 
-              swapDevices = [ ];
+              swapDevices = [
+                { device = "/dev/disk/by-uuid/edb966ac-b852-4051-bc93-668b968849a7"; }
+              ];
 
               # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
               # (the default) this is the recommended approach. When using systemd-networkd it's
               # still possible to use this option, but it's recommended to use it in conjunction
               # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
               networking.useDHCP = lib.mkDefault true;
-              # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
+              # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
+              # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
               nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
               hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
             }
           )
+
+          ({ })
 
         ];
       };
