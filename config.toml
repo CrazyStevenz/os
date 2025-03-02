@@ -70,7 +70,7 @@ enable = true
 maxFpsLimit = 165 # Use 0 for unlimited
 
 [icedos.applications.mullvad]
-enable = true
+enable = false
 gui = true
 
 [icedos.applications.network-manager]
