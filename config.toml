@@ -49,7 +49,7 @@ user = "icedborn"
 
 [icedos.applications.kitty]
 enable = true
-hideDecorations = true # Hide top bar
+hideDecorations = false # Hide top bar
 
 [icedos.applications.librewolf]
 enable = true
@@ -71,7 +71,7 @@ maxFpsLimit = 165 # Use 0 for unlimited
 
 [icedos.applications.mullvad]
 enable = false
-gui = true
+gui = false
 
 [icedos.applications.network-manager]
 enable = false
