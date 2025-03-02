@@ -55,6 +55,7 @@
         };
 
         mysql = mkOption { type = types.bool; };
+        nautilus = mkOption { type = types.bool; };
 
         network-manager = {
           enable = mkOption { type = types.bool; };
@@ -302,6 +303,7 @@
           hostname = mkOption { type = types.str; };
           hosts = mkOption { type = types.bool; };
           ipv6 = mkOption { type = types.bool; };
+          vpnExcludeIp = mkOption { type = types.str; };
         };
 
         mounts = mkOption { type = types.bool; };

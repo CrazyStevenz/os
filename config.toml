@@ -28,6 +28,7 @@ falkor = false
 fwupd = true
 input-remapper = false
 mysql = false
+nautilus = true
 php = false
 pitivi = false
 protonvpn = true
@@ -294,6 +295,7 @@ tenBit = false
 hostname = "desktop"
 hosts = false
 ipv6 = false
+vpnExcludeIp = "192.168.1.200"
 
 [icedos.system]
 channels = [] # https://github.com/NixOS/nixpkgs/branches/active
