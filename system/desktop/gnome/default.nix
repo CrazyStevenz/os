@@ -1,14 +1,11 @@
 {
-  config,
   lib,
   pkgs,
   ...
 }:
 
 let
-  inherit (lib) filterAttrs mkIf;
-
-  cfg = config.icedos.desktop.gnome;
+  inherit (lib) filterAttrs;
 
   getModules =
     path:
@@ -18,37 +15,29 @@ let
 in
 {
   imports = getModules (./modules);
-  services.xserver.desktopManager.gnome.enable = cfg.enable;
-  programs.dconf.enable = cfg.enable;
+  services.xserver.desktopManager.gnome.enable = true;
+  programs.dconf.enable = true;
+  environment.systemPackages = [
+    pkgs.gnome-tweaks
+    pkgs.gnomeExtensions.quick-settings-audio-devices-hider
+    pkgs.gnomeExtensions.quick-settings-audio-devices-renamer
+  ];
 
-  environment.systemPackages =
-    with pkgs;
-    mkIf (cfg.enable) [
-      # gnome-extension-manager # Gnome extensions manager and downloader
-      gnome-tweaks # Tweaks missing from pure gnome
-      gnomeExtensions.appindicator # Tray icons for gnome
-      gnomeExtensions.quick-settings-audio-devices-hider
-      gnomeExtensions.quick-settings-audio-devices-renamer
-      gnomeExtensions.quick-settings-tweaker
-    ];
-
-  environment.gnome.excludePackages =
-    with pkgs;
-    mkIf (cfg.enable) [
-      cheese # Camera
-      eog # Image viewer
-      epiphany # Web browser
-      evince # Document viewer
-      geary # Email
-      gnome-characters # Emojis
-      gnome-console # Terminal
-      gnome-font-viewer # Font viewer
-      gnome-maps # Maps
-      gnome-software # Software center
-      gnome-system-monitor # System monitoring tool
-      gnome-text-editor # Text editor
-      gnome-tour # Greeter
-      simple-scan # Scanner
-      yelp # Help
-    ];
+  environment.gnome.excludePackages = with pkgs; [
+    cheese # Camera
+    eog # Image viewer
+    epiphany # Web browser
+    evince # Document viewer
+    geary # Email
+    gnome-characters # Emojis
+    gnome-console # Terminal
+    gnome-font-viewer # Font viewer
+    gnome-maps # Maps
+    gnome-software # Software center
+    gnome-system-monitor # System monitoring tool
+    gnome-text-editor # Text editor
+    gnome-tour # Greeter
+    simple-scan # Scanner
+    yelp # Help
+  ];
 }

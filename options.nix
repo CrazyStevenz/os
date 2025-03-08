@@ -27,6 +27,8 @@
           user = mkOption { type = types.str; };
         };
 
+        input-remapper = mkOption { type = types.bool; };
+
         kitty = {
           enable = mkOption { type = types.bool; };
           hideDecorations = mkOption { type = types.bool; };
@@ -53,6 +55,12 @@
         };
 
         mysql = mkOption { type = types.bool; };
+        nautilus = mkOption { type = types.bool; };
+
+        network-manager = {
+          enable = mkOption { type = types.bool; };
+          applet = mkOption { type = types.bool; };
+        };
 
         obs-studio = {
           enable = mkOption { type = types.bool; };
@@ -102,7 +110,6 @@
           deviceId = mkOption { type = types.str; };
         };
 
-        walker = mkOption { type = types.bool; };
         yazi = mkOption { type = types.bool; };
 
         zed = {
@@ -280,8 +287,7 @@
             types.submodule {
               options = {
                 name = mkOption { type = types.str; };
-                deck = mkOption { type = types.bool; };
-                gaming = mkOption { type = types.bool; };
+                disable = mkOption { type = types.bool; };
                 resolution = mkOption { type = types.str; };
                 refreshRate = mkOption { type = types.number; };
                 position = mkOption { type = types.str; };
@@ -297,6 +303,7 @@
           hostname = mkOption { type = types.str; };
           hosts = mkOption { type = types.bool; };
           ipv6 = mkOption { type = types.bool; };
+          vpnExcludeIp = mkOption { type = types.str; };
         };
 
         mounts = mkOption { type = types.bool; };

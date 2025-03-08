@@ -5,7 +5,7 @@
 }:
 
 let
-  inherit (lib) mapAttrs mkIf optional;
+  inherit (lib) mapAttrs mkIf;
   cfg = config.icedos;
 in
 {
@@ -88,12 +88,9 @@ in
       };
 
       "org/gnome/shell" = {
-        # Enable gnome extensions
         disable-user-extensions = false;
         # Set enabled gnome extensions
         enabled-extensions = [
-          "appindicatorsupport@rgcjonas.gmail.com"
-          "quick-settings-tweaks@qwreey"
           "quicksettings-audio-devices-hider@marcinjahn.com"
           "quicksettings-audio-devices-renamer@marcinjahn.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
@@ -108,35 +105,9 @@ in
         toggle-message-tray = [ ];
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = [
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-        ];
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>x";
-        command = "kitty";
-        name = "Kitty";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        binding = "<Super>e";
-        command = "nautilus .";
-        name = "Nautilus";
-      };
-
       # Limit app switcher to current workspace
       "org/gnome/shell/app-switcher" = {
         current-workspace-only = true;
-      };
-
-      "org/gnome/shell/extensions/clipboard-indicator" = {
-        # Remove whitespace before and after the text
-        strip-text = true;
-        # Open the extension with Super + V
-        toggle-menu = [ "<Super>v" ];
       };
     };
   }) cfg.system.users;

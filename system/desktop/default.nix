@@ -42,20 +42,14 @@ in
         };
   };
 
-  networking = {
-    networkmanager.enable = !cfg.hardware.devices.server.enable;
-    firewall.enable = false;
-  };
-
   environment = {
-    # Packages to install for all window manager/desktop environments
     systemPackages = with pkgs; [
       adwaita-icon-theme # Gtk theme
       amberol # Music player
       dconf-editor # Edit gnome's dconf
       libnotify # Send desktop notifications
+      libreoffice-fresh # Office tools
       loupe # Image viewer
-      onlyoffice-bin # Office tools
     ];
 
     sessionVariables = {

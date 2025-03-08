@@ -6,12 +6,14 @@
 }:
 
 let
-  inherit (lib) mapAttrs makeSearchPathOutput;
+  inherit (lib) mapAttrs makeSearchPathOutput mkIf;
   cfg = config.icedos;
 in
 {
-  environment = {
+  environment = mkIf (cfg.applications.nautilus) {
     systemPackages = [ pkgs.nautilus ];
+
+    gnome.excludePackages = mkIf (!cfg.applications.nautilus && cfg.desktop.gnome.enable) [ pkgs.nautilus ];
 
     sessionVariables = {
       # Fix for missing audio/video information in properties https://github.com/NixOS/nixpkgs/issues/53631
@@ -27,10 +29,10 @@ in
     };
   };
 
-  services.gvfs.enable = true;
+  services.gvfs.enable = cfg.applications.nautilus;
 
   home-manager.users = mapAttrs (user: _: {
-    dconf.settings = {
+    dconf.settings = mkIf (cfg.applications.nautilus) {
       "org/gnome/nautilus/preferences" = {
         always-use-location-entry = true;
         show-create-link = true;
@@ -45,9 +47,20 @@ in
         sort-directories-first = true;
         show-hidden = true;
       };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
+        mkIf (cfg.desktop.gnome.enable)
+          {
+            binding = "<Super>e";
+            command = "nautilus .";
+            name = "Nautilus";
+          };
+
+      "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = mkIf (cfg.desktop.gnome.enable
+      ) [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
     };
 
-    home.file = {
+    home.file = mkIf (cfg.applications.nautilus) {
       "Templates/new".text = "";
       "Templates/new.cfg".text = "";
       "Templates/new.ini".text = "";
