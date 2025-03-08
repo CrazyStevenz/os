@@ -1,7 +1,7 @@
 {
-config,
-pkgs,
-...
+  config,
+  pkgs,
+  ...
 }:
 
 let
@@ -10,8 +10,8 @@ in
 {
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "vpn-exclude" ''
-      INTERFACE=$(ip -o -4 route show to default | awk '{print $5}')
-      GATEWAY=$(ip -o -4 route show to default | awk '{print $3}')
+      INTERFACE=$(ip -o -4 route show to default | awk '{print $5}' | tail -1)
+      GATEWAY=$(ip -o -4 route show to default | awk '{print $3}' | tail -1)
       NAMESPACE="vpnexcludens"
       LINK="vpnexcludelink"
 
