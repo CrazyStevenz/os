@@ -118,7 +118,7 @@ light = "One Light"
 mode = "system" # Options: 'system', 'dark', 'light'
 
 [icedos.applications.zen-browser]
-enable = true
+enable = false
 privacy = false
 
 [icedos.applications.zen-browser.pwas]
@@ -381,7 +381,7 @@ list = [
   "slack.desktop",
   "discord-canary.desktop",
   "signal-desktop.desktop",
-  "zen.desktop",
+  "librewolf.desktop",
   "webstorm.desktop",
 ]
 

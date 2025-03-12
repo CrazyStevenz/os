@@ -36,11 +36,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
 
   outputs =
@@ -53,7 +48,6 @@
       self,
       aagl,
 
-      zen-browser,
       ...
     }@inputs:
     {
@@ -136,8 +130,6 @@
           }
 
           ./system/desktop/gnome
-
-          ./system/applications/modules/zen-browser
 
           ./system/users/stef
           ./system/users/work
