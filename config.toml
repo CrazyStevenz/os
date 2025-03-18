@@ -1,16 +1,34 @@
 [icedos.applications]
-extraPackages = []
-aagl = false
+extraPackages = [
+  # "audacity", # Sound editor with graphical UI
+  # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
+  "curtail", # Image compressor
+  "discord-canary", # Bleeding edge version of Discord
+  # "eartag", # Simple music tag editor
+  "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
+  "handbrake", # Tool for converting video files and ripping DVDs
+  "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
+  "mousai", # Song recognizer
+  # "nextcloud-client", # Nextcloud themed desktop client
+  "nodejs_20", # Node package manager
+  "parabolic", # Download web video and audio
+  "pnpm", # Fast, disk space efficient package manager for JavaScript
+  "spotify", # Music streaming service
+  "sticky-notes", # Simple sticky notes app
+  "ungoogled-chromium", # Chromium with dependencies on Google web services removed
+  "warp" # File sync
+]
+aagl = true
 android-tools = true
-brave = true
+brave = false
 celluloid = true
 clamav = false
-defaultBrowser = "zen" # Options: 'librewolf', 'zen'
-defaultEditor = "zed" # Options: 'codium', 'zed'
+defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
+defaultEditor = "codium" # Options: 'codium', 'zed'
 falkor = false
 fwupd = true
-input-remapper = true
-librewolf = false
+input-remapper = false
+librewolf = true
 mysql = false
 nautilus = true
 php = false
@@ -19,20 +37,20 @@ protonvpn = true
 rust = false
 solaar = true
 ssh = true
-sunshine = true
+sunshine = false
 suyu = false
 yazi = false
 
 [icedos.applications.codium]
 enable = true
-zoomLevel = 0
+zoomLevel = 1
 
 [icedos.applications.httpd]
 enable = false
 user = "icedborn"
 
 [icedos.applications.httpd.php]
-enable = true
+enable = false
 version = "7.4.3"
 
 [icedos.applications.kitty]
@@ -41,23 +59,23 @@ hideDecorations = false # Hide top bar
 
 [icedos.applications.mangohud]
 enable = true
-maxFpsLimit = 144 # Use 0 for unlimited
+maxFpsLimit = 165 # Use 0 for unlimited
 
 [icedos.applications.mullvad]
 enable = false
 gui = false
 
 [icedos.applications.network-manager]
-enable = true
+enable = false
 applet = true
 
 [icedos.applications.obs-studio]
-enable = true
+enable = false
 virtualCamera = false
 
 [icedos.applications.signal]
 enable = true
-package = "flare" # Options: 'flare', 'signal'
+package = "signal" # Options: 'flare', 'signal'
 
 [icedos.applications.steam]
 enable = true
@@ -66,7 +84,7 @@ downloadsWorkaround = true
 
 [icedos.applications.steam.session]
 enable = false
-user = "icedborn"
+user = "stef"
 
 [icedos.applications.steam.session.autoStart]
 enable = false
@@ -74,16 +92,16 @@ desktopSession = "hyprland"
 
 [icedos.applications.tailscale]
 enable = true
-enableTrayscale = true
+enableTrayscale = false
 
 [icedos.applications.valent]
 enable = false
 deviceId = "901524a4_c7c0_407e_9903_431abce54131"
 
 [icedos.applications.zed]
-enable = true
+enable = false
 ollamaSupport = false
-vim = true
+vim = false
 
 [icedos.applications.zed.theme]
 dark = "One Dark Pro"
@@ -91,11 +109,11 @@ light = "One Light"
 mode = "system" # Options: 'system', 'dark', 'light'
 
 [icedos.applications.zen-browser]
-enable = true
-privacy = true
+enable = false
+privacy = false
 
 [icedos.applications.zen-browser.pwas]
-enable = true
+enable = false
 sites = [
   "https://mail.proton.me",
   "https://develop.element.io",
@@ -116,7 +134,7 @@ enable = true
 mountPoint = "/boot"
 
 [icedos.desktop]
-accentColor = "7E57C2" # With gnome enabled this is getting overriden by gnome's selected accent color hex code
+accentColor = "#913A8B" # With gnome enabled this is getting overriden by gnome's selected accent color hex code
 
 [icedos.desktop.autologin]
 enable = true
@@ -127,29 +145,29 @@ enable = true
 autoSuspend = true
 
 [icedos.desktop.gnome]
-enable = false
+enable = true
 accentColor = "purple" # Options: 'blue', 'teal', 'green', 'yellow', 'orange', 'red', 'pink', 'purple', 'slate'
 hotCorners = false
 powerButtonAction = "interactive"
 
 # Options: 'minimize', 'maximize', 'close', 'spacer'(adds space between buttons), ':'(left-center-right separator)
-titlebarLayout = "appmenu:close"
+titlebarLayout = "appmenu:minimize,maximize,close"
 
 [icedos.desktop.gnome.extensions]
-arcmenu = false
-dashToPanel = false
+arcmenu = true
+dashToPanel = true
 
 [icedos.desktop.gnome.clock]
-date = false # Show the month and day of the month on the clock
-weekday = false # Show the day of the week on the clock
+date = true # Show the month and day of the month on the clock
+weekday = true # Show the day of the week on the clock
 
 [icedos.desktop.gnome.workspaces]
 dynamicWorkspaces = true
 maxWorkspaces = 1 # Determines the maximum number of workspaces when dynamic workspaces are disabled
 
 [icedos.desktop.hyprland]
-enable = true
-followMouse = 1 # Options: https://wiki.hyprland.org/Configuring/Variables/#follow-mouse-cursor
+enable = false
+followMouse = 2 # Options: https://wiki.hyprland.org/Configuring/Variables/#follow-mouse-cursor
 hyprspace = false
 
 startupScript = """
@@ -212,7 +230,7 @@ enable = true
 
 [icedos.hardware.cpus.amd.undervolt]
 enable = true
-value = "-p 0 -v 3C -f A0" # Pstate 0, 1.175 voltage, 4000 clock speed
+value = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.hardware.devices]
 laptop = false
@@ -220,7 +238,7 @@ steamdeck = false
 
 [icedos.hardware.drivers]
 rtl8821ce = false # Use the unofficial RTL8821CE driver
-xpadneo = true # Xbox gamepad bluetooth driver (supports various xinput controllers)
+xpadneo = false # Xbox gamepad bluetooth driver (supports various xinput controllers)
 
 [icedos.hardware.devices.server]
 enable = false
@@ -231,7 +249,7 @@ ip = "192.168.1.3"
 
 [icedos.hardware.gpus.amd]
 enable = true
-rocm = true
+rocm = false
 
 [icedos.hardware.gpus.nvidia]
 enable = false
@@ -247,7 +265,7 @@ value = 242
 name = "DP-1"
 disable = false
 resolution = "3440x1440"
-refreshRate = 144
+refreshRate = 164.90
 position = "0x0"
 scaling = 1
 rotation = 0
@@ -257,18 +275,8 @@ tenBit = false
 name = "DP-2"
 disable = false
 resolution = "1920x1080"
-refreshRate = 144
-position = "3440x0"
-scaling = 1
-rotation = 0
-tenBit = false
-
-[[icedos.hardware.monitors]]
-name = "HDMI-A-1"
-disable = false
-resolution = "3840x2160"
 refreshRate = 60
-position = "-3840x0"
+position = "3440x360"
 scaling = 1
 rotation = 0
 tenBit = false
@@ -283,67 +291,113 @@ vpnExcludeIp = "192.168.1.200"
 channels = [] # https://github.com/NixOS/nixpkgs/branches/active
 forceFirstBuild = false
 home = "/home"
-kernel = "cachyos" # Options: 'cachyos', 'cachyos-server', 'latest', 'lts', 'valve', 'zen'
+kernel = "zen" # Options: 'cachyos', 'cachyos-server', 'latest', 'lts', 'valve', 'zen'
 swappiness = 1
 version = "23.05" # Do not change without checking the docs (config.system.stateVersion)
 
 [icedos.system.generations]
-bootEntries = 10
+bootEntries = 30
 
 [icedos.system.generations.garbageCollect]
-automatic = true
-days = 0 # Number of days before a generation can be deleted
-generations = 10 # Number of generations that will always be kept
+automatic = false
+days = 7 # Number of days before a generation can be deleted
+generations = 5 # Number of generations that will always be kept
 interval = "Mon *-*-* 00:00:00" # Format(https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html)
 
-[icedos.system.users.icedborn]
-description = "IceDBorn"
+[icedos.system.users.stef]
+description = "Stefanos"
 type = "main" # Options: 'main', 'work', 'server'
 
-[icedos.system.users.icedborn.applications.codium]
-autoSave = "off" # Options: 'off', 'afterDelay', 'onFocusChange', 'onWindowChange'
+[icedos.system.users.stef.applications.codium]
+autoSave = "onFocusChange" # Options: 'off', 'afterDelay', 'onFocusChange', 'onWindowChange'
 formatOnSave = true
-formatOnPaste = true
+formatOnPaste = false
 
-[icedos.system.users.icedborn.applications.git]
-username = "IceDBorn"
-email = "git.outsider841@simplelogin.fr"
+[icedos.system.users.stef.applications.git]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
 
+[icedos.system.users.stef.desktop.gnome]
+startupScript = "protonvpn-app & steam & signal-desktop"
 
-[icedos.system.users.icedborn.desktop.gnome]
-startupScript = ""
-
-[icedos.system.users.icedborn.desktop.gnome.pinnedApps.arcmenu]
-enable = false
-list = ["codiumIDE.desktop", "codium.desktop", "mullvad-vpn.desktop"]
+[icedos.system.users.stef.desktop.gnome.pinnedApps.arcmenu]
+enable = true
+list = [
+  "codium.desktop",
+  "org.nicotine_plus.Nicotine.desktop",
+  "spek.desktop",
+]
 
 # Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
-[icedos.system.users.icedborn.desktop.gnome.pinnedApps.shell]
-enable = false
+[icedos.system.users.stef.desktop.gnome.pinnedApps.shell]
+enable = true
 list = [
   "steam.desktop",
-  "webcord.desktop",
+  "discord-canary.desktop",
   "signal-desktop.desktop",
   "librewolf.desktop",
 ]
 
-[icedos.system.users.icedborn.desktop.idle.lock]
-enable = true
+[icedos.system.users.stef.desktop.idle.lock]
+enable = false
 seconds = 180
 
-[icedos.system.users.icedborn.desktop.idle.disableMonitors]
+[icedos.system.users.stef.desktop.idle.disableMonitors]
 enable = true
+seconds = 300
+
+[icedos.system.users.stef.desktop.idle.suspend]
+enable = false
 seconds = 900
 
-[icedos.system.users.icedborn.desktop.idle.suspend]
+[icedos.system.users.work]
+description = "Work"
+type = "work" # Options: 'main', 'work', 'server'
+
+[icedos.system.users.work.applications.codium]
+autoSave = "onFocusChange" # Options: 'off', 'afterDelay', 'onFocusChange', 'onWindowChange'
+formatOnSave = true
+formatOnPaste = false
+
+[icedos.system.users.work.applications.git]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
+
+[icedos.system.users.work.desktop.gnome]
+startupScript = "protonvpn-app & discordcanary & slack"
+
+[icedos.system.users.work.desktop.gnome.pinnedApps.arcmenu]
 enable = true
-seconds = 1800
+list = ["codium.desktop"]
+
+# Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
+[icedos.system.users.work.desktop.gnome.pinnedApps.shell]
+enable = true
+list = [
+  "slack.desktop",
+  "discord-canary.desktop",
+  "signal-desktop.desktop",
+  "librewolf.desktop",
+  "webstorm.desktop",
+]
+
+[icedos.system.users.work.desktop.idle.lock]
+enable = true
+seconds = 270
+
+[icedos.system.users.work.desktop.idle.disableMonitors]
+enable = true
+seconds = 300
+
+[icedos.system.users.work.desktop.idle.suspend]
+enable = false
+seconds = 900
 
 [icedos.system.virtualisation]
 virtManager = false
 waydroid = false
 
 [icedos.system.virtualisation.containerManager]
-enable = false
+enable = true
 usePodman = true
 requireSudoForDocker = true # CAUTION: Disabling this gives every user root priviledges!

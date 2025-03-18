@@ -45,4 +45,8 @@ in
       wget # Terminal downloader
     ]
     ++ (pkgMapper cfg.applications.extraPackages);
+
+  environment.variables = {
+    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+  };
 }

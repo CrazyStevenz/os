@@ -17,7 +17,11 @@ in
   imports = getModules (./modules);
   services.xserver.desktopManager.gnome.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = [ pkgs.gnome-tweaks ];
+  environment.systemPackages = [
+    pkgs.gnome-tweaks
+    pkgs.gnomeExtensions.quick-settings-audio-devices-hider
+    pkgs.gnomeExtensions.quick-settings-audio-devices-renamer
+  ];
 
   environment.gnome.excludePackages = with pkgs; [
     cheese # Camera

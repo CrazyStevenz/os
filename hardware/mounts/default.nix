@@ -1,30 +1,44 @@
-{
-  config,
-  lib,
-  ...
-}:
+{ lib, config, ... }:
 
 let
   inherit (lib) mkIf;
+
   cfg = config.icedos.hardware;
   btrfsCompression = cfg.btrfs.compression;
 in
 mkIf (cfg.mounts) {
-  fileSystems."/mnt/games" = {
-    device = "/dev/disk/by-uuid/040329ae-685d-4ba6-8bdd-e0a9785f9672";
+  fileSystems."/mnt/Nvme" = {
+    device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52";
     fsType = "btrfs";
-    options = mkIf (btrfsCompression.enable && btrfsCompression.mounts) [ "compress=zstd" ];
+    options = mkIf (btrfsCompression.enable && btrfsCompression.mounts) [
+      "compress=zstd"
+      "x-systemd.automount"
+      "noauto"
+    ];
   };
 
-  fileSystems."/mnt/games2" = {
-    device = "/dev/disk/by-uuid/60876d91-f863-45db-88c5-4c707879588f";
+  fileSystems."/mnt/SSDGames" = {
+    device = "/dev/disk/by-uuid/2b04380c-cefe-4915-a1f4-26bef6ebc360";
     fsType = "btrfs";
-    options = mkIf (btrfsCompression.enable && btrfsCompression.mounts) [ "compress=zstd" ];
+    options = mkIf (btrfsCompression.enable && btrfsCompression.mounts) [
+      "compress=zstd"
+      "x-systemd.automount"
+      "noauto"
+    ];
   };
 
-  fileSystems."/mnt/storage" = {
-    device = "/dev/disk/by-uuid/89730200-942d-4a5c-893f-0196c87435d2";
+  fileSystems."/mnt/HDDGames" = {
+    device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112";
     fsType = "btrfs";
-    options = mkIf (btrfsCompression.enable && btrfsCompression.mounts) [ "compress=zstd" ];
+    options = mkIf (btrfsCompression.enable && btrfsCompression.mounts) [
+      "compress=zstd"
+      "x-systemd.automount"
+      "noauto"
+    ];
   };
+
+  # fileSystems."/mnt/Windows" = {
+  #   device = "/dev/disk/by-uuid/3032AC4732AC13BE";
+  #   fsType = "ntfs";
+  # };
 }

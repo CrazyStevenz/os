@@ -11,12 +11,17 @@ This is a NixOS configuration project that aims to create a highly opinionated g
 ## Install
 
 ```bash
-git clone https://github.com/icedborn/icedos
-cd icedos
+mkdir code
+cd code
+nix-shell -p git
+git clone https://github.com/CrazyStevenz/os
+cd os
+git checkout os
 nix-shell ./build.sh
 ```
 
 ## Preview
+
 ![Untitled](https://github.com/user-attachments/assets/ac03c7bd-8211-42e7-856c-f6ff03966ce6)
 
 ## Contributing
