@@ -13,7 +13,9 @@ in
   environment = mkIf (cfg.applications.nautilus) {
     systemPackages = [ pkgs.nautilus ];
 
-    gnome.excludePackages = mkIf (!cfg.applications.nautilus && cfg.desktop.gnome.enable) [ pkgs.nautilus ];
+    gnome.excludePackages = mkIf (!cfg.applications.nautilus && cfg.desktop.gnome.enable) [
+      pkgs.nautilus
+    ];
 
     sessionVariables = {
       # Fix for missing audio/video information in properties https://github.com/NixOS/nixpkgs/issues/53631
@@ -48,7 +50,7 @@ in
         show-hidden = true;
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" =
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/nautilus" =
         mkIf (cfg.desktop.gnome.enable)
           {
             binding = "<Super>e";
@@ -57,7 +59,7 @@ in
           };
 
       "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = mkIf (cfg.desktop.gnome.enable
-      ) [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
+      ) [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/nautilus/" ];
     };
 
     home.file = mkIf (cfg.applications.nautilus) {
