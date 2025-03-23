@@ -6,7 +6,6 @@
       applications = {
         aagl = mkOption { type = types.bool; };
         android-tools = mkOption { type = types.bool; };
-        brave = mkOption { type = types.bool; };
         celluloid = mkOption { type = types.bool; };
         clamav = mkOption { type = types.bool; };
 
@@ -18,8 +17,6 @@
         defaultBrowser = mkOption { type = types.str; };
         defaultEditor = mkOption { type = types.str; };
         extraPackages = mkOption { type = with types; listOf str; };
-        falkor = mkOption { type = types.bool; };
-        fwupd = mkOption { type = types.bool; };
 
         httpd = {
           enable = mkOption { type = types.bool; };
@@ -65,8 +62,6 @@
         };
 
         php = mkOption { type = types.bool; };
-        pitivi = mkOption { type = types.bool; };
-        protonvpn = mkOption { type = types.bool; };
         rust = mkOption { type = types.bool; };
 
         signal = {
@@ -95,7 +90,6 @@
         };
 
         sunshine = mkOption { type = types.bool; };
-        suyu = mkOption { type = types.bool; };
 
         tailscale = {
           enable = mkOption { type = types.bool; };
@@ -106,8 +100,6 @@
           enable = mkOption { type = types.bool; };
           deviceId = mkOption { type = types.str; };
         };
-
-        yazi = mkOption { type = types.bool; };
 
         zed = {
           enable = mkOption { type = types.bool; };
@@ -254,10 +246,7 @@
           steamdeck = mkOption { type = types.bool; };
         };
 
-        drivers = {
-          rtl8821ce = mkOption { type = types.bool; };
-          xpadneo = mkOption { type = types.bool; };
-        };
+        drivers.rtl8821ce = mkOption { type = types.bool; };
 
         gpus = {
           amd = {

@@ -1,16 +1,10 @@
 {
-  config,
-  inputs,
-  lib,
   pkgs,
   ...
 }:
 
 let
-  inherit (lib) optional;
-  cfg = config.icedos;
-
-  emulators = with pkgs; [
+  launchers = with pkgs; [
     # cemu # Wiuu
     # duckstation # PS1
     # heroic # Cross-platform Epic Games Launcher
@@ -39,7 +33,5 @@ in
       # wine # Compatibility layer capable of running Windows applications
       # winetricks # Wine prefix settings manager
     ]
-    ++ emulators
-    ++ optional (cfg.applications.falkor) inputs.falkor.packages.${pkgs.system}.default
-    ++ optional (cfg.applications.suyu) inputs.switch-emulators.packages.${pkgs.system}.suyu;
+    ++ launchers;
 }

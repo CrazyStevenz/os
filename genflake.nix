@@ -13,7 +13,6 @@ let
   aagl = cfg.applications.aagl;
   channels = cfg.system.channels;
   configurationLocation = fileContents "/tmp/configuration-location";
-  falkor = cfg.applications.falkor;
   gnome = cfg.desktop.gnome.enable;
   hyprland = cfg.desktop.hyprland.enable;
   isFirstBuild = !pathExists "/run/current-system/source" || cfg.system.forceFirstBuild;
@@ -23,10 +22,10 @@ let
     || cfg.system.kernel == "cachyos-server"
     || cfg.system.kernel == "valve";
 
+  librewolf = cfg.applications.librewolf;
   php = cfg.applications.php || (cfg.applications.httpd.enable && cfg.applications.httpd.php.enable);
   server = cfg.hardware.devices.server.enable;
   steam-session = cfg.applications.steam.session.enable;
-  suyu = cfg.applications.suyu;
   users = attrNames cfg.system.users;
   zen-browser = cfg.applications.zen-browser.enable;
 
@@ -119,18 +118,6 @@ in
         }
 
         ${
-          if (falkor) then
-            ''
-              falkor = {
-                url = "github:Team-Falkor/falkor";
-                inputs.nixpkgs.follows = "nixpkgs";
-              };
-            ''
-          else
-            ""
-        }
-
-        ${
           if (hyprland) then
             ''
               hyprpanel = {
@@ -154,16 +141,11 @@ in
             ""
         }
 
-        pipewire-screenaudio = {
-          url = "github:IceDBorn/pipewire-screenaudio";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         ${
-          if (suyu) then
+          if (librewolf) then
             ''
-              suyu = {
-                url = "git+https:///codeberg.org/K900/yuzu-flake";
+              pipewire-screenaudio = {
+                url = "github:IceDBorn/pipewire-screenaudio";
                 inputs.nixpkgs.follows = "nixpkgs";
               };
             ''
@@ -189,15 +171,13 @@ in
           home-manager,
           nerivations,
           nixpkgs,
-          pipewire-screenaudio,
           self,
           ${if (aagl) then ''aagl,'' else ""}
-          ${if (falkor) then ''falkor,'' else ""}
           ${if (hyprland) then ''hyprpanel,'' else ""}
           ${if (kernel || steam-session) then ''chaotic,'' else ""}
+          ${if (librewolf) then ''pipewire-screenaudio,'' else ""}
           ${if (php) then ''phps,'' else ""}
           ${if (steam-session) then ''steam-session,'' else ""}
-          ${if (suyu) then ''suyu,'' else ""}
           ${if (zen-browser) then ''zen-browser,'' else ""}
           ...
         }@inputs:

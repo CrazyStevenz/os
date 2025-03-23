@@ -38,9 +38,10 @@
       home-manager,
       nerivations,
       nixpkgs,
-      pipewire-screenaudio,
       self,
       aagl,
+
+      pipewire-screenaudio,
 
       ...
     }@inputs:
