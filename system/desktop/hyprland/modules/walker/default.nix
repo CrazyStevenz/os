@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (lib) mapAttrs;
+  inherit (lib) mapAttrs replaceStrings;
   cfg = config.icedos;
   accentColor = cfg.internals.accentColor;
   package = pkgs.walker;
@@ -25,7 +25,15 @@ in
     ];
 
     home.file = {
-      ".config/walker/config.json".source = "${package.src}/internal/config/config.default.json";
+      ".config/walker/config.toml" = {
+        text =
+          replaceStrings
+            [ ''app_launch_prefix = ""'' ]
+            [ ''app_launch_prefix = "${pkgs.uwsm}/bin/uwsm app -- "'' ]
+            (builtins.readFile ("${package.src}/internal/config/config.default.toml"));
+
+        force = true;
+      };
 
       ".config/walker/themes/theme.css".text = ''
         #window,
