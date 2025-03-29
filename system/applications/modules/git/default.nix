@@ -13,10 +13,6 @@ in
     programs.git = {
       enable = true;
 
-      extraConfig = {
-        pull.rebase = true;
-      };
-
       userName = "${cfg.system.users.${user}.applications.git.username}";
       userEmail = "${cfg.system.users.${user}.applications.git.email}";
     };

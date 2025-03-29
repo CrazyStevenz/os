@@ -117,9 +117,19 @@
           enable = mkOption { type = types.bool; };
           privacy = mkOption { type = types.bool; };
 
-          pwas = {
-            enable = mkOption { type = types.bool; };
-            sites = mkOption { type = with types; listOf str; };
+          profiles = mkOption {
+            type = types.listOf (
+              types.submodule {
+                options = {
+                  default = mkOption { type = types.bool; };
+                  exec = mkOption { type = types.str; };
+                  icon = mkOption { type = types.str; };
+                  name = mkOption { type = types.str; };
+                  pwa = mkOption { type = types.bool; };
+                  sites = mkOption { type = with types; listOf str; };
+                };
+              }
+            );
           };
         };
       };
@@ -210,12 +220,6 @@
       hardware = {
         bluetooth = mkOption { type = types.bool; };
 
-        btrfs.compression = {
-          enable = mkOption { type = types.bool; };
-          mounts = mkOption { type = types.bool; };
-          root = mkOption { type = types.bool; };
-        };
-
         cpus = {
           amd = {
             enable = mkOption { type = types.bool; };
@@ -224,6 +228,8 @@
               enable = mkOption { type = types.bool; };
               value = mkOption { type = types.str; };
             };
+
+            zenpower = mkOption { type = types.bool; };
           };
 
           intel = mkOption {
@@ -289,9 +295,25 @@
           hosts = mkOption { type = types.bool; };
           ipv6 = mkOption { type = types.bool; };
           vpnExcludeIp = mkOption { type = types.str; };
+
+          wg-quick = {
+            enable = mkOption { type = types.bool; };
+            interfaces = mkOption { type = with types; listOf str; };
+          };
         };
 
-        mounts = mkOption { type = types.bool; };
+        mounts = mkOption {
+          type = types.listOf (
+            types.submodule {
+              options = {
+                path = mkOption { type = types.str; };
+                device = mkOption { type = types.str; };
+                fsType = mkOption { type = types.str; };
+                flags = mkOption { type = with types; listOf str; };
+              };
+            }
+          );
+        };
       };
 
       system = {

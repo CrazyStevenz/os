@@ -106,8 +106,18 @@ mode = "system" # Options: 'system', 'dark', 'light'
 enable = false
 privacy = false
 
-[icedos.applications.zen-browser.pwas]
-enable = false
+[[icedos.applications.zen-browser.profiles]]
+default = false
+exec = "default"
+pwa = false
+
+[[icedos.applications.zen-browser.profiles]]
+default = false
+exec = "zen-social"
+pwa = true
+icon = "zen"
+name = "Zen Social"
+
 sites = [
   "https://mail.proton.me",
   "https://develop.element.io",
@@ -163,7 +173,6 @@ followMouse = 2 # Options: https://wiki.hyprland.org/Configuring/Variables/#foll
 hyprspace = false
 
 startupScript = """
-run protonvpn-app
 run zen
 run zen-pwas
 nautilus -w &
@@ -179,7 +188,7 @@ windowRules = [
   "workspace 1 silent, class:^(zen)$",
   "workspace 2 silent, class:^(dev.zed.Zed)$",
   "workspace 3 silent, class:^(steam_app_.*)$, title:^((?!notificationtoasts.*).)*$",
-  "workspace 11 silent, class:^(de.schmidhuberj.Flare|pwas)$",
+  "workspace 11 silent, class:^(de.schmidhuberj.Flare|zen-social)$",
   "workspace 12 silent, class:^(Steam|steam)$, title:^((?!notificationtoasts.*).)*$",
   "workspace 12 silent, title:^(.*Steam[A-Za-z0-9\\s]*)$",
   "workspace 13 silent, class:^(org\\.gnome\\.Nautilus)$",
@@ -207,18 +216,62 @@ networkUsageThreshold = 1_000_000 # Network usage to inhibit lock in bytes/s
 
 [icedos.hardware]
 bluetooth = true
-mounts = true # Set to false if hardware/mounts.nix is not correctly configured
 
-[icedos.hardware.btrfs.compression]
-enable = true
-mounts = true # Use btrfs compression for mounted drives
-root = true # Use btrfs compression for / (root)
+[[icedos.hardware.mounts]]
+path = "/"
+device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834"
+fsType = "btrfs"
+flags = [
+  "compress=zstd",
+  "nofail",
+  "x-gvfs-show",
+]
+
+[[icedos.hardware.mounts]]
+path = "/mnt/Nvme"
+device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52"
+fsType = "btrfs"
+flags = [
+  "compress=zstd",
+  "nofail",
+  "x-gvfs-show",
+]
+
+[[icedos.hardware.mounts]]
+path = "/mnt/SSDGames"
+device = "/dev/disk/by-uuid/2b04380c-cefe-4915-a1f4-26bef6ebc360"
+fsType = "btrfs"
+flags = [
+  "compress=zstd",
+  "nofail",
+  "x-gvfs-show",
+]
+
+[[icedos.hardware.mounts]]
+path = "/mnt/HDDGames"
+device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
+fsType = "btrfs"
+flags = [
+  "compress=zstd",
+  "nofail",
+  "x-gvfs-show",
+]
+
+# [[icedos.hardware.mounts]]
+# path = "/mnt/Windows"
+# device = "/dev/disk/by-uuid/3032AC4732AC13BE"
+# fsType = "ntfs"
+# flags = [
+#   "nofail",
+#   "x-gvfs-show"
+# ]
 
 [icedos.hardware.cpus]
 intel = false
 
 [icedos.hardware.cpus.amd]
 enable = true
+zenpower = true # Report watt usage for apps e.g. mangohud
 
 [icedos.hardware.cpus.amd.undervolt]
 enable = true
@@ -277,6 +330,13 @@ hostname = "desktop"
 hosts = false
 ipv6 = false
 vpnExcludeIp = "192.168.1.200"
+
+[icedos.hardware.networking.wg-quick]
+enable = true
+
+interfaces = [
+  "desktop-ro-69",
+]
 
 [icedos.system]
 channels = [] # https://github.com/NixOS/nixpkgs/branches/active
