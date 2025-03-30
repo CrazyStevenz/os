@@ -13,7 +13,6 @@ extraPackages = [
   "nodejs_20", # Node package manager
   "parabolic", # Download web video and audio
   "pnpm", # Fast, disk space efficient package manager for JavaScript
-  "protonvpn-gui", # Proton VPN GTK app
   "spotify", # Music streaming service
   "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
@@ -353,7 +352,7 @@ username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
 [icedos.system.users.stef.desktop.gnome]
-startupScript = "protonvpn-app & steam & signal-desktop"
+startupScript = "steam & signal-desktop"
 
 [icedos.system.users.stef.desktop.gnome.pinnedApps.arcmenu]
 enable = true
@@ -399,7 +398,7 @@ username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
 [icedos.system.users.work.desktop.gnome]
-startupScript = "protonvpn-app & discordcanary & slack"
+startupScript = "discordcanary & slack"
 
 [icedos.system.users.work.desktop.gnome.pinnedApps.arcmenu]
 enable = true
