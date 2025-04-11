@@ -15,11 +15,12 @@ let
 
   cfg = config.icedos;
 
-  package = (
-    pkgs.librewolf.override {
-      nativeMessagingHosts = [ inputs.pipewire-screenaudio.packages.${pkgs.system}.default ];
-    }
-  );
+  package = pkgs.librewolf;
+  # (
+  #   pkgs.librewolf.override {
+  #     nativeMessagingHosts = [ inputs.pipewire-screenaudio.packages.${pkgs.system}.default ];
+  #   }
+  # );
 
   getModules =
     path:

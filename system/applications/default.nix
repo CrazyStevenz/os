@@ -34,7 +34,7 @@ in
     [
       efibootmgr # Edit EFI entries
       killall # Tool to kill all programs matching process name
-      lazygit # Git TUI
+      # lazygit # Git TUI
       ncdu # Terminal disk analyzer
       nix-health # Check system health
       nixfmt-rfc-style # A nix formatter
