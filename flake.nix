@@ -20,11 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    windsurf = {
-      url = "github:KenMacD/etc-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Apps
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
@@ -42,7 +37,6 @@
     {
       home-manager,
       nerivations,
-      windsurf,
       nixpkgs,
       pipewire-screenaudio,
       self,
@@ -113,10 +107,6 @@
 
           home-manager.nixosModules.home-manager
           nerivations.nixosModules.default
-
-          ({
-            environment.systemPackages = [ windsurf.packages.${system}.windsurf ];
-          })
 
           ./system/desktop
 

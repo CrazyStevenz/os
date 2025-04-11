@@ -93,11 +93,6 @@ in
           inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        windsurf = {
-          url = "github:KenMacD/etc-nixos";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         ${
           if (cfg.system.kernel == "valve" || steam-session) then
             ''
@@ -193,7 +188,6 @@ in
         {
           home-manager,
           nerivations,
-          windsurf,
           nixpkgs,
           pipewire-screenaudio,
           self,
@@ -271,12 +265,6 @@ in
 
               home-manager.nixosModules.home-manager
               nerivations.nixosModules.default
-
-              (
-                {
-                  environment.systemPackages = [windsurf.packages.''${system}.windsurf];
-                }
-              )
 
               ${concatImapStrings (i: channel: ''
                 (
