@@ -35,7 +35,6 @@ in
       killall # Tool to kill all programs matching process name
       lazygit # Git TUI
       ncdu # Terminal disk analyzer
-      nix-health # Check system health
       ntfs3g # Support NTFS drives
       p7zip # 7zip
       unrar # Support opening rar files
@@ -43,6 +42,8 @@ in
       wget # Terminal downloader
     ]
     ++ (pkgMapper cfg.applications.extraPackages);
+
+  nixpkgs.config.permittedInsecurePackages = cfg.applications.insecurePackages;
 
   environment.variables = {
     PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";

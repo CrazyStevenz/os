@@ -25,14 +25,11 @@ in
     systemPackages = with pkgs; [
       baobab # Disk usage analyser
       file-roller # Archive file manager
-      gnome-calculator # Calculator
       gnome-disk-utility # Disks manager
       gnome-keyring # Keyring daemon
       gnome-online-accounts # Nextcloud integration
       gnome-themes-extra # Adwaita GTK theme
       hyprshade # Shader config tool
-      slurp # Monitor selector
-      swappy # Edit screenshots
       wdisplays # Displays manager
     ];
   };
