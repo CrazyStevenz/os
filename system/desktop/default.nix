@@ -6,13 +6,13 @@
 }:
 
 let
-  inherit (lib) filterAttrs mkIf;
+  inherit (lib) attrNames filterAttrs mkIf;
   cfg = config.icedos;
 
   getModules =
     path:
-    builtins.map (dir: ./. + ("/modules/" + dir)) (
-      builtins.attrNames (filterAttrs (_: v: v == "directory") (builtins.readDir path))
+    map (dir: ./. + ("/modules/" + dir)) (
+      attrNames (filterAttrs (_: v: v == "directory") (builtins.readDir path))
     );
 
   # Use monitor configuration for GDM (desktop monitor primary). See https://discourse.nixos.org/t/gdm-monitor-configuration/6356/4
