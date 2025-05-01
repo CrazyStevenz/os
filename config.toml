@@ -356,7 +356,7 @@ list = [
 ]
 
 [icedos.system.users.stef.desktop.idle.sd-inhibitor]
-enable = true
+enable = false
 
 [icedos.system.users.stef.desktop.idle.sd-inhibitor.watchers.cpu]
 enable = true
