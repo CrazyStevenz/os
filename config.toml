@@ -224,6 +224,12 @@ fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
 [[icedos.hardware.mounts]]
+path = "/mnt/SamsungSSD"
+device = "/dev/disk/by-uuid/bb93c901-8df3-4e23-8029-b1816a66ef58"
+fsType = "btrfs"
+flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+
+[[icedos.hardware.mounts]]
 path = "/mnt/HDDGames"
 device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
 fsType = "btrfs"
