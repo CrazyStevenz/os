@@ -62,7 +62,7 @@
             {
               options.icedos.configurationLocation = mkOption {
                 type = types.str;
-                default = "/home/work/code/IceDOS";
+                default = "/home/work/code/os";
               };
             }
           )
