@@ -23,7 +23,6 @@ in
       flac # Library and tools for encoding and decoding the FLAC lossless audio file format
       fragments # BitTorrent client
       # ghex # HEX Editor
-      gimp # Image editor
       newsflash # RSS reader
       nicotine-plus # p2p music sharing platform
       # protontricks # Winetricks for proton prefixes

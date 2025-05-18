@@ -5,6 +5,7 @@ extraPackages = [
   "curtail", # Image compressor
   "discord-canary", # Bleeding edge version of Discord
   # "eartag", # Simple music tag editor
+  "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
