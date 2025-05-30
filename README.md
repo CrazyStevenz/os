@@ -10,9 +10,12 @@ This is a NixOS configuration project that aims to create a highly opinionated g
 ## Install
 
 ```bash
+mkdir -p ~/.config/nix
+echo "experimental-features = flakes nix-command" > ~/.config/nix/nix.conf
 mkdir code
 cd code
 nix-shell -p git
+
 git clone https://github.com/CrazyStevenz/os
 cd os
 git checkout os

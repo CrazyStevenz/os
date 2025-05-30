@@ -29,12 +29,12 @@ defaultEditor = "codium" # Options: 'codium', 'zed'
 input-remapper = false
 lact = true
 librewolf = true
+mission-center = true
 nautilus = true
 php = false
 rust = false
 solaar = true
 ssh = true
-sunshine = false
 
 [icedos.applications.codium]
 enable = true
@@ -58,7 +58,7 @@ virtualCamera = false
 
 [icedos.applications.ollama]
 enable = false
-models = ["qwen2.5-coder"] # https://ollama.com/library
+models = ["qwen2.5-coder:latest"] # https://ollama.com/library
 rocmOverrideGfx = "10.3.0" # https://github.com/ollama/ollama/blob/main/docs/gpu.md#amd-radeon
 
 [icedos.applications.signal]
@@ -77,6 +77,10 @@ user = "stef"
 [icedos.applications.steam.session.autoStart]
 enable = false
 desktopSession = "hyprland"
+
+[icedos.applications.sunshine]
+enable = false
+autostart = false
 
 [icedos.applications.tailscale]
 enable = false
@@ -115,9 +119,6 @@ sites = [
   "https://develop.element.io",
   "https://discord.com/app",
 ]
-
-[icedos.bootloader]
-animation = false # Hides console and displays a loading interface based on OEM on boot
 
 [icedos.bootloader.grub]
 enable = false
@@ -166,18 +167,17 @@ enable = false
 followMouse = 2 # Options: https://wiki.hyprland.org/Configuring/Variables/#follow-mouse-cursor
 secondsToLowerBrightness = 60
 startupScript = """
-run zen
-run zen-social
 nautilus -w &
 nautilus -w &
-run steam
-run signal-desktop
-run zeditor
+signal-desktop &
+steam &
+zeditor &
+zen-beta --no-remote -P default --name zen-startup &
+zen-social &
 """
 windowRules = [
-  "workspace 1 silent, class:^(zen-beta)$",
+  "workspace 1 silent, class:^(zen-startup)$",
   "workspace 2 silent, class:^(dev.zed.Zed)$",
-  "workspace 3 silent, class:^(steam_app_.*)$, title:^((?!notificationtoasts.*).)*$",
   "workspace 11 silent, class:^(signal|zen-social)$",
   "workspace 12 silent, class:^(Steam|steam)$, title:^((?!notificationtoasts.*).)*$",
   "workspace 12 silent, title:^(.*Steam[A-Za-z0-9\\s]*)$",
@@ -259,17 +259,23 @@ steamdeck = false
 [icedos.hardware.drivers]
 rtl8821ce = false # Use the unofficial RTL8821CE driver
 
-[icedos.hardware.gpus.amd]
+[icedos.hardware.graphics]
+enable = true
+
+[icedos.hardware.graphics.amd]
 enable = true
 rocm = false
 
-[icedos.hardware.gpus.nvidia]
+[icedos.hardware.graphics.mesa]
+unstable = false
+
+[icedos.hardware.graphics.nvidia]
 enable = false
 beta = false
 cuda = false
 openDrivers = true
 
-[icedos.hardware.gpus.nvidia.powerLimit]
+[icedos.hardware.graphics.nvidia.powerLimit]
 enable = true
 value = 242
 
