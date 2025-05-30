@@ -29,6 +29,7 @@ in
       # protonup-qt # Install and manage Proton-GE and Luxtorpeda for Steam and Wine-GE
       spek # Audio file spectrogram analysis
       stremio # Media streaming platform
+      umu-launcher
       # wine # Compatibility layer capable of running Windows applications
       # winetricks # Wine prefix settings manager
     ]

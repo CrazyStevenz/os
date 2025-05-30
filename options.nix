@@ -56,6 +56,7 @@ in
           hideDecorations = mkBoolOption;
         };
 
+        lact = mkBoolOption;
         librewolf = mkBoolOption;
 
         mangohud = {
@@ -73,6 +74,12 @@ in
         obs-studio = {
           enable = mkBoolOption;
           virtualCamera = mkBoolOption;
+        };
+
+        ollama = {
+          enable = mkBoolOption;
+          models = mkStrListOption;
+          rocmOverrideGfx = mkStrOption;
         };
 
         php = mkBoolOption;
@@ -117,7 +124,6 @@ in
 
         zed = {
           enable = mkBoolOption;
-          ollamaSupport = mkBoolOption;
           vim = mkBoolOption;
 
           theme = {

@@ -27,6 +27,7 @@ clamav = false
 defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
 input-remapper = false
+lact = true
 librewolf = true
 nautilus = true
 php = false
@@ -55,6 +56,11 @@ applet = true
 enable = false
 virtualCamera = false
 
+[icedos.applications.ollama]
+enable = false
+models = ["qwen2.5-coder"] # https://ollama.com/library
+rocmOverrideGfx = "10.3.0" # https://github.com/ollama/ollama/blob/main/docs/gpu.md#amd-radeon
+
 [icedos.applications.signal]
 enable = true
 package = "signal" # Options: 'flare', 'signal'
@@ -73,7 +79,7 @@ enable = false
 desktopSession = "hyprland"
 
 [icedos.applications.tailscale]
-enable = true
+enable = false
 enableTrayscale = false
 
 [icedos.applications.valent]
@@ -82,7 +88,6 @@ deviceId = "901524a4_c7c0_407e_9903_431abce54131"
 
 [icedos.applications.zed]
 enable = false
-ollamaSupport = false
 vim = false
 
 [icedos.applications.zed.theme]
@@ -112,7 +117,7 @@ sites = [
 ]
 
 [icedos.bootloader]
-animation = true # Hides console and displays a loading interface based on OEM on boot
+animation = false # Hides console and displays a loading interface based on OEM on boot
 
 [icedos.bootloader.grub]
 enable = false
@@ -166,21 +171,17 @@ run zen-social
 nautilus -w &
 nautilus -w &
 run steam
-run flare
+run signal-desktop
 run zeditor
-kitty --class task-managers btop &
-kitty --class terminals tmux new -s terminals \\; split-window -v \\; select-pane -U \\; split-window -h \\; select-pane -D &
 """
 windowRules = [
   "workspace 1 silent, class:^(zen-beta)$",
   "workspace 2 silent, class:^(dev.zed.Zed)$",
   "workspace 3 silent, class:^(steam_app_.*)$, title:^((?!notificationtoasts.*).)*$",
-  "workspace 11 silent, class:^(de.schmidhuberj.Flare|zen-social)$",
+  "workspace 11 silent, class:^(signal|zen-social)$",
   "workspace 12 silent, class:^(Steam|steam)$, title:^((?!notificationtoasts.*).)*$",
   "workspace 12 silent, title:^(.*Steam[A-Za-z0-9\\s]*)$",
   "workspace 13 silent, class:^(org\\.gnome\\.Nautilus)$",
-  "workspace 14 silent, class:^(task-managers)$",
-  "workspace 15 silent, class:^(terminals)$",
 ]
 
 [icedos.desktop.hyprland.settings.animations]

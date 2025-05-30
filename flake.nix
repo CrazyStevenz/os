@@ -1,11 +1,8 @@
 {
   inputs = {
-    # Update channels
+    # Package repositories
 
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Modules
     home-manager = {
