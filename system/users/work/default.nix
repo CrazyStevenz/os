@@ -5,7 +5,7 @@
     # beekeeper-studio # SQL client
     slack # Desktop client for Slack
     watchman # Watches files and takes action when they change
-    windsurf # Agentic IDE powered by AI Flow paradigm
+    # windsurf # Agentic IDE powered by AI Flow paradigm
   ];
 
   services.postgresql = {

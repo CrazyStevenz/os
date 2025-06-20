@@ -123,18 +123,6 @@ in
         }
 
         ${
-          if (librewolf) then
-            ''
-              pipewire-screenaudio = {
-                url = "github:IceDBorn/pipewire-screenaudio";
-                inputs.nixpkgs.follows = "nixpkgs";
-              };
-            ''
-          else
-            ""
-        }
-
-        ${
           if (zen-browser) then
             ''
               zen-browser = {
@@ -156,7 +144,7 @@ in
           ${if (aagl) then ''aagl,'' else ""}
           ${if (hyprland) then ''hyprpanel,'' else ""}
           ${if (chaotic) then ''chaotic,'' else ""}
-          ${if (librewolf) then ''pipewire-screenaudio,'' else ""}
+
           ${if (steam-session) then ''steam-session,'' else ""}
           ${if (zen-browser) then ''zen-browser,'' else ""}
           ...

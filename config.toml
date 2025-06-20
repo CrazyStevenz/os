@@ -2,20 +2,21 @@
 extraPackages = [
   # "audacity", # Sound editor with graphical UI
   # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-  "curtail", # Image compressor
+  # "curtail", # Image compressor
   "discord-canary", # Bleeding edge version of Discord
   # "eartag", # Simple music tag editor
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
-  "handbrake", # Tool for converting video files and ripping DVDs
+  # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # Professional IDE for Web and JavaScript development
-  "mousai", # Song recognizer
+  # "mousai", # Song recognizer
   # "nextcloud-client", # Nextcloud themed desktop client
   "nodejs_20", # Node package manager
   "parabolic", # Download web video and audio
-  "pnpm", # Fast, disk space efficient package manager for JavaScript
-  "spotify", # Music streaming service
-  "sticky-notes", # Simple sticky notes app
+  # "pnpm", # Fast, disk space efficient package manager for JavaScript
+  "protonvpn-gui",
+  # "spotify", # Music streaming service
+  # "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "warp" # File sync
 ]
@@ -27,13 +28,13 @@ clamav = false
 defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
 input-remapper = false
-lact = true
+lact = false
 librewolf = true
-mission-center = true
+mission-center = false
 nautilus = true
 php = false
 rust = false
-solaar = true
+solaar = false
 ssh = true
 
 [icedos.applications.codium]
@@ -45,7 +46,7 @@ enable = true
 hideDecorations = false # Hide top bar
 
 [icedos.applications.mangohud]
-enable = true
+enable = false
 maxFpsLimit = 165 # Use 0 for unlimited
 
 [icedos.applications.network-manager]
@@ -66,7 +67,7 @@ enable = true
 package = "signal" # Options: 'flare', 'signal'
 
 [icedos.applications.steam]
-enable = true
+enable = false
 beta = true
 downloadsWorkaround = true
 
@@ -126,14 +127,14 @@ device = "/dev/sda"
 
 [icedos.bootloader.systemd-boot]
 enable = true
-mountPoint = "/boot"
+mountPoint = "/boot/efi"
 
 [icedos.desktop]
 accentColor = "#913A8B" # With gnome enabled this is getting overriden by gnome's selected accent color hex code
 
 [icedos.desktop.autologin]
 enable = true
-user = "icedborn"
+user = "work"
 
 [icedos.desktop.gdm]
 enable = true
@@ -209,56 +210,29 @@ bluetooth = true
 
 [[icedos.hardware.mounts]]
 path = "/"
-device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834"
+device = "/dev/disk/by-uuid/a96c8707-e60d-4a63-84e4-a09775df2bec"
 fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
-
-[[icedos.hardware.mounts]]
-path = "/mnt/Nvme"
-device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
-
-[[icedos.hardware.mounts]]
-path = "/mnt/SSDGames"
-device = "/dev/disk/by-uuid/bb93c901-8df3-4e23-8029-b1816a66ef58"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
-
-[[icedos.hardware.mounts]]
-path = "/mnt/HDDGames"
-device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
-
-# [[icedos.hardware.mounts]]
-# path = "/mnt/Windows"
-# device = "/dev/disk/by-uuid/3032AC4732AC13BE"
-# fsType = "ntfs"
-# flags = [
-#   "nofail",
-#   "x-gvfs-show"
-# ]
 
 [icedos.hardware.cpus]
 intel = false
 
 [icedos.hardware.cpus.amd]
 enable = true
-zenpower = true # Report watt usage for apps e.g. mangohud
+zenpower = false # Report watt usage for apps e.g. mangohud
 
 [icedos.hardware.cpus.amd.undervolt]
-enable = true
+enable = false
 value = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.hardware.devices]
-laptop = false
+laptop = true
 server = false
 steamdeck = false
 
 [icedos.hardware.drivers]
 rtl8821ce = false # Use the unofficial RTL8821CE driver
-xpadneo = true # Xinput bluetooth controller driver
+xpadneo = false # Xinput bluetooth controller driver
 
 [icedos.hardware.graphics]
 enable = true
@@ -281,37 +255,25 @@ enable = true
 value = 242
 
 [[icedos.hardware.monitors]]
-name = "DP-1"
+name = "eDP-1"
 disable = false
-resolution = "3440x1440"
-refreshRate = 164.90
+resolution = "1920x1080"
+refreshRate = 59.98
 position = "0x0"
 scaling = 1
 rotation = 0
 tenBit = false
 
-[[icedos.hardware.monitors]]
-name = "DP-2"
-disable = false
-resolution = "1920x1080"
-refreshRate = 60
-position = "3440x360"
-scaling = 1
-rotation = 0
-tenBit = false
-
 [icedos.hardware.networking]
-hostname = "desktop"
+hostname = "laptop"
 hosts = ""
 ipv6 = false
-vpnExcludeIp = "192.168.1.200"
+vpnExcludeIp = "192.168.1.201"
 
 [icedos.hardware.networking.wg-quick]
-enable = true
+enable = false
 
-interfaces = [
-  "desktop-ro-69",
-]
+interfaces = []
 
 [icedos.system]
 channels = [] # https://github.com/NixOS/nixpkgs/branches/active
@@ -319,7 +281,7 @@ forceFirstBuild = false
 home = "/home"
 kernel = "zen" # Options: 'cachyos', 'cachyos-server', 'latest', 'lts', 'valve', 'zen'
 swappiness = 1
-version = "23.05" # Do not change without checking the docs (config.system.stateVersion)
+version = "22.05" # Do not change without checking the docs (config.system.stateVersion)
 
 [icedos.system.generations]
 bootEntries = 30
@@ -329,72 +291,6 @@ automatic = false
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
 interval = "Mon *-*-* 00:00:00" # Format(https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html)
-
-[icedos.system.users.stef]
-description = "Stefanos"
-type = "main" # Options: 'main', 'work'
-
-[icedos.system.users.stef.applications.codium]
-autoSave = "onFocusChange" # Options: 'off', 'afterDelay', 'onFocusChange', 'onWindowChange'
-formatOnSave = true
-formatOnPaste = false
-
-[icedos.system.users.stef.applications.git]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
-
-[icedos.system.users.stef.desktop.gnome]
-startupScript = "steam & signal-desktop"
-
-[icedos.system.users.stef.desktop.gnome.pinnedApps.arcmenu]
-enable = true
-list = [
-  "codium.desktop",
-  "org.nicotine_plus.Nicotine.desktop",
-  "spek.desktop",
-]
-
-# Set pinned apps for gnome shell (will be used by dash-to-panel if enabled)
-[icedos.system.users.stef.desktop.gnome.pinnedApps.shell]
-enable = true
-list = [
-  "steam.desktop",
-  "discord-canary.desktop",
-  "signal.desktop",
-  "librewolf.desktop",
-]
-
-[icedos.system.users.stef.desktop.idle.sd-inhibitor]
-enable = false
-
-[icedos.system.users.stef.desktop.idle.sd-inhibitor.watchers.cpu]
-enable = true
-threshold = 60 # CPU usage to inhibit lock in percentage
-
-[icedos.system.users.stef.desktop.idle.sd-inhibitor.watchers.disk]
-enable = true
-threshold = 10 # Disk usage to inhibit lock in MB/s
-
-[icedos.system.users.stef.desktop.idle.sd-inhibitor.watchers.network]
-enable = true
-threshold = 1_000_000 # Network usage to inhibit lock in bytes/s
-
-[icedos.system.users.stef.desktop.idle.sd-inhibitor.watchers.pipewire]
-enable = true
-inputsToIgnore = ["Noise Canceling source", "Peak detect", "cava"]
-outputsToIgnore = ["Discord", "Element"]
-
-[icedos.system.users.stef.desktop.idle.lock]
-enable = false
-seconds = 180
-
-[icedos.system.users.stef.desktop.idle.disableMonitors]
-enable = true
-seconds = 300
-
-[icedos.system.users.stef.desktop.idle.suspend]
-enable = false
-seconds = 900
 
 [icedos.system.users.work]
 description = "Work"
@@ -410,7 +306,7 @@ username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
 [icedos.system.users.work.desktop.gnome]
-startupScript = "discordcanary & slack"
+startupScript = "protonvpn-app & discordcanary & slack"
 
 [icedos.system.users.work.desktop.gnome.pinnedApps.arcmenu]
 enable = true
@@ -428,7 +324,7 @@ list = [
 ]
 
 [icedos.system.users.work.desktop.idle.sd-inhibitor]
-enable = true
+enable = false
 
 [icedos.system.users.work.desktop.idle.sd-inhibitor.watchers.cpu]
 enable = true
