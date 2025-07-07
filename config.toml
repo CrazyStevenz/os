@@ -4,7 +4,7 @@ extraPackages = [
   # "bun", # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
   "curtail", # Image compressor
   "discord-canary", # Bleeding edge version of Discord
-  # "eartag", # Simple music tag editor
+  "eartag", # Simple music tag editor
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   "handbrake", # Tool for converting video files and ripping DVDs
