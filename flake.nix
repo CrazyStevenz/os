@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lsfg-vk = {
+      url = "github:pabloaul/lsfg-vk-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     pipewire-screenaudio = {
       url = "github:IceDBorn/pipewire-screenaudio";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +44,7 @@
       aagl,
 
       pipewire-screenaudio,
+      lsfg-vk,
 
       ...
     }@inputs:
@@ -119,6 +125,8 @@
             nix.settings = aagl.nixConfig; # Set up Cachix
             programs.anime-game-launcher.enable = true; # Adds launcher and /etc/hosts rules
           }
+
+          lsfg-vk.nixosModules.default
 
           ./system/desktop/gnome
 

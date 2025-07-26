@@ -5,6 +5,7 @@ extraPackages = [
   "curtail", # Image compressor
   "discord-canary", # Bleeding edge version of Discord
   "eartag", # Simple music tag editor
+  "faugus-launcher",
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   "handbrake", # Tool for converting video files and ripping DVDs
@@ -26,12 +27,14 @@ celluloid = true
 clamav = false
 defaultBrowser = "librewolf" # Options: 'librewolf', 'zen'
 defaultEditor = "codium" # Options: 'codium', 'zed'
+gamescope = false
 input-remapper = false
 lact = true
 librewolf = true
 mission-center = true
 nautilus = true
 php = false
+proton-launch = true
 rust = false
 solaar = true
 ssh = true
@@ -43,6 +46,10 @@ zoomLevel = 1
 [icedos.applications.kitty]
 enable = true
 hideDecorations = false # Hide top bar
+
+[icedos.applications.lsfg-vk]
+enable = true
+dllPath = "/home/stef/Downloads/Lossless.dll"
 
 [icedos.applications.mangohud]
 enable = true
@@ -67,7 +74,7 @@ package = "signal" # Options: 'flare', 'signal'
 
 [icedos.applications.steam]
 enable = true
-beta = true
+beta = false
 downloadsWorkaround = true
 
 [icedos.applications.steam.session]
