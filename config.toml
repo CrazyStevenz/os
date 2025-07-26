@@ -74,7 +74,7 @@ package = "signal" # Options: 'flare', 'signal'
 
 [icedos.applications.steam]
 enable = true
-beta = false
+beta = true
 downloadsWorkaround = true
 
 [icedos.applications.steam.session]
