@@ -59,11 +59,7 @@ in
 
         lact = mkBoolOption;
         librewolf = mkBoolOption;
-
-        lsfg-vk = {
-          enable = mkBoolOption;
-          dllPath = mkStrOption;
-        };
+        lsfg-vk = mkBoolOption;
 
         mangohud = {
           enable = mkBoolOption;
@@ -256,7 +252,7 @@ in
               value = mkStrOption;
             };
 
-            zenpower = mkBoolOption;
+            zenergy = mkBoolOption;
           };
 
           intel = mkBoolOption;

@@ -16,6 +16,7 @@ let
   chaotic = (
     graphics.mesa.unstable
     || cfg.system.kernel == "cachyos"
+    || cfg.system.kernel == "cachyos-rc"
     || cfg.system.kernel == "cachyos-server"
     || cfg.system.kernel == "valve"
     || steam-session
@@ -27,7 +28,7 @@ let
   hyprland = cfg.desktop.hyprland.enable;
   isFirstBuild = !pathExists "/run/current-system/source" || cfg.system.forceFirstBuild;
   librewolf = cfg.applications.librewolf;
-  lsfg-vk = cfg.applications.lsfg-vk.enable;
+  lsfg-vk = cfg.applications.lsfg-vk;
   server = cfg.hardware.devices.server;
   steam-session = cfg.applications.steam.session.enable;
   users = attrNames cfg.system.users;
@@ -211,7 +212,7 @@ in
                     ./hardware
                     ./internals.nix
                     ./options.nix
-                  ] ++ getModules (./system) ++ getModules (./hardware);
+                  ] ++ getModules (./system) ++ getModules (./hardware) ++ getModules(./private);
 
                   config.system.stateVersion = "${cfg.system.version}";
                 }

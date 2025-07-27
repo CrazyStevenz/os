@@ -21,10 +21,12 @@ let
   proton-launch = (
     pkgs.writeShellScriptBin "proton-launch" ''
       GAMEMODE="${pkgs.gamemode}/bin/gamemoderun"
-      SDL="--backend sdl"
+      PROTON_ENABLE_HIDRAW=0
       PROTON_ENABLE_WAYLAND=1
-      PROTON_USE_NTSYNC=1
+      PROTON_PREFER_SDL=1
       PROTON_USE_WOW64=1
+      SDL="--backend sdl"
+      SteamDeck=0
 
       ${
         if (cfg.applications.mangohud.enable) then
@@ -32,16 +34,6 @@ let
             MANGOAPP="--mangoapp"
             MANGOHUD="${pkgs.mangohud}/bin/mangohud"
             MANGOHUD_CONFIGFILE="/home/$USER/.config/MangoHud/MangoHud.conf"
-          ''
-        else
-          ""
-      }
-
-      ${
-        if (cfg.applications.lsfg-vk.enable) then
-          ''
-            ENABLE_LSFG=1
-            LSFG_PERF_MODE=1
           ''
         else
           ""
@@ -64,12 +56,20 @@ let
 
       while [[ $# -gt 0 ]]; do
         case "$1" in
+          --deck)
+            SteamDeck=1
+            shift
+            ;;
           --fsr4)
             PROTON_FSR4_UPGRADE=1
             shift
             ;;
           --hdr)
             PROTON_ENABLE_HDR=1
+            shift
+            ;;
+          --hidraw)
+            PROTON_ENABLE_HIDRAW=1
             shift
             ;;
           --gamescope)
@@ -101,10 +101,6 @@ let
             GAMEMODE=""
             shift
             ;;
-          --no-lsfg)
-            ENABLE_LSFG=0
-            shift
-            ;;
           --no-mangohud)
             MANGOHUD=""
             MANGOAPP=""
@@ -112,6 +108,7 @@ let
             ;;
           --no-sdl)
             SDL=""
+            PROTON_PREFER_SDL=0
             shift
             ;;
           --no-wayland)
@@ -144,7 +141,16 @@ let
 
       SCB_GAMESCOPE_ARGS="$DEFAULT_HEIGHT $DEFAULT_REFRESH_RATE $DEFAULT_WIDTH $GAMESCOPE_ARGS $MANGOAPP $SDL"
 
-      export ENABLE_LSFG LSFG_PERF_MODE PROTON_ENABLE_HDR PROTON_ENABLE_WAYLAND PROTON_FSR4_UPGRADE PROTON_USE_NTSYNC PROTON_USE_WOW64 SCB_GAMESCOPE_ARGS
+      export \
+      PROTON_ENABLE_HDR \
+      PROTON_ENABLE_HIDRAW \
+      PROTON_ENABLE_WAYLAND \
+      PROTON_FSR4_UPGRADE \
+      PROTON_PREFER_SDL \
+      PROTON_USE_NTSYNC \
+      PROTON_USE_WOW64 \
+      SCB_GAMESCOPE_ARGS \
+      SteamDeck
 
       [[ "$MANGOAPP" != "" && "$GAMESCOPE" != "" ]] && MANGOHUD=""
 

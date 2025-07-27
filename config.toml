@@ -31,6 +31,7 @@ gamescope = false
 input-remapper = false
 lact = true
 librewolf = true
+lsfg-vk = true
 mission-center = true
 nautilus = true
 php = false
@@ -46,10 +47,6 @@ zoomLevel = 1
 [icedos.applications.kitty]
 enable = true
 hideDecorations = false # Hide top bar
-
-[icedos.applications.lsfg-vk]
-enable = true
-dllPath = "/home/stef/Downloads/Lossless.dll"
 
 [icedos.applications.mangohud]
 enable = true
@@ -252,7 +249,7 @@ intel = false
 
 [icedos.hardware.cpus.amd]
 enable = true
-zenpower = true # Report watt usage for apps e.g. mangohud
+zenergy = true # Report watt usage for apps e.g. mangohud
 
 [icedos.hardware.cpus.amd.undervolt]
 enable = true
@@ -324,7 +321,7 @@ interfaces = [
 channels = [] # https://github.com/NixOS/nixpkgs/branches/active
 forceFirstBuild = false
 home = "/home"
-kernel = "zen" # Options: 'cachyos', 'cachyos-server', 'latest', 'lts', 'valve', 'zen'
+kernel = "zen" # Options: 'cachyos', 'cachyos-rc', cachyos-server', 'latest', 'lts', 'valve', 'zen'
 swappiness = 1
 version = "23.05" # Do not change without checking the docs (config.system.stateVersion)
 

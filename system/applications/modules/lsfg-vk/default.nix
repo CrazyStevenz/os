@@ -9,9 +9,9 @@ let
   cfg = config.icedos;
   lsfg-vk = cfg.applications.lsfg-vk;
 in
-mkIf (lsfg-vk.enable) {
+mkIf (lsfg-vk) {
   services.lsfg-vk = {
     enable = true;
-    losslessDLLFile = lsfg-vk.dllPath;
+    ui.enable = true;
   };
 }
