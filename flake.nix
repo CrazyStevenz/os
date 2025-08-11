@@ -84,14 +84,13 @@
                 );
             in
             {
-              imports =
-                [
-                  ./hardware
-                  ./internals.nix
-                  ./options.nix
-                ]
-                ++ getModules (./system)
-                ++ getModules (./hardware);
+              imports = [
+                ./hardware
+                ./internals.nix
+                ./options.nix
+              ]
+              ++ getModules (./system)
+              ++ getModules (./hardware);
 
               config.system.stateVersion = "22.05";
             }
