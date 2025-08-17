@@ -13,12 +13,13 @@ extraPackages = [
   "mousai", # Song recognizer
   # "nextcloud-client", # Nextcloud themed desktop client
   "nodejs_20", # Node package manager
+  "owmods-gui", # Outer Wilds Mod Manager
   "parabolic", # Download web video and audio
   "pnpm", # Fast, disk space efficient package manager for JavaScript
   "spotify", # Music streaming service
   "sticky-notes", # Simple sticky notes app
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
-  "warp" # File sync
+  "warp", # File sync
 ]
 insecurePackages = []
 aagl = true
