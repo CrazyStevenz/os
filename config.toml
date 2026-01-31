@@ -1,10 +1,408 @@
+# [[icedos.repositories]]
+# url = "github:icedos/cosmic"
+
+# [icedos.desktop.cosmic.users.stef]
+# startupScript = "steam & signal-desktop"
+
+# [icedos.desktop.cosmic.users.work]
+# startupScript = "slack"
+
+# [icedos.desktop.cosmic.panel]
+# autohide = true
+# favorites = ["steam", "discord", "signal", "helium"]
+# position = "Bottom" # Left, Right, Top, Bottom
+# size = "S" # XS, S, M, L, XL
+
+# [icedos.desktop.cosmic.panel.plugins]
+# left = ["com.system76.CosmicAppList"]
+# center = []
+# right = [
+#   "com.system76.CosmicAppletStatusArea",
+#   "com.system76.CosmicAppletInputSources",
+#   "com.system76.CosmicAppletBluetooth",
+#   "com.system76.CosmicAppletAudio",
+#   "com.system76.CosmicAppletBattery",
+#   "com.system76.CosmicAppletNetwork",
+#   "com.system76.CosmicAppletNotifications",
+#   "com.system76.CosmicAppletTime",
+#   "com.system76.CosmicAppletPower",
+# ]
+
+# [icedos.desktop.cosmic.input.keyboard]
+# superKeyAction = "Launcher" # Launcher, WorkspaceOverview, AppLibrary, Disable
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "kitty"
+# description = "Kitty"
+# keys = ["Super+x", "Super+Greek_xi"]
+# variant = "Spawn"
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "cosmic-files"
+# description = "Files"
+# keys = ["Super+e", "Super+Greek_epsilon"]
+# variant = "Spawn"
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "walker-clipboard"
+# description = "Clipboard Manager"
+# keys = ["Super+v", "Super+Greek_omega"]
+# variant = "Spawn"
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "walker-emojis"
+# description = "Emoji Picker"
+# keys = ["Super+slash"]
+# variant = "Spawn"
+
+# [icedos.desktop.cosmic.time]
+# date = true
+# weekday = true
+
+[[icedos.repositories]]
+url = "path:/home/stef/code/os/.repos/hytale-launcher"
+
+[[icedos.repositories]]
+url = "github:icedos/apps"
+# url = "path:/home/stef/code/os/apps"
+modules = [
+  "aagl",
+  "bash",
+  "btop",
+  "celluloid",
+  "codium",
+  "flatpak",
+  "gamemode",
+  "gamescope",
+  "helium",
+  "kitty",
+  "lact",
+  "librewolf",
+  "lsfg-vk",
+  "mangohud",
+  "me3",
+  "nautilus",
+  "ncdu",
+  "podman",
+  "proton-launch",
+  "reigntweak",
+  "scx",
+  "solaar",
+  "steam",
+  "steam-session",
+  "tailscale",
+  # "walker",
+  "wg-quick",
+  "zenergy",
+  "zenstates",
+]
+
+# [icedos.applications.steam.session]
+# args = ["--hdr-enabled", "-W 3440", "-H 1440", "--output DP-1"]
+# steamArgs = []
+
+# [icedos.applications.steam.session.env]
+# DXVK_HDR = "1"
+
+[[icedos.repositories]]
+url = "github:icedos/desktop"
+modules = ["gdm"]
+
+[[icedos.repositories]]
+url = "github:icedos/gnome"
+fetchOptionalDependencies = true
+
+[icedos.applications]
+defaultBrowser = "helium.desktop"
+defaultEditor = "codium.desktop"
+extraPackages = [
+  "appimage-run", # Appimage runner
+  "discord",
+  "gimp3", # GNU Image Manipulation Program
+  "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
+  # "handbrake", # Tool for converting video files and ripping DVDs
+  "jetbrains.datagrip", # Database IDE
+  "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
+  "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
+  "mousai", # Song recognizer
+  "nodejs_22", # Node package manager
+  "pnpm", # Fast, disk space efficient package manager for JavaScript
+  "protonvpn-gui",
+  "signal-desktop",
+  "ungoogled-chromium", # Chromium with dependencies on Google web services removed
+  "warp", # File sync
+]
+insecurePackages = []
+
+[icedos.applications.flatpak]
+packages = ["flathub-beta:com.stremio.Stremio"]
+
+[icedos.applications.codium.users.stef]
+autoSave = "onFocusChange"
+formatOnPaste = false
+
+[icedos.applications.codium.users.work]
+autoSave = "onFocusChange"
+formatOnPaste = false
+
+[icedos.applications.git.users.stef]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
+
+[icedos.applications.git.users.work]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
+
+[icedos.applications.mangohud]
+fpsLimit = "165,144,120,90,60,30,0"
+
+[[icedos.applications.me3.profiles]]
+name = "nr"
+config = """
+profileVersion = "v1"
+start_online = true
+
+[[supports]]
+game = "nightrein"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/disable-sharpening.dll"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-chromatic-aberration.dll"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-vignette.dll"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/ultrawide.dll"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/dxgi.dll"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/nrss.dll"
+
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/unlock-fps/unlock-fps.dll"
+
+[[packages]]
+id = "blue-filter-removal"
+path = "/home/stef/.config/me3/profiles/nightreign/packages/blue-filter-removal"
+"""
+
+[[icedos.applications.me3.profiles]]
+name = "nr-cl"
+dependencies = ["nr"]
+config = """
+[[natives]]
+path = "/home/stef/.config/me3/profiles/nightreign/natives/cl_server_redirector.dll"
+"""
+
+[[icedos.applications.me3.profiles]]
+name = "nr-mcv"
+dependencies = ["nr", "nr-cl"]
+config = """
+[[packages]]
+id = "more-castle-variations"
+path = "/home/stef/.config/me3/profiles/nightreign/packages/more-castle-variations"
+"""
+
+[icedos.applications.nh.gc]
+days = 7 # Number of days before a generation can be deleted
+generations = 5 # Number of generations that will always be kept
+
+[icedos.applications.scx]
+extraArgs = ["--performance"]
+
+[icedos.applications.steam]
+beta = false
+cpuUsageWorkaround = true
+downloadsWorkaround = true
+
+[icedos.applications.wg-quick]
+interfaces = ["desktop-ro-69"]
+
+[icedos.applications.zenstates]
+serviceArgs = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
+
+[icedos.desktop.gnome]
+titlebarLayout = "appmenu:minimize,maximize,close"
+
+[icedos.desktop.gnome.extensions]
+arcmenu = true
+dashToPanel = true
+
+[icedos.desktop.gnome.users.stef.pinnedApps.arcmenu]
+enable = true
+list = ["codium.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
+
+[icedos.desktop.gnome.users.stef.pinnedApps.shell]
+enable = true
+list = ["steam.desktop", "discord.desktop", "signal.desktop", "helium.desktop"]
+
+[icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
+enable = true
+list = ["codium.desktop"]
+
+[icedos.desktop.gnome.users.work.pinnedApps.shell]
+enable = true
+list = [
+  "slack.desktop",
+  "discord.desktop",
+  "signal.desktop",
+  "helium.desktop",
+  "webstorm.desktop",
+]
+
+[icedos.desktop.gnome.clock]
+date = true
+weekday = true
+
+[icedos.desktop.users.stef]
+startupScript = "steam & signal-desktop"
+
+[icedos.desktop.users.stef.idle.lock]
+enable = false
+
+[icedos.desktop.users.stef.idle.disableMonitors]
+seconds = 300
+
+[icedos.desktop.users.stef.idle.suspend]
+enable = false
+
+[icedos.desktop.users.work]
+startupScript = "slack"
+
+[icedos.desktop.users.work.idle.lock]
+seconds = 300
+
+[icedos.desktop.users.work.idle.disableMonitors]
+seconds = 270
+
+[icedos.desktop.users.work.idle.suspend]
+enable = false
+
 [[icedos.repositories]]
 url = "github:icedos/hardware"
+modules = [
+  "bluetooth",
+  "disable-ipv6",
+  "graphics",
+  "kernel",
+  "monitors",
+  "mounts",
+  "pipewire",
+  "radeon",
+  "ryzen",
+  "systemd-boot",
+  "uinput",
+  "upower",
+  "zram",
+]
 
 [icedos.hardware.bootloaders.systemd-boot]
 mountPoint = "/boot"
 
-[icedos.system]
-version = "25.11"
+[icedos.hardware.graphics.radeon]
+featureMask = "0xffffffff"
 
-[icedos.users.username]
+[icedos.hardware.kernel]
+variant = "latest"
+
+[[icedos.hardware.mounts]]
+path = "/"
+device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834"
+fsType = "btrfs"
+flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+
+[[icedos.hardware.mounts]]
+path = "/mnt/Nvme"
+device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52"
+fsType = "btrfs"
+flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+
+[[icedos.hardware.mounts]]
+path = "/mnt/SSDGames"
+device = "/dev/disk/by-uuid/bb93c901-8df3-4e23-8029-b1816a66ef58"
+fsType = "btrfs"
+flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+
+[[icedos.hardware.mounts]]
+path = "/mnt/HDDGames"
+device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
+fsType = "btrfs"
+flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+
+# [[icedos.hardware.mounts]]
+# path = "/mnt/Windows"
+# device = "/dev/disk/by-uuid/3032AC4732AC13BE"
+# fsType = "ntfs"
+# flags = ["nofail", "x-gvfs-show"]
+
+[[icedos.hardware.monitors]]
+name = "DP-1"
+resolution = "3440x1440"
+refreshRate = 164.90
+position = "0x0"
+
+[[icedos.hardware.monitors]]
+name = "DP-2"
+resolution = "1920x1080"
+refreshRate = 60
+position = "3440x360"
+
+[[icedos.repositories]]
+url = "github:icedos/tweaks"
+modules = ["gaming", "kernel"]
+
+[icedos.users.stef]
+description = "Stefanos"
+extraPackages = [
+  # "cemu", # Wiuu
+  # "duckstation", # PS1
+  # "heroic", # Cross-platform Epic Games Launcher
+  # "pcsx2", # PS2
+  # "ppsspp", # PSP
+  # "prismlauncher", # Minecraft launcher
+  # "rpcs3", # PS3
+
+  # "android-tools", # Android SDK platform tools
+  # "audacity", # Sound editor with graphical UI
+  # "bottles", # Wine manager
+  # "curtail", # Image compressor
+  "eartag", # Simple music tag editor
+  # "faugus-launcher",
+  "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
+  "fragments", # BitTorrent client
+  # "ghex", # HEX Editor
+  "newsflash", # RSS reader
+  # "nextcloud-client", # Nextcloud themed desktop client
+  "nicotine-plus", # p2p music sharing platform
+  # "owmods-gui", # Outer Wilds Mod Manager
+  "parabolic", # Download web video and audio
+  # "scrcpy", # Display and control Android devices over USB or TCP/IP
+  "spek", # Audio file spectrogram analysis
+  "sticky-notes", # Simple sticky notes app
+  # "stremio", # Media streaming platform
+]
+
+[icedos.users.work]
+description = "Work"
+extraPackages = [
+  "claude-code", # Agentic coding tool
+  # "code-cursor", # AI-powered code editor built on vscode
+  "envsubst", # Environment variables substitution for Go
+  # "google-cloud-sdk", # Required to use 'gcloud' command
+  "slack", # Desktop client for Slack
+  "watchman", # Required to watch when TypeScript files are created/updated/deleted
+  "windsurf", # Agentic IDE powered by AI Flow paradigm
+]
+
+[icedos.system]
+generations = 30
+version = "23.05"
+
+# [[icedos.system.channels]]
+# name = "small"
+# url = "github:nixos/nixpkgs/nixos-unstable-small"
