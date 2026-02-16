@@ -213,7 +213,7 @@ days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
 
 [icedos.applications.scx]
-extraArgs = ["--performance"]
+extraArgs = ["--perf", "1024"]
 
 [icedos.applications.steam]
 beta = false

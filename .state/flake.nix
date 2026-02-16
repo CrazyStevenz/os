@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/175a0f8e3557cdf2b72d574ce257be820596aaf3";
+      url = "github:icedos/apps/1f74c2d16728c7d75118d9a073acd8e975e06c00";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -41,7 +41,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/b04d1c10c6687303f06c2ead493ffa547142e4f1";
+      url = "github:icedos/desktop/7310cf4cf076408f5cdb099ef757689d2955bf00";
     };
     icedos-github_icedos_gnome = {
       url = "github:icedos/gnome/884a9f13516c18db04ce26898a7a17434b792e01";
@@ -66,6 +66,10 @@
       };
       url = "github:JPyke3/hytale-launcher-nix";
     };
+    icedos-state = {
+      flake = false;
+      url = "path:/nix/store/yw05v41gq3nsv7jm2g5194n3471qan5b-icedos";
+    };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
@@ -88,7 +92,18 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+
+          permittedInsecurePackages = [
+
+          ];
+        };
+      };
+
       inherit (pkgs) lib;
       inherit (lib) fileContents map filterAttrs;
 
@@ -141,6 +156,8 @@
 
           {
             imports = [
+              "${inputs.icedos-core}/modules/nh.nix"
+              "${inputs.icedos-core}/modules/nix.nix"
               "${inputs.icedos-core}/modules/rebuild.nix"
               "${inputs.icedos-core}/modules/state.nix"
               "${inputs.icedos-core}/modules/toolset.nix"
