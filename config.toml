@@ -385,6 +385,7 @@ extraPackages = [
   "spek", # Audio file spectrogram analysis
   "sticky-notes", # Simple sticky notes app
   # "stremio", # Media streaming platform
+  "qbittorrent",
 ]
 
 [icedos.users.work]

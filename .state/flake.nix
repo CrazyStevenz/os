@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/1f74c2d16728c7d75118d9a073acd8e975e06c00";
+      url = "github:icedos/apps/26557fd447140ddf188e8c463c7ee2bbb5763a98";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
