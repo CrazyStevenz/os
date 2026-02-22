@@ -88,8 +88,9 @@ modules = [
   "reigntweak",
   "scx",
   "solaar",
-  "steam",
   "steam-session",
+  "steam",
+  "sunshine",
   "tailscale",
   # "walker",
   "wg-quick",
@@ -351,6 +352,9 @@ name = "DP-2"
 resolution = "1920x1080"
 refreshRate = 60
 position = "3440x360"
+
+[icedos.hardware.network]
+firewall = false
 
 [[icedos.repositories]]
 url = "github:icedos/tweaks"
