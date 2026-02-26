@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/cea97cf68cabe4a68d9591f523cc9bafce678c36";
+      url = "github:icedos/apps/e7d4a5bd7121b7758ba4ed029650593282ab76e3";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -105,9 +105,9 @@
       };
 
       inherit (pkgs) lib;
-      inherit (lib) fileContents map filterAttrs;
+      inherit (lib) fileContents filterAttrs;
 
-      inherit (builtins) fromTOML pathExists;
+      inherit (builtins) pathExists;
       inherit ((fromTOML (fileContents "${inputs.icedos-config}/config.toml"))) icedos;
 
       icedosLib = import "${inputs.icedos-core}/lib" {

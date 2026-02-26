@@ -373,10 +373,9 @@ extraPackages = [
 
   # "android-tools", # Android SDK platform tools
   # "audacity", # Sound editor with graphical UI
-  # "bottles", # Wine manager
   # "curtail", # Image compressor
   "eartag", # Simple music tag editor
-  # "faugus-launcher",
+  "faugus-launcher",
   "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
   "fragments", # BitTorrent client
   # "ghex", # HEX Editor
