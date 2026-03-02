@@ -90,7 +90,7 @@ modules = [
   "solaar",
   "steam-session",
   "steam",
-  "sunshine",
+  # "sunshine",
   "tailscale",
   # "walker",
   "wg-quick",
@@ -122,7 +122,6 @@ extraPackages = [
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
-  "jetbrains.datagrip", # Database IDE
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
   "mousai", # Song recognizer
@@ -398,6 +397,7 @@ extraPackages = [
   # "code-cursor", # AI-powered code editor built on vscode
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
+  "jetbrains.datagrip", # Database IDE
   "slack", # Desktop client for Slack
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
   "windsurf", # Agentic IDE powered by AI Flow paradigm
