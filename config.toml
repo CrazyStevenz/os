@@ -80,7 +80,7 @@ modules = [
   "librewolf",
   "lsfg-vk",
   "mangohud",
-  "me3",
+  # "me3",
   "nautilus",
   "ncdu",
   "podman",
@@ -156,57 +156,57 @@ email = "github.ekta@aleeas.com"
 [icedos.applications.mangohud]
 fpsLimit = "165,144,120,90,60,30,0"
 
-[[icedos.applications.me3.profiles]]
-name = "nr"
-config = """
-profileVersion = "v1"
-start_online = true
+# [[icedos.applications.me3.profiles]]
+# name = "nr"
+# config = """
+# profileVersion = "v1"
+# start_online = true
 
-[[supports]]
-game = "nightrein"
+# [[supports]]
+# game = "nightrein"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/disable-sharpening.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/disable-sharpening.dll"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-chromatic-aberration.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-chromatic-aberration.dll"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-vignette.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-vignette.dll"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/ultrawide.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/ultrawide.dll"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/dxgi.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/dxgi.dll"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/nrss.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/nrss.dll"
 
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/unlock-fps/unlock-fps.dll"
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/unlock-fps/unlock-fps.dll"
 
-[[packages]]
-id = "blue-filter-removal"
-path = "/home/stef/.config/me3/profiles/nightreign/packages/blue-filter-removal"
-"""
+# [[packages]]
+# id = "blue-filter-removal"
+# path = "/home/stef/.config/me3/profiles/nightreign/packages/blue-filter-removal"
+# """
 
-[[icedos.applications.me3.profiles]]
-name = "nr-cl"
-dependencies = ["nr"]
-config = """
-[[natives]]
-path = "/home/stef/.config/me3/profiles/nightreign/natives/cl_server_redirector.dll"
-"""
+# [[icedos.applications.me3.profiles]]
+# name = "nr-cl"
+# dependencies = ["nr"]
+# config = """
+# [[natives]]
+# path = "/home/stef/.config/me3/profiles/nightreign/natives/cl_server_redirector.dll"
+# """
 
-[[icedos.applications.me3.profiles]]
-name = "nr-mcv"
-dependencies = ["nr", "nr-cl"]
-config = """
-[[packages]]
-id = "more-castle-variations"
-path = "/home/stef/.config/me3/profiles/nightreign/packages/more-castle-variations"
-"""
+# [[icedos.applications.me3.profiles]]
+# name = "nr-mcv"
+# dependencies = ["nr", "nr-cl"]
+# config = """
+# [[packages]]
+# id = "more-castle-variations"
+# path = "/home/stef/.config/me3/profiles/nightreign/packages/more-castle-variations"
+# """
 
 [icedos.applications.nh.gc]
 days = 7 # Number of days before a generation can be deleted
@@ -376,16 +376,15 @@ extraPackages = [
   "eartag", # Simple music tag editor
   "faugus-launcher",
   "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
-  "fragments", # BitTorrent client
+  # "fragments", # BitTorrent client
   # "ghex", # HEX Editor
-  "newsflash", # RSS reader
+  # "newsflash", # RSS reader
   # "nextcloud-client", # Nextcloud themed desktop client
   "nicotine-plus", # p2p music sharing platform
   # "owmods-gui", # Outer Wilds Mod Manager
   "parabolic", # Download web video and audio
   # "scrcpy", # Display and control Android devices over USB or TCP/IP
   "spek", # Audio file spectrogram analysis
-  "sticky-notes", # Simple sticky notes app
   # "stremio", # Media streaming platform
   "qbittorrent",
 ]
