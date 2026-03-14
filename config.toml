@@ -379,7 +379,7 @@ extraPackages = [
   # "fragments", # BitTorrent client
   # "ghex", # HEX Editor
   # "newsflash", # RSS reader
-  # "nextcloud-client", # Nextcloud themed desktop client
+  "nextcloud-client", # Nextcloud themed desktop client
   "nicotine-plus", # p2p music sharing platform
   # "owmods-gui", # Outer Wilds Mod Manager
   "parabolic", # Download web video and audio
