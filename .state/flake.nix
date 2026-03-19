@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/8f811afe4967593f7efed258aaa273e8487b8f74";
+      url = "github:icedos/apps/d095f6d12e17813b47df97c030ccd09704806e40";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -47,13 +47,13 @@
       url = "github:icedos/gnome/884a9f13516c18db04ce26898a7a17434b792e01";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/f4c2eb72ee6745ea6cf1120abe3c26f60075de2a";
+      url = "github:icedos/hardware/f2ef3525a43ed550e34703167f00f27c6c95ebda";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/c1a5aa2f9cdfd58f0c58ea78a4905c6afa9c373e";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/b73911a16e86fb8c075ea413fced1b4e78ded179";
+      url = "github:icedos/tweaks/49cc499d59327056142c9c1382577fdbf76c2e81";
     };
     icedos-path__home_stef_code_os__repos_hytale-launcher = {
       url = "path:/home/stef/code/os/.repos/hytale-launcher?narHash=sha256-oYwGh6ZO1uCzhQ/+BUk/FDcuNenulk9pNW3b5vsn0TA=";
