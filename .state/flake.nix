@@ -40,6 +40,20 @@
       };
       url = "github:HikariKnight/ScopeBuddy";
     };
+    icedos-github_icedos_cosmic = {
+      url = "github:icedos/cosmic/2a5b24885cef9fc63daf6ada99d3e6de9c07f843";
+    };
+    icedos-github_icedos_cosmic-default-cosmic-manager = {
+      inputs = {
+        home-manager = {
+          follows = "home-manager";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "github:HeitorAugustoLN/cosmic-manager";
+    };
     icedos-github_icedos_desktop = {
       url = "github:icedos/desktop/7310cf4cf076408f5cdb099ef757689d2955bf00";
     };
