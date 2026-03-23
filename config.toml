@@ -40,7 +40,7 @@ keys = ["Super+x", "Super+Greek_xi"]
 variant = "Spawn"
 
 [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
-command = "cosmic-files"
+command = "nautilus"
 description = "Files"
 keys = ["Super+e", "Super+Greek_epsilon"]
 variant = "Spawn"
