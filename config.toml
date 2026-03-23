@@ -8,12 +8,9 @@ panelFavorites = ["steam", "discord", "signal-desktop", "helium"]
 panelFavorites = ["slack", "discord", "signal-desktop", "helium", "webstorm"]
 
 [icedos.desktop.cosmic.panel]
+autohide = true
 position = "Bottom" # Left, Right, Top, Bottom
 size = "S" # XS, S, M, L, XL
-
-[icedos.desktop.cosmic.panel.autohide]
-enable = true
-alwaysHide = true
 
 [icedos.desktop.cosmic.panel.plugins]
 left = ["com.system76.CosmicAppList"]
@@ -29,6 +26,9 @@ right = [
   "com.system76.CosmicAppletTime",
   "com.system76.CosmicAppletPower",
 ]
+
+[icedos.desktop.cosmic.patches.cosmic-panel.autohide]
+alwaysHide = true
 
 [icedos.desktop.cosmic.input.keyboard]
 superKeyAction = "Launcher" # Launcher, WorkspaceOverview, AppLibrary, Disable
