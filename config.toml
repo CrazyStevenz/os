@@ -90,7 +90,7 @@ modules = [
   "reigntweak",
   "scx",
   "solaar",
-  "steam-session",
+  # "steam-session",
   "steam",
   # "sunshine",
   "tailscale",
