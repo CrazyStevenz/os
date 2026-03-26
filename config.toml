@@ -1,6 +1,15 @@
 [[icedos.repositories]]
 url = "github:icedos/cosmic"
 
+[icedos.desktop.cosmic]
+disableExcludedPackagesWarning = true
+excludeDefaultPackages = [
+  "cosmic-applibrary",
+  "cosmic-files",
+  "cosmic-initial-setup",
+  "cosmic-launcher",
+]
+
 [icedos.desktop.cosmic.users.stef]
 panelFavorites = ["steam", "discord", "signal-desktop", "helium"]
 
