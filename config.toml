@@ -55,6 +55,12 @@ keys = ["Super+e", "Super+Greek_epsilon"]
 variant = "Spawn"
 
 [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+command = "walker"
+description = "Walker"
+keys = ["Super+r", "Super+Greek_rho"]
+variant = "Spawn"
+
+[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
 command = "walker-clipboard"
 description = "Clipboard Manager"
 keys = ["Super+v", "Super+Greek_omega"]
