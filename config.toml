@@ -403,7 +403,7 @@ extraPackages = [
   # "scrcpy", # Display and control Android devices over USB or TCP/IP
   "spek", # Audio file spectrogram analysis
   # "stremio", # Media streaming platform
-  "stremio-linux-shell",
+  # "stremio-linux-shell",
   "qbittorrent",
 ]
 
