@@ -80,8 +80,8 @@
         "icedos": "icedos"
       },
       "locked": {
-        "lastModified": 1774608511,
-        "narHash": "sha256-BaeUkQE+tV2kfoJveok6MMSartOVtpXEz5H7UHAFTtQ=",
+        "lastModified": 1775208325,
+        "narHash": "sha256-WGQ6S/8XwtXg95jo6aRy9hVF4f1xTwJkGpggZ7UBUTs=",
         "path": "/home/work/code/os",
         "type": "path"
       },
@@ -92,17 +92,17 @@
     },
     "icedos-github_icedos_apps": {
       "locked": {
-        "lastModified": 1774318277,
-        "narHash": "sha256-VQFztT+ZBvKOUpB/CKQh2vjh5Panuw/qSU/ZOOHlxNg=",
+        "lastModified": 1775005745,
+        "narHash": "sha256-/yPO/T6bPo0ejYB24ON/iq7eEL/JQ6moM4H/M+jUA40=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "75cf8af31fc5c630b66449365c7eef82f0c948be",
+        "rev": "0edc6e15e49e1814704034013c36a9262a66bdc8",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "75cf8af31fc5c630b66449365c7eef82f0c948be",
+        "rev": "0edc6e15e49e1814704034013c36a9262a66bdc8",
         "type": "github"
       }
     },
@@ -143,49 +143,49 @@
     },
     "icedos-github_icedos_desktop": {
       "locked": {
-        "lastModified": 1774281843,
-        "narHash": "sha256-1rgewpDzeOVJcId//501+Zqpd3XCCTvgJd5g6zrvRVs=",
+        "lastModified": 1774959480,
+        "narHash": "sha256-yqlV7b0Wo9H4LA10YBMYUFQjvCjWMiS6U9qTk1iCSMk=",
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "6a3e77f84ef25acd3de3a57be4f860452eb5b8ed",
+        "rev": "8045be79c59919a97095feb12c7693ab72531959",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "6a3e77f84ef25acd3de3a57be4f860452eb5b8ed",
+        "rev": "8045be79c59919a97095feb12c7693ab72531959",
         "type": "github"
       }
     },
     "icedos-github_icedos_gnome": {
       "locked": {
-        "lastModified": 1764254863,
-        "narHash": "sha256-L+GM/loSa/dVk2lZ3haqyB9nNYgEZWBmyAnpbOYy+1s=",
+        "lastModified": 1774872851,
+        "narHash": "sha256-ryNxbkDU7Gx5Pq7glLYZDOJr6Mu6mxUJtGOPkNcegwc=",
         "owner": "icedos",
         "repo": "gnome",
-        "rev": "884a9f13516c18db04ce26898a7a17434b792e01",
+        "rev": "e6de0a98cccbd64ab6b2cadc3a33a443892eaa51",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "gnome",
-        "rev": "884a9f13516c18db04ce26898a7a17434b792e01",
+        "rev": "e6de0a98cccbd64ab6b2cadc3a33a443892eaa51",
         "type": "github"
       }
     },
     "icedos-github_icedos_hardware": {
       "locked": {
-        "lastModified": 1774281564,
-        "narHash": "sha256-YPh27iGGAuMllSCx3ffxUh4v3Ba8hR/bF+XrRT7ZUUk=",
+        "lastModified": 1774959462,
+        "narHash": "sha256-+3/AEZyvT0TXqVeY2TTWZo3eVAvFfdOI/aJvhbYX/NU=",
         "owner": "icedos",
         "repo": "hardware",
-        "rev": "d3ef267398fa9c46e8ab92461311125129af4501",
+        "rev": "c0053df3529c19ca192c46126d46b03ce8acd8ac",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "hardware",
-        "rev": "d3ef267398fa9c46e8ab92461311125129af4501",
+        "rev": "c0053df3529c19ca192c46126d46b03ce8acd8ac",
         "type": "github"
       }
     },
@@ -207,17 +207,17 @@
     },
     "icedos-github_icedos_tweaks": {
       "locked": {
-        "lastModified": 1773248669,
-        "narHash": "sha256-TS1a6O6d2hGJtKMd7SwWvJB2yJKpEPKm/dwMHgtr22U=",
+        "lastModified": 1774898854,
+        "narHash": "sha256-fpwNo4IbnJaYNosOlf+tqNZrbkPqlkNSjuPqA6duUhc=",
         "owner": "icedos",
         "repo": "tweaks",
-        "rev": "49cc499d59327056142c9c1382577fdbf76c2e81",
+        "rev": "9f7e1b8fedb7cbe8aaa3767396a899d2362ea2fe",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "tweaks",
-        "rev": "49cc499d59327056142c9c1382577fdbf76c2e81",
+        "rev": "9f7e1b8fedb7cbe8aaa3767396a899d2362ea2fe",
         "type": "github"
       }
     },

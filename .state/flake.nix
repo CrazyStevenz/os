@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/75cf8af31fc5c630b66449365c7eef82f0c948be";
+      url = "github:icedos/apps/0edc6e15e49e1814704034013c36a9262a66bdc8";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -30,19 +30,19 @@
       url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/6a3e77f84ef25acd3de3a57be4f860452eb5b8ed";
+      url = "github:icedos/desktop/8045be79c59919a97095feb12c7693ab72531959";
     };
     icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/884a9f13516c18db04ce26898a7a17434b792e01";
+      url = "github:icedos/gnome/e6de0a98cccbd64ab6b2cadc3a33a443892eaa51";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/d3ef267398fa9c46e8ab92461311125129af4501";
+      url = "github:icedos/hardware/c0053df3529c19ca192c46126d46b03ce8acd8ac";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/c1a5aa2f9cdfd58f0c58ea78a4905c6afa9c373e";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/49cc499d59327056142c9c1382577fdbf76c2e81";
+      url = "github:icedos/tweaks/9f7e1b8fedb7cbe8aaa3767396a899d2362ea2fe";
     };
     icedos-state = {
       flake = false;
