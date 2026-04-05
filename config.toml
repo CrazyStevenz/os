@@ -110,7 +110,6 @@ modules = [
   # "sunshine",
   "tailscale",
   "walker",
-  "wg-quick",
   "zenergy",
   "zenstates",
 ]
@@ -144,7 +143,7 @@ extraPackages = [
   "mousai", # Song recognizer
   "nodejs_22", # Node package manager
   "pnpm", # Fast, disk space efficient package manager for JavaScript
-  "protonvpn-gui",
+  "proton-vpn",
   "signal-desktop",
   "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "warp", # File sync
@@ -237,9 +236,6 @@ beta = true
 cpuUsageWorkaround = true
 downloadsWorkaround = true
 
-[icedos.applications.wg-quick]
-interfaces = ["desktop-ro-69"]
-
 [icedos.applications.zenstates]
 serviceArgs = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
@@ -277,7 +273,7 @@ date = true
 weekday = true
 
 [icedos.desktop.users.stef]
-startupScript = "steam & signal-desktop"
+startupScript = "protonvpn-app & steam & signal-desktop"
 
 [icedos.desktop.users.stef.idle.lock]
 enable = false
