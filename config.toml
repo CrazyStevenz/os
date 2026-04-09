@@ -240,6 +240,13 @@ downloadsWorkaround = true
 serviceArgs = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
 
 [icedos.desktop.gnome]
+excludeDefaultPackages = [
+  "gnome-text-editor", # Text editor
+  "papers", # Document viewer
+  "seahorse", # Encryption key and password manager UI
+  "showtime", # New video player
+  "sushi", # File previewer
+]
 titlebarLayout = "appmenu:minimize,maximize,close"
 
 [icedos.desktop.gnome.extensions]
