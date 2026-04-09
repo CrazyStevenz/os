@@ -81,7 +81,6 @@ url = "path:/home/stef/code/os/.repos/hytale-launcher"
 
 [[icedos.repositories]]
 url = "github:icedos/apps"
-# url = "path:/home/stef/code/os/apps"
 modules = [
   "aagl",
   "bash",
@@ -102,9 +101,9 @@ modules = [
   "ncdu",
   "podman",
   "proton-launch",
-  "reigntweak",
+  # "reigntweak",
   "scx",
-  "solaar",
+  # "solaar",
   # "steam-session",
   "steam",
   # "sunshine",
