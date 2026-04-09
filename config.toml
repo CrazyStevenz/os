@@ -354,12 +354,6 @@ device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
 fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
-# [[icedos.hardware.mounts]]
-# path = "/mnt/Windows"
-# device = "/dev/disk/by-uuid/3032AC4732AC13BE"
-# fsType = "ntfs"
-# flags = ["nofail", "x-gvfs-show"]
-
 [[icedos.hardware.monitors]]
 name = "DP-1"
 resolution = "3440x1440"
