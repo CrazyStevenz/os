@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/75cf8af31fc5c630b66449365c7eef82f0c948be";
+      url = "github:icedos/apps/e8f811afaf901426db2be6012f8e4fe10ad4b415";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -40,34 +40,20 @@
       };
       url = "github:HikariKnight/ScopeBuddy";
     };
-    icedos-github_icedos_cosmic = {
-      url = "github:icedos/cosmic/ac20ff213a8c5e28ddff85462ffbfe7c3f43c81d";
-    };
-    icedos-github_icedos_cosmic-default-cosmic-manager = {
-      inputs = {
-        home-manager = {
-          follows = "home-manager";
-        };
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "github:HeitorAugustoLN/cosmic-manager";
-    };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/6a3e77f84ef25acd3de3a57be4f860452eb5b8ed";
+      url = "github:icedos/desktop/7966dbc9c2316a46bc7748d025fd4db098b0d2fa";
     };
     icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/884a9f13516c18db04ce26898a7a17434b792e01";
+      url = "github:icedos/gnome/361f1e01ec385848546f5b2c9ae741c42a137b28";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/d3ef267398fa9c46e8ab92461311125129af4501";
+      url = "github:icedos/hardware/2811c2ddedfc768c08b2d4b2f215fe7bb35d1fb6";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/c1a5aa2f9cdfd58f0c58ea78a4905c6afa9c373e";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/49cc499d59327056142c9c1382577fdbf76c2e81";
+      url = "github:icedos/tweaks/0735682a601229bd5ad9b874f147fdd7c129918f";
     };
     icedos-path__home_stef_code_os__repos_hytale-launcher = {
       url = "path:/home/stef/code/os/.repos/hytale-launcher?narHash=sha256-oYwGh6ZO1uCzhQ/+BUk/FDcuNenulk9pNW3b5vsn0TA=";
@@ -166,6 +152,11 @@
           {
             # Source: https://github.com/NixOS/nixpkgs/blob/5e4fbfb6b3de1aa2872b76d49fafc942626e2add/nixos/modules/system/activation/top-level.nix#L191
             system.systemBuilderCommands = "ln -s ${self} $out/source";
+          }
+
+          # Remove nixos manual package
+          {
+            documentation.nixos.enable = false;
           }
 
           {

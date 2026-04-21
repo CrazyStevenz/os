@@ -1,80 +1,93 @@
-[[icedos.repositories]]
-url = "github:icedos/cosmic"
+# [[icedos.repositories]]
+# url = "github:icedos/cosmic"
 
-[icedos.desktop.cosmic]
-disableExcludedPackagesWarning = true
-excludeDefaultPackages = [
-  "cosmic-applibrary",
-  "cosmic-files",
-  "cosmic-initial-setup",
-  "cosmic-launcher",
-]
+# [icedos.desktop.cosmic]
+# disableExcludedPackagesWarning = true
+# excludeDefaultPackages = [
+#   "cosmic-applibrary",
+#   "cosmic-files",
+#   "cosmic-initial-setup",
+#   # "cosmic-launcher", # <- Required for Alt + Tab
+# ]
 
-[icedos.desktop.cosmic.users.stef]
-panelFavorites = ["steam", "discord", "signal-desktop", "helium"]
+# [icedos.desktop.cosmic.users.stef]
+# panelFavorites = ["steam", "discord", "signal-desktop", "helium"]
 
-[icedos.desktop.cosmic.users.work]
-panelFavorites = ["slack", "discord", "signal-desktop", "helium", "webstorm"]
+# [icedos.desktop.cosmic.users.work]
+# panelFavorites = ["slack", "discord", "signal-desktop", "helium", "webstorm"]
 
-[icedos.desktop.cosmic.panel]
-autohide = true
-position = "Bottom" # Left, Right, Top, Bottom
-size = "S" # XS, S, M, L, XL
+# [icedos.desktop.cosmic.panel]
+# autohide = true
+# position = "Bottom" # Left, Right, Top, Bottom
+# size = "S" # XS, S, M, L, XL
 
-[icedos.desktop.cosmic.panel.plugins]
-left = ["com.system76.CosmicAppList"]
-center = []
-right = [
-  "com.system76.CosmicAppletStatusArea",
-  "com.system76.CosmicAppletInputSources",
-  "com.system76.CosmicAppletBluetooth",
-  "com.system76.CosmicAppletAudio",
-  "com.system76.CosmicAppletBattery",
-  "com.system76.CosmicAppletNetwork",
-  "com.system76.CosmicAppletNotifications",
-  "com.system76.CosmicAppletTime",
-  "com.system76.CosmicAppletPower",
-]
+# [icedos.desktop.cosmic.panel.plugins]
+# left = ["com.system76.CosmicAppList"]
+# center = []
+# right = [
+#   "com.system76.CosmicAppletStatusArea",
+#   "com.system76.CosmicAppletInputSources",
+#   "com.system76.CosmicAppletBluetooth",
+#   "com.system76.CosmicAppletAudio",
+#   "com.system76.CosmicAppletBattery",
+#   "com.system76.CosmicAppletNetwork",
+#   "com.system76.CosmicAppletNotifications",
+#   "com.system76.CosmicAppletTime",
+#   "com.system76.CosmicAppletPower",
+# ]
 
-[icedos.desktop.cosmic.patches.cosmic-panel.autohide]
-alwaysHide = true
+# [icedos.desktop.cosmic.patches.cosmic-applets]
+# steamGameIconMatcher = true
 
-[icedos.desktop.cosmic.input.keyboard]
-superKeyAction = "Launcher" # Launcher, WorkspaceOverview, AppLibrary, Disable
+# [icedos.desktop.cosmic.patches.cosmic-comp]
+# perWindowKeyboardLayout = true
 
-[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
-command = "kitty"
-description = "Kitty"
-keys = ["Super+x", "Super+Greek_xi"]
-variant = "Spawn"
+# [icedos.desktop.cosmic.patches.cosmic-osd]
+# keyboardLayoutOsd = true
 
-[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
-command = "nautilus"
-description = "Files"
-keys = ["Super+e", "Super+Greek_epsilon"]
-variant = "Spawn"
+# [icedos.desktop.cosmic.patches.cosmic-panel.autohide]
+# alwaysHide = true
 
-[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
-command = "walker"
-description = "Walker"
-keys = ["Super+r", "Super+Greek_rho"]
-variant = "Spawn"
+# [icedos.desktop.cosmic.patches.xdg-desktop-portal-cosmic]
+# filePickerDefaultSortName = true
+# useGtkFilePicker = true
 
-[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
-command = "walker-clipboard"
-description = "Clipboard Manager"
-keys = ["Super+v", "Super+Greek_omega"]
-variant = "Spawn"
+# [icedos.desktop.cosmic.input.keyboard]
+# superKeyAction = "Launcher" # Launcher, WorkspaceOverview, AppLibrary, Disable
 
-[[icedos.desktop.cosmic.input.keyboard.shortcuts]]
-command = "walker-emojis"
-description = "Emoji Picker"
-keys = ["Super+slash"]
-variant = "Spawn"
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "kitty"
+# description = "Kitty"
+# keys = ["Super+x", "Super+Greek_xi"]
+# variant = "Spawn"
 
-[icedos.desktop.cosmic.time]
-date = true
-weekday = true
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "nautilus"
+# description = "Files"
+# keys = ["Super+e", "Super+Greek_epsilon"]
+# variant = "Spawn"
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "walker"
+# description = "Walker"
+# keys = ["Super+r", "Super+Greek_rho"]
+# variant = "Spawn"
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "walker-clipboard"
+# description = "Clipboard Manager"
+# keys = ["Super+v", "Super+Greek_omega"]
+# variant = "Spawn"
+
+# [[icedos.desktop.cosmic.input.keyboard.shortcuts]]
+# command = "walker-emojis"
+# description = "Emoji Picker"
+# keys = ["Super+slash"]
+# variant = "Spawn"
+
+# [icedos.desktop.cosmic.time]
+# date = true
+# weekday = true
 
 [[icedos.repositories]]
 url = "path:/home/stef/code/os/.repos/hytale-launcher"
@@ -247,6 +260,11 @@ excludeDefaultPackages = [
   "sushi", # File previewer
 ]
 titlebarLayout = "appmenu:minimize,maximize,close"
+
+[icedos.applications.zsh.aliases]
+i = "icedos"
+ir = "icedos rebuild"
+iu = "icedos rebuild --update"
 
 [icedos.desktop.gnome.extensions]
 arcmenu = true
