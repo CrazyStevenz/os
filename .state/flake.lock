@@ -44,11 +44,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776661682,
-        "narHash": "sha256-X32LTSDqUdVqMy85WYdRgyt0I75wc4Lhi9j+lrCDR8w=",
+        "lastModified": 1776964438,
+        "narHash": "sha256-AF0cby9Xuijr5qaFpYKbm1mExV956Hk233bel6QxpFw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4bfce11ea820df0359f73736fd59c7e8f53641a6",
+        "rev": "e09259dd2e147d35ef889784b51e89b0a10ffe15",
         "type": "github"
       },
       "original": {
@@ -62,11 +62,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1776552108,
-        "narHash": "sha256-PcLlMK54tkt+6fh4DRRnOcoJS1hHI0Z8y1TPqoXuNgU=",
+        "lastModified": 1776681974,
+        "narHash": "sha256-MGQlnVFC1sG9CPrSISgV2W64NZ9wsy7cL01WrHD7t+8=",
         "owner": "icedos",
         "repo": "core",
-        "rev": "61dce32459ccd9ed1e62e5a2a26adeceb9ec401a",
+        "rev": "9cfc02b9ef82283411babed62f57534f3f1dc5d7",
         "type": "github"
       },
       "original": {
@@ -80,8 +80,8 @@
         "icedos": "icedos"
       },
       "locked": {
-        "lastModified": 1776764573,
-        "narHash": "sha256-KR3Bam7WbyLzDoHhAOkaxgKT8NOOnBm/LOleslWFT5g=",
+        "lastModified": 1776964585,
+        "narHash": "sha256-G/kKztoCdwXCdkXXzVzrT2ICUIkVg2Pw2fZVFT6rNzI=",
         "path": "/home/stef/code/os",
         "type": "path"
       },
@@ -92,17 +92,17 @@
     },
     "icedos-github_icedos_apps": {
       "locked": {
-        "lastModified": 1776728609,
-        "narHash": "sha256-EBH/VC/7ntip0Y6B/kFWddoEwTqNg4okMKbIY/ivIzo=",
+        "lastModified": 1776886915,
+        "narHash": "sha256-Bp8g113BN/qiQRhU9QZV6yHgwYL78gxekZCayGlRRqo=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "e8f811afaf901426db2be6012f8e4fe10ad4b415",
+        "rev": "7392ff0a2d7b997ea3783144ff6334acd791b78c",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "e8f811afaf901426db2be6012f8e4fe10ad4b415",
+        "rev": "7392ff0a2d7b997ea3783144ff6334acd791b78c",
         "type": "github"
       }
     },
@@ -178,17 +178,17 @@
     },
     "icedos-github_icedos_desktop": {
       "locked": {
-        "lastModified": 1776699675,
-        "narHash": "sha256-gzcHNye4KO2HBfPxZTjk4K0EfZm4GGo06T1N9A2JM3w=",
+        "lastModified": 1776781145,
+        "narHash": "sha256-OQBYoMvUrZPzm0BUVd1IknSzWT3juJ84aee0vkLpUzc=",
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "7966dbc9c2316a46bc7748d025fd4db098b0d2fa",
+        "rev": "7b9d75dcf3b843bc5e182425fcaceb205f9c0a3d",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "7966dbc9c2316a46bc7748d025fd4db098b0d2fa",
+        "rev": "7b9d75dcf3b843bc5e182425fcaceb205f9c0a3d",
         "type": "github"
       }
     },
@@ -276,11 +276,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776439279,
-        "narHash": "sha256-YaSMPJOwKkcNK90GoH2dB7R1f6EqD/0kOampZqBrsoc=",
+        "lastModified": 1776961915,
+        "narHash": "sha256-oI4p1je0UJw05PtBjeG0eWo4eK2qzo049JgxnyMgxVA=",
         "owner": "JPyke3",
         "repo": "hytale-launcher-nix",
-        "rev": "42d9f38dda75a9b44e710cc9e457b89eb00ccf35",
+        "rev": "489133a3c2f9f77a5cc6da775cfa558796ddc5ac",
         "type": "github"
       },
       "original": {
@@ -336,11 +336,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1776169885,
-        "narHash": "sha256-l/iNYDZ4bGOAFQY2q8y5OAfBBtrDAaPuRQqWaFHVRXM=",
+        "lastModified": 1776548001,
+        "narHash": "sha256-ZSK0NL4a1BwVbbTBoSnWgbJy9HeZFXLYQizjb2DPF24=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4bd9165a9165d7b5e33ae57f3eecbcb28fb231c9",
+        "rev": "b12141ef619e0a9c1c84dc8c684040326f27cdcc",
         "type": "github"
       },
       "original": {
@@ -358,11 +358,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776671125,
-        "narHash": "sha256-L2d0n8lbrtppu7v/+G4+zpbVIZM9J57yO/rnCz+DsNg=",
+        "lastModified": 1776962733,
+        "narHash": "sha256-oVV+Q1Qzsq8dcNUelArpXqpuGZo+lEUmrCOjalq1GXY=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "2f9d03735406a4b4c4e707e099429fb771c4391c",
+        "rev": "31dff878916d8fd8be2860f28b7c6fe1df18b413",
         "type": "github"
       },
       "original": {

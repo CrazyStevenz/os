@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/e8f811afaf901426db2be6012f8e4fe10ad4b415";
+      url = "github:icedos/apps/7392ff0a2d7b997ea3783144ff6334acd791b78c";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -41,7 +41,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/7966dbc9c2316a46bc7748d025fd4db098b0d2fa";
+      url = "github:icedos/desktop/7b9d75dcf3b843bc5e182425fcaceb205f9c0a3d";
     };
     icedos-github_icedos_gnome = {
       url = "github:icedos/gnome/361f1e01ec385848546f5b2c9ae741c42a137b28";
