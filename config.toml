@@ -116,7 +116,6 @@ modules = [
   # "reigntweak",
   "scx",
   # "solaar",
-  # "steam-session",
   "steam",
   # "sunshine",
   "tailscale",
@@ -124,13 +123,6 @@ modules = [
   "zenergy",
   "zenstates",
 ]
-
-# [icedos.applications.steam.session]
-# args = ["--hdr-enabled", "-W 3440", "-H 1440", "--output DP-1"]
-# steamArgs = []
-
-# [icedos.applications.steam.session.env]
-# DXVK_HDR = "1"
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
