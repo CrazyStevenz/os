@@ -384,19 +384,21 @@ extraPackages = [
   # "prismlauncher", # Minecraft launcher
   # "rpcs3", # PS3
 
+  # MUSIC #
+  # "eartag", # Simple music tag editor
+  # "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
+  # "nicotine-plus", # p2p music sharing platform
+  # "parabolic", # Download web video and audio
+  # "spek", # Audio file spectrogram analysis
+
   # "android-tools", # Android SDK platform tools
   # "audacity", # Sound editor with graphical UI
   # "curtail", # Image compressor
-  "eartag", # Simple music tag editor
   "faugus-launcher",
-  "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
   # "ghex", # HEX Editor
   # "newsflash", # RSS reader
-  "nextcloud-client", # Nextcloud themed desktop client
-  "nicotine-plus", # p2p music sharing platform
+  # "nextcloud-client", # Nextcloud themed desktop client
   # "owmods-gui", # Outer Wilds Mod Manager
-  "parabolic", # Download web video and audio
-  "spek", # Audio file spectrogram analysis
   # "stremio", # Media streaming platform
   # "stremio-linux-shell", # Media streaming platform
   "qbittorrent", # BitTorrent client
