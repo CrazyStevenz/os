@@ -376,6 +376,7 @@ modules = ["gaming", "kernel"]
 [icedos.users.stef]
 description = "Stefanos"
 extraPackages = [
+  # - EMULATORS - #
   # "cemu", # Wiuu
   # "duckstation", # PS1
   # "heroic", # Cross-platform Epic Games Launcher
@@ -384,7 +385,7 @@ extraPackages = [
   # "prismlauncher", # Minecraft launcher
   # "rpcs3", # PS3
 
-  # MUSIC #
+  # - MUSIC - #
   # "eartag", # Simple music tag editor
   # "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
   # "nicotine-plus", # p2p music sharing platform
