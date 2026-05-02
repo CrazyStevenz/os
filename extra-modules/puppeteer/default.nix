@@ -2,6 +2,6 @@
 
 {
   environment.variables = {
-    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
+    PUPPETEER_EXECUTABLE_PATH = "/run/current-system/sw/bin/helium";
   };
 }
