@@ -429,7 +429,6 @@ extraPackages = [
   "jetbrains.datagrip", # Database IDE
   "slack", # Desktop client for Slack
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
-  "windsurf", # Agentic IDE powered by AI Flow paradigm
 ]
 
 [icedos.system]
