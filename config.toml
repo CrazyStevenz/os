@@ -100,7 +100,6 @@ modules = [
   "btop",
   "celluloid",
   "codium",
-  "flatpak",
   "gamemode",
   "gamescope",
   "helium",
@@ -161,9 +160,6 @@ extraPackages = [
   "warp", # File sync
 ]
 insecurePackages = []
-
-[icedos.applications.flatpak]
-packages = []
 
 [icedos.applications.codium.users.stef]
 autoSave = "onFocusChange"
