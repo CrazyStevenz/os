@@ -147,7 +147,6 @@ extraPackages = [
   "pnpm", # Fast, disk space efficient package manager for JavaScript
   "proton-vpn",
   "signal-desktop",
-  "ungoogled-chromium", # Chromium with dependencies on Google web services removed
   "warp", # File sync
 ]
 insecurePackages = []
