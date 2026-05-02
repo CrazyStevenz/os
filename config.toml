@@ -11,10 +11,10 @@
 # ]
 
 # [icedos.desktop.cosmic.users.stef]
-# panelFavorites = ["steam", "discord", "signal-desktop", "helium"]
+# panelFavorites = ["steam", "signal-desktop", "helium"]
 
 # [icedos.desktop.cosmic.users.work]
-# panelFavorites = ["slack", "discord", "signal-desktop", "helium", "webstorm"]
+# panelFavorites = ["slack", "signal-desktop", "helium", "webstorm"]
 
 # [icedos.desktop.cosmic.panel]
 # autohide = true
@@ -137,7 +137,6 @@ defaultBrowser = "helium.desktop"
 defaultEditor = "codium.desktop"
 extraPackages = [
   "appimage-run", # Appimage runner
-  "discord",
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
@@ -264,7 +263,7 @@ list = ["codium.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
 
 [icedos.desktop.gnome.users.stef.pinnedApps.shell]
 enable = true
-list = ["steam.desktop", "discord.desktop", "signal.desktop", "helium.desktop"]
+list = ["steam.desktop", "signal.desktop", "helium.desktop"]
 
 [icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
 enable = true
@@ -272,13 +271,7 @@ list = ["codium.desktop"]
 
 [icedos.desktop.gnome.users.work.pinnedApps.shell]
 enable = true
-list = [
-  "slack.desktop",
-  "discord.desktop",
-  "signal.desktop",
-  "helium.desktop",
-  "webstorm.desktop",
-]
+list = ["slack.desktop", "signal.desktop", "helium.desktop", "webstorm.desktop"]
 
 [icedos.desktop.gnome.clock]
 date = true
