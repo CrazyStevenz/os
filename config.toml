@@ -105,23 +105,20 @@ modules = [
   "helium",
   "kitty",
   "lact",
-  "librewolf",
   "lsfg-vk",
   "mangohud",
   # "me3",
   "nautilus",
-  "ncdu",
   "podman",
   "proton-launch",
   # "reigntweak",
-  "scx",
+  # "scx",
   # "solaar",
   "steam",
   # "sunshine",
   "tailscale",
   "walker",
   "zenergy",
-  "zenstates",
 ]
 
 [[icedos.repositories]]
@@ -142,7 +139,6 @@ extraPackages = [
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
-  "mousai", # Song recognizer
   "nodejs_22", # Node package manager
   "pnpm", # Fast, disk space efficient package manager for JavaScript
   "proton-vpn",
@@ -226,16 +222,31 @@ fpsLimit = "165,144,120,90,60,30,0"
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
 
-[icedos.applications.scx]
-extraArgs = ["--perf", "1024"]
+# [icedos.applications.scx]
+# extraArgs = ["--perf", "1024"]
 
 [icedos.applications.steam]
 beta = true
 cpuUsageWorkaround = true
 downloadsWorkaround = true
 
-[icedos.applications.zenstates]
-serviceArgs = "-p 0 -v 40 -f B0" # Pstate 0, 1.15 voltage, 4400 clock speed
+[[icedos.desktop.entries]]
+id = "librewolf" # Firefox privacy flavor
+name = "Librewolf"
+exec = "icedos pkgs run librewolf"
+icon = "librewolf"
+
+[[icedos.desktop.entries]]
+id = "mousai" # Song recognizer
+name = "Mousai"
+exec = "icedos pkgs run mousai"
+icon = "mousai"
+
+[[icedos.desktop.entries]]
+id = "newsflash" # RSS reader
+name = "Newsflash"
+exec = "icedos pkgs run newsflash"
+icon = "newsflash"
 
 [icedos.desktop.gnome]
 excludeDefaultPackages = [
@@ -397,10 +408,8 @@ extraPackages = [
   # "curtail", # Image compressor
   "faugus-launcher",
   # "ghex", # HEX Editor
-  # "newsflash", # RSS reader
   # "nextcloud-client", # Nextcloud themed desktop client
   # "owmods-gui", # Outer Wilds Mod Manager
-  # "stremio", # Media streaming platform
   # "stremio-linux-shell", # Media streaming platform
   "qbittorrent", # BitTorrent client
 ]
