@@ -256,7 +256,6 @@ excludeDefaultPackages = [
   "showtime", # New video player
   "sushi", # File previewer
 ]
-titlebarLayout = "appmenu:minimize,maximize,close"
 
 [icedos.applications.zsh.aliases]
 i = "icedos"
@@ -310,6 +309,10 @@ seconds = 270
 
 [icedos.desktop.users.work.idle.suspend]
 enable = false
+
+[icedos.desktop.windows]
+maximizeButton = true
+minimizeButton = true
 
 [[icedos.repositories]]
 url = "github:icedos/hardware"

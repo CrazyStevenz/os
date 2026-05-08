@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/7392ff0a2d7b997ea3783144ff6334acd791b78c";
+      url = "github:icedos/apps/0fbe6a3a3754a46a54aea717b0b41f2eacea0c24";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -29,9 +29,6 @@
       flake = false;
       url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
     };
-    icedos-github_icedos_apps-flatpak-nix-flatpak = {
-      url = "github:gmodena/nix-flatpak";
-    };
     icedos-github_icedos_apps-proton-launch-scopebuddy = {
       inputs = {
         nixpkgs = {
@@ -41,19 +38,27 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/7b9d75dcf3b843bc5e182425fcaceb205f9c0a3d";
+      url = "github:icedos/desktop/91286ff730c3c13c53eb9ef363560d66ef7fb99d";
+    };
+    icedos-github_icedos_desktop-stylix-stylix = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "github:nix-community/stylix";
     };
     icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/361f1e01ec385848546f5b2c9ae741c42a137b28";
+      url = "github:icedos/gnome/d8a0a2fff6092f21268621194e62d63137e2e8ea";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/2811c2ddedfc768c08b2d4b2f215fe7bb35d1fb6";
+      url = "github:icedos/hardware/ddfaa01c68f4e7f1dcea78e12247016ac9167a47";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/c1a5aa2f9cdfd58f0c58ea78a4905c6afa9c373e";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/0735682a601229bd5ad9b874f147fdd7c129918f";
+      url = "github:icedos/tweaks/3bc12d831e0260e2d80d50e78d6d18301afe0370";
     };
     icedos-path__home_stef_code_os__repos_hytale-launcher = {
       url = "path:/home/stef/code/os/.repos/hytale-launcher?narHash=sha256-oYwGh6ZO1uCzhQ/+BUk/FDcuNenulk9pNW3b5vsn0TA=";
@@ -120,12 +125,12 @@
 
       getModules =
         path:
-        map (dir: "/${path}/${dir}") (
-          let
-            inherit (lib) attrNames;
-          in
-          attrNames (filterAttrs (n: v: v == "directory") (builtins.readDir path))
-        );
+        let
+          inherit (lib) attrNames;
+          dirs = attrNames (filterAttrs (n: v: v == "directory") (builtins.readDir path));
+          hasDefaultNix = dir: pathExists "${path}/${dir}/default.nix";
+        in
+        map (dir: "/${path}/${dir}") (builtins.filter hasDefaultNix dirs);
     in
     {
       nixosConfigurations."icedos" = nixpkgs.lib.nixosSystem rec {
@@ -136,13 +141,12 @@
         modules = [
           # Read configuration location
           (
-            { lib, ... }:
+            { icedosLib, ... }:
             let
-              inherit (lib) mkOption types;
+              inherit (icedosLib) mkStrOption;
             in
             {
-              options.icedos.configurationLocation = mkOption {
-                type = types.str;
+              options.icedos.configurationLocation = mkStrOption {
                 default = "/home/stef/code/os/.state";
               };
             }
