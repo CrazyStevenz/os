@@ -138,6 +138,7 @@ extraPackages = [
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
+  "jq", # Lightweight and flexible command-line JSON processor
   "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
   "nodejs_22", # Node package manager
   "pnpm", # Fast, disk space efficient package manager for JavaScript
