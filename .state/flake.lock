@@ -182,11 +182,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778144356,
-        "narHash": "sha256-dGM+QCstz/DyLB68+JK5GWyMx4QSqmOJEVgZmy63d/g=",
+        "lastModified": 1778248595,
+        "narHash": "sha256-dhFgEjoeJMYN/7OY6xfxS799YB4IjbbYXTjyGIJyLpc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e4419d3123b780d5f4c0bceeace450424387638c",
+        "rev": "fdb2ccba9d5e1238d32e0c4a3ec1a277efa80c1d",
         "type": "github"
       },
       "original": {
@@ -200,11 +200,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1778164664,
-        "narHash": "sha256-YbMYZyc11Gd2IkoPFc9JCVDCtO6FKWoAXC+UbIJIKWI=",
+        "lastModified": 1778259744,
+        "narHash": "sha256-3wprwkhPL8/GDKqx81aLow45JJiZE50eq5xTpcWrwio=",
         "owner": "icedos",
         "repo": "core",
-        "rev": "214e7910098cabc02c103433326586151fa39bf8",
+        "rev": "3855e843eb4633f6f1775bb34c10eb1184cede4c",
         "type": "github"
       },
       "original": {
@@ -218,8 +218,8 @@
         "icedos": "icedos"
       },
       "locked": {
-        "lastModified": 1778235321,
-        "narHash": "sha256-AQS7tYDhyRYWnBTbUbqfZs/h4ZsZlgeNWXwL+cLvyNE=",
+        "lastModified": 1778260581,
+        "narHash": "sha256-6udX6lbg3afkoTfmJEVAN36YBwUvWkeM+rrXQytIJNQ=",
         "path": "/home/stef/code/os",
         "type": "path"
       },
@@ -230,17 +230,17 @@
     },
     "icedos-github_icedos_apps": {
       "locked": {
-        "lastModified": 1778101839,
-        "narHash": "sha256-NhqCRX09KQ27ce7ad7EhCrca2MmUqpISeci0wEcZ6cw=",
+        "lastModified": 1778259076,
+        "narHash": "sha256-5FwktWekpZhj2oyQn6K6Fn8fakkI9Ll+BbRlQqeHwus=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "0fbe6a3a3754a46a54aea717b0b41f2eacea0c24",
+        "rev": "cade3a51acf0fbf0a6ddc052fe832d89f992f826",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "0fbe6a3a3754a46a54aea717b0b41f2eacea0c24",
+        "rev": "cade3a51acf0fbf0a6ddc052fe832d89f992f826",
         "type": "github"
       }
     },
@@ -412,39 +412,6 @@
         "type": "github"
       }
     },
-    "icedos-path__home_stef_code_os__repos_hytale-launcher": {
-      "locked": {
-        "lastModified": 1769381722,
-        "narHash": "sha256-oYwGh6ZO1uCzhQ/+BUk/FDcuNenulk9pNW3b5vsn0TA=",
-        "path": "/home/stef/code/os/.repos/hytale-launcher",
-        "type": "path"
-      },
-      "original": {
-        "narHash": "sha256-oYwGh6ZO1uCzhQ/+BUk/FDcuNenulk9pNW3b5vsn0TA=",
-        "path": "/home/stef/code/os/.repos/hytale-launcher",
-        "type": "path"
-      }
-    },
-    "icedos-path__home_stef_code_os__repos_hytale-launcher-default-hytale-launcher": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1778175185,
-        "narHash": "sha256-134+a/Cj35/rx9mewWhqrTWUBPPAUGuAR+mBWJ0Z7+Y=",
-        "owner": "JPyke3",
-        "repo": "hytale-launcher-nix",
-        "rev": "406db6018489ecf55955b0587c280285375a0491",
-        "type": "github"
-      },
-      "original": {
-        "owner": "JPyke3",
-        "repo": "hytale-launcher-nix",
-        "type": "github"
-      }
-    },
     "icedos-state": {
       "flake": false,
       "locked": {
@@ -523,11 +490,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778228612,
-        "narHash": "sha256-v7Tt253O8H04sSn0o1s84Q3Sj54VVe6XJsL+TY7yoB8=",
+        "lastModified": 1778259292,
+        "narHash": "sha256-C8BSAXwKwHrs6JeXEZ005caMC3RaM3dRPlLFoZLkU4E=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "902997eab80f0720cb5f6e5dd09f535114fe9f68",
+        "rev": "770ee63058beb818c89740441bc2a20e8a0b3947",
         "type": "github"
       },
       "original": {
@@ -554,8 +521,6 @@
         "icedos-github_icedos_hardware": "icedos-github_icedos_hardware",
         "icedos-github_icedos_providers": "icedos-github_icedos_providers",
         "icedos-github_icedos_tweaks": "icedos-github_icedos_tweaks",
-        "icedos-path__home_stef_code_os__repos_hytale-launcher": "icedos-path__home_stef_code_os__repos_hytale-launcher",
-        "icedos-path__home_stef_code_os__repos_hytale-launcher-default-hytale-launcher": "icedos-path__home_stef_code_os__repos_hytale-launcher-default-hytale-launcher",
         "icedos-state": "icedos-state",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur_2"

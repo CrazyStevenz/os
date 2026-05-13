@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/0fbe6a3a3754a46a54aea717b0b41f2eacea0c24";
+      url = "github:icedos/apps/cade3a51acf0fbf0a6ddc052fe832d89f992f826";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -59,17 +59,6 @@
     };
     icedos-github_icedos_tweaks = {
       url = "github:icedos/tweaks/3bc12d831e0260e2d80d50e78d6d18301afe0370";
-    };
-    icedos-path__home_stef_code_os__repos_hytale-launcher = {
-      url = "path:/home/stef/code/os/.repos/hytale-launcher?narHash=sha256-oYwGh6ZO1uCzhQ/+BUk/FDcuNenulk9pNW3b5vsn0TA=";
-    };
-    icedos-path__home_stef_code_os__repos_hytale-launcher-default-hytale-launcher = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "github:JPyke3/hytale-launcher-nix";
     };
     icedos-state = {
       flake = false;
