@@ -89,8 +89,8 @@
 # date = true
 # weekday = true
 
-[[icedos.repositories]]
-url = "path:/home/stef/code/os/.repos/hytale-launcher"
+# [[icedos.repositories]]
+# url = "path:/home/stef/code/os/.repos/hytale-launcher"
 
 [[icedos.repositories]]
 url = "github:icedos/apps"
