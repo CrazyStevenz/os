@@ -16,15 +16,13 @@ modules = [
   "lact",
   "lsfg-vk",
   "mangohud",
-  # "me3",
   "nautilus",
   "podman",
   "proton-launch",
-  # "reigntweak",
   # "scx",
   # "solaar",
   "steam",
-  # "sunshine",
+  "sunshine",
   "tailscale",
   "walker",
   "zenergy",
@@ -32,34 +30,16 @@ modules = [
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
-modules = ["gdm"]
 
 [[icedos.repositories]]
 url = "github:icedos/gnome"
 fetchOptionalDependencies = true
 
-[icedos.applications]
-defaultBrowser = "helium.desktop"
-defaultEditor = "codium.desktop"
-extraPackages = [
-  "appimage-run", # Appimage runner
-  "gimp3", # GNU Image Manipulation Program
-  "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
-  # "handbrake", # Tool for converting video files and ripping DVDs
-  "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
-  "jq", # Lightweight and flexible command-line JSON processor
-  "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
-  "nodejs_22", # Node package manager
-  "pnpm", # Fast, disk space efficient package manager for JavaScript
-  "proton-vpn",
-  "signal-desktop",
-  "warp", # File sync
-]
-insecurePackages = []
-
 [icedos.applications.codium.users.stef]
 autoSave = "onFocusChange"
+colorTheme = "One Dark Pro Darker"
 formatOnPaste = false
+fontSize = 14
 
 [icedos.applications.codium.users.work]
 autoSave = "onFocusChange"
@@ -76,58 +56,6 @@ email = "github.ekta@aleeas.com"
 [icedos.applications.mangohud]
 fpsLimit = "165,144,120,90,60,30,0"
 
-# [[icedos.applications.me3.profiles]]
-# name = "nr"
-# config = """
-# profileVersion = "v1"
-# start_online = true
-
-# [[supports]]
-# game = "nightrein"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/disable-sharpening.dll"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-chromatic-aberration.dll"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/remove-vignette.dll"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/ultrawide.dll"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/dxgi.dll"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/nrss/nrss.dll"
-
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/unlock-fps/unlock-fps.dll"
-
-# [[packages]]
-# id = "blue-filter-removal"
-# path = "/home/stef/.config/me3/profiles/nightreign/packages/blue-filter-removal"
-# """
-
-# [[icedos.applications.me3.profiles]]
-# name = "nr-cl"
-# dependencies = ["nr"]
-# config = """
-# [[natives]]
-# path = "/home/stef/.config/me3/profiles/nightreign/natives/cl_server_redirector.dll"
-# """
-
-# [[icedos.applications.me3.profiles]]
-# name = "nr-mcv"
-# dependencies = ["nr", "nr-cl"]
-# config = """
-# [[packages]]
-# id = "more-castle-variations"
-# path = "/home/stef/.config/me3/profiles/nightreign/packages/more-castle-variations"
-# """
-
 [icedos.applications.nh.gc]
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
@@ -139,6 +67,13 @@ generations = 5 # Number of generations that will always be kept
 beta = true
 cpuUsageWorkaround = true
 downloadsWorkaround = true
+
+[icedos.applications.sunshine]
+autoStart = true
+
+[icedos.desktop]
+defaultBrowser = "helium.desktop"
+defaultEditor = "codium.desktop"
 
 [[icedos.desktop.entries]]
 id = "librewolf" # Firefox privacy flavor
@@ -195,6 +130,10 @@ list = ["slack.desktop", "signal.desktop", "helium.desktop", "webstorm.desktop"]
 [icedos.desktop.gnome.clock]
 date = true
 weekday = true
+
+[icedos.desktop.stylix]
+enable = true
+disabledTargets = ["console", "kmscon"]
 
 [icedos.desktop.users.stef]
 startupScript = "protonvpn-app & steam & signal-desktop"
@@ -299,7 +238,7 @@ modules = ["gaming", "kernel"]
 
 [icedos.users.stef]
 description = "Stefanos"
-extraPackages = [
+packages = [
   # - EMULATORS - #
   # "cemu", # Wiuu
   # "duckstation", # PS1
@@ -329,7 +268,7 @@ extraPackages = [
 
 [icedos.users.work]
 description = "Work"
-extraPackages = [
+packages = [
   "claude-code", # Agentic coding tool
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
@@ -341,8 +280,23 @@ extraPackages = [
 
 [icedos.system]
 generations = 30
+packages = [
+  "appimage-run", # Appimage runner
+  "gimp3", # GNU Image Manipulation Program
+  "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
+  # "handbrake", # Tool for converting video files and ripping DVDs
+  "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
+  "jq", # Lightweight and flexible command-line JSON processor
+  "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
+  "nodejs_22", # Node package manager
+  "pnpm", # Fast, disk space efficient package manager for JavaScript
+  "proton-vpn",
+  "signal-desktop",
+  "warp", # File sync
+]
+permittedInsecurePackages = []
 version = "23.05"
 
-# [[icedos.system.channels]]
-# name = "small"
+# [[icedos.system.overlays.fromChannel]]
 # url = "github:nixos/nixpkgs/nixos-unstable-small"
+# packages = []
