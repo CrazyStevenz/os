@@ -15,7 +15,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/cade3a51acf0fbf0a6ddc052fe832d89f992f826";
+      url = "github:icedos/apps/bf0bdc9fc8656898b4f75acf1aa233b6d478932e";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -38,7 +38,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/91286ff730c3c13c53eb9ef363560d66ef7fb99d";
+      url = "github:icedos/desktop/cfc8accfe2f5ab877142595e5135e28f35f08b7c";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -49,16 +49,16 @@
       url = "github:nix-community/stylix";
     };
     icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/d8a0a2fff6092f21268621194e62d63137e2e8ea";
+      url = "github:icedos/gnome/2f70b4765136932117a5f5c4d4a83cf647b72c40";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/ddfaa01c68f4e7f1dcea78e12247016ac9167a47";
+      url = "github:icedos/hardware/e3a407391d2bc89290fa8a43393db37a8d71252d";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/c1a5aa2f9cdfd58f0c58ea78a4905c6afa9c373e";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/3bc12d831e0260e2d80d50e78d6d18301afe0370";
+      url = "github:icedos/tweaks/13a2a6c4a6bac229b5a980398c70c54783ff2845";
     };
     icedos-state = {
       flake = false;
@@ -91,18 +91,15 @@
         inherit system;
         config = {
           allowUnfree = true;
-
-          permittedInsecurePackages = [
-
-          ];
+          permittedInsecurePackages = [ ];
         };
       };
 
       inherit (pkgs) lib;
-      inherit (lib) fileContents filterAttrs;
+      inherit (lib) fileContents;
 
       inherit (builtins) pathExists;
-      inherit ((fromTOML (fileContents "${inputs.icedos-config}/config.toml"))) icedos;
+      inherit (import "${inputs.icedos-core}/lib/load-user-config.nix" "${inputs.icedos-config}") icedos;
 
       icedosLib = import "${inputs.icedos-core}/lib" {
         inherit lib pkgs inputs;
@@ -110,16 +107,7 @@
         self = toString inputs.icedos-core;
       };
 
-      inherit (icedosLib) modulesFromConfig;
-
-      getModules =
-        path:
-        let
-          inherit (lib) attrNames;
-          dirs = attrNames (filterAttrs (n: v: v == "directory") (builtins.readDir path));
-          hasDefaultNix = dir: pathExists "${path}/${dir}/default.nix";
-        in
-        map (dir: "/${path}/${dir}") (builtins.filter hasDefaultNix dirs);
+      inherit (icedosLib) getModules modulesFromConfig;
     in
     {
       nixosConfigurations."icedos" = nixpkgs.lib.nixosSystem rec {
@@ -153,27 +141,16 @@
           }
 
           {
-            imports = [
-              "${inputs.icedos-core}/modules/nh.nix"
-              "${inputs.icedos-core}/modules/nix.nix"
-              "${inputs.icedos-core}/modules/rebuild.nix"
-              "${inputs.icedos-core}/modules/state.nix"
-              "${inputs.icedos-core}/modules/toolset.nix"
-              "${inputs.icedos-core}/modules/users.nix"
-            ];
+            imports = getModules "${inputs.icedos-core}/modules";
           }
 
-          # Internal modules and config
+          # Extra modules and stateVersion
           {
-            imports = [
-              "${inputs.icedos-core}/modules/options.nix"
-            ]
-            ++ (
+            imports =
               if (pathExists "${inputs.icedos-config}/extra-modules") then
                 (getModules "${inputs.icedos-config}/extra-modules")
               else
-                [ ]
-            );
+                [ ];
             config.system.stateVersion = "23.05";
           }
 
