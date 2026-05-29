@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/ny2hm5639mxqvn4ab17kz33zv27783ks-icedos-config";
+      url = "path:/nix/store/fvb5cbz79wk851ghi0p8hqhdpczgn1w8-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -23,7 +23,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/b3556c27f5e94c1f614fa690ff0a7523d9a46dcd";
+      url = "github:icedos/apps/d83263f6404a53b890dd8b54316b8fdc7575b8b9";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {

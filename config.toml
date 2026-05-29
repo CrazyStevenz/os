@@ -1,5 +1,6 @@
 [[icedos.repositories]]
 url = "github:icedos/apps"
+# overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
   "aagl",
   "bash",
@@ -23,6 +24,7 @@ modules = [
   "tailscale",
   "walker",
   "zenergy",
+  "zed",
 ]
 
 [[icedos.repositories]]
@@ -31,6 +33,9 @@ url = "github:icedos/desktop"
 [[icedos.repositories]]
 url = "github:icedos/gnome"
 fetchOptionalDependencies = true
+
+[icedos.applications.aagl]
+launchers = ["anime-game-launcher", "sleepy-launcher"]
 
 [icedos.applications.codium.users.stef]
 autoSave = "onFocusChange"
@@ -67,6 +72,10 @@ downloadsWorkaround = true
 
 [icedos.applications.sunshine]
 autoStart = true
+
+[icedos.applications.zed]
+autosave = true
+formatOnSave = true
 
 [icedos.desktop]
 defaultBrowser = "helium.desktop"
@@ -130,7 +139,7 @@ weekday = true
 
 [icedos.desktop.stylix]
 enable = true
-disabledTargets = ["console", "kmscon"]
+disabledTargets = ["console", "kmscon", "zed"]
 
 [icedos.desktop.users.stef]
 startupScript = "protonvpn-app & steam & signal-desktop"
