@@ -206,10 +206,10 @@ fsType = "btrfs"
 flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
 [[icedos.hardware.mounts]]
-path = "/mnt/HDDGames"
-device = "/dev/disk/by-uuid/e7e03cc8-e8fe-47e2-b48a-c6dbd1903112"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+path = "/mnt/HDD"
+device = "/dev/disk/by-uuid/a8bdc116-6aac-4f2e-8422-fad546ecf5c0"
+fsType = "xfs"
+flags = ["nofail", "x-gvfs-show"]
 
 [icedos.hardware.network]
 firewall = false
