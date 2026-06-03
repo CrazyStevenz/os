@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/fvb5cbz79wk851ghi0p8hqhdpczgn1w8-icedos-config";
+      url = "path:/nix/store/gnpswn64v09zd37mvwygsbffg1hx29ak-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -23,7 +23,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/d83263f6404a53b890dd8b54316b8fdc7575b8b9";
+      url = "github:icedos/apps/be873378f3249c7292c7cbebf7d8793ff37a13e4";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -46,7 +46,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/5076f66219a4791254103154b69c0348603feb05";
+      url = "github:icedos/desktop/5ebf01d96e9793633ff53cbbab1d3d400cb59dab";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -60,7 +60,21 @@
       url = "github:icedos/gnome/2f70b4765136932117a5f5c4d4a83cf647b72c40";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/e3a407391d2bc89290fa8a43393db37a8d71252d";
+      url = "github:icedos/hardware/38e5cabd2e2a06f132658d84e77595f0f0f2d482";
+    };
+    icedos-github_icedos_kde = {
+      url = "path:/home/stef/code/os/.repos/kde";
+    };
+    icedos-github_icedos_kde-default-plasma-manager = {
+      inputs = {
+        home-manager = {
+          follows = "home-manager";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "github:nix-community/plasma-manager";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/c1a5aa2f9cdfd58f0c58ea78a4905c6afa9c373e";
@@ -68,9 +82,12 @@
     icedos-github_icedos_tweaks = {
       url = "github:icedos/tweaks/13a2a6c4a6bac229b5a980398c70c54783ff2845";
     };
+    icedos-overlay-github_K900_nixpkgs_788a6c3a28b78c647ceb5c69d9346845985df77b = {
+      url = "github:K900/nixpkgs/788a6c3a28b78c647ceb5c69d9346845985df77b";
+    };
     icedos-state = {
       flake = false;
-      url = "path:/nix/store/yw05v41gq3nsv7jm2g5194n3471qan5b-icedos";
+      url = "path:/nix/store/2szh47a70xy566yfg2rf010ic53k90ai-icedos";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
@@ -155,6 +172,23 @@
           }
 
           home-manager.nixosModules.home-manager
+
+          (
+            { config, lib, ... }:
+            {
+              # `lib.mkBefore` keeps these overlays at the head of
+              # `nixpkgs.overlays` so they swap the package source
+              # *before* downstream patch overlays (e.g. cosmic
+              # patches) run via `prev.<pkg>.overrideAttrs`. Without
+              # it the swap clobbers patches that already landed on
+              # the base derivation.
+              nixpkgs.overlays = lib.mkBefore (
+                icedosLib.pkgs.overlaysFromChannel config.icedos
+                  inputs."icedos-overlay-github_K900_nixpkgs_788a6c3a28b78c647ceb5c69d9346845985df77b"
+                  [ "kdePackages" ]
+              );
+            }
+          )
 
           { icedos.system.isFirstBuild = true; }
 
