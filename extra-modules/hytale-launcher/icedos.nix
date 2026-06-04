@@ -11,7 +11,7 @@
     [
       {
         environment.systemPackages = [
-          inputs.hytale-launcher.packages.x86_64-linux.default
+          # inputs.hytale-launcher.packages.x86_64-linux.default
         ];
       }
     ];
