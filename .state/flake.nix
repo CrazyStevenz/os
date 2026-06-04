@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/gnpswn64v09zd37mvwygsbffg1hx29ak-icedos-config";
+      url = "path:/nix/store/rc4vml54k79rcksa7yh53bis6s2z48a2-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -23,7 +23,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/be873378f3249c7292c7cbebf7d8793ff37a13e4";
+      url = "github:icedos/apps/bc62aa48fcb370aac0f996af80512db4d7d07a6e";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -46,7 +46,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/5ebf01d96e9793633ff53cbbab1d3d400cb59dab";
+      url = "github:icedos/desktop/4277a112953abdce6dd9954d4d915a7dc7c5dcd6";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -57,10 +57,10 @@
       url = "github:nix-community/stylix";
     };
     icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/2f70b4765136932117a5f5c4d4a83cf647b72c40";
+      url = "github:icedos/gnome/222471e0596c15e966c1202d75572411727d52b7";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/38e5cabd2e2a06f132658d84e77595f0f0f2d482";
+      url = "github:icedos/hardware/680f9e79bc5fad691135423e38c133fe43437c0b";
     };
     icedos-github_icedos_kde = {
       url = "path:/home/stef/code/os/.repos/kde";
@@ -173,22 +173,19 @@
 
           home-manager.nixosModules.home-manager
 
-          (
-            { config, lib, ... }:
-            {
-              # `lib.mkBefore` keeps these overlays at the head of
-              # `nixpkgs.overlays` so they swap the package source
-              # *before* downstream patch overlays (e.g. cosmic
-              # patches) run via `prev.<pkg>.overrideAttrs`. Without
-              # it the swap clobbers patches that already landed on
-              # the base derivation.
-              nixpkgs.overlays = lib.mkBefore (
-                icedosLib.pkgs.overlaysFromChannel config.icedos
-                  inputs."icedos-overlay-github_K900_nixpkgs_788a6c3a28b78c647ceb5c69d9346845985df77b"
-                  [ "kdePackages" ]
-              );
-            }
-          )
+          ({ config, lib, ... }: {
+            # `lib.mkBefore` keeps these overlays at the head of
+            # `nixpkgs.overlays` so they swap the package source
+            # *before* downstream patch overlays (e.g. cosmic
+            # patches) run via `prev.<pkg>.overrideAttrs`. Without
+            # it the swap clobbers patches that already landed on
+            # the base derivation.
+            nixpkgs.overlays = lib.mkBefore (
+              icedosLib.pkgs.overlaysFromChannel config.icedos
+                inputs."icedos-overlay-github_K900_nixpkgs_788a6c3a28b78c647ceb5c69d9346845985df77b"
+                [ "kdePackages" ]
+            );
+          })
 
           { icedos.system.isFirstBuild = true; }
 

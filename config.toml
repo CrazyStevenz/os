@@ -6,7 +6,6 @@ modules = [
   "bash",
   "btop",
   "celluloid",
-  "codium",
   "gamemode",
   "gamescope",
   "helium",
@@ -22,7 +21,7 @@ modules = [
   "steam",
   "sunshine",
   "tailscale",
-  "walker",
+  # "walker",
   "zenergy",
   "zed",
 ]
@@ -34,18 +33,12 @@ url = "github:icedos/desktop"
 url = "github:icedos/gnome"
 fetchOptionalDependencies = true
 
+[[icedos.repositories]]
+url = "github:icedos/kde"
+overrideUrl = "path:/home/stef/code/os/.repos/kde"
+
 [icedos.applications.aagl]
 launchers = ["anime-game-launcher", "sleepy-launcher"]
-
-[icedos.applications.codium.users.stef]
-autoSave = "onFocusChange"
-colorTheme = "One Dark Pro Darker"
-formatOnPaste = false
-fontSize = 14
-
-[icedos.applications.codium.users.work]
-autoSave = "onFocusChange"
-formatOnPaste = false
 
 [icedos.applications.git.users.stef]
 username = "CrazyStevenz"
@@ -77,9 +70,19 @@ autoStart = true
 autosave = true
 formatOnSave = true
 
+[icedos.applications.zsh.aliases]
+i = "icedos"
+ir = "icedos rebuild"
+iu = "icedos rebuild --update"
+
 [icedos.desktop]
 defaultBrowser = "helium.desktop"
-defaultEditor = "codium.desktop"
+defaultEditor = "dev.zed.Zed.desktop"
+keyboardLayouts = [ "us", "gr" ]
+
+[icedos.desktop.clock]
+date = true
+weekday = true
 
 [[icedos.desktop.entries]]
 id = "librewolf" # Firefox privacy flavor
@@ -108,18 +111,13 @@ excludeDefaultPackages = [
   "sushi", # File previewer
 ]
 
-[icedos.applications.zsh.aliases]
-i = "icedos"
-ir = "icedos rebuild"
-iu = "icedos rebuild --update"
-
 [icedos.desktop.gnome.extensions]
 arcmenu = true
 dashToPanel = true
 
 [icedos.desktop.gnome.users.stef.pinnedApps.arcmenu]
 enable = true
-list = ["codium.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
+list = ["dev.zed.Zed.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
 
 [icedos.desktop.gnome.users.stef.pinnedApps.shell]
 enable = true
@@ -127,22 +125,22 @@ list = ["steam.desktop", "signal.desktop", "helium.desktop"]
 
 [icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
 enable = true
-list = ["codium.desktop"]
+list = ["dev.zed.Zed.desktop"]
 
 [icedos.desktop.gnome.users.work.pinnedApps.shell]
 enable = true
 list = ["slack.desktop", "signal.desktop", "helium.desktop", "webstorm.desktop"]
 
-[icedos.desktop.gnome.clock]
-date = true
-weekday = true
+[[icedos.desktop.kde.screenEdges]]
+position = "topLeft"
+action = "none"
 
 [icedos.desktop.stylix]
 enable = true
-disabledTargets = ["console", "kmscon", "zed"]
+disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
 
 [icedos.desktop.users.stef]
-startupScript = "protonvpn-app & steam & signal-desktop"
+startupScript = "protonvpn-app"
 
 [icedos.desktop.users.stef.idle.lock]
 enable = false
@@ -223,6 +221,9 @@ flags = ["nofail", "x-gvfs-show"]
 [icedos.hardware.network]
 firewall = false
 
+[icedos.hardware.pipewire.echoCancellation]
+enable = true
+
 [icedos.hardware.pipewire.noiseCancellation]
 enable = true
 # true  = smart filter on the default mic (transparent, follows default source)
@@ -255,31 +256,32 @@ packages = [
   # "rpcs3", # PS3
 
   # - MUSIC - #
-  # "eartag", # Simple music tag editor
+  # "eartag", # Music tag editor
   # "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
   # "nicotine-plus", # p2p music sharing platform
   # "parabolic", # Download web video and audio
   # "spek", # Audio file spectrogram analysis
 
-  # "android-tools", # Android SDK platform tools
-  # "audacity", # Sound editor with graphical UI
+  # "android-tools", # Required for certain operations on Android phones
+  # "audacity", # Sound editor
   # "curtail", # Image compressor
-  "faugus-launcher",
-  # "ghex", # HEX Editor
-  # "nextcloud-client", # Nextcloud themed desktop client
+  "faugus-launcher", # Run Windows games using UMU-Launcher
+  # "ghex", # HEX editor
+  # "nextcloud-client", # Used for two-way syncing with Nextcloud
   # "owmods-gui", # Outer Wilds Mod Manager
-  # "stremio-linux-shell", # Media streaming platform
-  "qbittorrent", # BitTorrent client
+  # "stremio-linux-shell",
+  "qbittorrent",
 ]
 
 [icedos.users.work]
 description = "Work"
 packages = [
-  "claude-code", # Agentic coding tool
+  "claude-code",
+  "codex",
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
-  "slack", # Desktop client for Slack
+  "slack",
   "t3code", # Minimal web GUI for coding agents
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
 ]
@@ -287,18 +289,18 @@ packages = [
 [icedos.system]
 generations = 30
 packages = [
-  "appimage-run", # Appimage runner
+  "appimage-run",
   "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "jq", # Lightweight and flexible command-line JSON processor
   "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
-  "nodejs_22", # Node package manager
+  "nodejs_22",
   "pnpm", # Fast, disk space efficient package manager for JavaScript
   "proton-vpn",
   "signal-desktop",
-  "warp", # File sync
+  "warp", # Send files via the automatically fastest route
 ]
 permittedInsecurePackages = []
 version = "23.05"
@@ -306,3 +308,7 @@ version = "23.05"
 # [[icedos.system.overlays.fromChannel]]
 # url = "github:nixos/nixpkgs/nixos-unstable-small"
 # packages = []
+
+[[icedos.system.overlays.fromChannel]]
+url = "github:K900/nixpkgs/788a6c3a28b78c647ceb5c69d9346845985df77b"
+packages = ["kdePackages"]
