@@ -219,12 +219,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-iZtQinX9tm+51Nzzxog6KQ8JGRdUMEObk2ncZQDXi4w=",
-        "path": "/nix/store/rc4vml54k79rcksa7yh53bis6s2z48a2-icedos-config",
+        "narHash": "sha256-wk27RmVKHTMjCdGjTj0MRi+S1Qp7QBIlpvntQ/P6Pgo=",
+        "path": "/nix/store/v458gmn2ywr3im4kzrpvli2lx8fy8dpb-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/rc4vml54k79rcksa7yh53bis6s2z48a2-icedos-config",
+        "path": "/nix/store/v458gmn2ywr3im4kzrpvli2lx8fy8dpb-icedos-config",
         "type": "path"
       }
     },
@@ -402,8 +402,8 @@
     },
     "icedos-github_icedos_kde": {
       "locked": {
-        "lastModified": 1780610420,
-        "narHash": "sha256-Bw/oV3cq3nEfTCs3JJeiFs7FNq9xySCfmIhKYGgUDqk=",
+        "lastModified": 1780653118,
+        "narHash": "sha256-39vngsvT6UAQDpa09iR3Yld72rzV7d6MDB2s0gMhwyg=",
         "path": "/home/stef/code/os/.repos/kde",
         "type": "path"
       },

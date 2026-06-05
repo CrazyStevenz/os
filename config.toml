@@ -278,6 +278,7 @@ description = "Work"
 packages = [
   "claude-code",
   "codex",
+  "discord",
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE

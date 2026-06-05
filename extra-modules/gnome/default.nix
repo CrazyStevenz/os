@@ -6,7 +6,7 @@
 }:
 
 let
-  inherit (lib) mapAttrs mkIf;
+  inherit (lib) mapAttrs;
   cfg = config.icedos;
 in
 {
