@@ -33,10 +33,6 @@ url = "github:icedos/desktop"
 url = "github:icedos/gnome"
 fetchOptionalDependencies = true
 
-[[icedos.repositories]]
-url = "github:icedos/kde"
-overrideUrl = "path:/home/stef/code/os/.repos/kde"
-
 [icedos.applications.aagl]
 launchers = ["anime-game-launcher", "sleepy-launcher"]
 
@@ -130,6 +126,16 @@ list = ["dev.zed.Zed.desktop"]
 [icedos.desktop.gnome.users.work.pinnedApps.shell]
 enable = true
 list = ["slack.desktop", "signal.desktop", "helium.desktop", "webstorm.desktop"]
+
+[[icedos.repositories]]
+url = "github:icedos/kde"
+# overrideUrl = "path:/home/stef/code/os/.repos/kde"
+
+[icedos.desktop.kde.keyboard]
+switchingPolicy = "window"
+
+[icedos.desktop.kde.panel]
+autohide = true
 
 [[icedos.desktop.kde.screenEdges]]
 position = "topLeft"

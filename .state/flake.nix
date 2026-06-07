@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/v458gmn2ywr3im4kzrpvli2lx8fy8dpb-icedos-config";
+      url = "path:/nix/store/s05llcwravrzkicqwlszzhmq0pc89j8n-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -22,8 +22,19 @@
     icedos-core = {
       follows = "icedos-config/icedos";
     };
+    icedos-github_icedborn_claude-icedos = {
+      url = "github:icedborn/claude-icedos/3872b8136f5c33748b9cc7fa8d6ef2a82a6bab75";
+    };
+    icedos-github_icedborn_claude-icedos-peon-ping-peon-ping = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "github:PeonPing/peon-ping";
+    };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/bc62aa48fcb370aac0f996af80512db4d7d07a6e";
+      url = "github:icedos/apps/de8b64e836985a978dc03df4f02356b150d7e43e";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -46,7 +57,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/4277a112953abdce6dd9954d4d915a7dc7c5dcd6";
+      url = "github:icedos/desktop/0c2b4034e73fc37671de4ea4eef9e5d183dee450";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -57,13 +68,13 @@
       url = "github:nix-community/stylix";
     };
     icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/222471e0596c15e966c1202d75572411727d52b7";
+      url = "github:icedos/gnome/936bf0d745c62bcc00777910d86b4a94ab7addb5";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/680f9e79bc5fad691135423e38c133fe43437c0b";
+      url = "github:icedos/hardware/a268f31077ffe2b2d0645721ccd174336e1d53d2";
     };
     icedos-github_icedos_kde = {
-      url = "path:/home/stef/code/os/.repos/kde";
+      url = "github:icedos/kde/bb36c2a3aa2ee02ab3594d957d627a4826ff0468";
     };
     icedos-github_icedos_kde-default-plasma-manager = {
       inputs = {
