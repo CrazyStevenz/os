@@ -137,6 +137,12 @@ switchingPolicy = "window"
 [icedos.desktop.kde.panel]
 autohide = true
 
+[icedos.desktop.kde.panel.systemTray]
+disabledApplets = [
+  "org.kde.plasma.devicenotifier",
+  "org.kde.plasma.mediacontroller"
+]
+
 [[icedos.desktop.kde.screenEdges]]
 position = "topLeft"
 action = "none"
@@ -172,6 +178,9 @@ enable = false
 [icedos.desktop.windows]
 maximizeButton = true
 minimizeButton = true
+
+[icedos.desktop.xdgDesktopPortal]
+forceGtkFilePicker = true
 
 [[icedos.repositories]]
 url = "github:icedos/hardware"

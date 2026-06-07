@@ -237,12 +237,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-27TZGcH4R1vqMBv+R7lZn5cj4Waeu//stru0QAK+y8A=",
-        "path": "/nix/store/s05llcwravrzkicqwlszzhmq0pc89j8n-icedos-config",
+        "narHash": "sha256-grkBVEGVQi2NmIResOURLEw9LtwhtYMT9Xk5K7PCiq8=",
+        "path": "/nix/store/xb3p6d15047p0bq6p2hxs0lqdis43xyz-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/s05llcwravrzkicqwlszzhmq0pc89j8n-icedos-config",
+        "path": "/nix/store/xb3p6d15047p0bq6p2hxs0lqdis43xyz-icedos-config",
         "type": "path"
       }
     },
@@ -457,18 +457,14 @@
     },
     "icedos-github_icedos_kde": {
       "locked": {
-        "lastModified": 1780863534,
-        "narHash": "sha256-aSXM4C+wr2hucdCs0B48UxNDzbbGQWzd/T2gvV2QmTI=",
-        "owner": "icedos",
-        "repo": "kde",
-        "rev": "bb36c2a3aa2ee02ab3594d957d627a4826ff0468",
-        "type": "github"
+        "lastModified": 1780870509,
+        "narHash": "sha256-++EuAtHpoYwr69H2LS0KDNwg6eGYkyedicR7Qhf+Zb4=",
+        "path": "/home/stef/code/os/.repos/kde",
+        "type": "path"
       },
       "original": {
-        "owner": "icedos",
-        "repo": "kde",
-        "rev": "bb36c2a3aa2ee02ab3594d957d627a4826ff0468",
-        "type": "github"
+        "path": "/home/stef/code/os/.repos/kde",
+        "type": "path"
       }
     },
     "icedos-github_icedos_kde-default-plasma-manager": {
