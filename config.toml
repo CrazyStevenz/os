@@ -27,11 +27,8 @@ modules = [
 ]
 
 [[icedos.repositories]]
-url = "github:icedos/desktop"
-
-[[icedos.repositories]]
-url = "github:icedos/gnome"
-fetchOptionalDependencies = true
+url = "github:icedos/tweaks"
+modules = ["gaming", "kernel"]
 
 [icedos.applications.aagl]
 launchers = ["anime-game-launcher", "sleepy-launcher"]
@@ -44,12 +41,20 @@ email = "github.ekta@aleeas.com"
 username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
-[icedos.applications.mangohud]
-fpsLimit = "165,144,120,90,60,30,0"
-
 [icedos.applications.nh.gc]
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
+
+# [icedos.applications.protonvpn-cli.connect]
+# country = "RO"
+# p2p = true
+
+# [icedos.applications.protonvpn-cli.desktopEntry]
+# countries = ["RO", "GR", "BG"]
+
+# [icedos.applications.protonvpn-cli.settings]
+# anonymousCrashReports = true
+# killSwitch = true
 
 # [icedos.applications.scx]
 # extraArgs = ["--perf", "1024"]
@@ -61,6 +66,7 @@ downloadsWorkaround = true
 
 [icedos.applications.sunshine]
 autoStart = true
+capSysAdmin = true
 
 [icedos.applications.zed]
 autosave = true
@@ -70,6 +76,9 @@ formatOnSave = true
 i = "icedos"
 ir = "icedos rebuild"
 iu = "icedos rebuild --update"
+
+[[icedos.repositories]]
+url = "github:icedos/desktop"
 
 [icedos.desktop]
 defaultBrowser = "helium.desktop"
@@ -97,6 +106,10 @@ id = "newsflash" # RSS reader
 name = "Newsflash"
 exec = "icedos pkgs run newsflash"
 icon = "newsflash"
+
+[[icedos.repositories]]
+url = "github:icedos/gnome"
+fetchOptionalDependencies = true
 
 [icedos.desktop.gnome]
 excludeDefaultPackages = [
@@ -130,6 +143,10 @@ list = ["slack.desktop", "signal.desktop", "helium.desktop", "webstorm.desktop"]
 [[icedos.repositories]]
 url = "github:icedos/kde"
 # overrideUrl = "path:/home/stef/code/os/.repos/kde"
+# fetchOptionalDependencies = true
+
+[icedos.desktop.kde]
+excludeDefaultPackages = ["dolphin", "dolphin-plugins"]
 
 [icedos.desktop.kde.keyboard]
 switchingPolicy = "window"
@@ -146,6 +163,16 @@ disabledApplets = [
 [[icedos.desktop.kde.screenEdges]]
 position = "topLeft"
 action = "none"
+
+[icedos.desktop.kde.shortcuts.hotkeys.kitty]
+name = "Kitty"
+command = "kitty"
+keys = ["Meta+X", "Meta+Χ"]
+
+[icedos.desktop.kde.shortcuts.hotkeys.nautilus]
+name = "Nautilus"
+command = "nautilus"
+keys = ["Meta+E", "Meta+Ε"]
 
 [icedos.desktop.stylix]
 enable = true
@@ -254,10 +281,6 @@ vadGracePeriod = 400
 # Ms of audio to retroactively restore when speech is detected, catching clipped first syllables
 retroactiveVadGrace = 100
 
-[[icedos.repositories]]
-url = "github:icedos/tweaks"
-modules = ["gaming", "kernel"]
-
 [icedos.users.stef]
 description = "Stefanos"
 packages = [
@@ -326,5 +349,5 @@ version = "23.05"
 # packages = []
 
 [[icedos.system.overlays.fromChannel]]
-url = "github:K900/nixpkgs/788a6c3a28b78c647ceb5c69d9346845985df77b"
+url = "github:nixos/nixpkgs/0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec"
 packages = ["kdePackages"]

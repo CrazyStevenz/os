@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/xb3p6d15047p0bq6p2hxs0lqdis43xyz-icedos-config";
+      url = "path:/nix/store/ql86fkhs739wbw5wzby8w0vhzsam6sr2-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -34,7 +34,7 @@
       url = "github:PeonPing/peon-ping";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/de8b64e836985a978dc03df4f02356b150d7e43e";
+      url = "github:icedos/apps/04631a4ad43b1e64bccdeab884e3491c388e49e0";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -57,7 +57,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/0c2b4034e73fc37671de4ea4eef9e5d183dee450";
+      url = "github:icedos/desktop/c1a64443b11b20e479317ad3e324a1df14a781d4";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -71,10 +71,10 @@
       url = "github:icedos/gnome/936bf0d745c62bcc00777910d86b4a94ab7addb5";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/a268f31077ffe2b2d0645721ccd174336e1d53d2";
+      url = "github:icedos/hardware/8c2d5eec37b38214913ce4096730999f5aad6f4a";
     };
     icedos-github_icedos_kde = {
-      url = "path:/home/stef/code/os/.repos/kde";
+      url = "github:icedos/kde/bb36c2a3aa2ee02ab3594d957d627a4826ff0468";
     };
     icedos-github_icedos_kde-default-plasma-manager = {
       inputs = {
@@ -93,8 +93,8 @@
     icedos-github_icedos_tweaks = {
       url = "github:icedos/tweaks/13a2a6c4a6bac229b5a980398c70c54783ff2845";
     };
-    icedos-overlay-github_K900_nixpkgs_788a6c3a28b78c647ceb5c69d9346845985df77b = {
-      url = "github:K900/nixpkgs/788a6c3a28b78c647ceb5c69d9346845985df77b";
+    icedos-overlay-github_nixos_nixpkgs_0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec = {
+      url = "github:nixos/nixpkgs/0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec";
     };
     icedos-state = {
       flake = false;
@@ -193,7 +193,7 @@
             # the base derivation.
             nixpkgs.overlays = lib.mkBefore (
               icedosLib.pkgs.overlaysFromChannel config.icedos
-                inputs."icedos-overlay-github_K900_nixpkgs_788a6c3a28b78c647ceb5c69d9346845985df77b"
+                inputs."icedos-overlay-github_nixos_nixpkgs_0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec"
                 [ "kdePackages" ]
             );
           })
