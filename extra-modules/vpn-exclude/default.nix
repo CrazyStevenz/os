@@ -1,12 +1,7 @@
 {
-  config,
   pkgs,
   ...
 }:
-
-let
-  cfg = config.icedos.hardware.networking;
-in
 {
   icedos.applications.toolset.commands = [
     (

@@ -14,6 +14,7 @@ modules = [
   "lsfg-vk",
   "mangohud",
   "nautilus",
+  "network-manager",
   "podman",
   "proton-launch",
   # "scx",
@@ -108,42 +109,9 @@ exec = "icedos pkgs run newsflash"
 icon = "newsflash"
 
 [[icedos.repositories]]
-url = "github:icedos/gnome"
-fetchOptionalDependencies = true
-
-[icedos.desktop.gnome]
-excludeDefaultPackages = [
-  "gnome-text-editor", # Text editor
-  "papers", # Document viewer
-  "seahorse", # Encryption key and password manager UI
-  "showtime", # New video player
-  "sushi", # File previewer
-]
-
-[icedos.desktop.gnome.extensions]
-arcmenu = true
-dashToPanel = true
-
-[icedos.desktop.gnome.users.stef.pinnedApps.arcmenu]
-enable = true
-list = ["dev.zed.Zed.desktop", "org.nicotine_plus.Nicotine.desktop", "spek.desktop"]
-
-[icedos.desktop.gnome.users.stef.pinnedApps.shell]
-enable = true
-list = ["steam.desktop", "signal.desktop", "helium.desktop"]
-
-[icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
-enable = true
-list = ["dev.zed.Zed.desktop"]
-
-[icedos.desktop.gnome.users.work.pinnedApps.shell]
-enable = true
-list = ["slack.desktop", "signal.desktop", "helium.desktop", "webstorm.desktop"]
-
-[[icedos.repositories]]
 url = "github:icedos/kde"
 # overrideUrl = "path:/home/stef/code/os/.repos/kde"
-# fetchOptionalDependencies = true
+fetchOptionalDependencies = true
 
 [icedos.desktop.kde]
 excludeDefaultPackages = ["dolphin", "dolphin-plugins"]
@@ -189,9 +157,6 @@ seconds = 300
 
 [icedos.desktop.users.stef.idle.suspend]
 enable = false
-
-[icedos.desktop.users.work]
-startupScript = "protonvpn-app & slack"
 
 [icedos.desktop.users.work.idle.lock]
 seconds = 300
