@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/ql86fkhs739wbw5wzby8w0vhzsam6sr2-icedos-config";
+      url = "path:/nix/store/w9z0vb9nq3wpxnq6v4rhqdb18370s234-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -34,7 +34,7 @@
       url = "github:PeonPing/peon-ping";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/04631a4ad43b1e64bccdeab884e3491c388e49e0";
+      url = "github:icedos/apps/ebadb6ba535ea79342e507513deb1f37be016e04";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -71,10 +71,10 @@
       url = "github:icedos/gnome/936bf0d745c62bcc00777910d86b4a94ab7addb5";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/8c2d5eec37b38214913ce4096730999f5aad6f4a";
+      url = "github:icedos/hardware/47c378e42a2ae0666453b6d4868be8e093bea3af";
     };
     icedos-github_icedos_kde = {
-      url = "github:icedos/kde/bb36c2a3aa2ee02ab3594d957d627a4826ff0468";
+      url = "github:icedos/kde/c4100996e857cd7390ddaafe6a80246e25220045";
     };
     icedos-github_icedos_kde-default-plasma-manager = {
       inputs = {
@@ -93,12 +93,12 @@
     icedos-github_icedos_tweaks = {
       url = "github:icedos/tweaks/13a2a6c4a6bac229b5a980398c70c54783ff2845";
     };
-    icedos-overlay-github_nixos_nixpkgs_0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec = {
-      url = "github:nixos/nixpkgs/0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec";
+    icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small = {
+      url = "github:nixos/nixpkgs/nixos-unstable-small";
     };
     icedos-state = {
       flake = false;
-      url = "path:/nix/store/2szh47a70xy566yfg2rf010ic53k90ai-icedos";
+      url = "path:/nix/store/p2gbyqprp3hcij13gkn1mqx2xf1iwkiy-icedos";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
@@ -193,7 +193,7 @@
             # the base derivation.
             nixpkgs.overlays = lib.mkBefore (
               icedosLib.pkgs.overlaysFromChannel config.icedos
-                inputs."icedos-overlay-github_nixos_nixpkgs_0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec"
+                inputs."icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small"
                 [ "kdePackages" ]
             );
           })

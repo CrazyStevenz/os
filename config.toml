@@ -344,10 +344,6 @@ packages = [
 permittedInsecurePackages = []
 version = "23.05"
 
-# [[icedos.system.overlays.fromChannel]]
-# url = "github:nixos/nixpkgs/nixos-unstable-small"
-# packages = []
-
 [[icedos.system.overlays.fromChannel]]
-url = "github:nixos/nixpkgs/0a5a86a79e986dd63b137f9d144ecd4e3a31e4ec"
+url = "github:nixos/nixpkgs/nixos-unstable-small"
 packages = ["kdePackages"]
