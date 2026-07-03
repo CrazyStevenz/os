@@ -3,7 +3,7 @@
   ...
 }:
 {
-  icedos.applications.toolset.commands = [
+  icedos.system.toolset.commands = [
     (
       let
         command = "vpn-exclude";

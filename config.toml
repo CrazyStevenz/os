@@ -14,7 +14,6 @@ modules = [
   "lsfg-vk",
   "mangohud",
   "nautilus",
-  "network-manager",
   "podman",
   "proton-launch",
   # "scx",
@@ -23,7 +22,6 @@ modules = [
   "sunshine",
   "tailscale",
   # "walker",
-  "zenergy",
   "zed",
 ]
 
@@ -41,10 +39,6 @@ email = "github.ekta@aleeas.com"
 [icedos.applications.git.users.work]
 username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
-
-[icedos.applications.nh.gc]
-days = 7 # Number of days before a generation can be deleted
-generations = 5 # Number of generations that will always be kept
 
 # [icedos.applications.protonvpn-cli.connect]
 # country = "RO"
@@ -157,6 +151,9 @@ seconds = 300
 
 [icedos.desktop.users.stef.idle.suspend]
 enable = false
+
+[icedos.desktop.users.work]
+startupScript = "protonvpn-app & slack"
 
 [icedos.desktop.users.work.idle.lock]
 seconds = 300
@@ -308,6 +305,10 @@ packages = [
 ]
 permittedInsecurePackages = []
 version = "23.05"
+
+[icedos.system.gc]
+days = 7 # Number of days before a generation can be deleted
+generations = 5 # Number of generations that will always be kept
 
 [[icedos.system.overlays.fromChannel]]
 url = "github:nixos/nixpkgs/nixos-unstable-small"
