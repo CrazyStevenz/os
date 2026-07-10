@@ -3,7 +3,6 @@ url = "github:icedos/apps"
 # overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
   "aagl",
-  "bash",
   "btop",
   "celluloid",
   "gamemode",
@@ -14,13 +13,12 @@ modules = [
   "lsfg-vk",
   "mangohud",
   "nautilus",
-  "podman",
   "proton-launch",
   # "scx",
   # "solaar",
   "steam",
   "sunshine",
-  "tailscale",
+  # "tailscale",
   # "walker",
   "zed",
 ]
@@ -31,14 +29,6 @@ modules = ["gaming", "kernel"]
 
 [icedos.applications.aagl]
 launchers = ["anime-game-launcher", "sleepy-launcher"]
-
-[icedos.applications.git.users.stef]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
-
-[icedos.applications.git.users.work]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
 
 # [icedos.applications.protonvpn-cli.connect]
 # country = "RO"
@@ -66,11 +56,6 @@ capSysAdmin = true
 [icedos.applications.zed]
 autosave = true
 formatOnSave = true
-
-[icedos.applications.zsh.aliases]
-i = "icedos"
-ir = "icedos rebuild"
-iu = "icedos rebuild --update"
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
@@ -183,14 +168,10 @@ modules = [
   "pipewire",
   "radeon",
   "ryzen",
-  "systemd-boot",
   "uinput",
   "upower",
   "zram",
 ]
-
-[icedos.hardware.bootloaders.systemd-boot]
-mountPoint = "/boot"
 
 [icedos.hardware.graphics.radeon]
 featureMask = "0xffffffff"
@@ -242,6 +223,10 @@ vadThreshold = 90
 vadGracePeriod = 400
 # Ms of audio to retroactively restore when speech is detected, catching clipped first syllables
 retroactiveVadGrace = 100
+
+[[icedos.repositories]]
+url = "github:icedos/virtualisation"
+modules = ["podman"]
 
 [icedos.users.stef]
 description = "Stefanos"
@@ -306,10 +291,26 @@ packages = [
 permittedInsecurePackages = []
 version = "23.05"
 
+[icedos.system.bootloaders.systemd-boot]
+mountPoint = "/boot"
+
 [icedos.system.gc]
 days = 7 # Number of days before a generation can be deleted
 generations = 5 # Number of generations that will always be kept
 
+[icedos.system.git.users.stef]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
+
+[icedos.system.git.users.work]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
+
 [[icedos.system.overlays.fromChannel]]
 url = "github:nixos/nixpkgs/nixos-unstable-small"
 packages = ["kdePackages"]
+
+[icedos.system.zsh.aliases]
+i = "icedos"
+ir = "icedos rebuild"
+iu = "icedos rebuild --update"
