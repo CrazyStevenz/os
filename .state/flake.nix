@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/vkg8yh6pan9d1nxfp1c3crd3azzp0527-icedos-config";
+      url = "path:/nix/store/7khg88dabgg5r2wm40lzf8hszzyc13lh-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -34,7 +34,7 @@
       url = "github:PeonPing/peon-ping";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/98e6494d5db804045f2f1665b557c7f833f1ef3f";
+      url = "github:icedos/apps/d9736650b461573e1390f73e0c230be9e9e87bbf";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -85,7 +85,7 @@
       url = "github:nix-community/plasma-manager";
     };
     icedos-github_icedos_providers = {
-      url = "github:icedos/providers/31ce3075807383c9648409d8fb8641982f3eb2e3";
+      url = "github:icedos/providers/38af861c05150dc492dde0128be6941b8d648d75";
     };
     icedos-github_icedos_tweaks = {
       url = "github:icedos/tweaks/7bda8d9f35790be26ff073bcb2ba6f7d1a1af825";
@@ -99,6 +99,14 @@
     icedos-state = {
       flake = false;
       url = "path:/nix/store/ry8ci5bv3l5yiic93hcw4w8zpmqc98b9-icedos";
+    };
+    jovian = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "github:jovian-experiments/jovian-nixos";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";

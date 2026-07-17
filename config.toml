@@ -16,8 +16,9 @@ modules = [
   "proton-launch",
   # "scx",
   # "solaar",
-  "steam",
-  "sunshine",
+  "steam-sunshine-headless-session",
+  # "steam",
+  # "sunshine",
   # "tailscale",
   # "walker",
   "zed",
@@ -48,6 +49,15 @@ launchers = ["anime-game-launcher", "sleepy-launcher"]
 beta = true
 cpuUsageWorkaround = true
 downloadsWorkaround = true
+
+[icedos.applications.steam.headlessSession]
+hdr = true
+colorManagement = true
+steamOS = true
+excludeHostControllers = false
+width = "3840"
+height = "2160"
+refresh = 120
 
 [icedos.applications.sunshine]
 autoStart = true
