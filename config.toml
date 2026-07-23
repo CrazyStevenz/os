@@ -55,9 +55,6 @@ hdr = true
 colorManagement = true
 steamOS = true
 excludeHostControllers = false
-width = "3840"
-height = "2160"
-refresh = 120
 
 [icedos.applications.sunshine]
 autoStart = true

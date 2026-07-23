@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/7khg88dabgg5r2wm40lzf8hszzyc13lh-icedos-config";
+      url = "path:/nix/store/vpavabjpf5kbjcnp5a3mb473rb673pvd-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
@@ -23,7 +23,7 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedborn_claude-icedos = {
-      url = "github:icedborn/claude-icedos/03df97892a9e306a079053f008206d60a72687a0";
+      url = "github:icedborn/claude-icedos/9c4fe85a992708a20939f79c88b9886991e8754f";
     };
     icedos-github_icedborn_claude-icedos-peon-ping-peon-ping = {
       inputs = {
@@ -34,7 +34,7 @@
       url = "github:PeonPing/peon-ping";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/d9736650b461573e1390f73e0c230be9e9e87bbf";
+      url = "github:icedos/apps/c97321beab6b4120c2d1e05e118fad900f62e6da";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -57,7 +57,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/96f1cc84cae9029a11bc64de0af1e69e47976e12";
+      url = "github:icedos/desktop/691a5b418e2c9bcc908a4e692b9eea68a0f3af64";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -68,7 +68,7 @@
       url = "github:nix-community/stylix";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/98be8b0414d51b218f9c5503a718a33b88998d00";
+      url = "github:icedos/hardware/c44dc5fdc9503aaea22f1ed21f2ad06d097fa185";
     };
     icedos-github_icedos_kde = {
       url = "github:icedos/kde/bcbb881c960af0f734ceaca3a103d097d62a08fa";
