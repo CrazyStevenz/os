@@ -35,7 +35,7 @@ launchers = ["anime-game-launcher", "sleepy-launcher"]
 # country = "RO"
 # p2p = true
 
-# [icedos.applications.protonvpn-cli.desktopEntry]
+# [icedos.applications.protonvpn-cli.desktop-entry]
 # countries = ["RO", "GR", "BG"]
 
 # [icedos.applications.protonvpn-cli.settings]
@@ -50,7 +50,7 @@ beta = true
 cpuUsageWorkaround = true
 downloadsWorkaround = true
 
-[icedos.applications.steam.headlessSession]
+[icedos.applications.steam.headless-session]
 hdr = true
 colorManagement = true
 steamOS = true
@@ -108,13 +108,13 @@ switchingPolicy = "window"
 [icedos.desktop.kde.panel]
 autohide = true
 
-[icedos.desktop.kde.panel.systemTray]
+[icedos.desktop.kde.panel.system-tray]
 disabledApplets = [
   "org.kde.plasma.devicenotifier",
   "org.kde.plasma.mediacontroller"
 ]
 
-[[icedos.desktop.kde.screenEdges]]
+[[icedos.desktop.kde.screen-edges]]
 position = "topLeft"
 action = "none"
 
@@ -138,7 +138,7 @@ startupScript = "protonvpn-app"
 [icedos.desktop.users.stef.idle.lock]
 enable = false
 
-[icedos.desktop.users.stef.idle.disableMonitors]
+[icedos.desktop.users.stef.idle.disable-monitors]
 seconds = 300
 
 [icedos.desktop.users.stef.idle.suspend]
@@ -150,7 +150,7 @@ startupScript = "protonvpn-app & slack"
 [icedos.desktop.users.work.idle.lock]
 seconds = 300
 
-[icedos.desktop.users.work.idle.disableMonitors]
+[icedos.desktop.users.work.idle.disable-monitors]
 seconds = 270
 
 [icedos.desktop.users.work.idle.suspend]
@@ -160,7 +160,7 @@ enable = false
 maximizeButton = true
 minimizeButton = true
 
-[icedos.desktop.xdgDesktopPortal]
+[icedos.desktop.xdg-desktop-portal]
 forceGtkFilePicker = true
 
 [[icedos.repositories]]
@@ -213,10 +213,10 @@ flags = ["nofail", "x-gvfs-show"]
 [icedos.hardware.network]
 firewall = false
 
-[icedos.hardware.pipewire.echoCancellation]
+[icedos.hardware.pipewire.echo-cancellation]
 enable = true
 
-[icedos.hardware.pipewire.noiseCancellation]
+[icedos.hardware.pipewire.noise-cancellation]
 enable = true
 # true  = smart filter on the default mic (transparent, follows default source)
 # false = separate virtual mic that apps must explicitly select
@@ -273,7 +273,7 @@ packages = [
   "discord",
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
-  "jetbrains.datagrip", # Database IDE
+  # "jetbrains.datagrip", # Database IDE
   "slack",
   "t3code", # Minimal web GUI for coding agents
   "watchman", # Required to watch when TypeScript files are created/updated/deleted

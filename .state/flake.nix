@@ -9,32 +9,13 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/vpavabjpf5kbjcnp5a3mb473rb673pvd-icedos-config";
-    };
-    icedos-config-hytale-launcher-hytale-launcher = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "github:JPyke3/hytale-launcher-nix";
+      url = "path:/nix/store/3sbb3qbi29k3pb83vv64zvlbfay4dlv1-icedos-config";
     };
     icedos-core = {
       follows = "icedos-config/icedos";
     };
-    icedos-github_icedborn_claude-icedos = {
-      url = "github:icedborn/claude-icedos/9c4fe85a992708a20939f79c88b9886991e8754f";
-    };
-    icedos-github_icedborn_claude-icedos-peon-ping-peon-ping = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "github:PeonPing/peon-ping";
-    };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/c97321beab6b4120c2d1e05e118fad900f62e6da";
+      url = "github:icedos/apps/5e9f81d41da4c1beef8e8b319ab7b0ac4936a8c0";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -57,7 +38,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/691a5b418e2c9bcc908a4e692b9eea68a0f3af64";
+      url = "github:icedos/desktop/c39d812a526458a0fbc5e51bc2bcb49eaed9fc2d";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -68,10 +49,10 @@
       url = "github:nix-community/stylix";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/c44dc5fdc9503aaea22f1ed21f2ad06d097fa185";
+      url = "github:icedos/hardware/a6b80470161b089ef51c7efd55ff1e6036d8632c";
     };
     icedos-github_icedos_kde = {
-      url = "github:icedos/kde/bcbb881c960af0f734ceaca3a103d097d62a08fa";
+      url = "github:icedos/kde/a4e0614afb823e0bd802217a065c17615575439c";
     };
     icedos-github_icedos_kde-default-plasma-manager = {
       inputs = {
@@ -88,10 +69,10 @@
       url = "github:icedos/providers/38af861c05150dc492dde0128be6941b8d648d75";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/7bda8d9f35790be26ff073bcb2ba6f7d1a1af825";
+      url = "github:icedos/tweaks/14f09b7e4a52e264705e17aeb8169ef2f7d9abf2";
     };
     icedos-github_icedos_virtualisation = {
-      url = "github:icedos/virtualisation/774d470f86d291b1751d7bee771b9dd401248a24";
+      url = "github:icedos/virtualisation/def37d04cf2d5044e67e7f43f3893845a5607cbc";
     };
     icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small = {
       url = "github:nixos/nixpkgs/nixos-unstable-small";
@@ -181,22 +162,28 @@
             imports = getModules "${inputs.icedos-core}/modules";
           }
 
-          # Extra modules and stateVersion
+          # Extra modules and stateVersion. Each configured extra-module
+          # directory (default `modules`) is scanned and imported; missing
+          # ones are skipped.
           {
-            imports =
-              if (pathExists "${inputs.icedos-config}/extra-modules") then
-                (getModules "${inputs.icedos-config}/extra-modules")
-              else
-                [ ];
+            imports = lib.flatten (
+              map (
+                d:
+                let
+                  p = "${inputs.icedos-config}/${d}";
+                in
+                if pathExists p then getModules p else [ ]
+              ) [ "modules" ]
+            );
             config.system.stateVersion = "23.05";
           }
 
           # Raw NixOS config passthrough: every top-level table in
-          # config.toml / .private.toml *except* [icedos.*] is applied verbatim
+          # config.toml / configs/*.toml *except* [icedos.*] is applied verbatim
           # as NixOS config. nixpkgs' module system types & validates each option —
           # IceDOS declares no schema. (home-manager is reachable the usual way,
           # under [home-manager.users.<name>.*].)
-          (lib.setDefaultModuleLocation "config.toml / .private.toml (raw NixOS passthrough)" {
+          (lib.setDefaultModuleLocation "config.toml / configs/*.toml (raw NixOS passthrough)" {
             config = builtins.removeAttrs userConfig [ "icedos" ];
           })
 
