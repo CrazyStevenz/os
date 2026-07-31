@@ -9,7 +9,7 @@ modules = [
   "gamescope",
   "helium",
   "kitty",
-  "lact",
+  # "lact",
   "lsfg-vk",
   "mangohud",
   "nautilus",
@@ -284,6 +284,7 @@ generations = 30
 packages = [
   "appimage-run",
   "gimp3", # GNU Image Manipulation Program
+  "gnome-calculator",
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
