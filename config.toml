@@ -260,7 +260,7 @@ packages = [
   "faugus-launcher", # Run Windows games using UMU-Launcher
   # "ghex", # HEX editor
   # "nextcloud-client", # Used for two-way syncing with Nextcloud
-  # "owmods-gui", # Outer Wilds Mod Manager
+  "owmods-gui", # Outer Wilds Mod Manager
   # "stremio-linux-shell",
   "qbittorrent",
 ]
