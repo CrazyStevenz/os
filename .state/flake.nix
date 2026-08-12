@@ -9,13 +9,13 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/8mn05chj89afg8ngbfsalincwfp8dkbq-icedos-config";
+      url = "path:/nix/store/c3zkvdkmnmcn4j47n1g6gib8044782jc-icedos-config";
     };
     icedos-core = {
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/f06b68ba0204789e9652d131777b97c336cd2e79";
+      url = "github:icedos/apps/dd9bce4a238f9f645f32962dfd3dee7fb510282f";
     };
     icedos-github_icedos_apps-aagl-aagl = {
       inputs = {
@@ -38,7 +38,7 @@
       url = "github:HikariKnight/ScopeBuddy";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/c39d812a526458a0fbc5e51bc2bcb49eaed9fc2d";
+      url = "github:icedos/desktop/f796b8b147958006bb275b68431a3fcb954e47f5";
     };
     icedos-github_icedos_desktop-stylix-stylix = {
       inputs = {
@@ -49,10 +49,10 @@
       url = "github:nix-community/stylix";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/5a7f339dd88475071a83b422ab750111085d0f1a";
+      url = "github:icedos/hardware/f4d9d7b1adc02dd5522418984d4ac8ea02270863";
     };
     icedos-github_icedos_kde = {
-      url = "github:icedos/kde/b9b9e6c5aa86ca86f554df12d1aab6d07eeed0cd";
+      url = "github:icedos/kde/03ce00f490726094931b0b1a863462a39ed340b8";
     };
     icedos-github_icedos_kde-default-plasma-manager = {
       inputs = {
@@ -66,13 +66,13 @@
       url = "github:nix-community/plasma-manager";
     };
     icedos-github_icedos_providers = {
-      url = "github:icedos/providers/38af861c05150dc492dde0128be6941b8d648d75";
+      url = "github:icedos/providers/fba216b922a6b78fb70dae25cc2a9724d017f8bf";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/5eade42fe4fd3df43d3ce8ce7ea1594f2bb3f93d";
+      url = "github:icedos/tweaks/8a012c7bc7804829e65e3ff4026bb5e1c1d257db";
     };
     icedos-github_icedos_virtualisation = {
-      url = "github:icedos/virtualisation/def37d04cf2d5044e67e7f43f3893845a5607cbc";
+      url = "github:icedos/virtualisation/1205b57cd0cad0f508d3750347136c50fd4c9c50";
     };
     icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small = {
       url = "github:nixos/nixpkgs/nixos-unstable-small";
