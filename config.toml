@@ -2,26 +2,25 @@
 url = "github:icedos/apps"
 # overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
-  "aagl",
+  # "aagl",
   "bash",
   "btop",
   "celluloid",
-  "gamemode",
-  "gamescope",
+  # "gamemode",
+  # "gamescope",
   "helium",
   "kitty",
-  "lact",
-  "lsfg-vk",
-  "mangohud",
+  # "lact",
+  # "lsfg-vk",
+  # "mangohud",
   "nautilus",
-  "network-manager",
   "podman",
-  "proton-launch",
+  # "proton-launch",
   # "scx",
   # "solaar",
-  "steam",
-  "sunshine",
-  "tailscale",
+  # "steam",
+  # "sunshine",
+  # "tailscale",
   # "walker",
   "zenergy",
   "zed",
@@ -29,10 +28,10 @@ modules = [
 
 [[icedos.repositories]]
 url = "github:icedos/tweaks"
-modules = ["gaming", "kernel"]
+modules = ["kernel"]
 
-[icedos.applications.aagl]
-launchers = ["anime-game-launcher", "sleepy-launcher"]
+# [icedos.applications.aagl]
+# launchers = ["anime-game-launcher", "sleepy-launcher"]
 
 [icedos.applications.git.users.stef]
 username = "CrazyStevenz"
@@ -60,14 +59,14 @@ generations = 5 # Number of generations that will always be kept
 # [icedos.applications.scx]
 # extraArgs = ["--perf", "1024"]
 
-[icedos.applications.steam]
-beta = true
-cpuUsageWorkaround = true
-downloadsWorkaround = true
+# [icedos.applications.steam]
+# beta = true
+# cpuUsageWorkaround = true
+# downloadsWorkaround = true
 
-[icedos.applications.sunshine]
-autoStart = true
-capSysAdmin = true
+# [icedos.applications.sunshine]
+# autoStart = true
+# capSysAdmin = true
 
 [icedos.applications.zed]
 autosave = true
@@ -84,7 +83,7 @@ url = "github:icedos/desktop"
 [icedos.desktop]
 defaultBrowser = "helium.desktop"
 defaultEditor = "dev.zed.Zed.desktop"
-keyboardLayouts = [ "us", "gr" ]
+keyboardLayouts = ["us", "gr"]
 
 [icedos.desktop.clock]
 date = true
@@ -108,55 +107,58 @@ name = "Newsflash"
 exec = "icedos pkgs run newsflash"
 icon = "newsflash"
 
-[[icedos.repositories]]
-url = "github:icedos/kde"
-# overrideUrl = "path:/home/stef/code/os/.repos/kde"
-fetchOptionalDependencies = true
+# [[icedos.repositories]]
+# url = "github:icedos/kde"
+# # overrideUrl = "path:/home/stef/code/os/.repos/kde"
+# fetchOptionalDependencies = true
 
-[icedos.desktop.kde]
-excludeDefaultPackages = ["dolphin", "dolphin-plugins"]
+# [icedos.desktop.kde]
+# excludeDefaultPackages = ["dolphin", "dolphin-plugins"]
 
-[icedos.desktop.kde.keyboard]
-switchingPolicy = "window"
+# [icedos.desktop.kde.keyboard]
+# switchingPolicy = "window"
 
-[icedos.desktop.kde.panel]
-autohide = true
+# [icedos.desktop.kde.panel]
+# autohide = true
 
-[icedos.desktop.kde.panel.systemTray]
-disabledApplets = [
-  "org.kde.plasma.devicenotifier",
-  "org.kde.plasma.mediacontroller"
-]
+# [icedos.desktop.kde.panel.systemTray]
+# disabledApplets = [
+#   "org.kde.plasma.devicenotifier",
+#   "org.kde.plasma.mediacontroller",
+# ]
 
-[[icedos.desktop.kde.screenEdges]]
-position = "topLeft"
-action = "none"
+# [[icedos.desktop.kde.screenEdges]]
+# position = "topLeft"
+# action = "none"
 
-[icedos.desktop.kde.shortcuts.hotkeys.kitty]
-name = "Kitty"
-command = "kitty"
-keys = ["Meta+X", "Meta+Χ"]
+# [icedos.desktop.kde.shortcuts.hotkeys.kitty]
+# name = "Kitty"
+# command = "kitty"
+# keys = ["Meta+X", "Meta+Χ"]
 
-[icedos.desktop.kde.shortcuts.hotkeys.nautilus]
-name = "Nautilus"
-command = "nautilus"
-keys = ["Meta+E", "Meta+Ε"]
+# [icedos.desktop.kde.shortcuts.hotkeys.nautilus]
+# name = "Nautilus"
+# command = "nautilus"
+# keys = ["Meta+E", "Meta+Ε"]
 
 [icedos.desktop.stylix]
 enable = true
 disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
 
+# [icedos.desktop.users.stef]
+# startupScript = "protonvpn-app"
+
+# [icedos.desktop.users.stef.idle.lock]
+# enable = false
+
+# [icedos.desktop.users.stef.idle.disableMonitors]
+# seconds = 300
+
+# [icedos.desktop.users.stef.idle.suspend]
+# enable = false
+
 [icedos.desktop.users.stef]
-startupScript = "protonvpn-app"
-
-[icedos.desktop.users.stef.idle.lock]
-enable = false
-
-[icedos.desktop.users.stef.idle.disableMonitors]
-seconds = 300
-
-[icedos.desktop.users.stef.idle.suspend]
-enable = false
+startupScript = "protonvpn-app & slack"
 
 [icedos.desktop.users.work.idle.lock]
 seconds = 300
@@ -193,40 +195,40 @@ modules = [
 ]
 
 [icedos.hardware.bootloaders.systemd-boot]
-mountPoint = "/boot"
+mountPoint = "/boot/efi"
 
-[icedos.hardware.graphics.radeon]
-featureMask = "0xffffffff"
+# [icedos.hardware.graphics.radeon]
+# featureMask = "0xffffffff"
 
 [icedos.hardware.kernel]
 variant = "latest"
 
-[[icedos.hardware.mounts]]
-path = "/"
-device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+# [[icedos.hardware.mounts]]
+# path = "/"
+# device = "/dev/disk/by-uuid/875ba1fd-ae85-47ec-beac-ec515e776834"
+# fsType = "btrfs"
+# flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
-[[icedos.hardware.mounts]]
-path = "/mnt/Nvme"
-device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+# [[icedos.hardware.mounts]]
+# path = "/mnt/Nvme"
+# device = "/dev/disk/by-uuid/ebcec57e-2afb-49a7-8ae8-d6776a841f52"
+# fsType = "btrfs"
+# flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
-[[icedos.hardware.mounts]]
-path = "/mnt/SSDGames"
-device = "/dev/disk/by-uuid/bb93c901-8df3-4e23-8029-b1816a66ef58"
-fsType = "btrfs"
-flags = ["compress=zstd", "nofail", "x-gvfs-show"]
+# [[icedos.hardware.mounts]]
+# path = "/mnt/SSDGames"
+# device = "/dev/disk/by-uuid/bb93c901-8df3-4e23-8029-b1816a66ef58"
+# fsType = "btrfs"
+# flags = ["compress=zstd", "nofail", "x-gvfs-show"]
 
-[[icedos.hardware.mounts]]
-path = "/mnt/HDD"
-device = "/dev/disk/by-uuid/a8bdc116-6aac-4f2e-8422-fad546ecf5c0"
-fsType = "xfs"
-flags = ["nofail", "x-gvfs-show"]
+# [[icedos.hardware.mounts]]
+# path = "/mnt/HDD"
+# device = "/dev/disk/by-uuid/a8bdc116-6aac-4f2e-8422-fad546ecf5c0"
+# fsType = "xfs"
+# flags = ["nofail", "x-gvfs-show"]
 
-[icedos.hardware.network]
-firewall = false
+# [icedos.hardware.network]
+# firewall = false
 
 [icedos.hardware.pipewire.echoCancellation]
 enable = true
@@ -246,47 +248,47 @@ vadGracePeriod = 400
 # Ms of audio to retroactively restore when speech is detected, catching clipped first syllables
 retroactiveVadGrace = 100
 
-[icedos.users.stef]
-description = "Stefanos"
-packages = [
-  # - EMULATORS - #
-  # "cemu", # Wiuu
-  # "duckstation", # PS1
-  # "heroic", # Cross-platform Epic Games Launcher
-  # "pcsx2", # PS2
-  # "ppsspp", # PSP
-  # "prismlauncher", # Minecraft launcher
-  # "rpcs3", # PS3
+# [icedos.users.stef]
+# description = "Stefanos"
+# packages = [
+#   # - EMULATORS - #
+#   # "cemu", # Wiuu
+#   # "duckstation", # PS1
+#   # "heroic", # Cross-platform Epic Games Launcher
+#   # "pcsx2", # PS2
+#   # "ppsspp", # PSP
+#   # "prismlauncher", # Minecraft launcher
+#   # "rpcs3", # PS3
 
-  # - MUSIC - #
-  # "eartag", # Music tag editor
-  # "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
-  # "nicotine-plus", # p2p music sharing platform
-  # "parabolic", # Download web video and audio
-  # "spek", # Audio file spectrogram analysis
+#   # - MUSIC - #
+#   # "eartag", # Music tag editor
+#   # "flac", # Library and tools for encoding and decoding the FLAC lossless audio file format
+#   # "nicotine-plus", # p2p music sharing platform
+#   # "parabolic", # Download web video and audio
+#   # "spek", # Audio file spectrogram analysis
 
-  # "android-tools", # Required for certain operations on Android phones
-  # "audacity", # Sound editor
-  # "curtail", # Image compressor
-  "faugus-launcher", # Run Windows games using UMU-Launcher
-  # "ghex", # HEX editor
-  # "nextcloud-client", # Used for two-way syncing with Nextcloud
-  # "owmods-gui", # Outer Wilds Mod Manager
-  # "stremio-linux-shell",
-  "qbittorrent",
-]
+#   # "android-tools", # Required for certain operations on Android phones
+#   # "audacity", # Sound editor
+#   # "curtail", # Image compressor
+#   "faugus-launcher", # Run Windows games using UMU-Launcher
+#   # "ghex", # HEX editor
+#   # "nextcloud-client", # Used for two-way syncing with Nextcloud
+#   # "owmods-gui", # Outer Wilds Mod Manager
+#   # "stremio-linux-shell",
+#   "qbittorrent",
+# ]
 
 [icedos.users.work]
 description = "Work"
 packages = [
   "claude-code",
-  "codex",
+  # "codex",
   "discord",
   "envsubst", # Environment variables substitution for Go
-  # "google-cloud-sdk", # Required to use 'gcloud' command
+  "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
   "slack",
-  "t3code", # Minimal web GUI for coding agents
+  # "t3code", # Minimal web GUI for coding agents
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
 ]
 
@@ -294,21 +296,43 @@ packages = [
 generations = 30
 packages = [
   "appimage-run",
-  "gimp3", # GNU Image Manipulation Program
+  # "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "jq", # Lightweight and flexible command-line JSON processor
-  "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
+  # "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
   "nodejs_22",
   "pnpm", # Fast, disk space efficient package manager for JavaScript
   "proton-vpn",
-  "signal-desktop",
+  # "signal-desktop",
   "warp", # Send files via the automatically fastest route
 ]
 permittedInsecurePackages = []
-version = "23.05"
+version = "22.05"
 
 [[icedos.system.overlays.fromChannel]]
 url = "github:nixos/nixpkgs/nixos-unstable-small"
 packages = ["kdePackages"]
+
+[[icedos.repositories]]
+url = "github:icedos/gnome"
+fetchOptionalDependencies = true
+
+[icedos.desktop.gnome.extensions]
+arcmenu = true
+dashToPanel = true
+
+[icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
+enable = true
+list = ["codium.desktop"]
+
+[icedos.desktop.gnome.users.work.pinnedApps.shell]
+enable = true
+list = [
+  "slack.desktop",
+  "discord.desktop",
+  # "signal.desktop",
+  "helium.desktop",
+  "webstorm.desktop",
+]
