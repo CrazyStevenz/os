@@ -286,7 +286,7 @@ packages = [
   "gimp3", # GNU Image Manipulation Program
   "gnome-calculator",
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
-  # "handbrake", # Tool for converting video files and ripping DVDs
+  "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "jq", # Lightweight and flexible command-line JSON processor
   "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
