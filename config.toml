@@ -129,7 +129,6 @@ command = "nautilus"
 keys = ["Meta+E", "Meta+Ε"]
 
 [icedos.desktop.stylix]
-enable = true
 disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
 
 [icedos.desktop.users.stef]
@@ -273,7 +272,7 @@ packages = [
   "discord",
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
-  # "jetbrains.datagrip", # Database IDE
+  "jetbrains.datagrip", # Database IDE
   "slack",
   "t3code", # Minimal web GUI for coding agents
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
