@@ -239,12 +239,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-hiLdf+Sx2/HJTI4pdhGIuKFV2tZ0N+ObVYCVxV+hTHg=",
-        "path": "/nix/store/w2ywi4zb1qnwcfxf4z9n5x4pfzbnavq7-icedos-config",
+        "narHash": "sha256-WiF1JPM16TovSJqTlsKc9RKkq8E+LOF2N3629ppeIdw=",
+        "path": "/nix/store/pdl8ppgnv7wgpplw3phf47qcrr6xad4v-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/w2ywi4zb1qnwcfxf4z9n5x4pfzbnavq7-icedos-config",
+        "path": "/nix/store/pdl8ppgnv7wgpplw3phf47qcrr6xad4v-icedos-config",
         "type": "path"
       }
     },
@@ -440,6 +440,22 @@
       "original": {
         "owner": "nix-community",
         "repo": "plasma-manager",
+        "type": "github"
+      }
+    },
+    "icedos-github_icedos_mcp-server": {
+      "locked": {
+        "lastModified": 1787966487,
+        "narHash": "sha256-0kq0s5rOrq6vqrMDOB06ZF0pzktRiohP9aD52V9f0/c=",
+        "owner": "icedos",
+        "repo": "mcp-server",
+        "rev": "943fb0130448cd09312f9bee61ea98e819fb1754",
+        "type": "github"
+      },
+      "original": {
+        "owner": "icedos",
+        "repo": "mcp-server",
+        "rev": "943fb0130448cd09312f9bee61ea98e819fb1754",
         "type": "github"
       }
     },
@@ -659,6 +675,7 @@
         "icedos-github_icedos_hardware": "icedos-github_icedos_hardware",
         "icedos-github_icedos_kde": "icedos-github_icedos_kde",
         "icedos-github_icedos_kde-default-plasma-manager": "icedos-github_icedos_kde-default-plasma-manager",
+        "icedos-github_icedos_mcp-server": "icedos-github_icedos_mcp-server",
         "icedos-github_icedos_providers": "icedos-github_icedos_providers",
         "icedos-github_icedos_providers-jovian-jovian": "icedos-github_icedos_providers-jovian-jovian",
         "icedos-github_icedos_providers-nur-nur": "icedos-github_icedos_providers-nur-nur",
