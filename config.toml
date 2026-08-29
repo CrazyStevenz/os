@@ -268,7 +268,6 @@ packages = [
 [icedos.users.work]
 description = "Work"
 packages = [
-  "claude-code",
   "codex",
   "discord",
   "envsubst", # Environment variables substitution for Go
@@ -283,6 +282,7 @@ packages = [
 generations = 30
 packages = [
   "appimage-run",
+  "claude-code",
   "gimp3", # GNU Image Manipulation Program
   "gnome-calculator",
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
