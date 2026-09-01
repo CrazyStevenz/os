@@ -30,7 +30,7 @@ url = "github:icedos/tweaks"
 modules = ["gaming", "kernel"]
 
 [icedos.applications.aagl]
-launchers = ["anime-game-launcher", "sleepy-launcher"]
+launchers = ["anime-game-launcher"]
 
 # [icedos.applications.protonvpn-cli.connect]
 # country = "RO"
@@ -362,3 +362,6 @@ url = "https://mcp.context7.com/mcp"
 [icedos.applications.prime-agent]
 defaultProvider = "opencode"
 defaultModel = "big-pickle"
+
+[icedos.applications.prime-agent.providers.opencode.modelOverrides.big-pickle]
+contextWindow = 100000

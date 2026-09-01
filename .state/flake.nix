@@ -9,60 +9,60 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/8dhbs2f5j8v0n5wwq2hfqvfmfz8p7s16-icedos-config";
+      url = "path:/nix/store/3lfqg16l79zlb2zbyzajwcjzppml9c56-icedos-config";
     };
-    icedos-config-hytale-launcher-hytale-launcher = {
+    icedos-config-hytale-launcher = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:JPyke3/hytale-launcher-nix";
+      url = "path:/nix/store/xivv2i5253l6j04il7c5l23x8pgbv63x-icedos-config-hytale-launcher-subflake";
     };
     icedos-core = {
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/dfe7ec9811868ef212123fff3c3168689c033419";
+      url = "github:icedos/apps/ba4ac9154fa2f199efb0b8097b1b1ff6988dac71";
     };
-    icedos-github_icedos_apps-aagl-aagl = {
+    icedos-github_icedos_apps-aagl = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:ezKEa/aagl-gtk-on-nix";
+      url = "path:/nix/store/26rhnp7s04952clqh6f1gqrbz0fyhas6-icedos-github_icedos_apps-aagl-subflake";
     };
-    icedos-github_icedos_apps-celluloid-celluloid-shader = {
-      flake = false;
-      url = "path:///nix/store/5zcj323fgw0vxx0nhgvp45yxrwikm0c6-FSR.glsl";
+    icedos-github_icedos_apps-celluloid = {
+      inputs = { };
+      url = "path:/nix/store/bakwi8d6hcgmmjnmrrr4nzvwjhwsbcix-icedos-github_icedos_apps-celluloid-subflake";
     };
-    icedos-github_icedos_apps-proton-launch-scopebuddy = {
+    icedos-github_icedos_apps-proton-launch = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:HikariKnight/ScopeBuddy";
+      url = "path:/nix/store/yihk6z7bd9rh3zyfgc8b1w0vq28gkznb-icedos-github_icedos_apps-proton-launch-subflake";
     };
     icedos-github_icedos_desktop = {
       url = "github:icedos/desktop/434a2504deb85c07eee44b57503ef02f3757726d";
     };
-    icedos-github_icedos_desktop-stylix-stylix = {
+    icedos-github_icedos_desktop-stylix = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:nix-community/stylix";
+      url = "path:/nix/store/crb5iyljvk4kh2mf3bnb9a21v4l8jvbg-icedos-github_icedos_desktop-stylix-subflake";
     };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/8d3db69a90a3cd5ea90acb56b285e2a78773141b";
+      url = "github:icedos/hardware/2d96776cbd686c5971dfc900a02f8e1b4f0486ec";
     };
     icedos-github_icedos_kde = {
-      url = "github:icedos/kde/8ee796d02fa400e8ff0786425a4895249102166c";
+      url = "github:icedos/kde/04c0ac1c0e662a9ac9b66aedeb25ef5843f01366";
     };
-    icedos-github_icedos_kde-default-plasma-manager = {
+    icedos-github_icedos_kde-default = {
       inputs = {
         home-manager = {
           follows = "home-manager";
@@ -71,35 +71,35 @@
           follows = "nixpkgs";
         };
       };
-      url = "github:nix-community/plasma-manager";
+      url = "path:/nix/store/7aczmhzngbc9q0dx2mfb2apjvbq0hdhw-icedos-github_icedos_kde-default-subflake";
     };
     icedos-github_icedos_mcp-server = {
       url = "github:icedos/mcp-server/943fb0130448cd09312f9bee61ea98e819fb1754";
     };
     icedos-github_icedos_providers = {
-      url = "github:icedos/providers/fe726bf2905c942efefc12bd514c9b4a8207f5fc";
+      url = "github:icedos/providers/5d7e31dc0d66939b2bf0525434fab1d1a95e35cd";
     };
-    icedos-github_icedos_providers-jovian-jovian = {
+    icedos-github_icedos_providers-jovian = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:jovian-experiments/jovian-nixos";
+      url = "path:/nix/store/m4dv6ndsd7kadj61d6f2i3j8a0bm21zz-icedos-github_icedos_providers-jovian-subflake";
     };
-    icedos-github_icedos_providers-nur-nur = {
+    icedos-github_icedos_providers-nur = {
       inputs = {
         nixpkgs = {
           follows = "nixpkgs";
         };
       };
-      url = "github:nix-community/nur";
+      url = "path:/nix/store/c4kbdm8j9zl9vl23mgclszb7cki87n36-icedos-github_icedos_providers-nur-subflake";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/4ed19e3a4b9dfcefceef29579afebe3cee3d722a";
+      url = "github:icedos/tweaks/73d7d42457bb2b86e63f2da06575f3b51e4b5a8c";
     };
     icedos-github_icedos_virtualisation = {
-      url = "github:icedos/virtualisation/8180dad55d40577893d8a4570c0d9748138e8863";
+      url = "github:icedos/virtualisation/f7cdb7e73347210e165d3e0d0bcd9c31d302ac07";
     };
     icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small = {
       url = "github:nixos/nixpkgs/nixos-unstable-small";
@@ -133,7 +133,8 @@
 
       inherit (pkgs) lib;
       inherit (builtins) pathExists;
-      userConfig = import "${inputs.icedos-core}/lib/load-user-config.nix" "${inputs.icedos-config}";
+      userConfig = import "${inputs.icedos-core}/lib/config/load-user-config.nix" "${inputs.icedos-config
+      }";
       inherit (userConfig) icedos;
 
       icedosLib = import "${inputs.icedos-core}/lib" {
@@ -145,28 +146,18 @@
 
       inherit (icedosLib) getModules modulesFromConfig;
 
-      # Build-stage re-declaration of `[extraOptions]` options. Re-derived
-      # here (not interpolated from the genflake value): the generated flake
-      # evaluates against the filtered config snapshot, and the schema must
-      # match what this stage reads.
+      # Re-derived, not interpolated: this stage reads the filtered snapshot.
       extraOptionsDeclare = icedosLib.extraOptions.declare (userConfig.extraOptions or { });
     in
     {
-      # The module-facing lib as a first-class flake output: the exact
-      # value `specialArgs.icedosLib` shares (one `modulesFromConfig`
-      # evaluation), so repl-context / MCP `nix_eval` read the same merged
-      # lib the module system used.
+      # The same value `specialArgs.icedosLib` gets, so repl-context and MCP
+      # `nix_eval` read the lib the module system actually used.
       icedosLib = modulesFromConfig.closureLib;
 
       nixosConfigurations.icedos = nixpkgs.lib.nixosSystem rec {
         specialArgs = {
-          # Modules see the merged lib: base + every module's top-level
-          # `lib` field contribution, merged over the FULLY-RESOLVED
-          # closure. Reuses `modulesFromConfig.closureLib` — the exact
-          # value the phase-2 module-file/extra-module re-imports were
-          # made with — so the module system and the module files share
-          # one merged lib and no second `_mergeModuleLibs` fold happens
-          # here. The genflake-side uses below keep the base `icedosLib`.
+          # Reused (not re-merged), so module files and the module system share
+          # one lib. Genflake-side uses below keep the base `icedosLib`.
           icedosLib = modulesFromConfig.closureLib;
           inherit inputs;
         };
@@ -179,10 +170,8 @@
               inherit (icedosLib) mkStrOption;
             in
             {
-              # readOnly: not declared in modules/options.nix, so a
-              # config.toml-set value already aborts at genflake with
-              # "option does not exist"; readOnly additionally guards
-              # module-set values at build stage.
+              # config.toml values already abort at genflake ("option does not
+              # exist"); readOnly guards module-set values at build stage.
               options.icedos.configurationLocation = mkStrOption {
                 readOnly = true;
                 default = "/home/stef/code/os/.state";
@@ -195,10 +184,8 @@
             documentation.nixos.enable = false;
           }
 
-          # Loaded module set (derived, read-only): repo base url -> names.
-          # Computed by modulesFromConfig from the raw icedos config, so no
-          # circular dependency on the evaluated config. Backs
-          # `icedosLib.hasModule`.
+          # repo url -> names, computed from the RAW config (no circularity).
+          # Backs `icedosLib.hasModule`.
           {
             icedos.system.loadedModules = modulesFromConfig.loadedModules;
           }
@@ -207,9 +194,7 @@
             imports = getModules "${inputs.icedos-core}/modules";
           }
 
-          # Extra modules and stateVersion. Each configured extra-module
-          # directory (default `modules`) is scanned and imported; missing
-          # ones are skipped.
+          # Extra modules and stateVersion; missing dirs are skipped.
           {
             imports = lib.flatten (
               map (
@@ -223,13 +208,8 @@
             config.system.stateVersion = "23.05";
           }
 
-          # Raw NixOS config passthrough: every top-level table in
-          # config.toml / configs/*.toml *except* [icedos.*] is applied verbatim
-          # as NixOS config. nixpkgs' module system types & validates each option —
-          # IceDOS declares no schema. (home-manager is reachable the usual way,
-          # under [home-manager.users.<name>.*].) The `extraOptions` table is a
-          # declaration schema, not values, so it is excluded here (its options are
-          # declared by `extraOptionsDeclare` below).
+          # Every top-level table except [icedos.*] is applied verbatim as NixOS
+          # config; `extraOptions` is a schema, not values, so it is excluded.
           (lib.setDefaultModuleLocation "config.toml / configs/*.toml (raw NixOS passthrough)" {
             config = builtins.removeAttrs userConfig [
               "icedos"
@@ -242,12 +222,8 @@
           home-manager.nixosModules.home-manager
 
           ({ config, lib, ... }: {
-            # `lib.mkBefore` keeps these overlays at the head of
-            # `nixpkgs.overlays` so they swap the package source
-            # *before* downstream patch overlays (e.g. cosmic
-            # patches) run via `prev.<pkg>.overrideAttrs`. Without
-            # it the swap clobbers patches that already landed on
-            # the base derivation.
+            # Head of the list, so the source swap runs BEFORE downstream
+            # `overrideAttrs` patch overlays it would otherwise clobber.
             nixpkgs.overlays = lib.mkBefore (
               icedosLib.pkgs.overlaysFromChannel config.icedos
                 inputs."icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small"
