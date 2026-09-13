@@ -1,6 +1,6 @@
 [[icedos.repositories]]
 url = "github:icedos/apps"
-# overrideUrl = "path:/home/stef/code/os/.repos/apps"
+overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
   "aagl",
   "btop",
@@ -19,7 +19,6 @@ modules = [
   # "solaar",
   "steam-sunshine-headless-session",
   # "steam",
-  # "sunshine",
   # "tailscale",
   # "walker",
   "zed",
