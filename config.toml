@@ -296,7 +296,7 @@ packages = [
 generations = 30
 packages = [
   "appimage-run",
-  # "gimp3", # GNU Image Manipulation Program
+  "gimp3", # GNU Image Manipulation Program
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development

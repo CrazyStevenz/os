@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/pa5difznpwjbiv8hn03dri2h8mv4xksz-icedos-config";
+      url = "path:/nix/store/wa0fqi8a35k59fjciy8hbgagihxmc5cl-icedos-config";
     };
     icedos-config-hytale-launcher-hytale-launcher = {
       inputs = {
