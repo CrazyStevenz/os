@@ -1,6 +1,6 @@
 [[icedos.repositories]]
 url = "github:icedos/apps"
-overrideUrl = "path:/home/stef/code/os/.repos/apps"
+# overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
   "aagl",
   "btop",
@@ -18,7 +18,6 @@ modules = [
   # "scx",
   # "solaar",
   "steam-sunshine-headless-session",
-  # "steam",
   # "tailscale",
   # "walker",
   "zed",
@@ -68,9 +67,17 @@ formatOnSave = true
 url = "github:icedos/desktop"
 
 [icedos.desktop]
-defaultBrowser = "helium.desktop"
-defaultEditor = "dev.zed.Zed.desktop"
 keyboardLayouts = [ "us", "gr" ]
+
+[icedos.desktop.applications.browser]
+name = "helium.desktop"
+
+[icedos.desktop.applications.editor]
+name = "dev.zed.Zed.desktop"
+
+[icedos.desktop.applications.torrent]
+name = "org.qbittorrent.qBittorrent.desktop"
+package = ""
 
 [icedos.desktop.clock]
 date = true
@@ -93,6 +100,12 @@ id = "newsflash" # RSS reader
 name = "Newsflash"
 exec = "icedos pkgs run newsflash"
 icon = "newsflash"
+
+[[icedos.desktop.entries]]
+id = "powertop"
+name = "Powertop"
+exec = "sh -c \"printf 'layout tall\\nlaunch run0 btop\\nlaunch icedos pkgs run nvtopPackages.amd\\n' | kitty --session -\""
+icon = "terminal"
 
 [[icedos.repositories]]
 url = "github:icedos/kde"
