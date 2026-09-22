@@ -3,7 +3,6 @@ url = "github:icedos/apps"
 # overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
   # "aagl",
-  "bash",
   "btop",
   "celluloid",
   # "gamemode",
@@ -14,15 +13,12 @@ modules = [
   # "lsfg-vk",
   # "mangohud",
   "nautilus",
-  "podman",
   # "proton-launch",
   # "scx",
   # "solaar",
-  # "steam",
-  # "sunshine",
+  # "steam-sunshine-headless-session",
   # "tailscale",
   # "walker",
-  "zenergy",
   "zed",
 ]
 
@@ -31,21 +27,9 @@ url = "github:icedos/tweaks"
 modules = ["kernel"]
 
 # [icedos.applications.aagl]
-# launchers = ["anime-game-launcher", "sleepy-launcher"]
-
-[icedos.applications.git.users.stef]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
-
-[icedos.applications.git.users.work]
-username = "CrazyStevenz"
-email = "github.ekta@aleeas.com"
-
-[icedos.applications.nh.gc]
-days = 7 # Number of days before a generation can be deleted
-generations = 5 # Number of generations that will always be kept
-
-# [icedos.applications.protonvpn-cli.connect]
+# launchers = ["anime-game-launcher"]
+#
+# # [icedos.applications.protonvpn-cli.connect]
 # country = "RO"
 # p2p = true
 
@@ -56,13 +40,16 @@ generations = 5 # Number of generations that will always be kept
 # anonymousCrashReports = true
 # killSwitch = true
 
-# [icedos.applications.scx]
-# extraArgs = ["--perf", "1024"]
-
 # [icedos.applications.steam]
 # beta = true
 # cpuUsageWorkaround = true
 # downloadsWorkaround = true
+
+# [icedos.applications.steam.headless-session]
+# hdr = true
+# colorManagement = true
+# steamOS = true
+# excludeHostControllers = false
 
 # [icedos.applications.sunshine]
 # autoStart = true
@@ -72,18 +59,25 @@ generations = 5 # Number of generations that will always be kept
 autosave = true
 formatOnSave = true
 
-[icedos.applications.zsh.aliases]
-i = "icedos"
-ir = "icedos rebuild"
-iu = "icedos rebuild --update"
-
 [[icedos.repositories]]
 url = "github:icedos/desktop"
 
 [icedos.desktop]
-defaultBrowser = "helium.desktop"
-defaultEditor = "dev.zed.Zed.desktop"
 keyboardLayouts = ["us", "gr"]
+
+[icedos.desktop.applications.browser]
+name = "helium.desktop"
+
+[icedos.desktop.applications.editor]
+name = "dev.zed.Zed.desktop"
+
+[icedos.desktop.applications.torrent]
+name = ""
+package = ""
+
+[icedos.desktop.applications.wine]
+name = ""
+package = ""
 
 [icedos.desktop.clock]
 date = true
@@ -106,6 +100,12 @@ id = "newsflash" # RSS reader
 name = "Newsflash"
 exec = "icedos pkgs run newsflash"
 icon = "newsflash"
+
+[[icedos.desktop.entries]]
+id = "powertop"
+name = "Powertop"
+exec = "sh -c \"printf 'layout tall\\nlaunch run0 btop\\nlaunch icedos pkgs run nvtopPackages.amd\\n' | kitty --session -\""
+icon = "terminal"
 
 # [[icedos.repositories]]
 # url = "github:icedos/kde"
@@ -142,7 +142,6 @@ icon = "newsflash"
 # keys = ["Meta+E", "Meta+Ε"]
 
 [icedos.desktop.stylix]
-enable = true
 disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
 
 # [icedos.desktop.users.stef]
@@ -151,19 +150,19 @@ disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
 # [icedos.desktop.users.stef.idle.lock]
 # enable = false
 
-# [icedos.desktop.users.stef.idle.disableMonitors]
+# [icedos.desktop.users.stef.idle.disable-monitors]
 # seconds = 300
 
 # [icedos.desktop.users.stef.idle.suspend]
 # enable = false
 
-[icedos.desktop.users.stef]
-startupScript = "protonvpn-app & slack"
+[icedos.desktop.users.work]
+startupScript = "sleep 3 & protonvpn-app & slack"
 
 [icedos.desktop.users.work.idle.lock]
 seconds = 300
 
-[icedos.desktop.users.work.idle.disableMonitors]
+[icedos.desktop.users.work.idle.disable-monitors]
 seconds = 270
 
 [icedos.desktop.users.work.idle.suspend]
@@ -173,7 +172,7 @@ enable = false
 maximizeButton = true
 minimizeButton = true
 
-[icedos.desktop.xdgDesktopPortal]
+[icedos.desktop.xdg-desktop-portal]
 forceGtkFilePicker = true
 
 [[icedos.repositories]]
@@ -188,14 +187,13 @@ modules = [
   "pipewire",
   "radeon",
   "ryzen",
-  "systemd-boot",
   "uinput",
   "upower",
   "zram",
 ]
 
-[icedos.hardware.bootloaders.systemd-boot]
-mountPoint = "/boot/efi"
+[icedos.hardware.devices]
+laptop = true
 
 # [icedos.hardware.graphics.radeon]
 # featureMask = "0xffffffff"
@@ -230,23 +228,49 @@ variant = "latest"
 # [icedos.hardware.network]
 # firewall = false
 
-[icedos.hardware.pipewire.echoCancellation]
-enable = true
+# [icedos.hardware.pipewire.echoCancellation]
+# enable = true
 
-[icedos.hardware.pipewire.noiseCancellation]
+# [icedos.hardware.pipewire.noiseCancellation]
+# enable = true
+# # true  = smart filter on the default mic (transparent, follows default source)
+# # false = separate virtual mic that apps must explicitly select
+# dynamic = true
+# # true  = 1-channel rnnoise (mono mics native; stereo mics downmixed to mono)
+# # false = 2-channel rnnoise (stereo mics preserved; mono mics upmixed, ~2x CPU)
+# mono = false
+# # How confident (%) rnnoise must be that a sound is speech before letting it through
+# vadThreshold = 90
+# # Ms to keep the gate open after speech stops, preventing abrupt mid-sentence cutoffs
+# vadGracePeriod = 400
+# # Ms of audio to retroactively restore when speech is detected, catching clipped first syllables
+# retroactiveVadGrace = 100
+
+[[icedos.repositories]]
+url = "github:icedos/gnome"
+fetchOptionalDependencies = true
+
+[icedos.desktop.gnome.extensions]
+arcmenu = true
+dashToPanel = true
+
+[icedos.desktop.users.work.gnome.pinned-apps.arcmenu]
 enable = true
-# true  = smart filter on the default mic (transparent, follows default source)
-# false = separate virtual mic that apps must explicitly select
-dynamic = true
-# true  = 1-channel rnnoise (mono mics native; stereo mics downmixed to mono)
-# false = 2-channel rnnoise (stereo mics preserved; mono mics upmixed, ~2x CPU)
-mono = false
-# How confident (%) rnnoise must be that a sound is speech before letting it through
-vadThreshold = 90
-# Ms to keep the gate open after speech stops, preventing abrupt mid-sentence cutoffs
-vadGracePeriod = 400
-# Ms of audio to retroactively restore when speech is detected, catching clipped first syllables
-retroactiveVadGrace = 100
+list = ["codium.desktop"]
+
+[icedos.desktop.users.work.gnome.pinned-apps.shell]
+enable = true
+list = [
+  "slack.desktop",
+  "discord.desktop",
+  # "signal.desktop",
+  "helium.desktop",
+  "webstorm.desktop",
+]
+
+[[icedos.repositories]]
+url = "github:icedos/virtualisation"
+modules = ["podman"]
 
 # [icedos.users.stef]
 # description = "Stefanos"
@@ -311,28 +335,26 @@ packages = [
 permittedInsecurePackages = []
 version = "22.05"
 
-[[icedos.system.overlays.fromChannel]]
-url = "github:nixos/nixpkgs/nixos-unstable-small"
-packages = ["kdePackages"]
+[icedos.system.bootloaders.systemd-boot]
+mountPoint = "/boot/efi"
 
-[[icedos.repositories]]
-url = "github:icedos/gnome"
-fetchOptionalDependencies = true
+[icedos.system.gc]
+days = 7 # Number of days before a generation can be deleted
+generations = 5 # Number of generations that will always be kept
 
-[icedos.desktop.gnome.extensions]
-arcmenu = true
-dashToPanel = true
+# [icedos.system.git.users.stef]
+# username = "CrazyStevenz"
+# email = "github.ekta@aleeas.com"
 
-[icedos.desktop.gnome.users.work.pinnedApps.arcmenu]
-enable = true
-list = ["codium.desktop"]
+[icedos.system.git.users.work]
+username = "CrazyStevenz"
+email = "github.ekta@aleeas.com"
 
-[icedos.desktop.gnome.users.work.pinnedApps.shell]
-enable = true
-list = [
-  "slack.desktop",
-  "discord.desktop",
-  # "signal.desktop",
-  "helium.desktop",
-  "webstorm.desktop",
-]
+# [[icedos.system.overlays.fromChannel]]
+# url = "github:nixos/nixpkgs/nixos-unstable-small"
+# packages = ["kdePackages"]
+
+[icedos.system.zsh.aliases]
+i = "icedos"
+ir = "icedos rebuild"
+iu = "icedos rebuild --update"
