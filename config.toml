@@ -312,6 +312,7 @@ packages = [
   "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
   "slack",
+  "stremio-linux-shell",
   # "t3code", # Minimal web GUI for coding agents
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
 ]

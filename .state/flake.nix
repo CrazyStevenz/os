@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/fi5y7scgyyjgn52gm51ivxf7fqpjcv84-icedos-config";
+      url = "path:/nix/store/v87jpfwvmpgwb6h1m53izcjy2qcshylb-icedos-config";
     };
     icedos-core = {
       follows = "icedos-config/icedos";
@@ -57,7 +57,7 @@
     };
     icedos-state = {
       flake = false;
-      url = "path:/nix/store/xl58i7d670z75kmzlj81lf8sz20kazs1-icedos";
+      url = "path:/nix/store/yw05v41gq3nsv7jm2g5194n3471qan5b-icedos";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
