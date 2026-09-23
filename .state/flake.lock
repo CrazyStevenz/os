@@ -98,6 +98,28 @@
         "type": "path"
       }
     },
+    "claude-code": {
+      "inputs": {
+        "nixpkgs": [
+          "icedos-config-claude-code",
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1790096491,
+        "narHash": "sha256-zeY26igEw0G1GnVe1fA8pa/+q7mxanzCUV91GUTedzk=",
+        "owner": "sadjow",
+        "repo": "claude-code-nix",
+        "rev": "7e5f1c52ca206b2a3a535ec0e8f89bd1ae5f1afa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sadjow",
+        "repo": "claude-code-nix",
+        "type": "github"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -213,6 +235,27 @@
         "type": "github"
       }
     },
+    "hytale-launcher": {
+      "inputs": {
+        "nixpkgs": [
+          "icedos-config-hytale-launcher",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790039709,
+        "narHash": "sha256-nYKK3nrkVPa9ZCeLI3+yFesoSGnubJb5EBIAjcNf01U=",
+        "owner": "JPyke3",
+        "repo": "hytale-launcher-nix",
+        "rev": "60a1474b369ded47198fefab1b200400a4c41bc5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JPyke3",
+        "repo": "hytale-launcher-nix",
+        "type": "github"
+      }
+    },
     "icedos": {
       "inputs": {
         "cache-server": "cache-server",
@@ -238,12 +281,48 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-l8CSRg+0eyU137a6i9h95j/+8bNvwWyEx7gRGrrGrXw=",
-        "path": "/nix/store/v87jpfwvmpgwb6h1m53izcjy2qcshylb-icedos-config",
+        "narHash": "sha256-zQirbfyNtRtZqH2z+OS/5T2lzJ0fgo84I8fF+gm03cM=",
+        "path": "/nix/store/qk0m58cs9jiv7fmmszsyyf8zamw3lysc-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/v87jpfwvmpgwb6h1m53izcjy2qcshylb-icedos-config",
+        "path": "/nix/store/qk0m58cs9jiv7fmmszsyyf8zamw3lysc-icedos-config",
+        "type": "path"
+      }
+    },
+    "icedos-config-claude-code": {
+      "inputs": {
+        "claude-code": "claude-code",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-Ael0k92Rtj/JlSDnBH5+yadZxn2CUTm4LivJhSpE7vA=",
+        "path": "/nix/store/f1ng9apski7b7h4k623h4sxg8gglff8c-icedos-config-claude-code-subflake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/f1ng9apski7b7h4k623h4sxg8gglff8c-icedos-config-claude-code-subflake",
+        "type": "path"
+      }
+    },
+    "icedos-config-hytale-launcher": {
+      "inputs": {
+        "hytale-launcher": "hytale-launcher",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-rjtKwAeNm9x+1kiI3CMoybG73wpXhPjEvsOYjjiKw0w=",
+        "path": "/nix/store/xivv2i5253l6j04il7c5l23x8pgbv63x-icedos-config-hytale-launcher-subflake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/xivv2i5253l6j04il7c5l23x8pgbv63x-icedos-config-hytale-launcher-subflake",
         "type": "path"
       }
     },
@@ -508,6 +587,8 @@
       "inputs": {
         "home-manager": "home-manager",
         "icedos-config": "icedos-config",
+        "icedos-config-claude-code": "icedos-config-claude-code",
+        "icedos-config-hytale-launcher": "icedos-config-hytale-launcher",
         "icedos-core": [
           "icedos-config",
           "icedos"
@@ -540,7 +621,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
-        "systems": "systems",
+        "systems": "systems_2",
         "tinted-kitty": "tinted-kitty",
         "tinted-schemes": "tinted-schemes",
         "tinted-tmux": "tinted-tmux",
@@ -561,6 +642,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1774449309,
         "narHash": "sha256-brhZ8DmuGtzkCYHJg4HEd602amKm89Y9ytsFZ5uWD1w=",

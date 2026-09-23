@@ -9,7 +9,23 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/v87jpfwvmpgwb6h1m53izcjy2qcshylb-icedos-config";
+      url = "path:/nix/store/qk0m58cs9jiv7fmmszsyyf8zamw3lysc-icedos-config";
+    };
+    icedos-config-claude-code = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "path:/nix/store/f1ng9apski7b7h4k623h4sxg8gglff8c-icedos-config-claude-code-subflake";
+    };
+    icedos-config-hytale-launcher = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "path:/nix/store/xivv2i5253l6j04il7c5l23x8pgbv63x-icedos-config-hytale-launcher-subflake";
     };
     icedos-core = {
       follows = "icedos-config/icedos";
