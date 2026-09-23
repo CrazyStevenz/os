@@ -281,12 +281,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-XUcJpwqMWhh4svmAkGpDzTZwVQC6tSOqh/+V3kc7Vww=",
-        "path": "/nix/store/5ah408zvpl8jpy12ax4z0301xcy5hjv5-icedos-config",
+        "narHash": "sha256-YbYNxg28CKdav7TwKWnHlMedTLXGuWHgIx5Np85NLYY=",
+        "path": "/nix/store/qqvqd96c5n40lnw601gmhqczghfhzp64-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/5ah408zvpl8jpy12ax4z0301xcy5hjv5-icedos-config",
+        "path": "/nix/store/qqvqd96c5n40lnw601gmhqczghfhzp64-icedos-config",
         "type": "path"
       }
     },

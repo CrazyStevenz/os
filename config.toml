@@ -28,17 +28,20 @@ modules = ["kernel"]
 
 # [icedos.applications.aagl]
 # launchers = ["anime-game-launcher"]
-#
-# # [icedos.applications.protonvpn-cli.connect]
+
+# [icedos.applications.protonvpn-cli.connect]
 # country = "RO"
 # p2p = true
 
-# [icedos.applications.protonvpn-cli.desktopEntry]
+# [icedos.applications.protonvpn-cli.desktop-entry]
 # countries = ["RO", "GR", "BG"]
 
 # [icedos.applications.protonvpn-cli.settings]
 # anonymousCrashReports = true
 # killSwitch = true
+
+# [icedos.applications.scx]
+# extraArgs = ["--perf", "1024"]
 
 # [icedos.applications.steam]
 # beta = true
@@ -63,7 +66,8 @@ formatOnSave = true
 url = "github:icedos/desktop"
 
 [icedos.desktop]
-keyboardLayouts = ["us", "gr"]
+keyboardLayouts = [ "us", "gr" ]
+timezone = "Europe/Amsterdam"
 
 [icedos.desktop.applications.browser]
 name = "helium.desktop"
@@ -157,7 +161,7 @@ disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
 # enable = false
 
 [icedos.desktop.users.work]
-startupScript = "sleep 3 & protonvpn-app & slack"
+startupScript = "protonvpn-app & slack"
 
 [icedos.desktop.users.work.idle.lock]
 seconds = 300
@@ -228,10 +232,10 @@ variant = "latest"
 # [icedos.hardware.network]
 # firewall = false
 
-# [icedos.hardware.pipewire.echoCancellation]
+# [icedos.hardware.pipewire.echo-cancellation]
 # enable = true
 
-# [icedos.hardware.pipewire.noiseCancellation]
+# [icedos.hardware.pipewire.noise-cancellation]
 # enable = true
 # # true  = smart filter on the default mic (transparent, follows default source)
 # # false = separate virtual mic that apps must explicitly select
@@ -283,7 +287,6 @@ modules = ["podman"]
 [icedos.users.work]
 description = "Work"
 packages = [
-  "claude-code",
   # "codex",
   "discord",
   "envsubst", # Environment variables substitution for Go
@@ -299,7 +302,9 @@ packages = [
 generations = 30
 packages = [
   "appimage-run",
+  "claude-code",
   "gimp3", # GNU Image Manipulation Program
+  "gnome-calculator",
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   # "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
