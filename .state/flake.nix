@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/qk0m58cs9jiv7fmmszsyyf8zamw3lysc-icedos-config";
+      url = "path:/nix/store/5ah408zvpl8jpy12ax4z0301xcy5hjv5-icedos-config";
     };
     icedos-config-claude-code = {
       inputs = {
@@ -48,11 +48,22 @@
       };
       url = "path:/nix/store/crb5iyljvk4kh2mf3bnb9a21v4l8jvbg-icedos-github_icedos_desktop-stylix-subflake";
     };
-    icedos-github_icedos_gnome = {
-      url = "github:icedos/gnome/43900c84836a3b1aa96b0ce3615e271a6ae3922e";
-    };
     icedos-github_icedos_hardware = {
       url = "github:icedos/hardware/516ac8fc2eed3fdb377ed719380babbd5cfcfc86";
+    };
+    icedos-github_icedos_kde = {
+      url = "github:icedos/kde/fff4b8e1b46b84ff22c112328d1b0201a48ad825";
+    };
+    icedos-github_icedos_kde-default = {
+      inputs = {
+        home-manager = {
+          follows = "home-manager";
+        };
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "path:/nix/store/7aczmhzngbc9q0dx2mfb2apjvbq0hdhw-icedos-github_icedos_kde-default-subflake";
     };
     icedos-github_icedos_providers = {
       url = "github:icedos/providers/86f823cc597a496a3b8f4424ab3bb168d806303f";
@@ -70,6 +81,9 @@
     };
     icedos-github_icedos_virtualisation = {
       url = "github:icedos/virtualisation/eac61965dc47fccc50f7f6c67f4a379b5ea6a4d8";
+    };
+    icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small = {
+      url = "github:nixos/nixpkgs/nixos-unstable-small";
     };
     icedos-state = {
       flake = false;
@@ -187,6 +201,16 @@
           extraOptionsDeclare
 
           home-manager.nixosModules.home-manager
+
+          ({ config, lib, ... }: {
+            # Head of the list, so the source swap runs BEFORE downstream
+            # `overrideAttrs` patch overlays it would otherwise clobber.
+            nixpkgs.overlays = lib.mkBefore (
+              icedosLib.pkgs.overlaysFromChannel config.icedos
+                inputs."icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small"
+                [ "kdePackages" ]
+            );
+          })
 
           { icedos.system.isFirstBuild = true; }
 

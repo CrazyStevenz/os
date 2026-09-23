@@ -107,39 +107,39 @@ name = "Powertop"
 exec = "sh -c \"printf 'layout tall\\nlaunch run0 btop\\nlaunch icedos pkgs run nvtopPackages.amd\\n' | kitty --session -\""
 icon = "terminal"
 
-# [[icedos.repositories]]
-# url = "github:icedos/kde"
-# # overrideUrl = "path:/home/stef/code/os/.repos/kde"
-# fetchOptionalDependencies = true
+[[icedos.repositories]]
+url = "github:icedos/kde"
+# overrideUrl = "path:/home/stef/code/os/.repos/kde"
+fetchOptionalDependencies = true
 
-# [icedos.desktop.kde]
-# excludeDefaultPackages = ["dolphin", "dolphin-plugins"]
+[icedos.desktop.kde]
+excludeDefaultPackages = ["dolphin", "dolphin-plugins"]
 
-# [icedos.desktop.kde.keyboard]
-# switchingPolicy = "window"
+[icedos.desktop.kde.keyboard]
+switchingPolicy = "window"
 
 # [icedos.desktop.kde.panel]
 # autohide = true
 
-# [icedos.desktop.kde.panel.systemTray]
-# disabledApplets = [
-#   "org.kde.plasma.devicenotifier",
-#   "org.kde.plasma.mediacontroller",
-# ]
+[icedos.desktop.kde.panel.system-tray]
+disabledApplets = [
+  "org.kde.plasma.devicenotifier",
+  "org.kde.plasma.mediacontroller"
+]
 
-# [[icedos.desktop.kde.screenEdges]]
-# position = "topLeft"
-# action = "none"
+[[icedos.desktop.kde.screen-edges]]
+position = "topLeft"
+action = "none"
 
-# [icedos.desktop.kde.shortcuts.hotkeys.kitty]
-# name = "Kitty"
-# command = "kitty"
-# keys = ["Meta+X", "Meta+Χ"]
+[icedos.desktop.kde.shortcuts.hotkeys.kitty]
+name = "Kitty"
+command = "kitty"
+keys = ["Meta+X", "Meta+Χ"]
 
-# [icedos.desktop.kde.shortcuts.hotkeys.nautilus]
-# name = "Nautilus"
-# command = "nautilus"
-# keys = ["Meta+E", "Meta+Ε"]
+[icedos.desktop.kde.shortcuts.hotkeys.nautilus]
+name = "Nautilus"
+command = "nautilus"
+keys = ["Meta+E", "Meta+Ε"]
 
 [icedos.desktop.stylix]
 disabledTargets = ["blender", "chromium", "console", "kmscon", "vencord", "zed"]
@@ -247,28 +247,6 @@ variant = "latest"
 # retroactiveVadGrace = 100
 
 [[icedos.repositories]]
-url = "github:icedos/gnome"
-fetchOptionalDependencies = true
-
-[icedos.desktop.gnome.extensions]
-arcmenu = true
-dashToPanel = true
-
-[icedos.desktop.users.work.gnome.pinned-apps.arcmenu]
-enable = true
-list = ["codium.desktop"]
-
-[icedos.desktop.users.work.gnome.pinned-apps.shell]
-enable = true
-list = [
-  "slack.desktop",
-  "discord.desktop",
-  # "signal.desktop",
-  "helium.desktop",
-  "webstorm.desktop",
-]
-
-[[icedos.repositories]]
 url = "github:icedos/virtualisation"
 modules = ["podman"]
 
@@ -351,9 +329,9 @@ generations = 5 # Number of generations that will always be kept
 username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
-# [[icedos.system.overlays.fromChannel]]
-# url = "github:nixos/nixpkgs/nixos-unstable-small"
-# packages = ["kdePackages"]
+[[icedos.system.overlays.fromChannel]]
+url = "github:nixos/nixpkgs/nixos-unstable-small"
+packages = ["kdePackages"]
 
 [icedos.system.zsh.aliases]
 i = "icedos"
