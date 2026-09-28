@@ -136,6 +136,22 @@
         "type": "github"
       }
     },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1767039857,
+        "narHash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -281,12 +297,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-YbYNxg28CKdav7TwKWnHlMedTLXGuWHgIx5Np85NLYY=",
-        "path": "/nix/store/qqvqd96c5n40lnw601gmhqczghfhzp64-icedos-config",
+        "narHash": "sha256-jS3e02G3AV/Dh0MbSNoefUJFV6u8CNUAmi3AdnynTNA=",
+        "path": "/nix/store/rm41bnl2yp6v46xp741isj1skn21ywr7-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/qqvqd96c5n40lnw601gmhqczghfhzp64-icedos-config",
+        "path": "/nix/store/rm41bnl2yp6v46xp741isj1skn21ywr7-icedos-config",
         "type": "path"
       }
     },
