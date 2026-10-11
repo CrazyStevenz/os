@@ -13,11 +13,10 @@ modules = [
   "lsfg-vk",
   "mangohud",
   "nautilus",
-  "prime-agent",
   "proton-launch",
   # "scx",
   # "solaar",
-  "steam-sunshine-headless-session",
+  "steam-headless",
   # "tailscale",
   # "walker",
   "zed",
@@ -50,10 +49,14 @@ cpuUsageWorkaround = true
 downloadsWorkaround = true
 
 [icedos.applications.steam.headless-session]
+steamOS = true
+
+[icedos.applications.sunshine-headless.gamescope]
 hdr = true
 colorManagement = true
-steamOS = true
-excludeHostControllers = false
+
+[icedos.applications.sunshine-headless.session.controllers]
+excludeHost = false
 
 [icedos.applications.sunshine]
 autoStart = true
@@ -62,6 +65,9 @@ capSysAdmin = true
 [icedos.applications.zed]
 autosave = true
 formatOnSave = true
+
+[icedos.applications.zed.agentBridge]
+enable = false
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
@@ -335,45 +341,5 @@ i = "icedos"
 ir = "icedos rebuild"
 iu = "icedos rebuild --update"
 
-[[icedos.repositories]]
-url = "github:icedos/mcp-server"
-# overrideUrl = "path:/home/ice/Projects/icedos/mcp-server"
-
-[home-manager.users.stef.programs.mcp]
-enable = true
-
-[home-manager.users.stef.programs.mcp.servers.basic-memory]
-command = "nix-shell"
-args = [
-  "-p",
-  "uv",
-  "python313",
-  "stdenv.cc.cc.lib",
-  "gcc",
-  "--run",
-  "export BASIC_MEMORY_CONFIG_DIR=\"$HOME/.config/basic-memory\"; export BASIC_MEMORY_HOME=\"$HOME/.local/share/basic-memory\"; export BASIC_MEMORY_FORCE_LOCAL=true; export LD_LIBRARY_PATH=$(dirname $(gcc -print-file-name=libstdc++.so.6)):$LD_LIBRARY_PATH; uvx --python 3.13 basic-memory mcp",
-]
-
-[home-manager.users.stef.programs.mcp.servers.icedos]
-command = "icedos"
-args = ["mcp", "serve"]
-timeout = 3600000
-
-[home-manager.users.stef.programs.mcp.servers.nixos]
-command = "nix-shell"
-args = ["-p", "mcp-nixos", "--run", "mcp-nixos"]
-
-[home-manager.users.stef.programs.mcp.servers.chrome-devtools]
-command = "nix-shell"
-args = ["-p", "nodejs", "--run", "npx -y chrome-devtools-mcp@latest --executable-path=/run/current-system/sw/bin/helium --isolated=true --no-usage-statistics"]
-timeout = 600000
-
-[home-manager.users.stef.programs.mcp.servers.context7]
-url = "https://mcp.context7.com/mcp"
-
-[icedos.applications.prime-agent]
-defaultProvider = "opencode"
-defaultModel = "big-pickle"
-
-[icedos.applications.prime-agent.providers.opencode.modelOverrides.big-pickle]
-contextWindow = 100000
+[programs.kde-pim]
+enable = false
