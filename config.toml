@@ -71,6 +71,7 @@ enable = false
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
+# overrideUrl = "path:/home/stef/code/os/.repos/desktop"
 
 [icedos.desktop]
 keyboardLayouts = [ "us", "gr" ]
@@ -80,6 +81,9 @@ name = "helium.desktop"
 
 [icedos.desktop.applications.editor]
 name = "dev.zed.Zed.desktop"
+
+[icedos.desktop.applications.files]
+name = "org.gnome.Nautilus.desktop"
 
 [icedos.desktop.applications.torrent]
 name = "org.qbittorrent.qBittorrent.desktop"
