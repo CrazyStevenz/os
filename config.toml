@@ -290,9 +290,9 @@ packages = [
 [icedos.users.work]
 description = "Work"
 packages = [
-  "codex",
   "discord",
   "envsubst", # Environment variables substitution for Go
+  "gh",
   # "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
   "slack",
