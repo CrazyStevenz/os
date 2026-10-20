@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/n9v4gkp85p9r3p0fnxhhpw5scxdpqs9s-icedos-config";
+      url = "path:/nix/store/zp655b3vp7pbbdgxgvyx3s3h8yrncnc4-icedos-config";
     };
     icedos-config-hytale-launcher = {
       inputs = {
@@ -23,30 +23,14 @@
       follows = "icedos-config/icedos";
     };
     icedos-github_icedos_apps = {
-      url = "github:icedos/apps/b310a539477aa6f8ea06109ce0e32fc084c9c913";
-    };
-    icedos-github_icedos_apps-aagl = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "path:/nix/store/26rhnp7s04952clqh6f1gqrbz0fyhas6-icedos-github_icedos_apps-aagl-subflake";
+      url = "github:icedos/apps/eef49ce036480bb5fb58b564f0fbb22ae911a713";
     };
     icedos-github_icedos_apps-celluloid = {
       inputs = { };
       url = "path:/nix/store/bakwi8d6hcgmmjnmrrr4nzvwjhwsbcix-icedos-github_icedos_apps-celluloid-subflake";
     };
-    icedos-github_icedos_apps-proton-launch = {
-      inputs = {
-        nixpkgs = {
-          follows = "nixpkgs";
-        };
-      };
-      url = "path:/nix/store/yihk6z7bd9rh3zyfgc8b1w0vq28gkznb-icedos-github_icedos_apps-proton-launch-subflake";
-    };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/0b47318cde1f5e3e7ab6645233f05487d7a8297f";
+      url = "github:icedos/desktop/e455907ab3e74683adc31e0d0a31a3d8521431df";
     };
     icedos-github_icedos_desktop-stylix = {
       inputs = {
@@ -56,11 +40,30 @@
       };
       url = "path:/nix/store/crb5iyljvk4kh2mf3bnb9a21v4l8jvbg-icedos-github_icedos_desktop-stylix-subflake";
     };
+    icedos-github_icedos_gaming = {
+      url = "github:icedos/gaming/0ccb799a749dfacccb63c10d18ab4eb3e284cf87";
+    };
+    icedos-github_icedos_gaming-aagl = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "path:/nix/store/lakwlwykiiflnq6mcrqhwnipn0i681x3-icedos-github_icedos_gaming-aagl-subflake";
+    };
+    icedos-github_icedos_gaming-proton-launch = {
+      inputs = {
+        nixpkgs = {
+          follows = "nixpkgs";
+        };
+      };
+      url = "path:/nix/store/b42rsxan9wnxbvk89hxc97c1rczny6hc-icedos-github_icedos_gaming-proton-launch-subflake";
+    };
     icedos-github_icedos_hardware = {
-      url = "github:icedos/hardware/c052259fcee4daa039f20943e4a70784d5d2c081";
+      url = "github:icedos/hardware/f5932c2b333979e217405139234786ef50b3d9cc";
     };
     icedos-github_icedos_kde = {
-      url = "github:icedos/kde/2a724b8339a3ccb23135aa46dda68a0353effbd2";
+      url = "github:icedos/kde/eb6567c9df26e36a98481de2e1edbc6df8cfb9e8";
     };
     icedos-github_icedos_kde-default = {
       inputs = {
@@ -74,7 +77,7 @@
       url = "path:/nix/store/7aczmhzngbc9q0dx2mfb2apjvbq0hdhw-icedos-github_icedos_kde-default-subflake";
     };
     icedos-github_icedos_providers = {
-      url = "github:icedos/providers/86f823cc597a496a3b8f4424ab3bb168d806303f";
+      url = "github:icedos/providers/efbf9c9e0ab2b7eb56ddd0dcacfc31273229a55f";
     };
     icedos-github_icedos_providers-jovian = {
       inputs = {
@@ -93,7 +96,7 @@
       url = "path:/nix/store/c4kbdm8j9zl9vl23mgclszb7cki87n36-icedos-github_icedos_providers-nur-subflake";
     };
     icedos-github_icedos_tweaks = {
-      url = "github:icedos/tweaks/95c46f51bc85b1cbcc4d58bef2750581a26addab";
+      url = "github:icedos/tweaks/f986891bcf3fa9863e368a7a99f03117f093a158";
     };
     icedos-github_icedos_virtualisation = {
       url = "github:icedos/virtualisation/eac61965dc47fccc50f7f6c67f4a379b5ea6a4d8";

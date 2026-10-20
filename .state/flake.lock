@@ -4,7 +4,7 @@
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
-          "icedos-github_icedos_apps-aagl",
+          "icedos-github_icedos_gaming-aagl",
           "nixpkgs"
         ],
         "rust-overlay": "rust-overlay"
@@ -94,11 +94,11 @@
     "cache-server": {
       "flake": false,
       "locked": {
-        "lastModified": 1791884063,
-        "narHash": "sha256-WOCoqkyhQuGShTO2q+DKPnq4fAQdqgwA0wdOA9mhasY=",
+        "lastModified": 1792403157,
+        "narHash": "sha256-X0SpgtEGkl6LeiWRzsYY/YnJpqlzte1Veu9GZsiQ5AE=",
         "owner": "icedos",
         "repo": "cache-server",
-        "rev": "5995bea3159419b89d0cd5920eeb5f616bfcd968",
+        "rev": "80fe4aad0cb3712f0fe2cf8a11805c97f32627e9",
         "type": "github"
       },
       "original": {
@@ -239,11 +239,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791642191,
-        "narHash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw=",
+        "lastModified": 1792098797,
+        "narHash": "sha256-u4DIIZgznEGzByxXrxWCXK19VcMtTBmi/M9gZ7Jk9bM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
+        "rev": "640725978b99076e18e069f6e7d2959124584f8f",
         "type": "github"
       },
       "original": {
@@ -260,11 +260,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790615022,
-        "narHash": "sha256-Y/7vsBDIcj/lKYX7j+SS6Q5mzl3lE3WSI8AUpgL4Ly8=",
+        "lastModified": 1792011798,
+        "narHash": "sha256-gLIz9KH5t8SWTkzeQPEgQQHf1L061M3tSs4IW2Xa+go=",
         "owner": "JPyke3",
         "repo": "hytale-launcher-nix",
-        "rev": "d1685428dc727283d0aaad24d17fb6d677a4643b",
+        "rev": "30eb0515625a7f03e1fdc61009933d83759fffde",
         "type": "github"
       },
       "original": {
@@ -279,11 +279,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1791552680,
-        "narHash": "sha256-9ujBrDofK7/8Og77d63YU3dcvCAi7VjfzZyCRODZlXU=",
+        "lastModified": 1792192899,
+        "narHash": "sha256-9H6xhguXl3WT65uj0PS9eB3Ps5iofoNuRpN/oPrbDBM=",
         "owner": "icedos",
         "repo": "core",
-        "rev": "7c15882d47079a668aa3d05a27ee1940ccaf31d0",
+        "rev": "f0bfef0ee3dc967fcd1266916d844df808470dc2",
         "type": "github"
       },
       "original": {
@@ -298,12 +298,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-wqncurIoTFV6IvJg2ATPdMfLGJnKppN25RVo6+vypTc=",
-        "path": "/nix/store/n9v4gkp85p9r3p0fnxhhpw5scxdpqs9s-icedos-config",
+        "narHash": "sha256-cM5Zu0wVM7vT3DGzSnHazeCztZ0AgHWcEgTdIugFfUM=",
+        "path": "/nix/store/zp655b3vp7pbbdgxgvyx3s3h8yrncnc4-icedos-config",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/n9v4gkp85p9r3p0fnxhhpw5scxdpqs9s-icedos-config",
+        "path": "/nix/store/zp655b3vp7pbbdgxgvyx3s3h8yrncnc4-icedos-config",
         "type": "path"
       }
     },
@@ -327,36 +327,18 @@
     },
     "icedos-github_icedos_apps": {
       "locked": {
-        "lastModified": 1791845397,
-        "narHash": "sha256-/fsapjNA0TSGA4+6SZdL/ZgsB8t9uQkew5a7gWUUotU=",
+        "lastModified": 1792417982,
+        "narHash": "sha256-QM0R82XpPL8ic1fpw4dXnlNKwQ0FlfHbyS9G6r0+MKU=",
         "owner": "icedos",
         "repo": "apps",
-        "rev": "b310a539477aa6f8ea06109ce0e32fc084c9c913",
+        "rev": "eef49ce036480bb5fb58b564f0fbb22ae911a713",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "apps",
-        "rev": "b310a539477aa6f8ea06109ce0e32fc084c9c913",
+        "rev": "eef49ce036480bb5fb58b564f0fbb22ae911a713",
         "type": "github"
-      }
-    },
-    "icedos-github_icedos_apps-aagl": {
-      "inputs": {
-        "aagl": "aagl",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-TGqJp0tj0JjEbYxUM+MjN1k284XzPZeh1EJQOGjNVts=",
-        "path": "/nix/store/26rhnp7s04952clqh6f1gqrbz0fyhas6-icedos-github_icedos_apps-aagl-subflake",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/26rhnp7s04952clqh6f1gqrbz0fyhas6-icedos-github_icedos_apps-aagl-subflake",
-        "type": "path"
       }
     },
     "icedos-github_icedos_apps-celluloid": {
@@ -374,37 +356,19 @@
         "type": "path"
       }
     },
-    "icedos-github_icedos_apps-proton-launch": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "scopebuddy": "scopebuddy"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-PMoJ13cUUiOikzGeSt3G+n1d50eyGF+Xxcb3DvRr8gg=",
-        "path": "/nix/store/yihk6z7bd9rh3zyfgc8b1w0vq28gkznb-icedos-github_icedos_apps-proton-launch-subflake",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/yihk6z7bd9rh3zyfgc8b1w0vq28gkznb-icedos-github_icedos_apps-proton-launch-subflake",
-        "type": "path"
-      }
-    },
     "icedos-github_icedos_desktop": {
       "locked": {
-        "lastModified": 1791749065,
-        "narHash": "sha256-2mMsLrjqSlAY+oNsmmsBfNAtxFmQC9xd5XZFAHeGpRM=",
+        "lastModified": 1791894874,
+        "narHash": "sha256-qk6aBbr2WP9f1fELwaUKCJZPN1LSxg3Zk8baXczEI1U=",
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "0b47318cde1f5e3e7ab6645233f05487d7a8297f",
+        "rev": "e455907ab3e74683adc31e0d0a31a3d8521431df",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "desktop",
-        "rev": "0b47318cde1f5e3e7ab6645233f05487d7a8297f",
+        "rev": "e455907ab3e74683adc31e0d0a31a3d8521431df",
         "type": "github"
       }
     },
@@ -426,35 +390,87 @@
         "type": "path"
       }
     },
+    "icedos-github_icedos_gaming": {
+      "locked": {
+        "lastModified": 1792343946,
+        "narHash": "sha256-w5mPVuaYtx7jfDL5t7ZK2ZyKE8feLLgJ8lxMc+1pkrE=",
+        "owner": "icedos",
+        "repo": "gaming",
+        "rev": "0ccb799a749dfacccb63c10d18ab4eb3e284cf87",
+        "type": "github"
+      },
+      "original": {
+        "owner": "icedos",
+        "repo": "gaming",
+        "rev": "0ccb799a749dfacccb63c10d18ab4eb3e284cf87",
+        "type": "github"
+      }
+    },
+    "icedos-github_icedos_gaming-aagl": {
+      "inputs": {
+        "aagl": "aagl",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-TGqJp0tj0JjEbYxUM+MjN1k284XzPZeh1EJQOGjNVts=",
+        "path": "/nix/store/lakwlwykiiflnq6mcrqhwnipn0i681x3-icedos-github_icedos_gaming-aagl-subflake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/lakwlwykiiflnq6mcrqhwnipn0i681x3-icedos-github_icedos_gaming-aagl-subflake",
+        "type": "path"
+      }
+    },
+    "icedos-github_icedos_gaming-proton-launch": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "scopebuddy": "scopebuddy"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-PMoJ13cUUiOikzGeSt3G+n1d50eyGF+Xxcb3DvRr8gg=",
+        "path": "/nix/store/b42rsxan9wnxbvk89hxc97c1rczny6hc-icedos-github_icedos_gaming-proton-launch-subflake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/b42rsxan9wnxbvk89hxc97c1rczny6hc-icedos-github_icedos_gaming-proton-launch-subflake",
+        "type": "path"
+      }
+    },
     "icedos-github_icedos_hardware": {
       "locked": {
-        "lastModified": 1791859919,
-        "narHash": "sha256-VH+LHDO6o1UV4fS9HBad9vtQzKCLZBo2nMEwU34iWh4=",
+        "lastModified": 1792356187,
+        "narHash": "sha256-gHH4RyqwpmZHqljC4u85NKJ56YmPpFxfm4Gmf9zZvMQ=",
         "owner": "icedos",
         "repo": "hardware",
-        "rev": "c052259fcee4daa039f20943e4a70784d5d2c081",
+        "rev": "f5932c2b333979e217405139234786ef50b3d9cc",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "hardware",
-        "rev": "c052259fcee4daa039f20943e4a70784d5d2c081",
+        "rev": "f5932c2b333979e217405139234786ef50b3d9cc",
         "type": "github"
       }
     },
     "icedos-github_icedos_kde": {
       "locked": {
-        "lastModified": 1791649492,
-        "narHash": "sha256-1/fxv4Ze1sA8AgdQDHOrLoG07By6AmgDzn6apl6sA7Q=",
+        "lastModified": 1792418335,
+        "narHash": "sha256-TKGEuUoqFUaiEPUIoH86MbycKK3mmtFvtBxh8doVT/c=",
         "owner": "icedos",
         "repo": "kde",
-        "rev": "2a724b8339a3ccb23135aa46dda68a0353effbd2",
+        "rev": "eb6567c9df26e36a98481de2e1edbc6df8cfb9e8",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "kde",
-        "rev": "2a724b8339a3ccb23135aa46dda68a0353effbd2",
+        "rev": "eb6567c9df26e36a98481de2e1edbc6df8cfb9e8",
         "type": "github"
       }
     },
@@ -481,17 +497,17 @@
     },
     "icedos-github_icedos_providers": {
       "locked": {
-        "lastModified": 1789701572,
-        "narHash": "sha256-2bd0b6hK2qoDSg5WVyEv+poQsIbXNFdi5PL2NPwtfc0=",
+        "lastModified": 1792417726,
+        "narHash": "sha256-XDf7/OapwUX8k4ovsWKjHlRb4vl/9zeUDb1xfF2ledI=",
         "owner": "icedos",
         "repo": "providers",
-        "rev": "86f823cc597a496a3b8f4424ab3bb168d806303f",
+        "rev": "efbf9c9e0ab2b7eb56ddd0dcacfc31273229a55f",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "providers",
-        "rev": "86f823cc597a496a3b8f4424ab3bb168d806303f",
+        "rev": "efbf9c9e0ab2b7eb56ddd0dcacfc31273229a55f",
         "type": "github"
       }
     },
@@ -533,17 +549,17 @@
     },
     "icedos-github_icedos_tweaks": {
       "locked": {
-        "lastModified": 1789990840,
-        "narHash": "sha256-nRhoeKnfF6jjA1HjG88oDbWI8MhhYa8vLhEFPNSG7QU=",
+        "lastModified": 1792418358,
+        "narHash": "sha256-gjk2T+f9ck7s+406y/tOw+pwT7bCu3CG38iLPNci64E=",
         "owner": "icedos",
         "repo": "tweaks",
-        "rev": "95c46f51bc85b1cbcc4d58bef2750581a26addab",
+        "rev": "f986891bcf3fa9863e368a7a99f03117f093a158",
         "type": "github"
       },
       "original": {
         "owner": "icedos",
         "repo": "tweaks",
-        "rev": "95c46f51bc85b1cbcc4d58bef2750581a26addab",
+        "rev": "f986891bcf3fa9863e368a7a99f03117f093a158",
         "type": "github"
       }
     },
@@ -565,11 +581,11 @@
     },
     "icedos-overlay-github_nixos_nixpkgs_nixos-unstable-small": {
       "locked": {
-        "lastModified": 1791832894,
-        "narHash": "sha256-OWH1UMHyyujUBebnpMKqD2S8ESIJBqXl/s0mIUvX2tk=",
+        "lastModified": 1792377679,
+        "narHash": "sha256-gaQNXDVBAoJgajKaI8T+BUF8bDtBINM/g7Mbs1BBeBA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6aa7ad7f840d5a5bf17020b231d1c8d87a71995b",
+        "rev": "0d927ee3b4dfd77e453f28d6289e58d55136975b",
         "type": "github"
       },
       "original": {
@@ -601,11 +617,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791718482,
-        "narHash": "sha256-RXEq3ZL6P5xtLUYabbzjZMTXJ9RSzewwwHevfBZ7JG4=",
+        "lastModified": 1792392313,
+        "narHash": "sha256-x1Svgjbe1Ed8GDsfIpC+UqNL54/mpR7jI9GoNRzlYKI=",
         "owner": "jovian-experiments",
         "repo": "jovian-nixos",
-        "rev": "0f910b74686f38367c2d35809b542a3b94698f62",
+        "rev": "ed4307e11dbf98542ec15bc1151c63094fc1cbd7",
         "type": "github"
       },
       "original": {
@@ -623,27 +639,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1729697500,
-        "narHash": "sha256-VFTWrbzDlZyFHHb1AlKRiD/qqCJIripXKiCSFS8fAOY=",
-        "owner": "zhaofengli",
+        "lastModified": 1737420293,
+        "narHash": "sha256-F1G5ifvqTpJq7fdkT34e/Jy9VCyzd5XfJ9TO8fHhJWE=",
+        "owner": "nix-community",
         "repo": "nix-github-actions",
-        "rev": "e418aeb728b6aa5ca8c5c71974e7159c2df1d8cf",
+        "rev": "f4158fa080ef4503c8f4c820967d946c2af31ec9",
         "type": "github"
       },
       "original": {
-        "owner": "zhaofengli",
-        "ref": "matrix-name",
+        "owner": "nix-community",
         "repo": "nix-github-actions",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1791734076,
-        "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
+        "lastModified": 1792094642,
+        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
         "type": "github"
       },
       "original": {
@@ -655,11 +670,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1791734076,
-        "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
+        "lastModified": 1792094642,
+        "narHash": "sha256-zp8ToDMnqZcu4o4IH9pdwXFXGp7yLm/M0dEnNWnyd7I=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7fd4004d0511991fff3a0524856a9be09e28c5f0",
+        "rev": "fe13242281a67641c0102cdb1087f0ebe586c7df",
         "type": "github"
       },
       "original": {
@@ -705,11 +720,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791887569,
-        "narHash": "sha256-qqFOX7pIPViqvw61h45aXkPvBgqtwIMWpk5eWQSj17g=",
+        "lastModified": 1792417428,
+        "narHash": "sha256-Gfu2tpdFfa7iJSVsSUZwC61A5f/QfQPbObJ/+d5rCNY=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "8aaebfe1e67a926f6dbd9c4cb5e0733703a51d1b",
+        "rev": "6239dc1f27f7599b9b9001a1eb2a510b0620c8d2",
         "type": "github"
       },
       "original": {
@@ -753,11 +768,12 @@
           "icedos"
         ],
         "icedos-github_icedos_apps": "icedos-github_icedos_apps",
-        "icedos-github_icedos_apps-aagl": "icedos-github_icedos_apps-aagl",
         "icedos-github_icedos_apps-celluloid": "icedos-github_icedos_apps-celluloid",
-        "icedos-github_icedos_apps-proton-launch": "icedos-github_icedos_apps-proton-launch",
         "icedos-github_icedos_desktop": "icedos-github_icedos_desktop",
         "icedos-github_icedos_desktop-stylix": "icedos-github_icedos_desktop-stylix",
+        "icedos-github_icedos_gaming": "icedos-github_icedos_gaming",
+        "icedos-github_icedos_gaming-aagl": "icedos-github_icedos_gaming-aagl",
+        "icedos-github_icedos_gaming-proton-launch": "icedos-github_icedos_gaming-proton-launch",
         "icedos-github_icedos_hardware": "icedos-github_icedos_hardware",
         "icedos-github_icedos_kde": "icedos-github_icedos_kde",
         "icedos-github_icedos_kde-default": "icedos-github_icedos_kde-default",
@@ -774,7 +790,7 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "icedos-github_icedos_apps-aagl",
+          "icedos-github_icedos_gaming-aagl",
           "aagl",
           "nixpkgs"
         ]
@@ -796,7 +812,7 @@
     "scopebuddy": {
       "inputs": {
         "nixpkgs": [
-          "icedos-github_icedos_apps-proton-launch",
+          "icedos-github_icedos_gaming-proton-launch",
           "nixpkgs"
         ]
       },

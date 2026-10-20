@@ -2,18 +2,12 @@
 url = "github:icedos/apps"
 # overrideUrl = "path:/home/stef/code/os/.repos/apps"
 modules = [
-  "aagl",
   "btop",
   "celluloid",
-  "gamemode",
-  "gamescope",
   "helium",
   "kitty",
   # "lact",
-  "lsfg-vk",
-  "mangohud",
   "nautilus",
-  "proton-launch",
   # "scx",
   # "solaar",
   "steam-headless",
@@ -24,10 +18,7 @@ modules = [
 
 [[icedos.repositories]]
 url = "github:icedos/tweaks"
-modules = ["gaming", "kernel"]
-
-[icedos.applications.aagl]
-launchers = ["anime-game-launcher"]
+modules = ["kernel"]
 
 # [icedos.applications.protonvpn-cli.connect]
 # country = "RO"
@@ -66,8 +57,23 @@ capSysAdmin = true
 autosave = true
 formatOnSave = true
 
-[icedos.applications.zed.agentBridge]
+[icedos.applications.zed.agent-bridge]
 enable = false
+
+[[icedos.repositories]]
+url = "github:icedos/gaming"
+modules = [
+  "aagl",
+  "gamemode",
+  "gamescope",
+  "lsfg-vk",
+  "mangohud",
+  "proton-launch",
+  "tweaks",
+]
+
+[icedos.gaming.aagl]
+launchers = ["anime-game-launcher"]
 
 [[icedos.repositories]]
 url = "github:icedos/desktop"
@@ -336,7 +342,7 @@ email = "github.ekta@aleeas.com"
 username = "CrazyStevenz"
 email = "github.ekta@aleeas.com"
 
-[[icedos.system.overlays.fromChannel]]
+[[icedos.system.overlays.from-channel]]
 url = "github:nixos/nixpkgs/nixos-unstable-small"
 packages = ["kdePackages"]
 
