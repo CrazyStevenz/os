@@ -298,7 +298,6 @@ description = "Work"
 packages = [
   "discord",
   "envsubst", # Environment variables substitution for Go
-  "gh",
   # "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
   "slack",
@@ -311,6 +310,7 @@ generations = 30
 packages = [
   "appimage-run",
   "claude-code",
+  "gh",
   "gimp3", # GNU Image Manipulation Program
   "gnome-calculator",
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)

@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
     };
     icedos-config = {
-      url = "path:/nix/store/zp655b3vp7pbbdgxgvyx3s3h8yrncnc4-icedos-config";
+      url = "path:/nix/store/yav279b6z9jfnwxmj1qsma1xw0pgpp06-icedos-config";
     };
     icedos-config-hytale-launcher = {
       inputs = {
@@ -30,7 +30,7 @@
       url = "path:/nix/store/bakwi8d6hcgmmjnmrrr4nzvwjhwsbcix-icedos-github_icedos_apps-celluloid-subflake";
     };
     icedos-github_icedos_desktop = {
-      url = "github:icedos/desktop/e455907ab3e74683adc31e0d0a31a3d8521431df";
+      url = "path:/home/stef/code/os/.repos/desktop";
     };
     icedos-github_icedos_desktop-stylix = {
       inputs = {
