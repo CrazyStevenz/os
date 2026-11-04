@@ -82,6 +82,10 @@ url = "github:icedos/desktop"
 [icedos.desktop]
 keyboardLayouts = [ "us", "gr" ]
 
+[icedos.desktop.applications.audio-player]
+name = "io.github.celluloid_player.Celluloid.desktop"
+package = ""
+
 [icedos.desktop.applications.browser]
 name = "helium.desktop"
 
@@ -296,12 +300,10 @@ packages = [
 [icedos.users.work]
 description = "Work"
 packages = [
-  "discord",
   "envsubst", # Environment variables substitution for Go
   # "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
   "slack",
-  "t3code", # Minimal web GUI for coding agents
   "watchman", # Required to watch when TypeScript files are created/updated/deleted
 ]
 
@@ -310,6 +312,7 @@ generations = 30
 packages = [
   "appimage-run",
   "claude-code",
+  "discord",
   "gh",
   "gimp3", # GNU Image Manipulation Program
   "gnome-calculator",
@@ -317,7 +320,7 @@ packages = [
   "handbrake", # Tool for converting video files and ripping DVDs
   "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "jq", # Lightweight and flexible command-line JSON processor
-  "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
+  # "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
   "nodejs_22",
   "pnpm", # Fast, disk space efficient package manager for JavaScript
   "proton-vpn",
@@ -350,6 +353,3 @@ packages = ["kdePackages"]
 i = "icedos"
 ir = "icedos rebuild"
 iu = "icedos rebuild --update"
-
-[programs.kde-pim]
-enable = false
