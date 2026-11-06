@@ -80,7 +80,7 @@ url = "github:icedos/desktop"
 # overrideUrl = "path:/home/stef/code/os/.repos/desktop"
 
 [icedos.desktop]
-keyboardLayouts = [ "us", "gr" ]
+keyboardLayouts = ["us", "gr"]
 
 [icedos.desktop.applications.audio-player]
 name = "io.github.celluloid_player.Celluloid.desktop"
@@ -94,6 +94,10 @@ name = "dev.zed.Zed.desktop"
 
 [icedos.desktop.applications.files]
 name = "org.gnome.Nautilus.desktop"
+
+[icedos.desktop.applications.office-suite]
+name = "startcenter.desktop"
+package = "libreoffice"
 
 [icedos.desktop.applications.torrent]
 name = "org.qbittorrent.qBittorrent.desktop"
@@ -144,7 +148,7 @@ autohide = true
 [icedos.desktop.kde.panel.system-tray]
 disabledApplets = [
   "org.kde.plasma.devicenotifier",
-  "org.kde.plasma.mediacontroller"
+  "org.kde.plasma.mediacontroller",
 ]
 
 [[icedos.desktop.kde.screen-edges]]
@@ -318,7 +322,6 @@ packages = [
   "gnome-calculator",
   "gsound", # Small library for playing system sounds (required to show file properties in Nautilus)
   "handbrake", # Tool for converting video files and ripping DVDs
-  "jetbrains.webstorm", # IDE for Web, JavaScript and Typescript development
   "jq", # Lightweight and flexible command-line JSON processor
   # "mission-center", # CPU, Memory, Disk, Network and GPU usage monitor
   "nodejs_22",
@@ -326,6 +329,7 @@ packages = [
   "proton-vpn",
   "signal-desktop",
   "warp", # Send files via the automatically fastest route
+  "webstorm", # IDE for Web, JavaScript and Typescript development
 ]
 permittedInsecurePackages = []
 version = "23.05"
@@ -352,4 +356,4 @@ packages = ["kdePackages"]
 [icedos.system.zsh.aliases]
 i = "icedos"
 ir = "icedos rebuild"
-iu = "icedos rebuild --update"
+iu = "icedos rebuild --update --lock-only && icedos rebuild" # I don't want the flake to reset on fail
