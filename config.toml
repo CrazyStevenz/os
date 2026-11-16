@@ -66,8 +66,8 @@ formatOnSave = true
 url = "github:icedos/desktop"
 
 [icedos.desktop]
-keyboardLayouts = [ "us", "gr" ]
-timezone = "Europe/Amsterdam"
+keyboardLayouts = ["us", "gr"]
+# timezone = "Europe/Amsterdam"
 
 [icedos.desktop.applications.browser]
 name = "helium.desktop"
@@ -128,7 +128,7 @@ switchingPolicy = "window"
 [icedos.desktop.kde.panel.system-tray]
 disabledApplets = [
   "org.kde.plasma.devicenotifier",
-  "org.kde.plasma.mediacontroller"
+  "org.kde.plasma.mediacontroller",
 ]
 
 [[icedos.desktop.kde.screen-edges]]
@@ -290,8 +290,10 @@ packages = [
   # "codex",
   "discord",
   "envsubst", # Environment variables substitution for Go
+  "gh",
   "google-cloud-sdk", # Required to use 'gcloud' command
   "jetbrains.datagrip", # Database IDE
+  # "nextcloud-client", # Used for two-way syncing with Nextcloud
   "slack",
   "stremio-linux-shell",
   # "t3code", # Minimal web GUI for coding agents
@@ -342,3 +344,7 @@ packages = ["kdePackages"]
 i = "icedos"
 ir = "icedos rebuild"
 iu = "icedos rebuild --update"
+
+# Raw NixOS options (anything outside `icedos` is passed through as-is)
+[environment.sessionVariables]
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = "1"
